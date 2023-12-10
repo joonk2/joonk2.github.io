@@ -32,23 +32,27 @@ title: 고준환                          # the main blog title, 블로그 맨 �
 tagline: '어서오시게'   # it will display as the sub-title,  (부제목 첫 페이지 좌측에서 확인가능)
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://joonhwan2.github.io'
+url: 'https://joonk2.github.io'
 
 github:
-  username: joonhwan2             # change to your github username
+  username: joonk2            # change to your github username
 
-twitter:
-  username: twitter_username            # change to your twitter username
+# twitter:
+#   username: twitter_username            # change to your twitter username
+
+
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: 고준환 J.K
-  email: rhwnsghks97.gmail.com             # change to your email address
+  email: with.joonk.gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/joonhwan2       # change to your github homepage
+    - https://discord.com/channels/1183260916188467240/1183260916188467243
+    # - https://twitter.com/username      # change to your twitter homepage
+    - https://github.com/joonk2       # change to your github homepage
+    - 'https://www.instagram.com/joonhwan10'
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
