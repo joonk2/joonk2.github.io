@@ -1,0 +1,42 @@
+#  The contact options.
+
+- type: github
+  icon: 'fab fa-github'
+
+- type: instagram
+  icon: 'fab fa-instagram'
+  url: 'https://www.instagram.com/joonhwan10'
+
+
+- type: discord
+  icon: 'fab fa-discord'
+  url: 'https://discord.com/channels/1183260916188467240/1183260916188467243'
+
+- type: internet-explorer
+  icon: 'fab fa-internet-explorer'
+  url: 'https://www.notion.so/fd6a135eab8d4fe4be2de35ca7e6946e?v=0525e9ee64e44452b0cc73db77321c1e'
+
+# - type: twitter
+#   icon: 'fab fa-twitter'
+
+- type: email
+  icon: 'fas fa-envelope'
+  noblank: true            # open link in current tab
+
+- type: rss
+  icon: 'fas fa-rss'
+  noblank: true
+
+# Uncomment and complete the url below to enable more contact options
+# -
+#   type: mastodon
+#   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
+#   url:  ''                  # Fill with your mastodon account page
+# -
+#   type: linkedin
+#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+#   url:  ''                  # Fill with your Linkedin homepage
+# -
+#   type: stack-overflow
+#   icon: 'fab fa-stack-overflow'
+#   url:  ''                  # Fill with your stackoverflow homepage
