@@ -1,5 +1,6 @@
 ---
 title:  "Node.js & 네이버지도로 내 근처 약국들 찾기 1"
+layout: post
 categories: [developer-tools, api, Node.js]
 tags: [api, nodejs]
 toc: true

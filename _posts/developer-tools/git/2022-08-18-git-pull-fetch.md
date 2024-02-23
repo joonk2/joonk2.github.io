@@ -1,5 +1,6 @@
 ---
 title:  "[git] git pull fetch 정리"
+layout: post
 categories: [developer-tools, git]
 tags: [git]
 toc: true
