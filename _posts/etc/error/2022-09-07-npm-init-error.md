@@ -1,5 +1,6 @@
 ---
 title:  "[error: npm init]"
+layout: post
 categories: [etc, error] 
 tags: [npm]
 toc: true

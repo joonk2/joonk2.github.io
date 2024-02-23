@@ -1,5 +1,6 @@
 ---
 title:  "[git error untracted files] untracted files"
+layout: post
 categories: [etc, error] 
 tags: [git error]
 toc: true

@@ -1,5 +1,6 @@
 ---
 title:  "[error: failed to push some refs to] 깃 푸시 에러"
+layout: post
 categories: [etc, error] 
 tags: [git error]
 toc: true

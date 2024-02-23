@@ -1,5 +1,6 @@
 ---
 title:  "[git error no commits updated] 파일 업로드가 안됨"
+layout: post
 categories: [etc, error] 
 tags: [git error]
 toc: true

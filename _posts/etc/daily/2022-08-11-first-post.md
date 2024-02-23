@@ -1,5 +1,6 @@
 ---
 title:  "메모"
+layout: post
 categories: [etc, daily]
 tags: [blog, jekyll, github, git]
 toc: true

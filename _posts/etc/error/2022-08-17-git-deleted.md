@@ -1,5 +1,6 @@
 ---
 title:  "[git deleted error] deleted by them X"
+layout: post
 categories: [etc, error] 
 tags: [git error]
 toc: true

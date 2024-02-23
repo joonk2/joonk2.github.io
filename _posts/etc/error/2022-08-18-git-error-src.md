@@ -1,5 +1,6 @@
 ---
 title:  "[error src refspec main does not match any] 깃에러2"
+layout: post
 categories: [etc, error] 
 tags: [git error]
 toc: true
