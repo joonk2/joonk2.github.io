@@ -1,6 +1,7 @@
 ---
 title: About Me
 icon: fas fa-info-circle
+show_toggle: false
 order: 4
 ---
 
