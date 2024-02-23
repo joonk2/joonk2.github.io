@@ -19,7 +19,7 @@ written: 2024-02-23 fri 18:20
 <br>
 <br>
 
-![Desktop View](/_posts/blog/240223/1.PNG)
+![Desktop View](/assets/img/blog/1.PNG)
 
 
 <br>
@@ -57,7 +57,7 @@ bundle exec jekyll serve
 ```
 입력하니 아래와 같은 결과가 나왔다.
 
-![Desktop View](/_posts/blog/240223/2.PNG)
+![Desktop View](/assets/img/blog/2.PNG)
 
 
 <br>
@@ -126,7 +126,7 @@ date: 2024-02-23
 
 # 짜잔✅
 
-![Desktop View](/_posts/blog/240223/2.PNG)
+![Desktop View](/assets/img/blog/3.PNG)
 
 메인 홈페이지로 카테고리화된 페이지가 나오게 변경해줬다! <br>
 내부 페이지를 클릭해봐도 잘 들어가질 것이다. <br>
