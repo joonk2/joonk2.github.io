@@ -12,12 +12,14 @@ written: 2024-02-23 fri 18:20
 <br>
 
 ---
-## 어떻게 하면 블로그에 들어오자마자 내가 원하는 페이지를 바로 볼 수 있을까?
+## 이번 시간에는 왼쪽 사이드바항목과 원하는 페이지를 메인 홈페이지로 설정하는 것을 해보겠다.
 ---
 <br>
 <br>
 <br>
 <br>
+
+### 1. 우선 왼쪽 사이드바 항목 수정 및 보완이다.
 
 ![Desktop View](/assets/img/blog/1.png)
 
@@ -63,7 +65,9 @@ bundle exec jekyll serve
 <br>
 <br>
 
-여기서 가만히 보니 카테고리화된 STUDY DIARY를 메인 페이지로 사용하고 싶어졌다.<br>
+### 2. 두 번째로 이 카테고리화된 study diary를 메인 페이지로 변경하는 것이다 
+
+<br>
 
 study-diary.md 파일을 메인 페이지로 사용하되, 카테고리 형식으로 나누어 보고 싶다면 다음과 같이 고쳐보자.<br>
 `.config_yml`,  &nbsp;&nbsp;&nbsp;&nbsp; `_tabs/study-diary.md`
