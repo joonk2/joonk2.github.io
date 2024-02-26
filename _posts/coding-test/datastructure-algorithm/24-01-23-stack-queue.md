@@ -1,7 +1,7 @@
 ---
 title:  "Stack-Queue"
 layout: post
-categories: [datastructure-algorithm] 
+categories: [coding-test, datastructure-algorithm] 
 tags: [blog, datastructure, algorithm, Stack, Queue]
 toc: true
 toc_sticky: true
