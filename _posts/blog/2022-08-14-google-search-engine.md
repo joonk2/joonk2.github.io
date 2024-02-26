@@ -1,7 +1,7 @@
 ---
 title:  "[blog] 깃허브 블로그 구글검색 노출시키기"
 layout: post
-categories: [blog] 
+categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
 toc: true
 toc_sticky: true

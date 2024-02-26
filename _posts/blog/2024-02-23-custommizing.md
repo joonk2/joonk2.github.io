@@ -1,7 +1,7 @@
 ---
 title:  "[blog] 블로그 커스터마이징"
 layout: post
-categories: [blog] 
+categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
 toc: true
 toc_sticky: true

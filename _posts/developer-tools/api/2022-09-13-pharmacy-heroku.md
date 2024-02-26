@@ -1,7 +1,7 @@
 ---
 title:  "Node.js & 약국지도찾기, heroku 배포하기"
 layout: post
-categories: [developer-tools, api, Node.js]
+categories: [developer-tools, api]
 tags: [api, nodejs, heroku]
 toc: true
 toc_sticky: true

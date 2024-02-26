@@ -1,7 +1,7 @@
 ---
 title:  "[blog] 블로그 카테고리 나누는 법"
 layout: post
-categories: [blog] 
+categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
 toc: true
 toc_sticky: true

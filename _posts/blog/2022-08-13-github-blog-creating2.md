@@ -1,7 +1,7 @@
 ---
 title:  "[blog] 깃허브 블로그 만드는 법 2"
 layout: post
-categories: [blog] 
+categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
 toc: true
 toc_sticky: true
