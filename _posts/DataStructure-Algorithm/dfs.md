@@ -24,9 +24,9 @@ date: 2024-01-03
 
 ## 2. 예시
 
-![Desktop View](assets/img/data-alg/dfs/0.PNG)
+![Desktop View](assets/img/data-alg/dfs/0.png)
 
-![Desktop View](assets/img/data-alg/dfs/1.PNG)
+![Desktop View](assets/img/data-alg/dfs/1.png)
 
 ## 3. 구현
 
@@ -59,7 +59,7 @@ result = dfs_recursive(graph, 'Onion')
 print(" -> ".join(result))
 ```
 
-![Desktop View](assets/img/data-alg/dfs/2.PNG)
+![Desktop View](assets/img/data-alg/dfs/2.png)
 
 <br><br><br>
 

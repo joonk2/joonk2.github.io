@@ -50,11 +50,11 @@ date: 2024-01-17
 
 ### 1) 데이터 삽입
 
-![Desktop View](assets/img/data-alg/heap/0.PNG)
+![Desktop View](assets/img/data-alg/heap/0.png)
 
 ### 2) 데이터 삭제
 
-![Desktop View](assets/img/data-alg/heap/1.PNG)
+![Desktop View](assets/img/data-alg/heap/1.png)
 
 ## 4. 구현 실험(python)
 
@@ -86,7 +86,7 @@ print(joonhwan_heap)
 # 결과: ['1', '3', '2', '5', '6', '4']
 ```
 
-![Desktop View](assets/img/data-alg/heap/2.PNG)
+![Desktop View](assets/img/data-alg/heap/2.png)
 
 - `힙 데이터 삭제`
 
@@ -101,7 +101,7 @@ print(joonhwan_heap)
 # 결과: ['2', '3', '4', '5', '6']
 ```
 
-![Desktop View](assets/img/data-alg/heap/3.PNG)
+![Desktop View](assets/img/data-alg/heap/3.png)
 
 # 참고
 
