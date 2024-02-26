@@ -1,7 +1,7 @@
 ---
 title:  "Two-Pointer"
 layout: post
-categories: [coding-test, datastructure-algorithm] 
+categories: [datastructure-algorithm] 
 tags: [blog, datastructure, algorithm, TwoPointer]
 toc: true
 toc_sticky: true
