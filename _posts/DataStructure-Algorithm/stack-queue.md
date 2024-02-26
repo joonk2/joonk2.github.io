@@ -10,7 +10,7 @@ date: 2024-01-23
 
 스택과 큐는 차이가 존재한다, 그 2개를 각자 비교해보겠다.
 
-![Desktop View](assets/img/data-alg/stack-queue/0.PNG)
+![Desktop View](assets/img/data-alg/stack-queue/0.png)
 
 ```python
 <스택이 제공하는 method>
@@ -57,7 +57,7 @@ print(result)
 # 결과     --->     ['mushroom_coongya']
 ```
 
-![Desktop View](assets/img/data-alg/stack-queue/1.PNG)
+![Desktop View](assets/img/data-alg/stack-queue/1.png)
 
 ## ※스택 활용 방안
 
@@ -65,7 +65,7 @@ print(result)
 - 후위 계산법
 - 개발 중 오류 해결을 위해, 일을 가장 최근에 한 것부터 싹 되돌아보기
 
-![Desktop View](assets/img/data-alg/stack-queue/2.PNG)
+![Desktop View](assets/img/data-alg/stack-queue/2.png)
 
 ```python
 <queue가 제공하는 method>
@@ -118,7 +118,7 @@ doll_picking(order) # 함수 적용
 print(how_dolls_come_out_in_sequence)
 ```
 
-![Desktop View](assets/img/data-alg/stack-queue/3.PNG)
+![Desktop View](assets/img/data-alg/stack-queue/3.png)
 
 # ※큐 활용방안
 
