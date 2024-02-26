@@ -48,16 +48,6 @@ date: 2022-08-16
 <br>
 <br>
 
-저는 이렇게 하였습니다.
-
-<br>
-
-![Desktop View](/assets/img/categories-dividing/5.PNG)
-
-<br>
-<br>
-<br>
-<br>
 
 그리고 해당되는 md폴더를 열어서 categories를 고치면 됩니다 제꺼를 한번 보여드리겠습니다.
 <br>
