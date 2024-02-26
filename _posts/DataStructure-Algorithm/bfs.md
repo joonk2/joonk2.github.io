@@ -1,0 +1,180 @@
+---
+title:  "BFS"
+layout: post
+categories: [DataStructure-Algorithm] 
+tags: [DataStructure, Algorithm, python, BFS]
+toc: true
+toc_sticky: true
+date: 2024-01-01
+---
+
+**`BFS(Breadth-First Search)`** 란 **`너비 우선 탐색`** 이라고도 불리며 그래프에서 시작 노드에 인접한 노드부터 탐색하는 알고리즘이다. BFS 알고리즘은 언제 사용하면 좋을까?? BFS 알고리즘은 주로 그래프에서 모든 간선의 비용이 동일한 조건에서 최단 거리를 구하는 문제를 효과적으로 해결할 수 있는 알고리즘이고, "미로를 빠져나가는 최단 거리(경로)"를 구하는 문제 등에서 효과적으로 활용할 수 있는 알고리즘
+
+**`BFS 동작 과정`**
+
+BFS 알고리즘은 그래프에서 가까운 노드부터 우선적으로 탐색한다는 점에서, 선입선출 방식의 큐(Queue) 자료구조를 활용한다. 즉, BFS는 인접한 노드를 반복적으로 큐에 삽입하고 먼저 삽입된 노드부터 차례로 큐에서 꺼내도록 알고리즘을 작성하면 된다. BFS 알고리즘의 구체적인 동작 과정은 아래와 같다.
+
+1️⃣ 탐색 시작 노드 정보를 큐에 삽입하고 방문 처리한다.
+
+2️⃣ 큐에서 노드를 꺼내 방문하지 않은 인접 노드 정보를 모두 큐에 삽입하고 방문 처리한다.
+
+3️⃣ 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다.
+
+<br><br><br>
+
+# 그래프 예시를 통해 bfs 작동과정 알아보자
+
+- 노드 1을 시작노드로 설정하겠다.
+- 인접한 노드가 2개 이상인 경우에는 해당 노드들 중 번호가 가장 낮은 노드부터 처리한다.
+
+![Desktop View](assets/img/data-alg/bfs/0.PNG)
+
+편의상 현재 큐에서 꺼내 처리 중인 노드는 빨간색, 방문 처리한 노드는 연두색으로 표시하겠다.
+
+### 1. 시작 노드인 `노드1`을 큐에 삽입하고 방문처리한다.
+
+![Desktop View](assets/img/data-alg/bfs/1.PNG)
+
+### 2. 큐에서 노드 1을 꺼내고, 노드 1과 인접한 노드 2, 3을  큐에 삽입하고 방문처리한다.
+
+![Desktop View](assets/img/data-alg/bfs/2.PNG)
+
+### 3. 큐에서 노드 2를 꺼내고, 노드 2과 인접한 노드 8을  큐에 삽입하고 방문처리한다.
+
+![Desktop View](assets/img/data-alg/bfs/3.PNG)
+
+### 4. 큐에서 노드 3을 꺼내고, 노드 3과 인접한 노드 4, 5을  큐에 삽입하고 방문처리한다.
+
+![Desktop View](assets/img/data-alg/bfs/4.PNG)
+
+### 5. 큐에서 노드 8을 꺼내고, 노드 8과 인접한 노드 6, 7을  큐에 삽입하고 방문처리한다.
+
+![Desktop View](assets/img/data-alg/bfs/5.PNG)
+
+### 6. 그래프 내의 노드에서 방문하지 않은 노드는 더이상 없어서 큐에서 모든 노드를 차례대로 꺼낸다.
+
+![Desktop View](assets/img/data-alg/bfs/6.PNG)
+
+```python
+결과적으로 노드의 탐색 순서, 즉 큐에 삽입한 순서는 다음과 같다
+1 -> 2 -> 3 -> 8 -> 4 -> 5 -> 6 -> 7
+# 부산 -> 울산 -> 창원 -> 대구 -> 여수 -> 광주 -> 포항 -> 대전 
+```
+
+# bfs 구현 (python)
+
+```python
+# deque 라이브러리 불러오기
+from collections import deque
+```
+
+- collection 모듈에서 deque 라이브러리 호출
+
+```python
+# BFS 메서드 정의
+def bfs (graph, node, visited):
+    # 큐 구현을 위한 deque 라이브러리 활용
+    queue = deque([node])
+    # 현재 노드를 방문 처리
+    visited[node] = True
+    
+    # 큐가 완전히 빌 때까지 반복
+    while queue:
+        # 큐에 삽입된 순서대로 노드 하나 꺼내기
+        v = queue.popleft()
+        # 탐색 순서 출력
+        print(v, end = ' ')
+        # 현재 처리 중인 노드에서 방문하지 않은 인접 노드를 모두 큐에 삽입
+        for i in graph[v]:
+            if not (visited[i]):
+                queue.append(i)
+                visited[i] = True
+```
+
+- bfs 메서드 정의
+
+```python
+graph = [
+    [],
+    [2, 3],
+    [1, 8],
+    [1, 4, 5],
+    [3, 5],
+    [3, 4],
+    [7, 8],
+    [6, 8],
+    [2, 6, 7]
+]
+```
+
+- 노드간의 연결정보 2차원을 통해 표현
+
+```python
+# 노드별로 방문 정보를 리스트로 표현
+visited = [False] * 9
+```
+
+왜 9냐?
+
+- 노드 번호가 1번부터 시작하는 점에서, 리스트 내 원소의 인덱스 번호와 노드 번호를 일치시키기 위해 인덱스 0에 빈 리스트를 넣음 ~~그래서 8이 아닌 것이다.~~
+
+```python
+# 정의한 BFS 메서드 호출(노드 1을 탐색 시작 노드로 설정)
+bfs(graph, 1, visited)
+```
+
+- `결과 값:` 1 2 3 8 4 5 6 7
+
+# 전체 코드
+
+```python
+graph = [
+    [],
+    [2, 3],
+    [1, 8],
+    [1, 4, 5],
+    [3, 5],
+    [3, 4],
+    [7, 8],
+    [6, 8],
+    [2, 6, 7]
+]
+
+# 노드별로 방문 정보를 리스트로 표현
+visited = [False] * 9
+
+# deque 라이브러리 불러오기
+from collections import deque
+
+# BFS 메서드 정의
+def bfs (graph, node, visited):
+    # 큐 구현을 위한 deque 라이브러리 활용
+    queue = deque([node])
+    # 현재 노드를 방문 처리
+    visited[node] = True
+    
+    # 큐가 완전히 빌 때까지 반복
+    while queue:
+        # 큐에 삽입된 순서대로 노드 하나 꺼내기
+        v = queue.popleft()
+        # 탐색 순서 출력
+        print(v, end = ' ')
+        # 현재 처리 중인 노드에서 방문하지 않은 인접 노드를 모두 큐에 삽입
+        for i in graph[v]:
+            if not (visited[i]):
+                queue.append(i)
+                visited[i] = True
+    
+
+# 정의한 BFS 메서드 호출(노드 1을 탐색 시작 노드로 설정)
+bfs(graph, 1, visited)
+
+--------------- 실행 결과 -----------------------
+# 1 2 3 8 4 5 6 7 
+```
+
+<br>
+<br>
+
+# 참고
+[https://heytech.tistory.com/56](https://heytech.tistory.com/56)
