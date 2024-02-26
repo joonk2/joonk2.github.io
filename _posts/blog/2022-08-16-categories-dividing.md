@@ -52,7 +52,7 @@ date: 2022-08-16
 
 <br>
 
-![Desktop View](/assets/img/categories-dividing/3.PNG)
+![Desktop View](/assets/img/categories-dividing/5.PNG)
 
 <br>
 <br>
