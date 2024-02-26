@@ -1,5 +1,6 @@
 ---
 title:  "[네이버지도로 약국찾기 작업하면서 배운 것]"
+layout: post
 categories: [etc, study] 
 tags: [study]
 toc: true
