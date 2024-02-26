@@ -34,7 +34,7 @@ date: 2024-01-30
 - 수행 시간 제한은 O(N) 이다
 ```
 
-![Desktop View](/assets/img/data-alg/twopointer/0.png)
+![Desktop View](/assets/img/data-alg/TwoPointer/0.png)
 
 ```md
 # 아이디어
@@ -45,7 +45,7 @@ date: 2024-01-30
 5. 모든 경우를 확인할 때까지 2번부터 4번까지의 과정을 반복한다
 ```
 
-![Desktop View](/assets/img/data-alg/twopointer/1.png)
+![Desktop View](/assets/img/data-alg/TwoPointer/1.png)
 
 ```python
 n = 5 # 데이터의 개수 N
