@@ -17,7 +17,7 @@ order: 4
 <br>
 
 # 아래 곰을 클릭하면 노션으로 이동
-# --> [ʕっ•ᴥ•ʔっ](https://www.notion.so/joonk2/59190ba1b7fb4d5d86f486d08f242558?v=a4e397d7ac3848fa9588b284b61825df)<br>
+# [ʕ　·ᴥ·ʔ](https://www.notion.so/joonk2/59190ba1b7fb4d5d86f486d08f242558?v=a4e397d7ac3848fa9588b284b61825df)<br>
 
 
 <!-- > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
