@@ -1,8 +1,8 @@
 ---
-title:  "경사하강법 수기 작성으로 이해해보자"
+title:  "경사하강법 작동 원리 [수기 작성]"
 layout: post
-categories: [ML-DL, ML] 
-tags: [gradient]
+categories: [DataScience, ML] 
+tags: [gradient, ML, DataScience]
 toc: true
 toc_sticky: true
 date: 2024-02-28
@@ -13,7 +13,7 @@ date: 2024-02-28
 
 ex) 짙은 안개산에서 앞은 안보이고 발 끝으로 산의 기울기만 느낄 수 있을 때, 탈출하기 위해 가장 기울기가 급한 길을 따라 내려가는 것
 
-![Desktop View](/assets/img/ML-DL/ML/0.png)
+![Desktop View](/assets/img/DataScience/ML/0.png)
 
 <br><br><br>
 
@@ -23,10 +23,10 @@ ex) 짙은 안개산에서 앞은 안보이고 발 끝으로 산의 기울기만
 >아래 종이에 적힌 것을 보면 경사하강법의 증명을 알 수 있다.
 
 
-![Desktop View](/assets/img/ML-DL/ML/1.png)
-![Desktop View](/assets/img/ML-DL/ML/2.png)
-![Desktop View](/assets/img/ML-DL/ML/3.png)
-![Desktop View](/assets/img/ML-DL/ML/4.png)
+![Desktop View](/assets/img/DataScience/ML/1.png)
+![Desktop View](/assets/img/DataScience/ML/2.png)
+![Desktop View](/assets/img/DataScience/ML/3.png)
+![Desktop View](/assets/img/DataScience/ML/4.png)
 
 
 
