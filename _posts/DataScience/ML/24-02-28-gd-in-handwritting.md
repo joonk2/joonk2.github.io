@@ -1,5 +1,5 @@
 ---
-title:  "경사하강법 작동 원리 [수기 작성]"
+title:  "gradient 작동 원리 [수기 작성]"
 layout: post
 categories: [DataScience, ML] 
 tags: [gradient, ML, DataScience]
