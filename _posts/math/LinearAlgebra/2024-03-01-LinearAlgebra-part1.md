@@ -24,8 +24,12 @@ date: 2024-03-01
 3. 행렬식     
  3-1) 행렬식이란? & Sarrus 전개     
  3-2) 역행렬     
- 3-3) 크래머 공식
- 3-4) 크래머 공식 예제 1개
+ 3-3) Crammer`s Rule
+ 3-4) Crammer`s Rule 예제 1개
+
+4. 1강 마무리 연습문제
+ 4-1) 가우스 조던 소거법
+ 4-2) 역행렬
 ```
 
 # 0. 선형대수학을 왜 배워야하냐?
@@ -83,18 +87,29 @@ date: 2024-03-01
 
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/11.png)
 
-## 3-3) 크래머공식
+## 3-3) Crammer`s Rule
 
 - 연립일차방정식 AX = B 에서 A가 행렬식 0이 아닌 정사각행렬일 때
 
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/12.png)
 
-## 3-4) 크래머공식 예제 1개
+## 3-4) Crammer`s Rule 예제 1개
 
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/13.png)
 
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/14.png)
 
+<br><br>
+
+# 4. 1강 마무리 연습문제
+
+## 4-1) 가우스 조던 소거법
+![Desktop View](/assets/img/math/LinearAlgebra/part1/15.png)
+![Desktop View](/assets/img/math/LinearAlgebra/part1/16.png)
+
+## 4-2) 역행렬
+![Desktop View](/assets/img/math/LinearAlgebra/part1/17.png)
+![Desktop View](/assets/img/math/LinearAlgebra/part1/18.png)
 # 참고
 
 [행렬로 연립일차방정식 풀기 - 가우스 소거법](https://www.youtube.com/watch?v=VlUfSrDcFzw&list=PLxz77rwoJPpWMrEaUpfGTG9P7X_faMYGi&index=3)
