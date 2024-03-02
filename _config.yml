@@ -27,7 +27,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 고준환                          # the main blog title, 블로그 맨 상단에 설정된 이름 확인가능
+title: 고준환                        # the main blog title, 블로그 맨 상단에 설정된 이름 확인가능
 
 tagline: '어서오시게'   # it will display as the sub-title,  (부제목 첫 페이지 좌측에서 확인가능)
 
