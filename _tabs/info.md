@@ -17,7 +17,7 @@ order: 4
 <br>
 
 # 아래 지렁이를 클릭하면 노션으로 이동
-# <a href="https://www.notion.so/joonk2/59190ba1b7fb4d5d86f486d08f242558?v=a4e397d7ac3848fa9588b284b61825df"><img src="https://user-images.githubusercontent.com/76584961/216099537-e1b5f736-96a4-4dee-94f3-5f040a105cfa.gif" style="height: 30px"/> 
+# <a href="https://www.notion.so/joonk2/59190ba1b7fb4d5d86f486d08f242558?v=a4e397d7ac3848fa9588b284b61825df"><img src="https://user-images.githubusercontent.com/76584961/216099537-e1b5f736-96a4-4dee-94f3-5f040a105cfa.gif" style="height: 40px; width: 40px"/> 
 
 <!-- > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
 {: .prompt-tip } -->
