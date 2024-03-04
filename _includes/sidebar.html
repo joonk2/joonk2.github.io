@@ -51,6 +51,78 @@
 
   </ul> <!-- ul.nav.flex-column -->
 
+
+
+
+  <!-- --------------------------------------------mar.04.2024 music button-------------------------------------------------- -->
+
+  <!-- 음악 재생, 멈춤 버튼 추가 -->
+  <div id="music-container" style="text-align: center;">
+    <img id="musicGif" src="https://media.tenor.com/15YUsMWt4FEAAAAj/music.gif" alt="Music GIF" style="display: inline-block; width: 50px; height: 50px; background-color: rgb(240, 236, 9)4, 128, 0);">
+    <button id="playPauseButton" onclick="toggleMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">Pause</button>
+  </div>
+
+  <!-- JavaScript 코드 -->
+  <script>
+    // 음악을 자동으로 재생할 audio 요소 생성
+    var audio = new Audio();
+
+    // 플레이리스트 ID
+    var playlistId = 'YOUR_PLAYLIST_ID';
+
+    // Replace 'YOUR_API_KEY' with your actual YouTube API key
+    var apiKey = 'YOUR_API_KEY';
+
+    var isPlaying = false;  // 음악이 재생 중인지 여부를 나타내는 상태 변수
+
+    // Fetch and update audio source with playlist videos
+    function fetchAndUpdateAudioSource() {
+      var apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=${playlistId}&key=${apiKey}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          // Extract video ID from the API response
+          var videoId = data.items[0].snippet.resourceId.videoId;
+
+          // Update audio source with the video ID
+          audio.src = `https://www.youtube.com/watch?v=${videoId}`;
+          if (isPlaying) {
+            audio.play();  // 자동 재생
+          }
+        })
+        .catch(error => console.error('Error fetching playlist videos:', error));
+    }
+
+    // Fetch and update audio source when the page loads
+    window.addEventListener('load', fetchAndUpdateAudioSource);
+
+    // 음악을 재생하거나 멈추는 함수
+    function toggleMusic() {
+      var musicGif = document.getElementById('musicGif');
+      var playPauseButton = document.getElementById('playPauseButton');
+
+      if (audio.paused) {
+        // 음악이 멈춰있을 때 재생
+        audio.play();
+        playPauseButton.innerText = 'Pause';  // 텍스트 변경
+        musicGif.style.opacity = 1;  // 음악 이미지 표시
+        isPlaying = true;  // 상태 업데이트
+      } else {
+        // 음악이 재생 중일 때 멈춤
+        audio.pause();
+        playPauseButton.innerText = 'Play';  // 텍스트 변경
+        musicGif.style.opacity = 0.5;  // 음악 이미지 반투명하게 표시
+        isPlaying = false;  // 상태 업데이트
+      }
+    }
+  </script>
+
+  <!------------------------------------------ ---------------------- ...------------------------------------- -->
+
+
+
+
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
 
     {% unless site.theme_mode %}
