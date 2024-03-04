@@ -9,12 +9,8 @@
 
 
 - type: discord
-  icon: 'fab fa-discord'
-  url: 'https://discord.gg/z6a83RWFDB'
-
-- type: internet-explorer
-  icon: 'fab fa-internet-explorer'
-  url: 'https://www.notion.so/joonk2/59190ba1b7fb4d5d86f486d08f242558?v=a4e397d7ac3848fa9588b284b61825df'
+  icon: 'fab fa-youtube'
+  url: 'https://www.youtube.com/channel/UCSo8ZFDlgCkr4geT5K9HdYg'
 
 # - type: twitter
 #   icon: 'fab fa-twitter'
