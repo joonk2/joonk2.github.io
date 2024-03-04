@@ -1,5 +1,6 @@
 // 음악을 자동으로 재생할 audio 요소 생성
 var audio = new Audio();
+var isPlaying = false;  // 전역 스코프에서 사용할 변수
 
 // 음악을 재생하거나 멈추는 함수
 var toggleMusic = function() {
