@@ -2,7 +2,7 @@
 var audio = new Audio();
 
 // 음악을 재생하거나 멈추는 함수
-function toggleMusic() {
+var toggleMusic = function() {
   var musicGif = document.getElementById('musicGif');
   var playPauseButton = document.getElementById('playPauseButton');
 
@@ -19,7 +19,7 @@ function toggleMusic() {
     musicGif.style.opacity = 0.5;  // 음악 이미지 반투명하게 표시
     isPlaying = false;  // 상태 업데이트
   }
-}
+};
 
 // Expand or close the sidebar in mobile screens.
 $(function() {
