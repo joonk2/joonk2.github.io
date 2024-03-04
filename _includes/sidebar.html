@@ -74,38 +74,55 @@
   <button id="nextButton" onclick="nextMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">Next</button>
 </div>
 
-<!-- JavaScript 코드 -->
 <script>
   var audio = new Audio();
   var mp3Urls = [
-    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/YOUR_MP3_FILE_PATH_1',
-    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/YOUR_MP3_FILE_PATH_2',
-    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/YOUR_MP3_FILE_PATH_3',
+    "https://gitlab.com/joonk2/music/-/raw/music/Swingin_Yuletide.mp3",
+    "https://gitlab.com/joonk2/music/-/raw/music/A_Happy_Christmas_-_David_Fesliyan.mp3",
     // Add more URLs as needed
   ];
   var currentTrack = 0;
 
-  // 음악 파일의 URL을 설정
-  audio.src = mp3Urls[currentTrack];
+  // 이전에 저장된 상태를 불러오기
+  var savedState = JSON.parse(localStorage.getItem('musicPlayerState')) || {};
+  if (savedState.currentTrack !== undefined) {
+    currentTrack = savedState.currentTrack;
+  }
+
+  // 페이지 로드 시 자동으로 상태에 따라 트랙을 재생
+  playMusic();
+
+  audio.addEventListener('ended', function() {
+    // 음악이 끝나면 다음 트랙으로 자동 재생
+    nextMusic();
+  });
+
+  function saveState() {
+    // 현재 상태를 로컬 스토리지에 저장
+    localStorage.setItem('musicPlayerState', JSON.stringify({ currentTrack: currentTrack }));
+  }
 
   function playMusic() {
-    audio.play();
-    updateButtons();
+    if (audio.src !== mp3Urls[currentTrack]) {
+      audio.src = mp3Urls[currentTrack];
+    }
+    audio.play().then(() => {
+      updateButtons();
+      saveState();
+    }).catch((error) => {
+      console.error("Autoplay failed:", error);
+    });
   }
 
   function pauseMusic() {
     audio.pause();
     updateButtons();
+    saveState();
   }
 
   function nextMusic() {
     currentTrack = (currentTrack + 1) % mp3Urls.length;
-    audio.src = mp3Urls[currentTrack];
-
-    if (audio.paused) {
-      audio.play();
-    }
-    updateButtons();
+    playMusic(); // 다음 트랙을 재생
   }
 
   function updateButtons() {
