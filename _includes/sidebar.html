@@ -77,35 +77,46 @@
 <!-- JavaScript 코드 -->
 <script>
   var audio = new Audio();
-  var mp3Url = 'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/YOUR_MP3_FILE_PATH';
+  var mp3Urls = [
+    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/MP3_FILE_PATH_1',
+    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/MP3_FILE_PATH_2',
+    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/MP3_FILE_PATH_3',
+    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/MP3_FILE_PATH_4',
+    'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/MP3_FILE_PATH_5'
+  ];
+
   var isPlaying = false;
+  var currentTrack = 0;
 
-  // 음악 파일의 URL을 설정
-  audio.src = mp3Url;
+  // 초기 음악 파일의 URL을 설정
+  audio.src = mp3Urls[currentTrack];
 
-  function playMusic() {
+  // 음악 재생 함수
+  window.playMusic = function () {
     audio.play();
     isPlaying = true;
     updateButtons();
-  }
+  };
 
-  function pauseMusic() {
+  // 음악 일시 정지 함수
+  window.pauseMusic = function () {
     audio.pause();
     isPlaying = false;
     updateButtons();
-  }
+  };
 
-  function nextMusic() {
-    // 다음 음악 파일을 로드하려면 새로운 mp3Url로 업데이트하세요.
-    // 예: mp3Url = 'https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/NEW_MP3_FILE_PATH';
-    audio.src = mp3Url;
+  // 다음 음악으로 이동 함수
+  window.nextMusic = function () {
+    currentTrack = (currentTrack + 1) % mp3Urls.length;
+    audio.src = mp3Urls[currentTrack];
     
     if (isPlaying) {
       audio.play();
     }
     updateButtons();
-  }
+  };
 
+  // 버튼 상태 업데이트 함수
   function updateButtons() {
     var playButton = document.getElementById('playButton');
     var pauseButton = document.getElementById('pauseButton');
