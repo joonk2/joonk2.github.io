@@ -131,9 +131,9 @@ bundle exec jekyll build
 
 # 3. githubpage에서 작동하게 변형해보자 (수동으로 클릭)
 
-외부정책 때문에 githubpage에서 작동 안함
+규정 때문에 githubpage에서 위의 코드로는 작동 안한다카네 <br>
 
-어라 `bundle exec jekyll build` 을 통해 들어간 로컬 주소 [http://127.0.0.1:4000/](http://127.0.0.1:4000/) 여기서는 자동 실행이 잘만되는데 어째서 깃허브 블로그에 업로드하고 각 play, pause, next 버튼을 클릭하니 음악 실행은 되지않고 F12 누르니 아래와 같은 오류가 뜨더라
+`bundle exec jekyll build` 을 통해 들어간 로컬 주소 [http://127.0.0.1:4000/](http://127.0.0.1:4000/) 여기서는 자동 실행이 잘만되는데 어째서 깃허브 블로그에 업로드하고 각 play, pause, next 버튼을 클릭하니 음악 실행은 되지않고 F12 누르니 아래와 같은 오류가 뜨더라
 
 ![Desktop View](/assets/img/blog/music/1.png)
 <br>
