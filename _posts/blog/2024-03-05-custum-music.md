@@ -163,7 +163,7 @@ jekyll theme은 /_filename 형식은 안 읽는다고 하여 폴더명을 바꿔
 ### 3-2) /javascript/commons/music-controls.js
 
 새로운 파일인 music-controls.js를 생성해주었다. 왜냐하면 jekyll은 정적인 페이지라 아까 위의 html코드에 한번에 작성하면 로컬주소에서는 작동이 될진 모르나, 실제 나의 https 도메인에서는 작동이 안되기에 기능을 외부파일에서 끌어오는 방식으로 써야한다더라 <br>
---> html 파일에서 js 파일을 하나 따로 생성하여 기능 분리
+#### ----> html 파일에서 js 파일을 하나 따로 생성하여 기능 분리
 
 ```jsx
 // music-controls.js
