@@ -121,7 +121,7 @@ bundle exec jekyll build
 ```
 ![Desktop View](/assets/img/blog/music/0.png)
 #### 영상으로 확인하고 싶으면 링크 클릭
-https://github.com/joonk2/music/assets/153247950/492279e7-a319-4bd8-b049-1c3b4f75dae5
+## [ㄱㄱ](https://github.com/joonk2/music/assets/153247950/492279e7-a319-4bd8-b049-1c3b4f75dae5)
 
 - [x] 로컬 홈페이지를 들어가자마자 음악 자동재생 된다
 - [x] play, pause, next 버튼 모두 잘 작동한다
@@ -246,7 +246,8 @@ function updateButtons() {
 ![Desktop View](/assets/img/blog/music/2.png)
 
 #### 영상으로 확인하고 싶으면 링크 클릭
-https://github.com/joonk2/music/assets/153247950/12c0ae39-a3c7-4d03-b3aa-71600e473137 <br><br>
+## [ㄱㄱ](https://github.com/joonk2/music/assets/153247950/12c0ae39-a3c7-4d03-b3aa-71600e473137)
+ <br><br>
 
 이제 우리는 깃허브 메인 홈페이지에서 수동으로 play를 클릭하면 음악이 자동으로 재생되는 것을 확인할 수 있고, pause, next도 정상 작동한다.
 
