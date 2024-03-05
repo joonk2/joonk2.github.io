@@ -139,9 +139,8 @@ bundle exec jekyll build
 
 ![Desktop View](/assets/img/blog/music/1.png)
 <br>
-
-jekyll 페이지가 정적이라하여 처음 홈페이지 들어올 때 자동 재생을 못한다더라 <br>
-대신 메인 홈페이지 들어오자마자 play를 누르거나 내부 페이지를 눌렀을 때 음악 자동재생이 시작된다하네 <br>
+일단 무슨 말이냐면 노래 저장한 경로를 못 찾고, 버튼도 못 찾겠다는거다. <br>
+그리고 jekyll 페이지가 정적이라 처음 홈페이지 들어올 때 자동 재생을 못하는 대신 메인 홈페이지 들어오자마자 play를 누르거나 내부 페이지를 눌렀을 때 음악 자동재생이 시작된다하네 <br>
 <br><br>
 
 내가 바꾸고 추가한 것 (총 3가지)
@@ -163,7 +162,8 @@ jekyll theme은 /_filename 형식은 안 읽는다고 하여 폴더명을 바꿔
 
 ### 3-2) /javascript/commons/music-controls.js
 
-새로운 파일인 music-controls.js를 생성해주었다. 왜냐하면 jekyll은 정적인 페이지라 아까 위의 html코드에 한번에 작성하면 로컬주소에서는 작동이 될진 모르나, 실제 나의 https 도메인에서는 작동이 안되기에 기능을 끌어오는 방식으로 써야한다더라
+새로운 파일인 music-controls.js를 생성해주었다. 왜냐하면 jekyll은 정적인 페이지라 아까 위의 html코드에 한번에 작성하면 로컬주소에서는 작동이 될진 모르나, 실제 나의 https 도메인에서는 작동이 안되기에 기능을 외부파일에서 끌어오는 방식으로 써야한다더라 <br>
+--> html 파일에서 js 파일을 하나 따로 생성하여 기능 분리
 
 ```jsx
 // music-controls.js
