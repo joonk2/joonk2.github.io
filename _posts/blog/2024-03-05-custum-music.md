@@ -245,8 +245,8 @@ n-1번째 시도 --> <script src="../../javascript/commons/music-controls.js"></
 마지막 시도 --> <script src="{{ site.baseurl }}/javascript/commons/music-controls.js"></script>`
 ```
 
-아까 적었던 코드에서 조금 변형을 시켜 이렇게 만들어보자
-나는 이러한 방법으로 시도하다가 결국 해결이 되었다.
+마지막 src가 결국 music-controls.js 경로를 찾아주었다. <br>
+아까 적었던 코드에서 조금 변형을 시켜 이렇게 만들어보자 <br>
 
 ```jsx
 # sidebar.html
