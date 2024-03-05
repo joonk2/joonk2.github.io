@@ -4,6 +4,8 @@ var audio = new Audio();
 var mp3Urls = [
   "https://github.com/joonk2/music/raw/music/Swingin_Yuletide.mp3",
   "https://github.com/joonk2/music/raw/music/A_Happy_Christmas_-_David_Fesliyan.mp3",
+  "https://github.com/joonk2/music/raw/music/Tchaikovsky-march-of-the-wooden-solders(piano).mp3",
+  "https://github.com/joonk2/music/raw/music/SellBuyMusic - C. Hunter - Possum And Taters_4.mp3"
   // Add more URLs as needed
 ];
 var currentTrack = 0;
