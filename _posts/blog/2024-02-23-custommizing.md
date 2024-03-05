@@ -21,7 +21,7 @@ written: 2024-02-23 fri 18:20
 
 ### 1. 우선 왼쪽 사이드바 항목 수정 및 보완이다.
 
-![Desktop View](/assets/img/blog/1.png)
+![Desktop View](/assets/img/blog/categorizing/1.png)
 
 
 <br>
@@ -59,7 +59,7 @@ bundle exec jekyll serve
 ```
 입력하니 아래와 같은 결과가 나왔다.
 
-![Desktop View](/assets/img/blog/2.png)
+![Desktop View](/assets/img/blog/categorizing/2.png)
 
 
 <br>
@@ -130,7 +130,7 @@ date: 2024-02-23
 
 # 짜잔✅
 
-![Desktop View](/assets/img/blog/3.png)
+![Desktop View](/assets/img/blog/categorizing/3.png)
 
 메인 홈페이지로 카테고리화된 페이지가 나오게 변경해줬다. <br>
 이제 HOME이나 STUDY DIARY 아무거나 클릭해도 메인홈페이지로 이동한다! <br>
