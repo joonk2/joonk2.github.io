@@ -30,7 +30,7 @@ written: 2024-03-07 wed 00:37
 1-4. A to Z 
 1-5. a 태그, href 
 1-6. 결과 분리 re 
-1-7. 아까 했던 1~6 원큐 
+1-7. 아까 했던 1~6 원큐에 
 1-8. 확인 및 DF형태로 만들고 저장 
 
 2-1. 하위페이지 시작
@@ -65,13 +65,13 @@ html = urlopen(req)
 soup = BeautifulSoup(html, "html.parser")
 print(soup.prettify())
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/0.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/0.png)
 <br><br><br>
 
 # 1-2. 홈페이지에서 필요한 부분 추출
 https://www.chicagomag.com/Chicago-Magazine/November-2012/Best-Sandwiches-Chicago/  <br>
 이 주소로 들어가 blt에서 검사 누르자
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/1.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/1.png)
 
 ```python
 # 1위인 blt를 검사하니 div class랑 class내용인 sammy가 있네. 이거 추출하자
@@ -92,12 +92,12 @@ len(soup.find_all("div", "sammy")) # 50개 (잘 들어옴)
 soup.find_all("div", "sammy")[0]
 ```
 
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/2.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/2.png)
 <br><br><br>
 
 # 1-4. A to Z
 
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/3.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/3.png)
 
 > 이걸 참고해서 맨 아래 코드 짜보자
 ```python
@@ -113,7 +113,7 @@ type(tmp_one) # bs4.element.Tag --> find 사용 가능
 ## sammy, sammyRank, sammyListing 아무거나 다 ㅇㅋ
 tmp_one.find(class_="sammyListing").get_text() 
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/4.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/4.png)
 <br><br><br>
 
 # 1-5. a태그, href
@@ -124,7 +124,7 @@ tmp_one.find(class_="sammyListing").get_text()
 tmp_one.find("a")["href"]
 #➡️ tmp_one.select_one("a").get("href")
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/5.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/5.png)
 <br><br><br>
 
 # 1-6. 결과 분리 re
@@ -167,7 +167,7 @@ for item in list_soup:
 list_soup 
 #➡️ 50개
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/6.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/6.png)
 <br><br><br>
 
 # 1-8. 확인 및 DF형태로 만들고 저장 
@@ -208,7 +208,7 @@ data = {
 df = pd.DataFrame(data)
 df.tail(2)
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/7.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/7.png)
 
 <br><br>
 
@@ -218,7 +218,7 @@ df = pd.DataFrame(data, columns=["Rank", "Cafe", "Menu", "URL"])
 df.tail()
 ```
 
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/8.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/8.png)
 
 ```python
 # 데이터 저장
@@ -251,14 +251,14 @@ df["URL"][0]
 출력해서 나온 첫번째 링크를 들어가서 조금 스크롤을 내려 저기서 `검사` 클릭 <br>
 --> 확인하니 p라는 태그, &nbsp;&nbsp;addy라는 클래스
 
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/9.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/9.png)
 
 <br><br>
 p랑 addy 찾자
 ```python
 soup_tmp.find("p", "addy") # soup_find.select_one(".addy")
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/10.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/10.png)
 
 추출 ——> 가격, 위치, 번호, 홈페이지
 
@@ -271,7 +271,7 @@ price_tmp = soup_tmp.find("p", "addy").text
 price_tmp
 ```
 
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/11.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/11.png)
 <br><br>
 
 ., 기준으로 분리한다. &nbsp;&nbsp;&nbsp; 그리고 `참고`를 보면 아래 코드를 쉽게 이해할 수 있다
@@ -351,7 +351,7 @@ df.set_index("Rank", inplace=True)
 df.head()
 ```
 
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/12.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/12.png)
 <br><br><br>
 
 이제 저장~
@@ -370,7 +370,7 @@ df.to_csv(
 df = pd.read_csv(src+"chicago2.csv", index_col=0)
 df.tail()
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/13.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/13.png)
 
 <br><br>
 
@@ -408,7 +408,7 @@ df["lat"] = lat
 df["lng"] = lng 
 df.tail()
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/14.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/14.png)
 <br><br>
 
 이제 시각화하자
@@ -429,4 +429,4 @@ for idx, row in df.iterrows():
 
 mapping
 ```
-![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/15.png)
+![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/15.png)
