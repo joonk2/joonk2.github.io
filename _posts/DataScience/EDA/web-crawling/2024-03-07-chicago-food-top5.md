@@ -1,7 +1,7 @@
 ---
 title:  "[WebCrawling] 시카고 맛집 찾기"
 layout: post
-categories: [DataScience, EDA, WebCrawling] 
+categories: [DataScience, eda, web-crawling] 
 tags: [EDA, WebCrawling]
 toc: true
 toc_sticky: true
@@ -14,9 +14,9 @@ written: 2024-03-07 wed 00:37
 
 ## 목표
 ```
-* 1단계: 메인페이지 긁어오고 html —> csv 파일로 저장 <br>
-* 2단계: 저장한 csv파일로 하위페이지 작성 <br>
-* 3단계: 구글 api를 이용한 시각화 <br>
+* 1단계: 메인페이지 긁어오고 html —> csv 파일로 저장 
+* 2단계: 저장한 csv파일로 하위페이지 작성 
+* 3단계: 구글 api를 이용한 시각화 
 ```
 
 <br>
