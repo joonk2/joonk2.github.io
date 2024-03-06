@@ -1,7 +1,7 @@
 ---
 title:  "[WebCrawling] 시카고 맛집 찾기"
 layout: post
-categories: [DataScience, eda, web-crawling] 
+categories: [DataScience, EDA, web-crawling] 
 tags: [EDA, WebCrawling]
 toc: true
 toc_sticky: true
