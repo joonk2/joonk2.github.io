@@ -100,6 +100,7 @@ soup.find_all("div", "sammy")[0]
 ![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/3.png)
 
 > 이걸 참고해서 맨 아래 코드 짜보자
+
 ```python
 ## div class인 것과 class명이 sammy인 것 싹다
 (soup.find_all("div", "sammy")) 
@@ -113,6 +114,7 @@ type(tmp_one) # bs4.element.Tag --> find 사용 가능
 ## sammy, sammyRank, sammyListing 아무거나 다 ㅇㅋ
 tmp_one.find(class_="sammyListing").get_text() 
 ```
+
 ![Desktop View](/assets/img/DataScience/eda/webcrawling/chicago/4.png)
 <br><br><br>
 
