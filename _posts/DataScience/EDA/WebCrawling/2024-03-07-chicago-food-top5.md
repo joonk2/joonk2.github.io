@@ -101,7 +101,7 @@ soup.find_all("div", "sammy")[0]
 
 > 이걸 참고해서 맨 아래 코드 짜보자
 ```python
-# div class인 것과 class명이 sammy인 것 싹다
+## div class인 것과 class명이 sammy인 것 싹다
 (soup.find_all("div", "sammy")) 
 
 len(soup.find_all("div", "sammy")) # 50개 (잘 들어옴)
@@ -110,7 +110,7 @@ soup.find_all("div", "sammy")[0]
 tmp_one = soup.find_all("div", "sammy")[0]
 type(tmp_one) # bs4.element.Tag --> find 사용 가능
 
-# sammy, sammyRank, sammyListing 아무거나 다 ㅇㅋ
+## sammy, sammyRank, sammyListing 아무거나 다 ㅇㅋ
 tmp_one.find(class_="sammyListing").get_text() 
 ```
 ![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/4.png)
@@ -218,7 +218,7 @@ df = pd.DataFrame(data, columns=["Rank", "Cafe", "Menu", "URL"])
 df.tail()
 ```
 
-![Untitled]![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/8.png)
+![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/8.png)
 
 ```python
 # 데이터 저장
@@ -233,7 +233,7 @@ df.to_csv(
 # 2-1. 하위페이지
 >url 정보를 따라 50개 페이지 각각의 주소와 가격을 갖고와야 한다.
 ```python
-# requirements 
+##-- requirements 
 import pandas as pd 
 from urllib.request import urlopen, Request
 from fake_useragent import UserAgent
