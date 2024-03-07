@@ -1,7 +1,7 @@
 ---
 title:  "[fatal: remote origin already exists 그리고 다른 하나 fatal 'origin' does not appear to be a git repository       fatal Could not read from remote repository] 깃 푸시 오류"
 layout: post
-categories: [etc, error] 
+categories: [etc, error, ~2022-sep] 
 tags: [git error]
 toc: true
 toc_sticky: true

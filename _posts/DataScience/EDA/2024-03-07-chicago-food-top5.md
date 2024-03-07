@@ -233,8 +233,9 @@ df.to_csv(
 
 # 2-1. 하위페이지
 >url 정보를 따라 50개 페이지 각각의 주소와 가격을 갖고와야 한다.
+
 ```python
-##-- requirements 
+# requirements 
 import pandas as pd 
 from urllib.request import urlopen, Request
 from fake_useragent import UserAgent
@@ -246,8 +247,8 @@ df.tail()
 
 df["URL"][0]
 #➡️ 'http://www.chicagomag.com/Chicago-Magazine/November-2012/Best-Sandwiches-in-Chicago-Old-Oak-Tap-BLT/'
-
 ```
+<br><br>
 
 출력해서 나온 첫번째 링크를 들어가서 조금 스크롤을 내려 저기서 `검사` 클릭 <br>
 --> 확인하니 p라는 태그, &nbsp;&nbsp;addy라는 클래스
@@ -255,6 +256,7 @@ df["URL"][0]
 ![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/9.png)
 
 <br><br>
+
 p랑 addy 찾자
 ```python
 soup_tmp.find("p", "addy") # soup_find.select_one(".addy")

@@ -1,7 +1,7 @@
 ---
 title:  "[git error no commits updated] 파일 업로드가 안됨"
 layout: post
-categories: [etc, error] 
+categories: [etc, error, ~2022-sep] 
 tags: [git error]
 toc: true
 toc_sticky: true

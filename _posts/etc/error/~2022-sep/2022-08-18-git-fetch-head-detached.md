@@ -1,7 +1,7 @@
 ---
 title:  "[head detached at] git push가 되지않음, head detached at"
 layout: post
-categories: [etc, error] 
+categories: [etc, error, ~2022-sep] 
 tags: [git error]
 toc: true
 toc_sticky: true

@@ -1,7 +1,7 @@
 ---
 title:  "[error: failed to push some refs to] 깃 푸시 에러"
 layout: post
-categories: [etc, error] 
+categories: [etc, error, ~2022-sep] 
 tags: [git error]
 toc: true
 toc_sticky: true
