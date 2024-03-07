@@ -1,7 +1,7 @@
 ---
 title:  "[git error untracted files] untracted files"
 layout: post
-categories: [etc, error, ~2022-sep] 
+categories: [etc, error, till-2022-sep] 
 tags: [git error]
 toc: true
 toc_sticky: true
@@ -52,7 +52,7 @@ date: 2022-08-17
 <br> 
 
 
-# [준환과 함께 깃 명령어 알아보러 가기🤓](https://joonhwan2.github.io/posts/git-add/)
+# [준환과 함께 깃 명령어 알아보러 가기🤓](https://joonk2.github.io/posts/git-add/)
 
 <br>
 <br>

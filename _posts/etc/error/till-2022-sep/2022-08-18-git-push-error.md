@@ -1,7 +1,7 @@
 ---
 title:  "[error: failed to push some refs to] 깃 푸시 에러"
 layout: post
-categories: [etc, error, ~2022-sep] 
+categories: [etc, error, till-2022-sep] 
 tags: [git error]
 toc: true
 toc_sticky: true
@@ -78,7 +78,7 @@ git pull origin --allow-unrelated--histories
 <br>
 그 후 git push로 해결 완료!
 
-# [준환과 함께 깃 명령어 알아보러 가기🤓](https://joonhwan2.github.io/posts/git-add/)
+# [준환과 함께 깃 명령어 알아보러 가기🤓](https://joonk2.github.io/posts/git-add/)
 
 <br>
 <br>

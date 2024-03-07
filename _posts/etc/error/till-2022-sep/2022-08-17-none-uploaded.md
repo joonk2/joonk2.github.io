@@ -1,7 +1,7 @@
 ---
 title:  "[git error no commits updated] 파일 업로드가 안됨"
 layout: post
-categories: [etc, error, ~2022-sep] 
+categories: [etc, error, till-2022-sep] 
 tags: [git error]
 toc: true
 toc_sticky: true
@@ -49,7 +49,7 @@ git add ~ push
 
 
 
-# [준환과 함께 깃 명령어 알아보러 가기🤓](https://joonhwan2.github.io/posts/git-add/)
+# [준환과 함께 깃 명령어 알아보러 가기🤓](https://joonk2.github.io/posts/git-add/)
 
 <br>
 <br>

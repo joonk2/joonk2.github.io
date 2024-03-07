@@ -1,7 +1,7 @@
 ---
 title:  "[error: npm init]"
 layout: post
-categories: [etc, error, ~2022-sep] 
+categories: [etc, error, till-2022-sep] 
 tags: [npm]
 toc: true
 toc_sticky: true
