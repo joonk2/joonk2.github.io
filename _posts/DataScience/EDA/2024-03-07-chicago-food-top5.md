@@ -8,6 +8,8 @@ toc_sticky: true
 date: 2024-03-07
 written: 2024-03-07 wed 00:37
 ---
+<img src="https://raw.githubusercontent.com/joonk2/mySvg/main/zb-joonhwan.gif" width="400">
+
 이글은 제로베이스 강의를 듣고 작성한다. <br>
 참 이번에 처음 알았는데 웹크롤링으로 `csv파일`도 만들 수 있더라 <br>
 아무튼 이글은 시카고 맛집 찾기에 대해 총 3단계로 나눌 것이다.
