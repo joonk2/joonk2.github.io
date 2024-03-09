@@ -1,15 +1,14 @@
 ---
-title:  [선형대수학] 3강. 수학적 벡터 (벡터공간)"
+title: "[선형대수학] 3강. 수학적 벡터 (벡터공간)"
 layout: post
-categories: [math, LinearAlgebra] 
+categories: [math, LinearAlgebra]
 tags: [math, LinearAlgebra]
 toc: true
 toc_sticky: true
 date: 2024-03-09
 ---
 
-
-```jsx
+```python
 참고
 
 1. 대수구조
