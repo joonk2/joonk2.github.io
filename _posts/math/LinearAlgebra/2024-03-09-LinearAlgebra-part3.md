@@ -54,7 +54,7 @@ ex) 일련의 연산들이 주어진 집합 --> 'x'라는 문자가 1 대신, &n
 즉 우리가 정하기에 따라 어떤 것들도 수학적 대상이 될 수 있다
 
 ## 1-2) 여러 대수구조
-![Desktop View](/assets/img/math/LinearAlgebra/part3/1.png)
+![Desktop View](/assets/img/math/LinearAlgebra/part3/0.jpg)
 ![Desktop View](/assets/img/math/LinearAlgebra/part3/2.png)
 
 # 2. 벡터공간
