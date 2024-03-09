@@ -203,3 +203,12 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+
+
+
+# 2024-03-09
+# https://devfancy.github.io/Technology-Google-Research-Console-Verification/
+plugins:
+    - jekyll-paginate
+    - jekyll-sitemap
