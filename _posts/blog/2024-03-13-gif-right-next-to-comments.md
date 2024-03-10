@@ -86,8 +86,10 @@ bundle exec jekyll serve --port 4000
 <br>
 
 ![Desktop View](/assets/img/blog/gifcomments/1.png)
+---
+
 ![Desktop View](/assets/img/blog/gifcomments/2.jpg)
+---
 <br><br>
 
-위의 사진은 각각 `노트북`, `휴대폰` 으로 본 것인데 <br>
-둘다 작동 잘하구먼! 
+위의 사진은 각각 `노트북`, `휴대폰` 으로 본 것인데 둘다 작동 잘하고 마 좋네! 
