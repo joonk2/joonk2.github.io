@@ -159,6 +159,10 @@ tail_includes:
 
 
 
+
+
+
+
 <!-- 부모 컨테이너 -->
 <div class="comment-section">
   <!-- Utterances 댓글 기능 삽입 -->
@@ -174,25 +178,25 @@ tail_includes:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- 3D GIF 추가 -->
-  <img src="/assets/img/glitering.gif" alt="3D GIF" class="my-3d-gif-class">
+  <img src="/assets/img/glitering.gif" alt="3D GIF" class="my-gif-class">
 </div>
 
 
 
 
-<!---------------------CSS-------------------->
+
+<!--------------------------------CSS---------------------------->
 <style>
   .comment-section {
     display: flex;
-    flex-direction: column; /* 세로 방향으로 배치 */
-    align-items: flex-start; /* 좌측 정렬 설정 */
+    align-items: center; /* 세로 정렬 설정 */
   }
 
-  .my-3d-gif-class {
-    width: 300%; /* 부모 컨테이너에 맞추어 가로 크기 100% 설정 */
-    max-width: 300px; /* 최대 가로 크기 설정 */
-    height: auto; /* 세로 크기 자동 조절 */
+  .my-gif-class {
+    max-width: 100%; /* 이미지 최대 너비 설정 */
+    width: 100%; /* 이미지 가로 크기 100% 설정 */
+    height: auto; /* 이미지 세로 크기 자동 조절 */
     object-fit: contain; /* 비율을 유지한 채로 적절한 크기에 맞춤 */
-    margin-top: 10px; /* 댓글창 위 간격 조절 */
+    margin-left: 10px; /* 댓글창과의 간격 조절 */
   }
 </style>
