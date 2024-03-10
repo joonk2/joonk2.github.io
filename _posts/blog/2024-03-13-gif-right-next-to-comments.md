@@ -41,7 +41,7 @@ written: 2024-03-10 sun 12:11
  </div><!-- div.post-tail-wrapper -->
 --------------------------------------------------------------------------------------
 
-<!-- 부모 컨테이너 -->
+<!------------------------ 부모 컨테이너 ---------------------->
 <div class="comment-section">
   <!-- Utterances 댓글 기능 삽입 -->
   <script src="https://utteranc.es/client.js"
@@ -56,7 +56,13 @@ written: 2024-03-10 sun 12:11
   <img src="/assets/img/glitering.gif" alt="3D GIF" class="your-3d-gif-class" width="300" height="300">
 </div>
 
-<!---------------------CSS-------------------->
+
+
+
+
+
+
+<!--------------------------------CSS---------------------------->
 <head>
   <!-- 다른 head 내용... -->
   <style>
