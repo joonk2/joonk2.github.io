@@ -30,6 +30,7 @@ date: 2024-03-01
 4. 1강 마무리 연습문제
  4-1) 가우스 조던 소거법
  4-2) 역행렬
+ 4-3) 크래머공식으로 연립일차방정식 해 구하기(2개)
 ```
 
 # 0. 선형대수학을 왜 배워야하냐?
@@ -106,10 +107,18 @@ date: 2024-03-01
 ## 4-1) 가우스 조던 소거법
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/15.png)
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/16.png)
+<br><br>
 
 ## 4-2) 역행렬
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/17.png)
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/18.png)
+<br><br>
+
+## 4-3) 크래머공식으로 연립일차방정식 해 구하기(2개)
+![Desktop View](/assets/img/math/LinearAlgebra/part1/19.png)
+![Desktop View](/assets/img/math/LinearAlgebra/part1/20.png)
+![Desktop View](/assets/img/math/LinearAlgebra/part1/21.png)
+
 # 참고
 
 [행렬로 연립일차방정식 풀기 - 가우스 소거법](https://www.youtube.com/watch?v=VlUfSrDcFzw&list=PLxz77rwoJPpWMrEaUpfGTG9P7X_faMYGi&index=3)
