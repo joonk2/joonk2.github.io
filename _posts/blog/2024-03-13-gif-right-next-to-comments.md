@@ -19,9 +19,9 @@ written: 2024-03-10 sun 12:11
 
 —는 아래 내용을 찾기 쉬우라고 적어놓은 구분선이다
 
-```python
+```html
  </div><!-- div.post-tail-wrapper -->
---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 <!-- 댓글기능 삽입 -->
 <script src="https://utteranc.es/client.js"
@@ -37,11 +37,8 @@ written: 2024-03-10 sun 12:11
 이걸 조금 수정하여 댓글창 바로 옆에 gif사진도 올 수 있도록 CSS까지 추가해보자 <br>
 —는 아래 내용을 찾기 쉬우라고 적어놓은 구분선이다
 
-```python
- </div><!-- div.post-tail-wrapper -->
---------------------------------------------------------------------------------------
-
-<!------------------------ 부모 컨테이너 ---------------------->
+```html
+<!-- 부모 컨테이너 -->
 <div class="comment-section">
   <!-- Utterances 댓글 기능 삽입 -->
   <script src="https://utteranc.es/client.js"
@@ -52,30 +49,32 @@ written: 2024-03-10 sun 12:11
           async>
   </script>
 
+  <!-- 휴대폰에서도 자동 크기 조절-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- 3D GIF 추가 -->
-  <img src="/assets/img/glitering.gif" alt="3D GIF" class="your-3d-gif-class" width="300" height="300">
+  <img src="/assets/img/glitering.gif" alt="3D GIF" class="my-gif-class">
 </div>
 
 
 
 
 
-
-
 <!--------------------------------CSS---------------------------->
-<head>
-  <!-- 다른 head 내용... -->
-  <style>
-    .comment-section {
-      display: flex;
-      align-items: center; /* 세로 정렬 설정 */
-    }
+<style>
+  .comment-section {
+    display: flex;
+    align-items: center; /* 세로 정렬 설정 */
+  }
 
-    .your-3d-gif-class {
-      margin-left: 10px; /* 댓글창과의 간격 조절 */
-    }
-  </style>
-</head> 
+  .my-gif-class {
+    max-width: 40%; 
+    width: 40%; 
+    height: auto; /* 이미지 세로 크기 자동 조절 */
+    object-fit: contain; /* 비율을 유지한 채로 적절한 크기에 맞춤 */
+    margin-left: 10px; /* 댓글창과의 간격 조절 */
+  }
+</style>
 ```
 
 <br><br>
@@ -87,3 +86,8 @@ bundle exec jekyll serve --port 4000
 <br>
 
 ![Desktop View](/assets/img/blog/gifcomments/1.png)
+![Desktop View](/assets/img/blog/gifcomments/2.jpg)
+<br><br>
+
+위의 사진은 각각 `노트북`, `휴대폰` 으로 본 것인데 <br>
+둘다 작동 잘하구먼! 
