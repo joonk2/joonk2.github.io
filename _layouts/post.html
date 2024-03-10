@@ -175,15 +175,18 @@ tail_includes:
 
 <!---------------------CSS-------------------->
 <head>
-  <!-- 다른 head 내용... -->
+  <!-- CSS 스타일 수정 -->
   <style>
     .comment-section {
       display: flex;
       align-items: center; /* 세로 정렬 설정 */
     }
 
-    .your-3d-gif-class {
+    .my-3d-gif-class {
       margin-left: 10px; /* 댓글창과의 간격 조절 */
+      width: 300px; /* 원하는 가로 크기 설정 */
+      height: 300px; /* 원하는 세로 크기 설정 */
+      object-fit: contain; /* 비율을 유지한 채로 적절한 크기에 맞춤 */
     }
   </style>
 </head>
