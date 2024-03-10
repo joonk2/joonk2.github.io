@@ -5,7 +5,7 @@ categories: [math, LinearAlgebra]
 tags: [math, LinearAlgebra]
 toc: true
 toc_sticky: true
-date: 2024-03-09
+date: 2024-03-09 sat 21:20
 ---
 
 ```python
