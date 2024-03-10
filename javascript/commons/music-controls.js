@@ -2,6 +2,8 @@
 
 var audio = new Audio();
 var mp3Urls = [
+  "https://github.com/joonk2/music/raw/music/happyworkingsong.mp4",
+  "https://github.com/joonk2/music/raw/music/partlysunnyalwaysfunny.mp4",
   "https://github.com/joonk2/music/raw/music/Swingin_Yuletide.mp3",
   "https://github.com/joonk2/music/raw/music/A_Happy_Christmas_-_David_Fesliyan.mp3",
   "https://github.com/joonk2/music/raw/music/Tchaikovsky-march-of-the-wooden-solders(piano).mp3",
