@@ -23,7 +23,8 @@ written: 2024-03-05 tue 08:58
 
 우선 이글은 jekyll theme chirpy를 기준으로 작성한다. <br>
 저작권 문제로 인해 나는 저작권이 없는 무료 음반사이트를 이용하였다. <br>
-## —> [이것 클릭](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/happy-music/2)
+## [링크1](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/happy-music/2)
+## [링크2](https://www.boomplay.com/)
 
 음악을 다운로드받고 나는 githib에 따로 또 등록하였다. <br>
 우리가 필요한 건 음악의 raw 주소다. <br>
