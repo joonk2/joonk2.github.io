@@ -166,7 +166,7 @@ tail_includes:
   </script>
 
   <!-- 3D GIF 추가 -->
-  <img src="/assets/img/glitering.gif" alt="3D GIF" class="your-3d-gif-class" width="300" height="300">
+  <img src="/assets/img/glitering.gif" alt="3D GIF" class="my-3d-gif-class">
 </div>
 
 
@@ -174,19 +174,18 @@ tail_includes:
 
 
 <!---------------------CSS-------------------->
-<head>
-  <!-- CSS 스타일 수정 -->
-  <style>
-    .comment-section {
-      display: flex;
-      align-items: center; /* 세로 정렬 설정 */
-    }
+<style>
+  .comment-section {
+    display: flex;
+    align-items: center; /* 세로 정렬 설정 */
+    flex-wrap: wrap; /* 작은 화면에서 줄 바꿈 설정 */
+  }
 
-    .my-3d-gif-class {
-      margin-left: 10px; /* 댓글창과의 간격 조절 */
-      width: 300px; /* 원하는 가로 크기 설정 */
-      height: 300px; /* 원하는 세로 크기 설정 */
-      object-fit: contain; /* 비율을 유지한 채로 적절한 크기에 맞춤 */
-    }
-  </style>
-</head>
+  .my-3d-gif-class {
+    margin-top: 10px; /* 댓글창 위 간격 조절 */
+    width: 300%; /* 부모 컨테이너에 맞추어 가로 크기 100% 설정 */
+    max-width: 300px; /* 최대 가로 크기 설정 */
+    height: auto; /* 세로 크기 자동 조절 */
+    object-fit: contain; /* 비율을 유지한 채로 적절한 크기에 맞춤 */
+  }
+</style>
