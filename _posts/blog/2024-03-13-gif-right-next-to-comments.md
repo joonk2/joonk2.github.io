@@ -13,7 +13,7 @@ written: 2024-03-10 sun 12:11
 블로그 댓글창이 너무 생동감이 없는 것 같아 댓글창 옆에 gif사진을 추가해보기로 했다
 <br><br>
 
-![Desktop View](/assets/img/blog/gif-comments/0.png)
+![Desktop View](/assets/img/blog/gifcomments/0.png)
 
 우선 나는 utterance 댓글창을 _layout/post.html 이곳에서 맨 아래에 작성해 놓은게 있었다 <br>
 
@@ -80,4 +80,4 @@ bundle exec jekyll serve --port 4000
 ```
 <br>
 
-![Desktop View](/assets/img/blog/gif-comments/1.png)
+![Desktop View](/assets/img/blog/gifcomments/1.png)
