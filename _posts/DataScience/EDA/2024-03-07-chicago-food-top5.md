@@ -1,8 +1,8 @@
 ---
-title:  "[WebCrawling] 시카고 맛집 찾기"
+title:  "static web page crawling"
 layout: post
 categories: [DataScience, EDA, WebCrawling] 
-tags: [eda, web-crawling]
+tags: [eda, web-crawling, static web page crawling]
 toc: true
 toc_sticky: true
 date: 2024-03-07
@@ -12,7 +12,7 @@ written: 2024-03-07 wed 00:37
 
 이글은 제로베이스 강의를 듣고 작성합니다. <br>
 참 이번에 처음 알았는데 웹크롤링으로 `csv파일`도 만들 수 있네요 <br>
-아무튼 이글은 시카고 맛집 찾기에 대해 총 3단계로 나눕니다!
+아무튼 이글은 `시카고 맛집 찾기`에 대해 총 3단계로 나눕니다!
 
 ## 목표
 ```
