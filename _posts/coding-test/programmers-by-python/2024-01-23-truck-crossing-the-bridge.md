@@ -44,7 +44,7 @@ def solution(bridge_length, weight, truck_weights):
         
         #  트럭이 탈출하는 시점으로 이동합니다.
         if len(q) > 0:
-            w, t = q.popleft() # w만 추출하고 t는 안 건드리겠다.
+            w, t = q.popleft() # w만 추출하고 t는 안 건드리고 그대로
             weightsum -= w
         
     # 큐의 트럭들을 모두 탈출시킵니다.

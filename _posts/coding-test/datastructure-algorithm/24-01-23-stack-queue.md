@@ -8,7 +8,7 @@ toc_sticky: true
 date: 2024-01-23
 ---
 
-스택과 큐는 차이가 존재한다, 그 2개를 각자 비교해보겠다.
+스택과 큐는 차이가 존재하는데, 그 2개를 각자 비교해봅시다!
 
 ![Desktop View](/assets/img/data-alg/stack-queue/0.png)
 
@@ -33,7 +33,7 @@ empty()
 
 ### 문제 : `누가 선물을 먼저 받을까?`
 
-(이 문제를 python으로 구현해보았다.)
+(이 문제를 python으로 구현해보았습니다)
 
 ```python
 order = ['radish_coongya', 'egg_coongya', 'mushroom_coongya']
@@ -94,7 +94,7 @@ qsize()
 
 ### 문제 : `인형을 바구니에 그림과 같은 순서로 넣은 후, 어떤 순서로 나오게 될까?`
 
-(이 문제를 python로 구현해보았다.)
+(이 문제를 python로 구현해보았습니다)
 
 ```python
 import queue

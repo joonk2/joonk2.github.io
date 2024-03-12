@@ -42,7 +42,7 @@ def solution(record):
 answer = []
 dict = {}`
 
-answer을 빈 리스트로, dict는 빈 딕셔너리로 생성하겠다.
+answer을 빈 리스트로, dict는 빈 딕셔너리로 생성합니다
 
 `for message in record:
 message_split = message.split()

@@ -82,7 +82,6 @@ git push 후 결과를 확인해보면?
 ![Desktop View](/assets/img/categories-dividing/5.PNG)
 
 ***
-
 <br>
 <br>
 <br>

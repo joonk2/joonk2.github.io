@@ -45,15 +45,15 @@ def solution(participant, completion):
 ★ completion 배열
 
 ```python
-전제조건: 3명 중 2명이 완주 성공이라면 1명은 당연히 실패했다.
+전제조건: 3명 중 2명이 완주 성공이라면 1명은 당연히 실패했습니다.
 ```
 
 ![Desktop View](/assets/img/programmers-py/2023-12-12-find-a-runner-who-hasnt-passed/3.png)
 
 ```python
-sumHash는 다합쳐서 35, 여기서 완주한 무시쿵야(5)와 완계쿵야(18)을 빼자.
-sumHash == 17이 우리가 찾는 완주못한 자의 key값이다.
-여기서 HashDict[sumHash] 쓰면 '초밥쿵야'가 답이 된다.
+sumHash는 다합쳐서 35, 여기서 완주한 무시쿵야(5)와 완계쿵야(18)을 뺍시다
+sumHash == 17이 우리가 찾는 완주못한 자의 key값입니다.
+여기서 HashDict[sumHash] 쓰면 '초밥쿵야'가 답이 됩니다.
 ```
 
 ```python
@@ -64,7 +64,7 @@ def solution(participant, completion):
     participant.sort()
     completion.sort()
 
-    # 2. completeion list의 len만큼 participant를 찾아서 없는 사람을 찾자
+    # 2. completeion list의 len만큼 participant를 찾아서 없는 사람을 찾읍시다
     for i in range(len(completion)):
         if participant[i] != completion[i]:
             return participant[i]

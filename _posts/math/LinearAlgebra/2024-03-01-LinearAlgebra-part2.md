@@ -37,7 +37,7 @@ date: 2024-03-01
 ## 1-1) 평면백터
 
 - `R**2`에서  크기(스칼라)와 방향의 의미를 모두 포함하는 표현도구 <br>
-(`R**2` —> 실수축 2개로 만들어진 좌표평면이라 생각해보자) <br>
+(`R**2` —> 실수축 2개로 만들어진 좌표평면이라 생각해봅시다) <br>
 ex) 속도 = 벡터 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 속력 = 스칼라
 <br><br>
@@ -75,7 +75,7 @@ ex) v 벡터를 보자 <br>
 <br><br>
 
 ## 2-3) 스칼라곱
-- ### 스칼라곱 시작하기 전에 잠깐 삼각함수 표 확인하자
+- ### 스칼라곱 시작하기 전에 잠깐 삼각함수 표 확인합시다
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/9.png)
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/10.png)
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/11.png)

@@ -49,17 +49,17 @@ for peoplie in photo:
 			# 없다면 0 반환
 			
 		result.append(score)
-		# result에 누적된 score 배열을 append(추가)하겠다.  
+		# result에 누적된 score 배열을 append(추가).  
 ```
 
 ### 배운 것
 
 `info.get(person, 0)`
 
-★우선 위에 딕셔너리로 만들어 주었다는 것을 기억하자.
+★우선 위에 딕셔너리로 만들어 주었다는 것을 기억합시다
 
 딕셔너리인 info에서 key가 person인 값을 찾는데, 만약 찾고자 하는 key가 없다면 2번째 인자인 0 반환
 
 `result.append(score)`
 
-result에 누적된 score 배열을 append(추가)하겠다.
+result에 누적된 score 배열을 append(추가)하였음

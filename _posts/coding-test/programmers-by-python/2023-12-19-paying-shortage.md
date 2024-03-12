@@ -16,7 +16,7 @@ date: 2023-12-19
 
 <br><br><br>
 *checklist*
-- 금액이 부족하지 않으면 0을 return 해라
+- 금액이 부족하지 않으면 0을 return 합시다
 - count 1부터 시작
 - 얼마나 모자라는지 return
 

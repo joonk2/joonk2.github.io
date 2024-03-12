@@ -14,7 +14,7 @@ date: 2023-12-23
 
 ![Desktop View](/assets/img/programmers-py/2023-12-23-sort-str-by-my-own/1.png)
 
-## 잠깐! `sorted(a, b)`는 오름차순 순서로 정렬한다.
+## 잠깐! `sorted(a, b)`는 오름차순 순서로 정렬합니다
 
 ## <풀이 1>
 

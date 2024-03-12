@@ -10,9 +10,9 @@ written: 2024-03-07 wed 00:37
 ---
 <img src="https://raw.githubusercontent.com/joonk2/mySvg/main/zb-joonhwan.gif" width="400">
 
-이글은 제로베이스 강의를 듣고 작성한다. <br>
-참 이번에 처음 알았는데 웹크롤링으로 `csv파일`도 만들 수 있더라 <br>
-아무튼 이글은 시카고 맛집 찾기에 대해 총 3단계로 나눌 것이다.
+이글은 제로베이스 강의를 듣고 작성합니다. <br>
+참 이번에 처음 알았는데 웹크롤링으로 `csv파일`도 만들 수 있네요 <br>
+아무튼 이글은 시카고 맛집 찾기에 대해 총 3단계로 나눕니다!
 
 ## 목표
 ```
@@ -44,9 +44,9 @@ written: 2024-03-07 wed 00:37
 
 # 1-1. 파일 불러오기 & headers 의미
 
-- `headers ={}`를 왜 쓰냐? <br>
-—> 나의 인터넷 접근 경로를 알리기 위해서다. <br>
-나는 chrome으로 접근하는데 그걸 시카고 맛집 홈페이지 서버관리자가 확인함으로써 당황 안 한다
+- `headers ={}`를 왜 쓰지? <br>
+—> 저의 인터넷 접근 경로를 알리기 위해서입니다. <br>
+전 chrome으로 접근하는데 그걸 시카고 맛집 홈페이지 서버관리자가 확인함으로써 당황하지않게 됩니다ㅎ
 
 ```python
 # !pip install fake-useragent
@@ -71,11 +71,11 @@ print(soup.prettify())
 
 # 1-2. 홈페이지에서 필요한 부분 추출
 https://www.chicagomag.com/Chicago-Magazine/November-2012/Best-Sandwiches-Chicago/  <br>
-이 주소로 들어가 blt에서 검사 누르자
+이 주소로 들어가 blt에서 검사 클릭
 ![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/1.png)
 
 ```python
-# 1위인 blt를 검사하니 div class랑 class내용인 sammy가 있네. 이거 추출하자
+# 1위인 blt를 검사하니 div class랑 class내용인 sammy가 있네. 이거 추출합시다
 
 soup.find_all("div", "sammy"), len(soup.find_all("div", "sammy"))
 #➡️ soup.select(".sammy"), len(soup.select(".sammy"))
@@ -100,7 +100,7 @@ soup.find_all("div", "sammy")[0]
 
 ![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/3.png)
 
-> 이걸 참고해서 맨 아래 코드 짜보자
+> 이걸 참고해서 맨 아래 코드 짜봅시다
 
 ```python
 ## div class인 것과 class명이 sammy인 것 싹다
@@ -175,7 +175,7 @@ list_soup
 
 # 1-8. 확인 및 DF형태로 만들고 저장 
 ```python
-# 50개씩 완벽하게 잘 들어왔네
+# 50개씩 완벽하게 잘 들어옴
 
 len(rank), len(main_menu), len(cafe_name), len(url_add)
 #➡️ (50, 50, 50, 50)
@@ -197,7 +197,7 @@ url_add[:5]
 ```
 <br>
 
-DataFrame 형태로 만든다
+DataFrame 형태로 만듭니다
 ```python
 import pandas as pd 
 
@@ -234,7 +234,7 @@ df.to_csv(
 <br><br><br><br>
 
 # 2-1. 하위페이지
->url 정보를 따라 50개 페이지 각각의 주소와 가격을 갖고와야 한다.
+>url 정보를 따라 50개 페이지 각각의 주소와 가격을 갖고와야 합니다.
 
 ```python
 # requirements 
@@ -279,7 +279,7 @@ price_tmp
 ![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/11.png)
 <br><br>
 
-., 기준으로 분리한다. &nbsp;&nbsp;&nbsp; 그리고 `참고`를 보면 아래 코드를 쉽게 이해할 수 있다
+., 기준으로 분리합니다. &nbsp;&nbsp;&nbsp; 그리고 `참고`를 보면 아래 코드를 쉽게 이해할 수 있음
 ```python
 import re 
 re.split(".,", price_tmp)
@@ -317,7 +317,7 @@ for idx, row in tqdm(df[:5].iterrows()):
 
 ---------------- 수정 --------------------
 
-# 근데 우리는 50개가 필요하니 싹 다 돌려야한다
+# 근데 우리는 50개가 필요하니 싹 다 돌려야 함
 for idx, row in tqdm(df.iterrows()):
     req = Request(row["URL"], headers={"user-agent":ua.ie})
     html = urlopen(req).read()
@@ -329,11 +329,11 @@ for idx, row in tqdm(df.iterrows()):
     address.append(price_tmp[len(tmp)+2:])
     print(idx)
 
-# 그럼 인덱스 0번부터 49번까지 아래에 천천히 progress처럼 생성한다
+# 그럼 인덱스 0번부터 49번까지 아래에 천천히 progress처럼 생성합니다
 ```
 <br><br>
 
-잘 생성되었나 확인해보자
+잘 생성되었나 확인 ㄱㄱ
 ```python
 len(price), len(address) 
 # (50, 50)
@@ -370,7 +370,7 @@ df.to_csv(
 <br><br><br><br>
 
 # 3. 시각화 & 구글api
-아까 저장한 파일 불러오겠다.
+아까 저장한 파일 불러옵시다
 ```python
 df = pd.read_csv(src+"chicago2.csv", index_col=0)
 df.tail()
@@ -416,7 +416,7 @@ df.tail()
 ![Desktop View](/assets/img/DataScience/EDA/WebCrawling/chicago/14.png)
 <br><br>
 
-이제 시각화하자
+이제 시각화 ㄱㄱ
 ```python
 mapping = folium.Map(location=[41.8781136, -87.6297982], zoom_start=11)
 

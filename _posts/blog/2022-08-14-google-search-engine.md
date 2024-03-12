@@ -131,7 +131,6 @@ Sitemap: https://joonhwan2.github.io/sitemap.xml
 <br>
 <br>
 <br>
-  
 
 아래 사진을 클릭하면 `제 취미공간`으로 이어집니다 ㅎㅎ 여기에서 메모 및 일상을 기록하는데 놀러오실 분들은 언제나 환영합니다!
 
