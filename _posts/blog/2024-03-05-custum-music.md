@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 블로그 음악 추가"
+title:  "[blog] 블로그 음악 추가 updated(2024-03-13)"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -7,6 +7,7 @@ toc: true
 toc_sticky: true
 date: 2024-03-05
 written: 2024-03-05 tue 08:58
+updated: 2024-03-13 wed 12:41
 ---
 
 
@@ -16,6 +17,7 @@ written: 2024-03-05 tue 08:58
 2. 음악 자동재생 기준으로 play, pause, next 버튼을 추가
 3. githubpage에서 작동하게 변형시키기 (수동으로 클릭)
 4. github page에 업로드하고 확인
+5. (updated) 버튼 색깔 바꾸기
 ```
 <br><br><br>
 
@@ -275,3 +277,117 @@ n-1번째 시도 --> <script src="../../javascript/commons/music-controls.js"></
 이제 우리는 깃허브 메인 홈페이지에서 수동으로 play를 클릭하면 음악이 자동으로 재생되는 것을 확인할 수 있고, pause, next도 정상 작동하는 것을 볼 수 있습니다!!
 
 ## 블로그가 조금 더 활기차진 것 같지 않은가요!?
+<br><br><br><br>
+
+2024-03-13 업데이트
+------------------------------------------------------------------
+# 5. (updated) 버튼 색깔 바꾸기
+### 버튼이 너무 밋밋하여 색깔을 넣어봅시다<br>
+`/includes/sidebar.html` 이곳에서 아래코드로 변경합시다
+```html
+<!-- 음악 제어 버튼 추가 -->
+<div id="music-controls" style="text-align: center;">
+  <img id="musicGif" src="https://media.tenor.com/15YUsMWt4FEAAAAj/music.gif" alt="Music GIF" style="display: inline-block; width: 50px; height: 50px; margin-top: 21px;">
+  <button id="playButton" class="btn-hover color-1 frame" onclick="playMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">play</button>
+  <button id="pauseButton" class="btn-hover color-2 frame" onclick="pauseMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">pause</button>
+  <button id="nextButton" class="btn-hover color-3 frame" onclick="nextMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">next</button>
+</div>
+
+<script src="{{ site.baseurl }}/javascript/commons/music-controls.js"></script>
+```
+class를 추가해줌으로써 기존 코드에 css 연계를 위해 변경했습니다.
+<br><br>
+
+### 버튼이 실행중일땐 반투명 추가
+
+`/javascripts/music-controls.js`
+```javascript
+------------- 생략 -----------------
+function updateButtons() {
+  var playButton = document.getElementById('playButton');
+  var pauseButton = document.getElementById('pauseButton');
+  playButton.disabled = !audio.paused;
+  pauseButton.disabled = audio.paused;
+
+
+⬇️
+// --------------------------------      2024-03-13 업데이트 -----------------------------------------
+  // 실행 중인 버튼에 반투명 스타일 적용
+  playButton.style.opacity = audio.paused ? '1' : '0.5';
+  pauseButton.style.opacity = audio.paused ? '0.5' : '1';
+  nextButton.style.opacity = '1'; // next 버튼은 항상 투명하지 않음
+```
+아래 화살표에 있는 코드를 추가해줍시다. <br>
+그렇게 함으로써 next버튼을 제외하고 나머지 버튼 실행시 반투명해집니다.
+<br><br>
+
+### CSS
+마지막으로 CSS입니다 <br>
+_sass/addon/common.scss 이 경로에서 아래 코드들을 아무대나 추가해줍시다 <br>
+저는 맨 밑에 추가했습니다
+```scss
+.buttons {
+  margin: 10%;
+  text-align: center;
+
+  .btn-container {
+    display: flex;
+    align-items: center; /* 이미지와 버튼들을 세로 중앙 정렬 */
+  }
+
+  img {
+    width: 50px; /* 이미지의 너비 조정 */
+    height: 50px; /* 이미지의 높이 조정 */
+  }
+
+  .btn-hover {
+    width: 45px; /* 버튼의 너비 조정 */
+    font-size: 10px; /* 버튼의 폰트 크기 조정 */
+    font-weight: 600;
+    color: #000; /* 버튼의 글자 색상을 검정색으로 변경 */
+    cursor: pointer;
+    margin: 5px; /* 버튼 사이의 간격 조정 */
+    height: 30px; /* 버튼의 높이 조정 */
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+
+    &:hover {
+      background-position: 100% 0;
+      transition: all .4s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.color-1 {
+      background: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+      box-shadow: 0 4px 13px rgba(229, 93, 135, 0.5);
+    }
+
+    &.color-2 {
+      background: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+      box-shadow: 0 4px 13px rgba(229, 93, 135, 0.5);
+    }
+
+    &.color-3 {
+      background: linear-gradient(to right, #e55d87, #5fc3e4);
+      box-shadow: 0 4px 13px 0 rgba(116, 79, 168, 0.75);
+    }
+  }
+}
+```
+이렇게 함으로써 각 클래스별 버튼 색깔을 부여할 수 있습니다. <br>
+이제 로컬환경에 한번 들어가보고 업데이트 후 블로그에도 들어가봅시다!
+<br><br>
+
+![Desktop View](/assets/img/blog/music/3.png)
+<br><br>
+
+![Desktop View](/assets/img/blog/music/4.png)
+<br><br>
+
+이것으로 음악추가는 여기서 마치겠습니다. 긴글 읽어주셔서 감사합니다!
