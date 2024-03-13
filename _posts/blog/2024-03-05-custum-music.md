@@ -24,7 +24,7 @@ updated: 2024-03-13 wed 12:41
 # 1. 음원 가져오기
 
 우선 이글은 jekyll theme chirpy를 기준으로 작성합니다 <br>
-저작권 문제로 인해 나는 저작권이 없는 무료 음반사이트를 이용했습니다. <br>
+저작권 문제로 인해 저는 저작권이 없는 무료 음반사이트를 이용했습니다. <br>
 ## [링크1](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/happy-music/2)
 ## [링크2](https://www.boomplay.com/)
 
