@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 블로그 음악 추가 updated(Mar 5, 2024)"
+title:  "[blog] 블로그 음악 추가 updated(Mar 13, 2024)"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
