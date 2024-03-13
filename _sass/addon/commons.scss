@@ -1682,3 +1682,44 @@ $sidebar-display: "sidebar-display";
   } /* #sidebar */
 
 } /* min-width: 1650px */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------- 2024-03-13   업데이트 ----------------------------------------
+
+#playButton.color-1 {
+  background: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+  box-shadow: 0 4px 13px rgba(229, 93, 135, 0.5);
+  border: none; /* 선 제거 */;
+  border-radius: 20px; /* 타원형 모양 설정 */
+}
+
+#pauseButton.color-2 {
+  background: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+  box-shadow: 0 4px 13px rgba(229, 93, 135, 0.5);
+  border: none; /* 선 제거 */;
+  border-radius: 20px; /* 타원형 모양 설정 */
+}
+
+#nextButton.color-3 {
+  background: linear-gradient(to right, #e55d87, #5fc3e4);
+  box-shadow: 0 4px 13px 0 rgba(116, 79, 168, 0.75);
+  border: none; /* 선 제거 */;
+  border-radius: 20px; /* 타원형 모양 설정 */
+}

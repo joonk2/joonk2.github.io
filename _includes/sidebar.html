@@ -60,14 +60,14 @@
 
 
 
-  
-<!-- --------------------------------------------mar.04.2024 music button-------------------------------------------------- -->
+<!-- --------------------------------mar.13.2024 music button for scss class update---------------------------- -->
+<!-- -------------------------------mar.04.2024 music button------------------------------------ -->
 <!-- 음악 제어 버튼 추가 -->
 <div id="music-controls" style="text-align: center;">
   <img id="musicGif" src="https://media.tenor.com/15YUsMWt4FEAAAAj/music.gif" alt="Music GIF" style="display: inline-block; width: 50px; height: 50px; margin-top: 21px;">
-  <button id="playButton" onclick="playMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">Play</button>
-  <button id="pauseButton" onclick="pauseMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">Pause</button>
-  <button id="nextButton" onclick="nextMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">Next</button>
+  <button id="playButton" class="btn-hover color-1 frame" onclick="playMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">play</button>
+  <button id="pauseButton" class="btn-hover color-2 frame" onclick="pauseMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">pause</button>
+  <button id="nextButton" class="btn-hover color-3 frame" onclick="nextMusic()" style="display: inline-block; margin-top: 10px; font-size: 14px;">next</button>
 </div>
 
 <script src="{{ site.baseurl }}/javascript/commons/music-controls.js"></script>

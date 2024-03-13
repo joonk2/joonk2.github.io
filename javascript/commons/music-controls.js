@@ -59,4 +59,17 @@ function updateButtons() {
   var pauseButton = document.getElementById('pauseButton');
   playButton.disabled = !audio.paused;
   pauseButton.disabled = audio.paused;
+
+
+
+
+
+
+
+
+// --------------------------------      2024-03-13 업데이트 -----------------------------------------
+  // 실행 중인 버튼에 반투명 스타일 적용
+  playButton.style.opacity = audio.paused ? '1' : '0.5';
+  pauseButton.style.opacity = audio.paused ? '0.5' : '1';
+  nextButton.style.opacity = '1'; // next 버튼은 항상 투명하지 않음
 }
