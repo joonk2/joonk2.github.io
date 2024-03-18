@@ -39,7 +39,7 @@ date: 2024-03-09 sat 21:20
  2-4) 기저
  2-5) 차원
 
-3. 예제(5개)
+3. 예제(6개)
 ```
 
 # *참고
@@ -359,7 +359,50 @@ $$
 
 <br><br><br><br>
 
-# 3. 예제 (5개)
+# 3. 예제 (6개)
+```
+(ง˙∇˙)ว 이벤트 문제
+```
+---
+벡터공간 $$R^4$$의 두 부분공간 V와 W를<br>
+$$V = \{(a,b,c,d) \in R^4 \quad | \quad b+c+d = 0 \},$$ <br>
+$$W = \{(a,b,c,d) \in R^4 \quad | \quad a+b=0, \quad c=2d \}$$로 정의할 때 <br>
+$$dim(V)$$ <span style="color:red">**+**</span> $$dim(W)$$ <span style="color:red">**+**</span> $$dim(V \cap W)$$의 값은?<br>
+------------------------------------------------------------------------------------
+<br><br><br><br>
+
+
+먼저 <span style="color:red">**V**</span>와 <span style="color:blue">**W**</span>의 교집합을 찾아줍시다!
+$$V \cap W = V = \{(a,b,c,d)  \quad | \quad b+c+d = 0, \quad a+b = 0, \quad c=2d\}$$ <br>
+이렇게 총 3가지네요! <br><br>
+
+#### [<span style="color:red">**V**</span>의 기저 찾기]
+이제 차원을 구하기 위해 V의 기저부터 찾아봅시다! <br>
+V를 보니 a는 혼자서 놀고 있어서 --> (1,0,0,0) <br>
+그다음에 b가 1이면 d는 당연히 -1 --> (0,1,0,-1) <br>
+그리고 c가 1이면 d는 당연히 -1 --> (0,0,1,-1) <br><br>
+따라서 V의 기저는 총 3개로 (1,0,0,0)<span style="color:red">**,**</span> (0,1,0,-1)<span style="color:red">**,**</span> (0,0,1,-1) <br>
+**$ \color{red}{\Rightarrow} $** 즉 dim(V) = 3
+<br><br>
+
+#### [<span style="color:blue">**W**</span>의 기저 찾기]
+W를 보니 a가 1로 고정되면 b는 당연히 -1 그리고 c,d는 따로 놀게! --> (1,-1,0,0)<br>
+그 다음에 c가 1이면 d는 당연히 $$\frac{1}{2}$$ --> (0,0,1,$$\frac{1}{2}$$)<br><br>
+따라서 W의 기저는 (1,-1,0,0)<span style="color:red">**,**</span> (0,0,1,$$\frac{1}{2}$$)
+<br>
+**$ \color{blue}{\Rightarrow} $** 즉 2차원이어서 기저는 총2개로 dim(W) = 2
+<br><br>
+
+#### [<span style="color:red">**V**</span>$$\cap$$<span style="color:blue">**W**</span>의 기저 찾기]
+$$V \cap W$$를 통해 a부터 정하니 복잡하네 그러면 거꾸로 c부터 정해서 보자! <br>
+c를 2로 먼저 정하면 d는 1 그럼 b는 -3이네! --> 자동으로 a는 3되네 <br>
+**$ \color{green}{\Rightarrow} $** (3,-3,2,1) 즉 기저는 1이라서 2개의 교집합은 1차원이네!<br><br>
+
+따라서 정답은 6
+
+
+
+<br><br><br>
 ![Desktop View](/assets/img/math/LinearAlgebra/part3/j2.jpeg)
 <br><br><br>
 
