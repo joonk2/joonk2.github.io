@@ -6,6 +6,7 @@ tags: [math, LinearAlgebra]
 toc: true
 toc_sticky: true
 date: 2024-03-09 sat 21:20
+updated: 2024-03-19 mon 00:44
 ---
 
 <!-- MathJax Script for this post only -->
@@ -362,6 +363,7 @@ $$
 # 3. 이벤트문제 + 예제(5개)
 ```
 (ง˙∇˙)ว 이벤트 문제
+(혹시 문제가 끊어져 보이면, 휴대폰을 가로로 돌리시면 보일겁니다!)
 ```
 ---
 벡터공간 $$R^4$$의 두 부분공간 V와 W를<br>
