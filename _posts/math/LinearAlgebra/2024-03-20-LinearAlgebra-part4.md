@@ -263,7 +263,7 @@ L(v1):  선형변환을 거친v1 즉 L(v1)는 w의 원소
 
 # 3. 차원정리
 ## 3-1) 차원정리
-L: &nbsp;&nbsp;&nbsp; V -> W 에 대하여 다읍이 성립한다 <br>
+L: &nbsp;&nbsp;&nbsp; V -> W 에 대하여 다음이 성립한다 <br>
 dim(**$ \color{red}V$**) = dim(ker **$\color{lightblue}L $**) + dim(im **$\color{lightblue}L $**) <br><br>
 
 요약본과 A to Z 방식으로 총 2개 작성합니다.
