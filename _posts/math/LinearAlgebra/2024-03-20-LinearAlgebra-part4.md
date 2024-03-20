@@ -295,7 +295,7 @@ dim(**$ \color{red}V$**) = dim(ker **$\color{lightblue}L $**) + dim(im **$\color
 ![Desktop View](/assets/img/math/LinearAlgebra/part4/17.png)
 <br>
 
-**—> n+1개의 물건을 n개의 상자에 넣을 때 적어도 어느 한 상자에는 두 개 이상의 물건이 들어 있다는 원리 <br><br>**
+**—> n+1개의 물건을 n개의 상자에 넣을 때 적어도 어느 한 상자에는 두 개 이상의 물건이 들어 있다는 원리** <br><br><br><br><br>
 
 ### *<U>만약 비둘기집에 선형대수학 논리를 적용시키려면?</U>
 `조건 임의설정`: L이 V에서 W로 가는 선형사상 <br>
