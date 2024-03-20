@@ -27,4 +27,30 @@ layout: null
 
     </url>
   {% endfor %}
+
+
+
+
+
+<!--   2024-03-20 categories 페이지들 인덱스 생성이 안되는데 이코드를 쓰면 category 추가한다함-->
+  {% assign pages = site.pages | where: "layout", "category" %}
+  {% for page in pages %}
+  <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+  </url>
+  {% endfor %}
+
+  {% assign pages = site.pages | where: "layout", "tag" %}
+  {% for page in pages %}
+  <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+  </url>
+  {% endfor %}
+
+
+
 </urlset>
