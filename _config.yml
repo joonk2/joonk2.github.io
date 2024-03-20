@@ -32,7 +32,7 @@ title: 고준환                        # the main blog title, 블로그 맨 상
 tagline: '어서오시게  ʕ   ·ᴥ·ʔ'   # it will display as the sub-title,  (부제목 첫 페이지 좌측에서 확인가능)
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://joonk2.github.io'
+url: 'https://joonk2.github.io/'
 
 github:
   username: joonk2            # change to your github username
