@@ -32,7 +32,8 @@ google search console 들어가기
 ![Desktop View](/assets/img/2022-08-14k/1.PNG)  
 <br>
   
-이제 여기 주소를 입력해주시면 됩니다. 저의 경우는 https://joonhwan2.github.io
+이제 여기 주소를 입력해주시면 됩니다. 저의 경우는 
+### **https://joonhwan2.github.io**
 <br>
 그리고 `계속`을 누르면
 <br>
