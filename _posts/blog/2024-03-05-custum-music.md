@@ -28,7 +28,7 @@ updated: 2024-03-13 wed 12:41
 ## [링크1 --> suno](https://app.suno.ai/create/)
 ## [링크2 --> artlist.io](https://artlist.io/royalty-free-music/)
 ## [링크3 --> fesliyanstudios](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/happy-music/2)
-## [링크3 --> boomplay](https://www.boomplay.com/)
+## [링크4 --> boomplay](https://www.boomplay.com/)
 
 
 음악을 다운로드받고 나는 githib에 따로 또 등록했습니다 <br>
