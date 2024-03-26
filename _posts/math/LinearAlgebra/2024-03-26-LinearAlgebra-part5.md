@@ -939,7 +939,7 @@ $$
 <br><br><br>
 
 ### **<span style="color:purple">(2)</span>** **<span style="color:blue">`링크`</span>**
-(이것을 참고하여 증명)[]
+[이것을 참고하여 증명](https://joonk2.github.io/posts/LinearAlgebra-part5/#:~:text=%EC%84%B1%EC%A7%88%EB%93%A4%EC%9D%80%20%EC%84%9C%EB%A1%9C%20%EC%9D%BC%EC%B9%98%ED%95%9C%EB%8B%A4.-,%EA%B7%B8%20%EC%A4%91%EC%97%90%20%EC%9D%BC%EB%8B%A8%2010%EA%B0%9C%EB%A7%8C%20%EB%B3%B4%EA%B2%A0%EC%8A%B5%EB%8B%88%EB%8B%A4,-1%0A2%0A3)
 
 `A 행렬`, &nbsp;&nbsp;&nbsp;`B행렬`(A를 대각화시킨 행렬)<br>
 을 아래와 같이 구했습니다. <br>
@@ -1020,15 +1020,13 @@ $$
 $$
 \gamma = 0
 $$
-&nbsp; 일 때 1개 <br>
-[링크 참조1]()
+&nbsp; 일 때 1개
 <br><br>
 
 $$
 \gamma = 3
 $$
-&nbsp; 일 때 2개 <br>
-[링크 참조2]()
+&nbsp; 일 때 2개
 <br><br><br>
 
 `8. 대각성분합` <br>
@@ -1052,8 +1050,7 @@ $$\gamma=3$$
 
 `10. 기하적 중복도` <br>
 말 그대로 기저의 원소 갯수 <br>
-[링크 참조1]() <br>
-[링크 참조2]()
+[링크 참조](https://joonk2.github.io/posts/LinearAlgebra-part5/#:~:text=%2C%20(%2D1%2C0%2C1)%7D-,%EA%B2%B0%EB%A1%A0%3A,-%EC%A6%89%20%EC%9D%B4%203x3)
 <br><br><br><br><br>
 
 
