@@ -645,7 +645,8 @@ $$
 
 ![Desktop View](/assets/img/math/LinearAlgebra/part5/1.png)
 
-### (👉고유벡터, 고유기저를 잘 모르겠다면 이것 클릭)[]
+### [👉고유벡터, 고유기저를 잘 모르겠다면 이것 클릭](https://joonk2.github.io/posts/LinearAlgebra-part5/#:~:text=1%20or%202-,step%202%EA%B3%A0%EC%9C%A0%EB%B2%A1%ED%84%B0%20%EA%B5%AC%ED%95%98%EA%B8%B0,-case%201)
+
 <br><br><br><br>
 
 ## 2-3) 닮음 불변량
@@ -795,7 +796,7 @@ $$
 를 구하시오 <br>
 
 (2) &nbsp; 두행렬 A, B에 대해 본문에 제시된 10가지 닮음 불변량을 각각 확인하시오
-(######## 불변량 링크) <br><br><br><br>
+[🎨여기 클릭해서 확인](https://joonk2.github.io/posts/LinearAlgebra-part5/#:~:text=%EC%84%B1%EC%A7%88%EB%93%A4%EC%9D%80%20%EC%84%9C%EB%A1%9C%20%EC%9D%BC%EC%B9%98%ED%95%9C%EB%8B%A4.-,%EA%B7%B8%20%EC%A4%91%EC%97%90%20%EC%9D%BC%EB%8B%A8%2010%EA%B0%9C%EB%A7%8C%20%EB%B3%B4%EA%B2%A0%EC%8A%B5%EB%8B%88%EB%8B%A4,-1%0A2%0A3) <br><br><br><br>
 
 ### <span style="color:orange">풀이</span>
 #### **<span style="color:blue">(1)-ㄱ 고윳값 구하기</span>** <br>
