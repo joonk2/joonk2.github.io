@@ -25,10 +25,10 @@ updated: 2024-03-13 wed 12:41
 
 우선 이글은 jekyll theme chirpy를 기준으로 작성합니다 <br>
 저작권 문제로 인해 저는 저작권이 없는 **<span style="color:pink">무료</span>**`제작` or `음반사이트`를 이용했습니다. <br>
-## [링크1 --> suno](https://app.suno.ai/create/)
-## [링크2 --> artlist.io](https://artlist.io/royalty-free-music/)
-## [링크3 --> fesliyanstudios](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/happy-music/2)
-## [링크4 --> boomplay](https://www.boomplay.com/)
+#### [링크1 --> suno](https://app.suno.ai/create/)
+#### [링크2 --> artlist.io](https://artlist.io/royalty-free-music/)
+#### [링크3 --> fesliyanstudios](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/happy-music/2)
+#### [링크4 --> boomplay](https://www.boomplay.com/)
 
 
 음악을 다운로드받고 나는 githib에 따로 또 등록했습니다 <br>
