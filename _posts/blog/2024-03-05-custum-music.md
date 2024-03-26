@@ -31,7 +31,7 @@ updated: 2024-03-13 wed 12:41
 #### [링크4 --> boomplay](https://www.boomplay.com/)
 
 
-음악을 다운로드받고 나는 githib에 따로 또 등록했습니다 <br>
+음악을 다운로드받고 저는 githib에 따로 또 등록했습니다 <br>
 우리가 필요한 건 음악의 raw 주소입니다 <br>
 github나 gitlab에 올린 음악파일.wav 혹은 mp3는 용량이 커서 view raw를 누르면 다운로드 되는데 당황하지말고 일단 제 글을 천천히 잘 읽어봅시다 <br>
 
