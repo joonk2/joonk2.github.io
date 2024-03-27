@@ -881,7 +881,7 @@ v = s\begin{vmatrix} ? \\ ? \\ ? \end{vmatrix} + r\begin{vmatrix} ? \\ ? \\ ? \e
 $$
 <br>
 
-## (링크 —> 왜 free variables 설정했는지 모르겠다면 여기 클릭)[]
+## [링크 —> 왜 free variables 설정했는지 모르겠다면 여기 클릭](https://joonk2.github.io/posts/LinearAlgebra-part4/#:~:text=row%20%3D%20rank%20%2B%20Nullity-,%EC%A4%91%EC%9A%94,-Nullity%EB%A5%BC%20%EC%95%8C%EB%A0%A4%EB%A9%B4)
 보아하니 첫번째 성분(1번행)과달리 2, 3번째 성분들은 0이네요. <br>
 그에 대해  2번째 성분에 대해 볼 때, &nbsp; 3번째 성분 = 0 <br>
 3번째 성분에 대해 볼 때, &nbsp; 2번째 성분 = 0 <br>
