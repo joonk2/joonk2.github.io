@@ -160,7 +160,7 @@ $$
 (\gamma I_n -M)v = 0
 $$
 <br>
-으로부터 v=0이 유도되어 모순입니다
+으로부터 v=0이 유도되어 모순입니다 &nbsp;&nbsp; 원래는 이게 맞습니다 --> $$ (\vec{v} \neq \vec{0}) $$
 <br>
 
 즉 **$ \color{red}{\Rightarrow} $**
