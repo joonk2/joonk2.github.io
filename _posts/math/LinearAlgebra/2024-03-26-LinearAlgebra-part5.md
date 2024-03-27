@@ -542,7 +542,7 @@ $$
 (P = A를 대각화해주는 행렬)
 <br><br><br>
 
-### **<span style="color:purple">예시 ㄱ) 대각화 불가능 사례 **</span> <br>**
+### **<span style="color:purple">예시 ㄱ) 대각화 불가능 사례</span> <br>**
 $$
 A = \begin{pmatrix} 2 & 1  \\ 0 & 2 \end{pmatrix}
 $$
