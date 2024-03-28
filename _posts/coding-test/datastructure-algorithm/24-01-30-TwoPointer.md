@@ -2,7 +2,7 @@
 title:  "Two-Pointer"
 layout: post
 categories: [coding-test, datastructure-algorithm] 
-tags: [blog, datastructure, algorithm, TwoPointer]
+tags: [datastructure, algorithm, TwoPointer]
 toc: true
 toc_sticky: true
 date: 2024-01-30

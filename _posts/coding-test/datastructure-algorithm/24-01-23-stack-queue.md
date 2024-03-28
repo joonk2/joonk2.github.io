@@ -2,7 +2,7 @@
 title:  "Stack-Queue"
 layout: post
 categories: [coding-test, datastructure-algorithm] 
-tags: [blog, datastructure, algorithm, Stack, Queue]
+tags: [datastructure, algorithm, Stack, Queue]
 toc: true
 toc_sticky: true
 date: 2024-01-23
