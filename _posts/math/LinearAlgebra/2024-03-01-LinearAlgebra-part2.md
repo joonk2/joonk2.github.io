@@ -2,7 +2,7 @@
 title:  "[선형대수학] 2강. 물리적 벡터"
 layout: post
 categories: [math, LinearAlgebra] 
-tags: [math, LinearAlgebra]
+tags: [Math, LinearAlgebra]
 toc: true
 toc_sticky: true
 date: 2024-03-01

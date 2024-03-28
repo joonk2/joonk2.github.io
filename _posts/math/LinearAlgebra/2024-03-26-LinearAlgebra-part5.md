@@ -2,7 +2,7 @@
 title: "[선형대수학] 5강. 고윳값과 대각화"
 layout: post
 categories: [math, LinearAlgebra]
-tags: [math, LinearAlgebra, EigenValue, kaley-hammilton, diagonalization of a matrix]
+tags: [Math, LinearAlgebra, EigenValue, kaley-hammilton, diagonalization of a matrix]
 toc: true
 toc_sticky: true
 date: 2024-03-26 tue 10:40
