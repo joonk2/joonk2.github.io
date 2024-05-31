@@ -143,6 +143,9 @@ $$
 # 1. 행렬
 
 ## 1-1. 용어정리
+<u>*차원 계산법</u> <br>
+행렬곱에서 $$A_{3*1} B_{1*3}$$이 있다하자 <br>
+여기서 mxn은 `행x열`이니 위는 matrix $$AB_{3*3}$$ 가 된다 <br>
 
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/0.png)
 ![Desktop View](/assets/img/math/LinearAlgebra/part1/1.png)
