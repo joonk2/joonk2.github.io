@@ -80,16 +80,10 @@ $$
 <br><br>
 
 ### **<font color='red'>자 그러면</font>**
-$$R^2$$에서 기존 기저벡터를
-$$
-\hat{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \quad\quad \hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-$$
-
+$$R^2$$ 에서 기존 기저벡터를 $$\hat{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \quad\quad \hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 그리고 새로운 기저벡터를 $$\hat{i}_{new} \quad\quad \hat{j}_{new}$$
 라 했을 때,  &nbsp;&nbsp;&nbsp;
-$$
-\hat{i}_{new} = T\begin{bmatrix} 1 \\ 0 \end{bmatrix} \quad\quad \hat{j}_{new} = T\begin{bmatrix} 0 \\ 1 \end{bmatrix}
-$$
+$$\hat{i}_{new} = T\begin{bmatrix} 1 \\ 0 \end{bmatrix} \quad\quad \hat{j}_{new} = T\begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
 <br>
 T가 선형변환이라면, 벡터
@@ -104,9 +98,7 @@ $$\hat{i}_{new}$$ 와 $$\hat{j}_{new}$$
 $$A= \begin{bmatrix} 2 & -3 \\ 1 & 1 \end{bmatrix}$$을 이용해 벡터 
 $$\vec{x} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$$을 변환시켜 보면, <br>
 
-$$
-A\vec{x}= \begin{bmatrix} 2 & -3 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\ 2 \end{bmatrix}
-$$
+$$A\vec{x}= \begin{bmatrix} 2 & -3 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} -1 \\ 2 \end{bmatrix}$$
 임을 알 수 있는데 <br>
 아래의 슬라이드를 움직이면 사진처럼 이 값은 새로운 두 기저벡터의 1배와 1배의 합으로 표현된다<br>
 그리고 슬라이드를 끝까지 움직여도 원점은 꼭짓점에 고정, 직선의 형태를 유지한게 보일것이다<br>
@@ -144,12 +136,8 @@ $$\quad\quad\quad\quad\quad\quad \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$$ 
 <br><br><br>
 
 ## <span style="color:red">**rotation**</span>
-$$
-\quad\quad\quad\quad\quad\quad
-\begin{bmatrix} cos(\frac{\pi}{2}) & -sin(\frac{\pi}{2}) \\ sin(\frac{\pi}{2}) & cos(\frac{\pi}{2}) \end{bmatrix}
-=
-\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}
-$$
+$$\quad\quad\quad\quad\quad\quad \begin{bmatrix} cos(\frac{\pi}{2}) & -sin(\frac{\pi}{2}) \\ sin(\frac{\pi}{2}) & cos(\frac{\pi}{2}) \end{bmatrix}
+=\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$$
 <br>
 
 ![Desktop View](https://github.com/joonk2/math/raw/main/linear-algebra/linear-transformation/rotation/rotation.gif) 
@@ -341,13 +329,9 @@ $$c_1, c_2\quad \ldots \quad,  c_n = 0$$ 이라면 <br>
 
 쉽게 보기위해 각 벡터집합인 $$v_1, v_2\quad \ldots \quad,  v_n$$을 전개해보겠습니다 <br>
 아래는 선형독립과 종속에 대한 판별법입니다 <br><br>
-$$
-v_1=\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}, \quad
-v_2=\begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix}, \quad
-v_3=\begin{bmatrix} -2 \\ 3 \\ 1 \end{bmatrix}, \quad
-v_4=\begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}
-$$
-<br><br>
+$$v_1=\begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}, \quad v_2=\begin{bmatrix} -1 \\ 1 \\ 2 \end{bmatrix}, \quad v_3=\begin{bmatrix} -2 \\ 3 \\ 1 \end{bmatrix}, \quad v_4=\begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}$$
+
+<br>
 이렇게 4개의 벡터가 있다고 가정할 때 <br>
 선형독립을 구하는 방법은 <br>
 정말 쉽게 얘기해서 각각의 벡터에 k상수배를<br>
@@ -361,12 +345,7 @@ $$k_2v_2 +k_3v_3 + k_4v_4 = v_1$$ 이렇게 표현되면 안된다는 얘기입�
 
 case 2) &nbsp; 0 이외의 해가 나오는 경우 <br>
 쉽게 얘기해 0 이외의 스칼라가 존재하는 경우입니다<br>
-$$
-k_1\begin{bmatrix} 1 \\ 0 \end{bmatrix} +
-k_2\begin{bmatrix} 0 \\ 1 \end{bmatrix} +
-k_3\begin{bmatrix} 1 \\ 1 \end{bmatrix}
-= \vec{0}
-$$ 
+$$k_1\begin{bmatrix} 1 \\ 0 \end{bmatrix} + k_2\begin{bmatrix} 0 \\ 1 \end{bmatrix} + k_3\begin{bmatrix} 1 \\ 1 \end{bmatrix}= \vec{0}$$ 
 &nbsp;&nbsp; 이라면
 
 <br><br>
@@ -375,26 +354,12 @@ $$k_1 = k_2 = 1$$ &nbsp;&nbsp;&nbsp;&nbsp;  $$k_3 = -1$$로 선형종속 입니�
 처음부터 차근차근 보겠습니다<br>
 우선 &nbsp;
 $$v_1, v_2, v_3$$ &nbsp; 만 비교해보겠습니다<br>
-$$
-c_1v_1 + c_2v_2 + c_3v_3 = \vec{0}
-$$
-**$ \color{red}{\Rightarrow} $**
-$$
-c_1, c_2, c_3 = 0
-$$
+$$c_1v_1 + c_2v_2 + c_3v_3 = \vec{0}$$ **$ \color{red}{\Rightarrow} $** $$c_1, c_2, c_3 = 0$$
 <br><br>
 
 이걸 식으로 고쳐보겠습니다<br>
 
-$$
-\begin{bmatrix}
-1 & -1 & -2 \\
-0 & 1 & 3 \\ 
-2 & 2 & 1
-\end{bmatrix}
-\begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix}
-= \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
-$$
+$$\begin{bmatrix}1 & -1 & -2 \\ 0 & 1 & 3 \\  2 & 2 & 1 \end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$$
 <br><br>
 
 현재 Ax = 0 형태인데 기약행 사다리꼴형태가 되는지 확인합니다 <br>
@@ -406,18 +371,13 @@ $$
 확인해보니 만들 수 있네요! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 아래 참고⬇️
 <br><br>
 
-$$
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\ 
-0 & 0 & 1
-\end{bmatrix}
-$$
+$$\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}$$
 <br><br>
 
 위 3개 벡터들은 선형독립이니 아래처럼 휘어진 좌표계들로<br>
 3차원 전체를 나타낼 수 있습니다
 <br>
+
 ![Desktop View](/assets/img/math/LinearAlgebra/part3/linear-independant.png)
 <br><br>
 
@@ -439,14 +399,14 @@ $$v_1,v_2,v_3$$ 끼리만 선형독립입니다.
 
 ```
 case 1)
-R^3 의 세 벡터 (1, 0, 0), (0, 1, 0), (0, 0, 1)은 선형독립이다
+$$R^3$$ 의 세 벡터 (1, 0, 0), (0, 1, 0), (0, 0, 1)은 선형독립이다
 ```
 ![Desktop View](/assets/img/math/LinearAlgebra/part3/7-1.png)
 <br><br><br>
 
 ```
 case 2)
-R^3 의 세 벡터 (1, 0, 0), (0, 1, 0), (2, 1, 0)은 선형종속이다
+$$R^3$$ 의 세 벡터 (1, 0, 0), (0, 1, 0), (2, 1, 0)은 선형종속이다
 그래서 기저가 될 수없다. 왜냐하면 v_1인 (1,0,0)과 v(0,1,0)으로
 v_3인 (2,1,0)을 나타낼 수 있기 때문이다
 ```
@@ -471,20 +431,11 @@ ex) <u>각 벡터의 원소가 5개인 기저벡터가 3개라면 3차원 평면
 
 
 
-표준기저로는  $$
-\begin{bmatrix} 3 \\ 4 \end{bmatrix}=
-3\begin{bmatrix} 1 \\ 0 \end{bmatrix} + 
-4\begin{bmatrix} 0 \\ 1 \end{bmatrix}
-$$ 
+표준기저로는  $$\begin{bmatrix} 3 \\ 4 \end{bmatrix}=3\begin{bmatrix} 1 \\ 0 \end{bmatrix} + 4\begin{bmatrix} 0 \\ 1 \end{bmatrix}$$ 
 **$ \color{red}{\Rightarrow} $** 좌표: &nbsp; $$\begin{bmatrix} 3 \\ 4 \end{bmatrix}$$  
 <br><br>
 
-기저로는  $$
-\begin{bmatrix} 3 \\ 4 \end{bmatrix}=
-3\begin{bmatrix} 1 \\ 1 \end{bmatrix} + 
-1\begin{bmatrix} 0 \\ 1 \end{bmatrix}
-$$ 
-**$ \color{red}{\Rightarrow} $** 좌표: &nbsp; $$\begin{bmatrix} 3 \\ 1 \end{bmatrix}$$  <br><br><br>
+기저로는  $$\begin{bmatrix} 3 \\ 4 \end{bmatrix}=3\begin{bmatrix} 1 \\ 1 \end{bmatrix} + 1\begin{bmatrix} 0 \\ 1 \end{bmatrix}$$  **$ \color{red}{\Rightarrow} $** 좌표: &nbsp; $$\begin{bmatrix} 3 \\ 1 \end{bmatrix}$$  <br><br><br>
 
 여기 있는 기저들로 &nbsp; (3, 4)를 나타낼 수 있습니다. <br>
 즉 여기 있는 $$R^2$$ 차원(그래프)에 있는 원하는 원소(aka 벡터)들을 생성해낼 수 있을 때<br>
@@ -497,17 +448,8 @@ $$
 🙂기저의 원소 갯수는 정해져있지 않지만, 표준기저는 무조건 단위 행렬입니다.
 ```
 ex) 
-$$
-R^2
-$$
-에서 &nbsp;
-임의로 정한 기저 = 
-$$
-\left\{
-\begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}, 
-\begin{bmatrix} 0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
-\right\}
-$$
+$$R^2$$에서 &nbsp; 임의로 정한 기저 = 
+$$\left\{\begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}\right\}$$
 <br>
 이 기저들로 2차원에서 2차원 평면을 표현할 수 있다
 <br><br><br><br><br>
@@ -524,12 +466,7 @@ $$
 게다가 3개 벡터의 세번째 원소가 모두 '0'으로 되어 있어서, <br>
 3차원의 세번째 차원을 표현할 방법이 없으므로 기저가 아닙니다.  <u>기저X</u> <br>
 그리고 0 이외의 해도 존재하여 <span style="color:red">**선형종속**</span> <br>
-$$
-\begin{cases} c_1 = 0 \\ c_2 = 0 \\ c_3 = 0 \end{cases}
-이외에도 
-\begin{cases} c_1 = 2 \\ c_2 = 1 \\ c_3 = -1 \end{cases}
-\begin{cases} c_1 = -2 \\ c_2 = -1 \\ c_3 = 1 \end{cases}
-$$
+$$ \begin{cases} c_1 = 0 \\ c_2 = 0 \\ c_3 = 0 \end{cases} ~ 이외에도 ~  \begin{cases} c_1 = 2 \\ c_2 = 1 \\ c_3 = -1 \end{cases} \begin{cases} c_1 = -2 \\ c_2 = -1 \\ c_3 = 1 \end{cases}$$
 <br><br>
 
 ![Desktop View](/assets/img/math/LinearAlgebra/part3/7-5.png)
@@ -601,16 +538,8 @@ $$V = \{(a,b,c,d,e) \quad | \quad a=b=c=0 \}$$
 ```
 예제 4)
 ``` 
-$$
-W = \begin{cases}
-\begin{pmatrix}
-x_1 \\
-x_2 \\
-x_3
-\end{pmatrix}
-\end{cases}
-\in R^3 \quad | \quad x_1 + 2x_3 = 0, \quad x_2 - x_3 = 0 
-$$ 
+$$W = \begin{cases}\begin{pmatrix}x_1 \\x_2 \\x_3\end{pmatrix}\end{cases}
+\in R^3 \quad | \quad x_1 + 2x_3 = 0, \quad x_2 - x_3 = 0$$ 
 <br><br>
 문제를 보니 $$x_1$$이 1이면, &nbsp; $$x_3$$은 $$-\frac{1}{2}$$되고, &nbsp; $$x_2$$는 $$\frac{1}{2}$$가 됩니다. <br>
 **$ \color{red}{\Rightarrow} $** 즉 기저는 1개로 $$\{(1, -\frac{1}{2},-\frac{1}{2}) \}$$ 가 되어 1차원 입니다
@@ -622,96 +551,23 @@ rank를 들어가기 전 잠깐 개념 복습 하겠습니다. <br>
 아래 식으로 행렬을 AX = B 꼴로 고쳤습니다 <br>
 A = 계수행렬, &nbsp;&nbsp;&nbsp; X = 변수를 포함한 열벡터 &nbsp;&nbsp;&nbsp; B = 상수벡터 <br>
 초기 형태는 아래와 같습니다<br><br>
-$$
-\begin{bmatrix} 2 & -1 \\ 1 & 1 \end{bmatrix}
-\begin{bmatrix} x \\ y \end{bmatrix}
-=
-\begin{bmatrix} 4 \\ -1 \end{bmatrix}
-$$ 
+$$\begin{bmatrix} 2 & -1 \\ 1 & 1 \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}=\begin{bmatrix} 4 \\ -1 \end{bmatrix}$$ 
 <br><br><br>
 
-$$
-\begin{cases}
-2x-y = -1 \\
-x+y = 4
-\end{cases}
-$$
-**$ \color{red}{\Rightarrow} $** 
-$$
-\begin{cases}
-x+y = 4 \\
-2x-y = -1 
-\end{cases}
-$$
-**$ \color{red}{\Rightarrow} $** 
-$$
-\begin{cases}
-2x+2y = 8 \\
-2x-y = -1 
-\end{cases}
-$$
-**$ \color{red}{\Rightarrow} $** 
-$$
-\begin{cases}
-2x+2y = 8 \\
-0-3y = -9 
-\end{cases}
-$$
+$$\begin{cases}2x-y = -1 \\x+y = 4\end{cases}$$
+**$ \color{red}{\Rightarrow} $** $$\begin{cases}x+y = 4 \\2x-y = -1 \end{cases}$$ **$ \color{red}{\Rightarrow} $** $$\begin{cases}2x+2y = 8 \\2x-y = -1 \end{cases}$$ **$ \color{red}{\Rightarrow} $** $$\begin{cases}2x+2y = 8 \\n0-3y = -9 \end{cases}$$
 <br>
-**$ \color{red}{\Rightarrow} $** 
-$$
-\begin{cases}
-x+y = 4 \\
-\quad\quad y = 3 
-\end{cases}
-$$
+
+**$ \color{red}{\Rightarrow} $** $$\begin{cases}x+y = 4 \\\quad\quad y = 3 \end{cases}$$
 <br><br><br>
 
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   2 & -1  & | -1\\ 
-   1 & 1  & |\quad 4\\ 
-   \end{pmatrix}  
-\end{equation} 
-$$
+$$\begin{equation}\begin{pmatrix} 2 & -1  & | -1\\ 1 & 1  & |\quad 4\\ \end{pmatrix}  \end{equation} $$
 **$ \color{red}{\Rightarrow} $**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 1  & |\quad 4\\ 
-   2 & -1  & | -1\\ 
-   \end{pmatrix}  
-\end{equation} 
-$$
-**$ \color{red}{\Rightarrow} $**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   2 & 2  & |\quad 8\\ 
-   2 & -1  & | -1\\ 
-   \end{pmatrix}  
-\end{equation} 
-$$
-**$ \color{red}{\Rightarrow} $**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   2 & 2  & |\quad 8\\ 
-   0 & -3  & | -9\\ 
-   \end{pmatrix}  
-\end{equation} 
-$$
+$$\begin{equation}\begin{pmatrix} 1 & 1  & |\quad 4\\ 2 & -1  & | -1\\ \end{pmatrix}  \end{equation} $$n**$ \color{red}{\Rightarrow} $** $$\begin{equation}\begin{pmatrix} 2 & 2  & |\quad 8\\ 2 & -1  & | -1\\ \end{pmatrix}  \end{equation} $$ **$ \color{red}{\Rightarrow} $** $$\begin{equation}\begin{pmatrix} 2 & 2  & |\quad 8\\ 0 & -3  & | -9\\ \end{pmatrix}  \end{equation}$$
 <br>
-**$ \color{red}{\Rightarrow} $**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 1  & | 4\\ 
-   0 & 1  & | 3\\ 
-   \end{pmatrix}  
-\end{equation} 
-$$
+
+**$ \color{red}{\Rightarrow} $** $$\begin{equation}\begin{pmatrix} 1 & 1  & | 4\\ 0 & 1  & | 3\\ \end{pmatrix}  
+\end{equation} $$
 
 <br>
 우선 행 위치를 변경한 이유는 1번 행의 첫번째 자리에 1이 오면 계산하기 편합니다 <br>
@@ -778,25 +634,9 @@ Rank와 Nullity 예시로 3개만 들겠습니다
 ```
 예시 1)
 ```
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   -1 & 0 & 5 \\ 
-   -3 & 7 & 0 \\
-   0 & 2 & 1 
-   \end{pmatrix}  
-\end{equation} 
-$$
-**$ \color{red}{\Rightarrow} $** $$\ldots$$ **$ \color{red}{\Rightarrow} $**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   -1 & 0 & 5 \\ 
-   0 & 14 & -30 \\
-   0 & 0 & 37 
-   \end{pmatrix}  
-\end{equation} 
-$$
+$$\begin{equation}\begin{pmatrix} -1 & 0 & 5 \\ -3 & 7 & 0 \\0 & 2 & 1 \end{pmatrix}  \end{equation} $$
+**$ \color{red}{\Rightarrow} $** $$\ldots$$ **$ \color{red}{\Rightarrow}$**
+$$\begin{equation}\begin{pmatrix} -1 & 0 & 5 \\ 0 & 14 & -30 \\0 & 0 & 37\end{pmatrix}  \end{equation} $$
 <br>
 
 계산해보면 rank 구하는 방법에 맞게 각 행들의 선도원소 아래는 zero가 되었고, 각 행들이 전부 0인 것은 없네요! <br>
@@ -810,40 +650,10 @@ free column은 3번째 열인 1개<br>
 ```
 예시 2)
 ```
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 4 & 2 \\ 
-   3 & 1 & -5 \\
-   -2 & 3 & 7 \\
-   -7 & 5 & 19
-   \end{pmatrix}  
-\end{equation} 
-$$
-**$ \color{red}{\Rightarrow} $**
-$$\ldots$$ 
-**$ \color{red}{\Rightarrow} $**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 4 & 2 \\ 
-   0 & -11 & -11 \\
-   0 & 11 & 11 \\
-   0 & 33 & 33
-   \end{pmatrix}  
-\end{equation} 
-$$
-**$$ \color{red}{\Rightarrow} $$**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 4 & 2 \\ 
-   0 & -11 & -11 \\
-   0 & 0 & 0 \\
-   0 & 0 & 0
-   \end{pmatrix}  
-\end{equation} 
-$$
+$$\begin{equation}\begin{pmatrix} 1 & 4 & 2 \\ 3 & 1 & -5 \\-2 & 3 & 7 \\-7 & 5 & 19\end{pmatrix} \end{equation} 
+$$**$ \color{red}{\Rightarrow} $**
+$$\ldots$$ **$ \color{red}{\Rightarrow} $** $$\begin{equation}\begin{pmatrix} 1 & 4 & 2 \\ 0 & -11 & -11 \\0 & 11 & 11 \\0 & 33 & 33\end{pmatrix} \end{equation} $$
+**$$ \color{red}{\Rightarrow} $$** $$\begin{equation}\begin{pmatrix} 1 & 4 & 2 \\ 0 & -11 & -11 \\0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix}  \end{equation} $$
 <br>
 
 계산해보면 rank 구하는 방법에 맞게 1, 2행만 선도원소 아래가 zero가 되었고,<br>
@@ -855,45 +665,11 @@ $$
 예시 3)
 ```
 일차연립방정식 
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 2 & 1 & 0 \\ 
-   2 & 5 & 5 & 1 \\
-   -2 & -3 & 0 & 3 \\
-   3 & 4 & -2 & -4
-   \end{pmatrix}  
-\end{equation} 
-$$
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   x_1 \\ 
-   x_2 \\
-   x_3 \\
-   x_4
-   \end{pmatrix}  
-\end{equation} 
-$$
-=
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   0 \\ 
-   0 \\
-   0 \\
-   1
-   \end{pmatrix}  
-\end{equation} 
-$$
+$$\begin{equation}\begin{pmatrix} 1 & 2 & 1 & 0 \\ 2 & 5 & 5 & 1 \\-2 & -3 & 0 & 3 \\3 & 4 & -2 & -4\end{pmatrix}  \end{equation} $$
+$$\begin{equation}\begin{pmatrix} x_1 \\ x_2 \\x_3 \\x_4\end{pmatrix}  \end{equation} $$ =$$\begin{equation}\begin{pmatrix} 0 \\ 0 \\0 \\1\end{pmatrix} \end{equation} $$
 를 만족하는 실수해는? <br><br>
 
-$$
-   (1) 단 하나 존재  \\
-   (2) 무한히 많이 존재   \\
-   (3) 존재 안함   \\
-   (4) 판정 불가 
-$$
+$$(1) 단 하나 존재  \\(2) 무한히 많이 존재   \\(3) 존재 안함   \\(4) 판정 불가$$
 <br><br>
 
 <u>정석으로 풀어보면</u> 아래처럼 순서대로 진행됩니다<br>
@@ -901,16 +677,7 @@ $$
 2행 -> 3, 4열 소거 <br>
 3행 -> 4열 소거 <br>
 **$ \color{red}{\Rightarrow} $**
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 2 & 1 & 0 &|0\\ 
-   0 & 1 & 3 & 1 & |0\\
-   0 & 0 & -1 & 2 & |0\\
-   0 & 0 & 0 & 0 & |1
-   \end{pmatrix}  
-\end{equation} 
-$$
+$$\begin{equation}\begin{pmatrix} 1 & 2 & 1 & 0 &|0\\ 0 & 1 & 3 & 1 & |0\\0 & 0 & -1 & 2 & |0\\0 & 0 & 0 & 0 & |1\end{pmatrix}  \end{equation}$$
 로 만들어 집니다 <br>
 1~4열까지 rankA 구하는 구간 <br>
 1~5열까지 rankA|B 구하는 구간
@@ -921,7 +688,6 @@ $$
 <br><br><br><br><Br>
 
 # 5. 이벤트문제(2개) + 예제(5개)
-
 ## 5-1 row space R(U), &nbsp; column space C(U), &nbsp; null space N(U) 구하기
 #### [💎행공간, 열공간 잘 모르겠으면 여기 클릭](https://joonk2.github.io/posts/Orthgonoliy-of-The-Four-Subspaces/)
 ```
@@ -929,28 +695,14 @@ $$
 (혹시 문제가 끊어져 보이면, 휴대폰을 가로로 돌리시면 보일겁니다!)
 ```
 다음의 기약행 사다리꼴(reduced row-echelon form)행렬 U를 보자 <br>
-$$
-U = 
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 0 & 0 & 2 & 2 \\ 
-   0 & 1 & 0 & -1 & 3 \\
-   0 & 0 & 1 & 4 & -1 \\
-   0 & 0 & 0 & 0 & 0
-   \end{pmatrix}  
-\end{equation} 
-$$
+$$U = \begin{equation}\begin{pmatrix} 1 & 0 & 0 & 2 & 2 \\ 0 & 1 & 0 & -1 & 3 \\0 & 0 & 1 & 4 & -1 \\0 & 0 & 0 & 0 & 0\end{pmatrix}  \end{equation} $$
 <br>
 
 (1) <span style="color:red">**row space**</span> R(U) <br>
 행 사다리꼴에서 제로행이 아닌 행들은 선형독립으로 마지막 제로행을 제외한 <br>
 처음의 3개행들은 선형독립이다. 이들이 U의 행공간 R(U)를생성하고 R(U)의 basis가 된다 <br>
 basis of R(U) = 
-$$ 
-{(1, 0, 0, 2, 2), (0, 1, 0, -1, 3), (0, 0, 1, 4, -1)}
-\\
-dim R(U) = 3
-$$
+$$ {(1, 0, 0, 2, 2), (0, 1, 0, -1, 3), (0, 0, 1, 4, -1)}\\dim R(U) = 3$$
 <br><br>
 
 (2) <span style="color:blue">**column space**</span> C(U) <br>
@@ -958,107 +710,29 @@ $$
 나머지 4, 5열은 1,2,3 열의 선형결합으로 표현이 가능하다 <br>
 그래서 처음 3개의 열벡터들이 U의 열공간 C(U)를 생성하고 이들이 C(U)의 basis
 basis of C(U) =
-$$
-\left\{
-\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}, 
-\begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}, 
-\begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}
-\right\}
-\\
-dim C(U) = 3
-$$
+$$\left\{\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}\right\}\\dim C(U) = 3$$
 <br><br>
 
 (3) <span style="color:pink">**Null space**</span> N(U) <br>
 영공간의 차원은 Nullity로 N(U)는 homogeneous equtation U`x` = **0**의 해집합이다 <br>
-U가 free variables을 가지니 
-$$
-x_4, x_5
-$$
-가 무수히 많은 해를 갖는다
+U가 free variables을 가지니 $$x_4, x_5$$가 무수히 많은 해를 갖는다
 <br>
-$$
-\begin{equation}
-   \begin{pmatrix} 
-   1 & 0 & 0 & 2 & 2 \\ 
-   0 & 1 & 0 & -1 & 3 \\
-   0 & 0 & 1 & 4 & -1 \\
-   0 & 0 & 0 & 0 & 0
-   \end{pmatrix}  
-\end{equation} 
-\begin{pmatrix} 
-x_1 \\ 
-x_2 \\
-x_3 \\
-x_4 \\
-x_5
-\end{pmatrix} 
-=
-\begin{pmatrix} 
-0 \\ 
-0 \\
-0 \\
-0 \\
-0
-\end{pmatrix} 
-$$
+$$\begin{equation}\begin{pmatrix} 1 & 0 & 0 & 2 & 2 \\ 0 & 1 & 0 & -1 & 3 \\0 & 0 & 1 & 4 & -1 \\0 & 0 & 0 & 0 & 0\end{pmatrix}  \end{equation} \begin{pmatrix} x_1 \\ x_2 \\x_3 \\x_4 \\x_5\end{pmatrix} =\begin{pmatrix} 0 \\ 0 \\0 \\0 \\0\end{pmatrix} $$
 <br>
-$$
-x_5 = t \\
-x_4 = s \\
-x_3 = -4s + t \\
-x_2 = s-3t \\
-x_1 = -2s -2t
-$$
+$$x_5 = t \\x_4 = s \\x_3 = -4s + t \\x_2 = s-3t \\x_1 = -2s -2t$$
 <br>
 
-$$
-\begin{pmatrix} 
-x_1 \\ 
-x_2 \\
-x_3 \\
-x_4 \\
-x_5
-\end{pmatrix} 
-=
-\begin{pmatrix} 
--2s-2t \\ 
-s-3t \\
--4s+t \\
-s \\
-t
-\end{pmatrix} 
-=
-s
-\begin{pmatrix} 
--2 \\ 
-1 \\
--4 \\
-1 \\
-0
-\end{pmatrix} 
-+t
-\begin{pmatrix} 
--2 \\ 
--3 \\
-1 \\
-0 \\
-1
-\end{pmatrix} 
-=
-s \vec{n}_s
-+
-t \vec{n}_t
-$$
+$$\begin{pmatrix} x_1 \\ x_2 \\x_3 \\x_4 \\x_5\end{pmatrix} =\begin{pmatrix} -2s-2t \\ s-3t \\-4s+t \\s \\t\end{pmatrix} =s\begin{pmatrix} 
+-2 \\ 1 \\-4 \\1 \\0\end{pmatrix} +t\begin{pmatrix} -2 \\ -3 \\1 \\0 \\
+1\end{pmatrix} =s \vec{n}_s+t \vec{n}_t$$
 <br>
 
 U`x`=**0** 의 해가 $$n_s$$와 $$n_t$$의 선형결합으로 나타나기에 $$n_s$$와 $$n_t$$는 N(U)를 생성한다 <br>
 또한 {$$n_s$$, $$n_t$$}는 선형독립이기에 N(U)의 basis가 된다 -->
 ($$n_s$$와 $$n_t$$의 마지막 두 성분을 보면 자명하다) <br>
+
 basis of N(U) = 
-$$
-\left\{ \vec{n}_s, \vec{n}_t \right\}
-$$ <br>
+$$\left\{ \vec{n}_s, \vec{n}_t \right\}$$ <br>
 nullity = dim`N`(U) = 2
 <br><br>
 

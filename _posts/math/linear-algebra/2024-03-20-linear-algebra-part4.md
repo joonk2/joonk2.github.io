@@ -77,13 +77,8 @@ B ⊂ A 이면  집합 B는 A의 부분집합이다.
 ![Desktop View](/assets/img/math/LinearAlgebra/part4/3.png)
 <br>
 
-$$
-\text{가산성(Additivity):}\quad\quad L(u+v) = L(u) + L(v)\quad (u,\quad v \in V)
-$$
-
-$$
-\text{동차성(Homogeneity):}\quad\quad L(kv) = kL(v)\quad (k \in F,\quad v \in V)
-$$
+$$\text{가산성(Additivity):}\quad\quad L(u+v) = L(u) + L(v)\quad (u,\quad v \in V)$$
+$$\text{동차성(Homogeneity):}\quad\quad L(kv) = kL(v)\quad (k \in F,\quad v \in V)$$
 
 <br>
 
@@ -144,39 +139,18 @@ F-벡터공간 V, W에 대해 V → W로의 선형사상들의 집합을 L(V, W)
 다음과 같이 L(V, W) 위의 `합`과 `스칼라배`를 정의한다<br><br>
 
 **<font color='green'>조건</font>** = 
-$$
-(v \in V, \quad k \in F) \\ 
-$$
+$$(v \in V, \quad k \in F) \\ $$
 <br>
-1) **<font color='blue'>합</font>** = 
-$$
-(L_1 + L_2)(v)
-$$
-**<font color='red'>=</font>**
-$$
-L_1(v) + L_2(v)
-$$
+1) **<font color='blue'>합</font>** = $$(L_1 + L_2)(v)$$ **<font color='red'>=</font>** $$L_1(v) + L_2(v)$$
 <br>
-2) **<font color='blue'>스칼라배</font>** =
-$$
-(kL)(v)
-$$
-**<font color='red'>=</font>**
-$$
-kL(v)
-$$
+2) **<font color='blue'>스칼라배</font>** = $$(kL)(v)$$ **<font color='red'>=</font>** $$kL(v)$$
 <br><br>
 
 F에 속한 m x n 행렬들의 집합을 아래와 같이 나타냅니다
-
-$$
-M_{m*n}(F)
-$$
+$$M_{m*n}(F)$$
 
 두 사상 $$f$$, $$g$$는 다음과 같이 정의합니다 <br>
-$$
-f: \quad L(V, W) \rightarrow M_{m*n}(F) \\ 정의방법: \quad f(L) = [L]_{Bw}^{Bv} = M \\[5ex] g: \quad M_{m*n}(F) \rightarrow L(V, W) \\ 정의방법: \quad g(M) = L_M([L_M(v)]_{Bw} = M[v]_{Bv}
-$$
+$$f: \quad L(V, W) \rightarrow M_{m*n}(F) \\ 정의방법: \quad f(L) = [L]_{Bw}^{Bv} = M \\[5ex] g: \quad M_{m*n}(F) \rightarrow L(V, W) \\ 정의방법: \quad g(M) = L_M([L_M(v)]_{Bw} = M[v]_{Bv}$$
 <br>
 
 ### **[기호 참고]**
@@ -195,16 +169,7 @@ $$
 
 ### 1번 설명
 **<font color='green'>ex-1)</font>**: &nbsp;&nbsp; V
-**<font color='red'>=</font>**
-$$
-|R^3
-$$
-**$ \color{red}{\Rightarrow} $**
-$$B_v$$
-= 
-**<font color='blue'>{</font>**
-(1,0,0),(0,1,0),(0,0,1)
-**<font color='blue'>}</font>**
+**<font color='red'>=</font>** $$|R^3$$**$ \color{red}{\Rightarrow} $**$$B_v$$= **<font color='blue'>{</font>**(1,0,0),(0,1,0),(0,0,1)**<font color='blue'>}</font>**
 <br><br>
 위는 예를 든 수식입니다 <br>
 이는 벡터공간 V가 3개의 기저벡터로 구성된 것을 나타냅니다 <br>
@@ -222,17 +187,7 @@ $$k_1$$ ~ $$k_n$$까지 모은 튜플을 행에서 열로 전치시켰네요 <br
 ### 2번 설명
 1번 v1, v2, v3에 이어서 합니다 <br>
 **<font color='green'>ex-2)</font>**: &nbsp;&nbsp;
-$$
-v \in V, \quad v = 3V_1 + V_2 + 2V_3 \\[3ex]
-$$
-**$ \color{red}{\Rightarrow} $**
-$$
-(3, 1,2)^T
-$$
-**$ \color{red}{\Rightarrow} $**
-$$
-즉\begin{bmatrix} 3\\ 1 \\ 2 \end{bmatrix} 이는 \quad [v]_{Bv}다
-$$ <br>
+$$v \in V, \quad v = 3V_1 + V_2 + 2V_3 \\[3ex]$$ **$ \color{red}{\Rightarrow} $** m$$(3, 1,2)^T$$ **$ \color{red}{\Rightarrow} $**$$ 즉\begin{bmatrix} 3\\ 1 \\ 2 \end{bmatrix} 이는 \quad [v]_{Bv}다$$ <br>
 기저는 아까 언급했듯이 어떤 것이든 상관없는데, 어떤 기저를 잡으면 그 기저에 대해 v라는 벡터를 $$3V_1 + V_2 + 2V_3$$ 처럼 표현하겠다는 뜻입니다.
 <br><br><br>
 
@@ -260,11 +215,7 @@ L(v1):  선형변환을 거친v1 즉 L(v1)는 w의 원소
 
 # 3. 차원정리
 잠깐! **<font color='blue'>커널의 개념</font>** 다시 한번 짚고 들어가겠습니다. <br>
-선형사상 
-$$
-L: IR^n \rightarrow IR^m, \quad L(x) = \vec{0}
-$$
-를 만족하는 모든 x들의 집합
+선형사상 $$L: IR^n \rightarrow IR^m, \quad L(x) = \vec{0}$$ 를 만족하는 모든 x들의 집합
 
 ## 3-1 차원정리
 L: &nbsp;&nbsp;&nbsp; V -> W 에 대하여 다음이 성립한다 <br>

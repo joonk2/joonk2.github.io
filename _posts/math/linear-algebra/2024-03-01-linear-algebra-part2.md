@@ -23,7 +23,7 @@ date: 2024-03-01
 2. 벡터의 연산  
  2-1. Norm    
  2-2. 선형결합   
- 2-3. 스칼라 곱   
+ 2-3. 스칼라 곱 + cosine simmilarity
  2-4. 벡터 곱
 
 3. 벡터의 응용    
@@ -141,11 +141,15 @@ ex) v 벡터를 보자 <br>
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/8.png)
 <br><br>
 
-## 2-3. 스칼라곱
+## 2-3. 스칼라 곱 + cosine simmilarity
 - ### 스칼라곱 시작하기 전에 잠깐 삼각함수 표 확인합시다
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/9.png)
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/10.png)
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/11.png)
+<br><br>
+
+#### cosine simmilarity
+$$cos\theta=\frac{a \cdot b}{\vert a \vert \cdot \vert b \vert} = \frac{\sum\limits_{i=1}^N a_i b_i}{\sqrt{\sum\limits_{i=1}^N a_i^2}\sqrt{\sum\limits_{i=1}^N b_i^2}}$$
 <br><br>
 
 ## 2-4. 벡터곱
@@ -177,12 +181,11 @@ $$
 \begin{bmatrix} 2 & 1 \end{bmatrix} \begin{bmatrix} 3 \\ -4 \end{bmatrix}
 = 2 * 3 + 1(-4) = 2
 $$
-<br><br>
+
+<br>
 
 즉, 행벡터는 열벡터를 입력으로 받아 스칼라를 출력하는 &nbsp;
-$$
-f: V \Rightarrow R
-$$
+$$f: V \Rightarrow R$$
 인 함수
 <br><br>
 
@@ -192,13 +195,16 @@ $$
 생각해보면  `2x+y=c`에 해당하는 점선은 모두 행벡터 [2, 1]에 수직이다 <br>
 <span style="color:red">**why?**</span> --> 행벡터가 점선으로 표현한 함수들에 대해 법선 벡터역할을 하기 때문 <br>
 따라서 위의 그림에서 빨간색으로 표현한 길이는 다음과 같이 직각 삼각형의 높이를 계산함으로써 얻을 수 있다.
+
 ![Desktop View](/assets/img/math/LinearAlgebra/part2/inner-product2.png)
 <br>
 
 직각 삼각형의 넓이를 구하는 방법을 이용해 d의 길이를 계산할 수 있다. <br>
 즉 4x2 = d * $$\sqrt 20$$ 이므로, $$d=\frac{8}{\sqrt20} = \frac{4}{\sqrt5}$$이다 <br>
 여기서 행벡터 [2, 1]의 길이는 $$\sqrt5$$인데, 이 길이를 d에 곱하면 <br>
-$$d*\sqrt5 = \frac{4}{\sqrt5}*\sqrt5 = 4$$ <br>
+$$d*\sqrt5 = \frac{4}{\sqrt5}*\sqrt5 = 4$$ 
+
+<br>
 
 즉 <u>열벡터의 정사영 길이 * 행벡터의 길이 = 내적 값 </u> <br>
 결과값은 아래와도 똑같이 4로 같다 <br>

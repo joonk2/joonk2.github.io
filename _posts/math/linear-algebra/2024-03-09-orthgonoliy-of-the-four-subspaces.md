@@ -78,42 +78,26 @@ updated:
 1. 부분 집합의 개념을 벡터 공간에 접목한 것 <br>
 2. 벡터 공간의 기본 구조를 그대로 유지하는 작은 벡터공간
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/3.png)
-
-$$
-\vec{0}
-$$
-은 항상 벡터공간에 들어있어야 하기에 <br>
-원점을 지나는 직선이
-$$
-R^2
-$$
-(2차원) 벡터공간 상에서 부분 공간이 될 수 있다! 
+![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/3.png) <br>
+$$\vec{0}$$은 항상 벡터공간에 들어있어야 하기에 <br>
+원점을 지나는 직선이 $$R^2$$(2차원) 벡터공간 상에서 부분 공간이 될 수 있다! 
 <br><br><br><br>
 
 # 3. 행공간과 열공간
 임의의 행렬 A의 모든 행 혹은 모든 열들의 선형결합(span)으로 얻은 모든 벡터를 포함하여 구성된 벡터공간은 부분 공간이며, 각각을 행공간, 열공간이라 한다.<br>
 가령 아래와 같은 행렬 A에 대해서,
 <br>
-$$
-A=\begin{bmatrix} 2 & 1 \\ 4 & 2\end{bmatrix}
-$$
-<br>
+$$A=\begin{bmatrix} 2 & 1 \\ 4 & 2\end{bmatrix}$$
 그러면, 행공간은 행벡터[2 1]와 [4 2]의 선형결합으로 이뤄진 선상에 있는 모든 벡터들의 집합이다
 
 ![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/4.png)
 <br><br><br><br>
 
 열공간은 열벡터 
-$$
-[2 \quad 4]^T
-$$
+$$[2 \quad 4]^T$$
 와
-$$
-[1 \quad 2]^T
-$$
-의 선형결합으로 이뤄진 선 상에 있는 모든 벡터들의 집합
-<br>
+$$[1 \quad 2]^T$$
+의 선형결합으로 이뤄진 선 상에 있는 모든 벡터들의 집합 <br>
 여기서는 열벡터 2개로 선형결합 시켜서 얻을 수 있는 벡터공간을 열공간이라 한다
 <br>
 
@@ -126,25 +110,17 @@ linear combination of column vectors → column space
 <br><br><br><br>
 
 그러면, 우선 A라는 행렬의 선형변환이 어떻게 작동하는지 시각적으로 생각해보자 <br>
-$$
-A= \begin{bmatrix} 2 & 1 \\ 4 & 2\end{bmatrix}
-$$
+$$A= \begin{bmatrix} 2 & 1 \\ 4 & 2\end{bmatrix}$$
 <br>
-$$
-Ax = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} a \\ c \end{bmatrix}x_1 + \begin{bmatrix} b \\ d \end{bmatrix}x_2
-$$
+$$Ax = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x_1 \\x_2 \end{bmatrix} = \begin{bmatrix} a \\ c \end{bmatrix}x_1 + \begi{bmatrix} b \\ d \end{bmatrix}x_2$$
 
 열벡터방향, 행벡터 방향으로 봐도 둘다 평행하다 즉 **`선형종속`**<br>
 즉 한쪽이 스칼라배를 해준 것을 알 수 있다. <br>
 아래 그림은 초록색 선이 <span style="color:green">**열벡터**</span> 
-$$
-1\begin{bmatrix} 1 \\ 2 \end{bmatrix}
-$$
+$$1\begin{bmatrix} 1 \\ 2 \end{bmatrix}$$
 
 빨간색 선이 <span style="color:red">**열벡터**</span> 
-$$
-2\begin{bmatrix} 1 \\ 2 \end{bmatrix}
-$$
+$$2\begin{bmatrix} 1 \\ 2 \end{bmatrix}$$
 
 ![Desktop View](https://github.com/joonk2/math/raw/main/linear-algebra/linear-transformation2.gif)
 ![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/transformation2.png)
@@ -153,20 +129,12 @@ $$
 # 4. 영공간
 `개념:` <br>
 행렬 A의 영공간은 다음과 같은 조건을 만족하는
-$$
-\vec{x}
-$$
+$$\vec{x}$$
 들의 집합 <br><br>
 
-$$
-A \vec{x} = 0
-$$
-<br>
+$$A \vec{x} = 0$$ <br>
 즉, A라 행렬을 통해 선형변환 후, 모두 0을 출력하게 만들어주는 입력벡터
-$$
-\vec{x}
-$$
-들이라는 것
+$$\vec{x}$$들이라는 것
 <br><br><br>
 
 [잠깐!]
@@ -201,9 +169,7 @@ A라는 선형변환 후에 결과가 0이 되어버리는 \vec{x}의 집합은 
 행렬이 함수라면, 그 함수의 기본적 의미인 집합 간의 관계를 어떻게 정의할 것인가?
 ```
  For 
-$$
-A \in R^{m*n}, \quad\quad f: R^n \rightarrow R^m
-$$
+$$A \in R^{m*n}, \quad\quad f: R^n \rightarrow R^m$$
 
 ![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/7.png)
 
@@ -221,10 +187,7 @@ why —> 말했듯이 null space의 벡터들은 선형변환 후에 모두 0이
 <br>
 
 ## <span style="color:red">**입력(정의역)**</span>
-row space + null space = 
-$$
-R^n
-$$
+row space + null space = $$R^n$$
 <br>
 
 - 선형변환의 정의역은 row space + null space의 합집합
@@ -235,14 +198,8 @@ $$
 
 이 그림은 <span style="color:red">**행공간**</span>인 빨간색 선과 <span style="color:pink">**영공간**</span>인 빨간 점선이 만나 <br>
 치역에 해당하는 부분인 초록색인 열공간에서의 <span style="color:green">**열벡터**</span>  
-$$
-1\begin{bmatrix} 1 \\ 2 \end{bmatrix}
-$$
-를 표현했고, 나아가
-$$
-2\begin{bmatrix} 1 \\ 2 \end{bmatrix}
-$$
-도 표현할 수 있습니다.
+$$1\begin{bmatrix} 1 \\ 2 \end{bmatrix}$$를 표현했고, 나아가
+$$2\begin{bmatrix} 1 \\ 2 \end{bmatrix}$$도 표현할 수 있습니다.
 <br><br>
 
 ## 공역
