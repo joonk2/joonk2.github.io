@@ -47,6 +47,15 @@ updated: 2024-05-04 sat
 ```
 
 # 0. 들어가며
+우선 요약본인데 잠시 훑어보고 지나가는 것도 나쁘진 않을 것 같습니다. <br>
+EVD 즉 고윳값 분해를 위한 식은 아래와 같이 나타낼 수 있습니다. <br>
+행렬Ax가 있을 때 <br>
+$Ax = \lambda_1q_1q_1^Tx+\lambda_2q_2q_2^Tx+\cdots+\lambda_nq_nq_n^Tx$
+
+여기서 dim reduction을 하여 고유벡터 2개만 사용할시  
+$Ax \approx \lambda_1q_1q_1^Tx+\lambda_2q_2q_2^Tx$
+아무튼 서론이 좀 길었는데 거두절미하고,
+
 이번 글에서의 주요 내용인 행렬을 고윳값과 고유벡터로 분해하는 과정인 Eigenvalue Decomposition(고윳값 분해)에 대한 내용과, symmetric matrix의 실생활 응용 및 새로운 해석에 관해 알아볼 것입니다 <br><br><br>
 
 # 1. Eigen decomposition (long provement)
