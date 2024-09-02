@@ -107,7 +107,7 @@ pageviews:
 
 
 
-theme_mode: [light|dark] # light
+theme_mode: light #[light|dark]  
 
 
 
