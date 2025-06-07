@@ -17,7 +17,7 @@ written: 2024-03-10 sun 12:11
 
 우선 전 utterance 댓글창을 _layout/post.html 이곳에서 맨 아래에 작성해 놓은게 있었습니다 <br>
 
-—는 아래 내용을 찾기 쉬우라고 적어놓은 구분선입니다
+—는 아래 내용을 찾기 쉬우라고 적어놓은 구분선입니다.
 
 ```html
  </div><!-- div.post-tail-wrapper -->
