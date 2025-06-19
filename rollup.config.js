@@ -3,7 +3,7 @@ import terser from '@rollup/plugin-terser';
 import license from 'rollup-plugin-license';
 import path from 'path';
 
-const SRC_DEFAULT = '_javascript';
+const SRC_DEFAULT = 'javascript';
 const DIST_DEFAULT = 'assets/js/dist';
 const isProd = process.env.NODE_ENV === 'production';
 
