@@ -2,7 +2,7 @@
 title:  "[java] ArrayList"
 layout: post
 categories: [language, java]
-tags: [md]
+tags: [java, ArrayList]
 toc: true
 toc_sticky: true
 date: 2025-06-16
