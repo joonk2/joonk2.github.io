@@ -44,23 +44,328 @@
     </div>
   </section>
 
+  <!-- 2024-05-10             챗봇 플로팅 버튼 + 팝업 (리디자인)           -->
+  <style>
+    #floating-chatbot {
+      position: fixed;
+      right: 48px;
+      bottom: 48px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .chatbot-balloon {
+      background: linear-gradient(135deg, #4f8cff 60%, #3ad0ff 100%);
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 24px;
+      margin-bottom: 10px;
+      font-size: 1.25em;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      position: relative;
+      display: inline-block;
+      letter-spacing: 1px;
+    }
+    .chatbot-balloon::after {
+      content: '';
+      position: absolute;
+      left: 40px;
+      bottom: -16px;
+      border-width: 12px 12px 0 12px;
+      border-style: solid;
+      border-color: #4f8cff transparent transparent transparent;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.04));
+    }
+    #chatbot-avatar,
+    .chatbot-avatar-mini {
+      width: 20%;
+      height: auto;
+      border-radius: 0 !important;
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+      object-fit: contain !important;
+    }
+    #chatbot-popup {
+      display: none;
+      position: fixed;
+      right: 48px;
+      bottom: 170px;
+      width: 400px;
+      max-width: 98vw;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.22);
+      z-index: 10000;
+      flex-direction: column;
+      overflow: hidden;
+      border: 2.5px solid #4f8cff;
+      animation: chatbot-pop 0.25s cubic-bezier(.4,2,.6,1) 1;
+    }
+    @keyframes chatbot-pop {
+      0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    #chatbot-popup-header {
+      background: linear-gradient(135deg, #4f8cff 60%, #3ad0ff 100%);
+      color: #fff;
+      padding: 18px 24px 12px 24px;
+      font-weight: bold;
+      font-size: 1.25em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+    }
+    #chatbot-popup-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-left: 8px;
+      transition: color 0.2s;
+    }
+    #chatbot-popup-close:hover {
+      color: #ffb300;
+    }
+    #chatbot-popup-messages {
+      padding: 24px 24px 12px 24px;
+      height: 320px;
+      overflow-y: auto;
+      background: #f6faff;
+      font-size: 1.08em;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chatbot-msg {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .chatbot-msg.bot {
+      justify-content: flex-start;
+    }
+    .chatbot-msg.user {
+      justify-content: flex-end;
+    }
+    .chatbot-bubble {
+      max-width: 75%;
+      padding: 12px 18px;
+      border-radius: 18px 18px 18px 6px;
+      background: #4f8cff;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1em;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+      word-break: break-word;
+      margin-bottom: 2px;
+      position: relative;
+      animation: chatbot-bubble-in 0.18s cubic-bezier(.4,2,.6,1) 1;
+    }
+    .chatbot-msg.bot .chatbot-bubble {
+      background: #e9f1ff;
+      color: #2a2a2a;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 18px;
+      border-top-right-radius: 18px;
+      border-top-left-radius: 18px;
+    }
+    .chatbot-msg.user .chatbot-bubble {
+      background: #4f8cff;
+      color: #fff;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 18px;
+      border-top-right-radius: 18px;
+      border-top-left-radius: 18px;
+    }
+    @keyframes chatbot-bubble-in {
+      0% { transform: scale(0.8) translateY(10px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    .chatbot-avatar-mini {
+      width: 36px;
+      height: 36px;
+    }
+    #chatbot-popup-input {
+      display: flex;
+      border-top: 1.5px solid #e0e0e0;
+      background: #fafdff;
+      padding: 14px 18px;
+      gap: 8px;
+    }
+    #chatbot-popup-input input {
+      flex: 1;
+      border: 1.5px solid #b3d1ff;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 1.08em;
+      margin-right: 6px;
+      outline: none;
+      transition: border 0.2s;
+      background: #fff;
+    }
+    #chatbot-popup-input input:focus {
+      border: 1.5px solid #4f8cff;
+    }
+    #chatbot-popup-input button {
+      background: linear-gradient(135deg, #4f8cff 60%, #3ad0ff 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 22px;
+      font-size: 1.08em;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+      transition: background 0.2s;
+    }
+    #chatbot-popup-input button:hover {
+      background: #3ad0ff;
+    }
+    @media (max-width: 600px) {
+      #chatbot-popup {
+        right: 4px;
+        width: 98vw;
+        min-width: 0;
+        border-radius: 12px;
+      }
+      #floating-chatbot {
+        right: 4px;
+        bottom: 4px;
+      }
+      #chatbot-popup-messages {
+        height: 220px;
+        padding: 12px 8px 8px 8px;
+      }
+      #chatbot-popup-header {
+        padding: 12px 10px 8px 10px;
+        font-size: 1.05em;
+      }
+    }
+  </style>
 
-
-
-
-
-
-
-<!-- 2024-05-10             포트폴리오 링크 추가           -->
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <a href="https://www.notion.so/joonk2/6ef428c33fd94581a0f4c533639f741d">
-      <img id="portfolio" src="https://github.com/joonk2/mySvg/blob/main/myID.gif?raw=true" alt="portfolio GIF" style="width: 250px; height: 250px;">
-    </a>
+  <div id="floating-chatbot">
+    <div class="chatbot-balloon">Click me</div>
+    <img id="chatbot-avatar" src="/assets/img/racoon.png" alt="챗봇" onclick="openChatbotPopup()" />
   </div>
 
+  <div id="chatbot-popup">
+    <div id="chatbot-popup-header">
+      챗봇
+      <button id="chatbot-popup-close" onclick="closeChatbotPopup()">&times;</button>
+    </div>
+    <div id="chatbot-popup-messages">
+      <div class="chatbot-msg bot">
+        <img src="/assets/img/racoon.png" class="chatbot-avatar-mini" alt="bot" />
+        <div class="chatbot-bubble">어서와 구리, 무엇이 필요하셔 구리?</div>
+      </div>
+    </div>
+    <div id="chatbot-popup-input">
+      <input type="text" id="chatbot-popup-input-text" placeholder="메시지를 입력하세요..." onkeypress="if(event.key==='Enter'){sendChatbotMessage();}">
+      <button onclick="sendChatbotMessage()">전송</button>
+    </div>
+  </div>
 
+  <script>
+    function openChatbotPopup() {
+      document.getElementById('chatbot-popup').style.display = 'flex';
+    }
+    function closeChatbotPopup() {
+      document.getElementById('chatbot-popup').style.display = 'none';
+    }
+    function sendChatbotMessage() {
+      const input = document.getElementById('chatbot-popup-input-text');
+      const messages = document.getElementById('chatbot-popup-messages');
+      const message = input.value.trim();
+      if (message) {
+        // 사용자 메시지
+        const userDiv = document.createElement('div');
+        userDiv.className = 'chatbot-msg user';
+        userDiv.innerHTML = `<div class='chatbot-bubble'>${message}</div>`;
+        messages.appendChild(userDiv);
+        // 챗봇 응답
+        setTimeout(() => {
+          const botDiv = document.createElement('div');
+          botDiv.className = 'chatbot-msg bot';
+          botDiv.innerHTML = `<img src='/assets/img/racoon.png' class='chatbot-avatar-mini' alt='bot' /><div class='chatbot-bubble'>${getGuardBotResponse(message)}</div>`;
+          messages.appendChild(botDiv);
+          messages.scrollTop = messages.scrollHeight;
+        }, 500);
+        input.value = '';
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
+    function getGuardBotResponse(message) {
+      const responses = {
+        '안녕': '어서오셔 구리! 궁금한 것이 있으면 무엇이든 물어보셔 구리.',
+        '이름': '나는 너굴이야 구리',
+        '블로그': '이곳은 고준환의 기술 블로그야 구리.',
+        '도움': '궁금한 점, 불편한 점, 무엇이든 말해주셔 구리.',
+        '감사': '고마워! 너의 방문이 나에겐 큰 힘이 돼 구리.',
+        '누구': '나는 언제나 도움을 드리려 대기 중인 너굴이야 구리!',
+        '시간': '시간은 소중하니까 알차게 써보는 거야 구리!',
+        '잘자': '좋은 꿈 꾸셔 구리~ 내일도 힘내는 거야 구리!',
+        '좋아': '그 말 들으니까 기분이 몹시 좋아졌어 구리!',
+        '싫어': '그럴 수도 있지 구리~ 그럼 다른 걸 해보는 건 어때 구리?',
+        '귀여워': '에헤헤~ 그런 말 들으면 부끄럽다구 구리!',
+        '배고파': '배고프면 힘도 안 나지 구리~ 맛있는 거 꼭 챙겨먹어 구리!',
+        '졸려': '눈이 스르륵 감기면 살짝 쉬어가는 것도 좋아 구리~',
+        '일해': '열심히 일하는 건 좋지만 너무 무리하진 마 구리!',
+        '쉬어': '쉼도 중요하니까 잠깐 숨 돌리는 건 어때 구리?',
+        '오늘 날씨': '오늘 하늘은 어떤가 구리? 흐리든 맑든, 너의 마음은 맑았으면 좋겠어 구리!',
+        '기분': '너의 기분이 좋아졌으면 좋겠어 구리! 나는 늘 응원해 구리!',
+        '스트레스': '힘든 일이 있으면 말해줘 구리, 같이 나눠보자 구리.',
+        '화났어': '화나는 일 있었구리? 너의 마음이 빨리 풀리길 바란다구 구리.',
+        '행복해': '너의 행복이 나한테도 전해지는 것 같아 구리~',
+        '이상한 질문': '세상에 이상한 질문이 어딨어 구리! 궁금한 건 언제든 환영이야 구리!',
+        '좋은 하루': '오늘 하루도 반짝반짝 빛나길 바랄게 구리!',
+        '너굴': '너굴은 언제나 너를 응원하고 있어 구리~ 화이팅 구리!',
+        '공부': '공부는 느려도 괜찮아 구리~ 포기하지 않는 게 중요하다구 구리!',
+        '코딩': '코딩은 퍼즐 맞추기 같아 구리! 하나씩 맞춰가보자 구리!',
+        '취업': '취업 준비도 인생도 마라톤이야 구리. 천천히 가도 괜찮다구 구리!',
+        '실수': '실수는 괜찮아 구리. 그걸로 배우는 거니까 구리!',
+        '성공': '작은 성공도 아주 값진 거라구 구리~ 축하해 구리!',
+        '계획': '작은 계획부터 차근차근 실행해보자 구리!',
+      };
 
+      const randomResponses = [
+        '너의 하루가 궁금하다구 구리!',
+        '뭔가 고민이 있다면 나한테 말해도 괜찮다구 구리.',
+        '따뜻한 차 한 잔 마시면서 쉬어가는 건 어때 구리?',
+        '너는 언제나 잘하고 있어 구리~ 걱정하지 마 구리!',
+        '오늘은 조금 느긋하게 가보는 것도 좋다구 구리.',
+      ];
 
+      const hour = new Date().getHours();
+      let timeGreeting = '';
+      if (hour >= 5 && hour < 12) {
+        timeGreeting = '좋은 아침이야 구리! 오늘도 힘내보자구 구리 ☀️';
+      } else if (hour >= 12 && hour < 18) {
+        timeGreeting = '점심은 잘 챙겨 먹었어 구리? 오후도 파이팅이야 구리 💪';
+      } else if (hour >= 18 && hour < 22) {
+        timeGreeting = '오늘 하루도 수고 많았어 구리~ 저녁은 맛있게 먹자구 구리 🍽️';
+      } else {
+        timeGreeting = '밤이 깊었구리~ 푹 쉬고 내일 다시 시작하자구 구리 🌙';
+      }
+
+      for (let key in responses) {
+        if (message.includes(key)) {
+          return responses[key];
+        }
+      }
+
+      // 키워드 매칭 없으면 시간대 인사 + 랜덤 반응
+      const random = randomResponses[Math.floor(Math.random() * randomResponses.length)];
+      return `${timeGreeting} ${random}`;
+    }
+
+  </script>
 
 {% endif %}
 
