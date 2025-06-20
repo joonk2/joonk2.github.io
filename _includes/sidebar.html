@@ -163,6 +163,10 @@
           https://github.com/{{ contact.value }}
         {%- elsif contact.type == 'twitter' -%}
           https://twitter.com/{{ contact.value }}
+        {%- elsif contact.type == 'instagram' -%}
+          https://www.instagram.com/{{ contact.value }}
+        {%- elsif contact.type == 'youtube' -%}
+          https://www.youtube.com/channel/{{ contact.value }}
         {%- elsif contact.type == 'email' -%}
           {% assign email = site.social.email | split: '@' %}
           javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
@@ -174,11 +178,7 @@
       {% endcapture %}
 
       {% if url %}
-        <a href="{{ url }}" aria-label="{{ contact.type }}"
-          {% assign link_types = 'Zotero ORCID' | split: ' ' %}
-          {% if link_types contains contact.type %}
-            target="_blank" rel="noopener"
-          {% endif %}>
+        <a href="{{ url }}" aria-label="{{ contact.type }}" target="_blank" rel="noopener">
           <i class="{{ contact.icon }}"></i>
         </a>
       {% endif %}
