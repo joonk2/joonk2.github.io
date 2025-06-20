@@ -25,6 +25,11 @@ export function initChatbot() {
       });
     }
   });
+
+  // Global functions for onclick attributes
+  window.openChatbotPopup = openChatbotPopup;
+  window.closeChatbotPopup = closeChatbotPopup;
+  window.sendChatbotMessage = sendChatbotMessage;
 }
 
 function openChatbotPopup() {
@@ -131,9 +136,4 @@ function getGuardBotResponse(message) {
   // 키워드 매칭 없으면 시간대 인사 + 랜덤 반응
   const random = randomResponses[Math.floor(Math.random() * randomResponses.length)];
   return `${timeGreeting} ${random}`;
-}
-
-// Global functions for onclick attributes
-window.openChatbotPopup = openChatbotPopup;
-window.closeChatbotPopup = closeChatbotPopup;
-window.sendChatbotMessage = sendChatbotMessage; 
+} 
