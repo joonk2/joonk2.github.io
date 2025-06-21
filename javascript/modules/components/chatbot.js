@@ -2,51 +2,22 @@
  * Chatbot functionality
  */
 
-export function initChatbot() {
-  // Add event listeners when DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    const chatbotAvatar = document.getElementById('chatbot-avatar');
-    const chatbotClose = document.getElementById('chatbot-popup-close');
-    const chatbotInput = document.getElementById('chatbot-popup-input-text');
-    
-    if (chatbotAvatar) {
-      chatbotAvatar.addEventListener('click', openChatbotPopup);
-    }
-    
-    if (chatbotClose) {
-      chatbotClose.addEventListener('click', closeChatbotPopup);
-    }
-    
-    if (chatbotInput) {
-      chatbotInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          sendChatbotMessage();
-        }
-      });
-    }
-  });
-
-  // Global functions for onclick attributes
-  window.openChatbotPopup = openChatbotPopup;
-  window.closeChatbotPopup = closeChatbotPopup;
-  window.sendChatbotMessage = sendChatbotMessage;
-}
-
-function openChatbotPopup() {
+// 전역 함수들을 즉시 등록
+window.openChatbotPopup = function() {
   const popup = document.getElementById('chatbot-popup');
   if (popup) {
     popup.style.display = 'flex';
   }
-}
+};
 
-function closeChatbotPopup() {
+window.closeChatbotPopup = function() {
   const popup = document.getElementById('chatbot-popup');
   if (popup) {
     popup.style.display = 'none';
   }
-}
+};
 
-function sendChatbotMessage() {
+window.sendChatbotMessage = function() {
   const input = document.getElementById('chatbot-popup-input-text');
   const messages = document.getElementById('chatbot-popup-messages');
   
@@ -72,6 +43,31 @@ function sendChatbotMessage() {
     input.value = '';
     messages.scrollTop = messages.scrollHeight;
   }
+};
+
+export function initChatbot() {
+  // Add event listeners when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    const chatbotAvatar = document.getElementById('chatbot-avatar');
+    const chatbotClose = document.getElementById('chatbot-popup-close');
+    const chatbotInput = document.getElementById('chatbot-popup-input-text');
+    
+    if (chatbotAvatar) {
+      chatbotAvatar.addEventListener('click', window.openChatbotPopup);
+    }
+    
+    if (chatbotClose) {
+      chatbotClose.addEventListener('click', window.closeChatbotPopup);
+    }
+    
+    if (chatbotInput) {
+      chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          window.sendChatbotMessage();
+        }
+      });
+    }
+  });
 }
 
 function getGuardBotResponse(message) {
