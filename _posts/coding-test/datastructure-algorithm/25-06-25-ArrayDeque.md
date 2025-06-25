@@ -71,3 +71,4 @@ dq.removeLast();  // 뒤에서 삭제
 dq.removeFirst(); // 앞에서 삭제
 
 System.out.println(dq); // [10]
+```
