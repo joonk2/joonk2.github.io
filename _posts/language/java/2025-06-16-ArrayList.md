@@ -1,7 +1,7 @@
 ---
 title:  "[java] ArrayList"
 layout: post
-categories: [language, java]
+categories: [coding-test, datastructure-algorithm]
 tags: [java, ArrayList]
 toc: true
 toc_sticky: true
@@ -37,7 +37,6 @@ date: 2025-06-16
 ---
 
 ### ⏳ 시간 복잡도 요약
-
 | 연산                     | 시간 복잡도 | 설명                           |
 |--------------------------|-------------|--------------------------------|
 | `add(value)`              | O(1)        | 맨 뒤에 추가                   |
@@ -45,7 +44,9 @@ date: 2025-06-16
 | `get(index)`              | O(1)        | 인덱스 조회                    |
 | `remove(index)`           | O(N)        | 중간 삭제, 요소들 이동 발생    |
 | `set(index, value)`       | O(1)        | 값 수정                        |
+
 ---
+
 
 ### 📍 언제 써야 하는지 (O(1))
 - **맨 뒤에서 추가** (`add`)

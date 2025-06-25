@@ -1,7 +1,7 @@
 ---
 title:  "[java] ArrayList vs LinkedList"
 layout: post
-categories: [language, java]
+categories: [coding-test, datastructure-algorithm]
 tags: [Java, 자료구조, ArrayList, LinkedList]
 toc: true
 toc_sticky: true
