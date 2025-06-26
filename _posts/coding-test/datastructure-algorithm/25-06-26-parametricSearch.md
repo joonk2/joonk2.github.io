@@ -43,36 +43,43 @@ int[] churos = {50, 30, 40}
 ```
 
 ```java
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+/*
+총 5명의 사람이 츄러스를 정확히 똑같은 사이즈로 잘라 한 덩어리씩 배분하려고 한다.
+최대 몇 cm으로 나누어먹을 수 있을까?
+int[] churos = {50, 30, 40}
+정답은 20cm 
+*/
+
+
+package swea;
+
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
 import java.util.Arrays;
 
-public class Main {
+public class Solution {
 	static int[] churos = {50, 30, 40};
 	static {
 		Arrays.sort(churos);
 	}
-	
 	static int people = 5;
-	
-	
+			
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int res = parametric_search(churos, people);
+		int res = parametric_search(churos,people);
 		System.out.println(res);
-	} 
+	}
 	
-	public static int parametric_search(int[] arr, int N) {
+	public static int parametric_search(int[] churos, int people) {
 		int left = 1;
-		int right = upperBound(arr);
+		int right = upperBound(churos);
 		int ans = 0;
 		
 		while (left <= right) {
 			int mid = (left + right) / 2;
-			
-			if (canCut(arr, mid, N)) {
+			if (canCut(churos, mid, people)) {
 				ans = mid;
 				left = mid + 1;
 			}
@@ -81,8 +88,8 @@ public class Main {
 			}
 		}
 		return ans;
-		
 	}
+	
 	
 	public static boolean canCut(int[] churos, int len, int people) {
 		int cnt = 0;
@@ -101,6 +108,8 @@ public class Main {
 		}
 		return max;
 	}
+	
+	
 	
 }
 ```
