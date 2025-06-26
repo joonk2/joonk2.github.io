@@ -5,7 +5,7 @@ categories: [coding-test, datastructure-algorithm]
 tags: [datastructure, algorithm, binarySearch]
 toc: true
 toc_sticky: true
-date: 2025-06-25
+date: 2025-06-26
 ---
 
 # 🔍 Binary Search (이진 탐색)
