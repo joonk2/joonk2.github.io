@@ -98,34 +98,33 @@ int[] churos = {50, 30, 40}
 */
 
 
-package swea;
-
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 import java.util.Arrays;
 
-public class Solution {
+public class Solution{
 	static int[] churos = {50, 30, 40};
+	static int people = 5;
 	static {
 		Arrays.sort(churos);
 	}
-	static int people = 5;
-			
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int res = parametric_search(churos,people);
+		int res = parametric_search(churos, people);
 		System.out.println(res);
 	}
 	
 	public static int parametric_search(int[] churos, int people) {
 		int left = 1;
 		int right = upperBound(churos);
-		int ans = 0;
+		int ans = -1;
 		
 		while (left <= right) {
 			int mid = (left + right) / 2;
+			
 			if (canCut(churos, mid, people)) {
 				ans = mid;
 				left = mid + 1;
@@ -133,29 +132,30 @@ public class Solution {
 			else {
 				right = mid - 1;
 			}
+			
+			
 		}
 		return ans;
+		
 	}
 	
-	
-	public static boolean canCut(int[] churos, int len, int people) {
+	public static boolean canCut(int[] churos, int mid, int people) {
 		int cnt = 0;
-		for (int c : churos) {
-			cnt += c / len;
+		for (int i : churos) {
+			cnt += (i / mid);
 		}
-		return cnt >= people;
+		return cnt >= people;	
 	}
 	
 	public static int upperBound(int[] arr) {
 		int max = 0;
-		for (int n : arr) {
-			if (n > max) {
-				max = n;
+		for (int i : arr) {
+			if (i > max) {
+				max = i;
 			}
 		}
 		return max;
 	}
-	
 	
 	
 }
