@@ -83,8 +83,11 @@ date: 2025-09-23
     때문에 이를 고려해야 한다.
 
 
-<br><br><br><br>
+<br><br><br>
 
+![Desktop View](/assets/img/data-alg/greedy/dials_lock_1.jpg)
+
+<br>
 
 ```java
 import java.io.IOException;
