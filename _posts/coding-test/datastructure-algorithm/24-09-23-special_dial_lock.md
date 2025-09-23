@@ -11,7 +11,8 @@ date: 2025-09-23
 
 
 # 특별한 다이얼 자물쇠
-![Desktop View](/assets/img/data-alg/greedy/dials_lock.png)
+
+![Desktop View](/assets/img/data-alg/greedy/dials_lock.jpg)
 
 일반적인 다이얼 자물쇠는 **위로 돌리면 숫자가 증가**, **아래로 돌리면
 숫자가 감소**합니다.\
