@@ -1,11 +1,11 @@
 ---
-title:  "implementation_2"
+title:  "pattern matching (implementation)"
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [implementation]
 toc: true
 toc_sticky: true
-date: 2025-10-29
+date: 2025-11-01
 ---
 <!-- MathJax Script for this post only -->
 <script type="text/javascript" async
@@ -72,7 +72,12 @@ bad puzzle
 <br><br>
 
 ## 접근
-N이 기본적으로 1e6이라 2중 for문으로 시간초과가 날 것이라 가정한 상태에서 설계를 시작했다 <br>
+java 2초 -> 2억 연산 이내
+
+최악의 실행시간
+2 * 200만 * 100만
+
+그렇지만 나는 이 코드로 도전해보고 싶었기에 시간초과를 하든말든 작성을 해보았다
 
 먼저 original 배열, target 배열을 생성했다 
 
@@ -84,19 +89,14 @@ tc 1번 기준으로
 original_extended = [1,2,3,4,5, 1,2,3,4,5]
 reverse_extended = [5,4,3,2,1, 5,4,3,2,1]
 ```
-그런데 도저히 $O(N^2)$ 외에 방법이 생각이 나지않아 일단 아래와 같이 작성해보았다
 
-필요한 것
-- good puzzle인지 확인 여부
-- 연장된 원래방향 배열의 각 글자가 target배열과 일치하는지 확인 여부
-- 연장된 반대방향 배열의 각 글자가 target배열과 일치하는지 확인 여부
 
 그리하여 아래와 같이 작성하였다
 
 ```java
 import java.io.IOException;
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
 
 public class Main {
@@ -111,11 +111,13 @@ public class Main {
 			original[i] = Integer.parseInt(s1[i]);
 			target[i] = Integer.parseInt(s2[i]);
 		}
+		
 		int[] reverse = new int[N];
 		for (int i = 0; i < N; i++) {
 			reverse[i] = original[N-1-i];
 		}
 		
+		// double size
 		int[] original_extended = new int[N*2];
 		int[] reverse_extended = new int[N*2];
 		for (int i = 0; i < N*2; i++) {
@@ -123,46 +125,52 @@ public class Main {
 			reverse_extended[i] = reverse[i%N];
 		}
 		
-		lets_see(original_extended, reverse_extended, target, N);
-	}
-	
-	
-	
-	
-	
-	static void lets_see(int[] original_extended, int[] reverse_extended, int[] target, int N) {
+		
+		int n = 2*N;
+		int m = N;
 		boolean is_good_puzzle = false;
-		for (int i = 0; i < N; i++) {
-			boolean is_matching_o = true;ㅜ
-			boolean is_matching_r = true;
-			for (int j = i; j < N+i; j++) {
-				if (original_extended[j] != target[j-i]) {
-					is_matching_o = false;
+		int i1 = 0;
+		int i2 = 0;
+		int j = 0;
+		int k = 0;
+		while (i1 < n && i2 < n) {
+			if (original_extended[i1] == target[j]) {
+				i1++;
+				j++;
+				if (j == m) {
+					is_good_puzzle = true;
 					break;
 				}
 			}
-			for (int j = i; j < N+i; j++) {
-				if (reverse_extended[j] != target[j-i]) {
-					is_matching_r = false;
+			else if (original_extended[i1] != target[j]) {
+				i1 = (i1 - j + 1);
+				j = 0;
+			}
+			
+			
+			if (reverse_extended[i2] == target[k]) {
+				i2++;
+				k++;
+				if (k == m) {
+					is_good_puzzle = true;
 					break;
 				}
 			}
-			// check
-			if (is_matching_o == true || is_matching_r == true) {
-				is_good_puzzle = true;
-				break;
+			else if (reverse_extended[i2] != target[k]) {
+				i2 = (i2 - k + 1);
+				k = 0;
 			}
 		}
+		
+		// res
 		if (is_good_puzzle) {
 			System.out.println("good puzzle");
 		}
 		else {
 			System.out.println("bad puzzle");
 		}
+		
 	}
-	
-
-
 }
 ```
 
@@ -177,7 +185,7 @@ public class Main {
 
 그래서 실제 연산 수행량은 이렇다더라
 ```
-O(N + N)
+O(2N)
 ```
 그런데 만약 서로 중복되면 아래와 같을 수 있다
 
@@ -185,6 +193,6 @@ O(N + N)
 arr = [1, 1, 1, 1, 1]
 ```
 
-이럴 경우에는 무조건 $O(N^2)$ 라서 시간초과라 이걸 방지하고자 O(N)으로 접근할 수 있는
+이럴 경우에는 무조건 $O(N*M)$ 라서 시간초과라 이걸 방지하고자 O(N)으로 접근할 수 있는
 
 ### KMP (패턴 매칭 알고리즘을 적용해볼까?)
