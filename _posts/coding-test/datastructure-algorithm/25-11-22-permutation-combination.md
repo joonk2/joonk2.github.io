@@ -84,3 +84,341 @@ C[r][c] = C[r-1][c-1] + C[r-1][c-1]
 
 #### combination
 - 조합 점화식 DP -> O(nr)
+- DP 파스칼 방식 -> O($N^2$)
+- `재귀 팩토리얼 방식 O(N) 절대 금지!!! why?? -> overflow`
+
+<br><br><br>
+
+# 예제
+# [boj_이항계수1_11050](https://www.acmicpc.net/problem/11050)
+
+<br><br><br>
+
+2가지 풀이를 보여주겠다
+<br><br><br><br><br>
+
+## 1번 풀이 `(강력 비추 ❌️)`
+ O(N) 이지만 정말 이거 쓰면 안된다
+
+문제 조건에서 N <= 10, K <= N 이지만, 만약
+N = 13 이면 13! 으로 int 초과, 그리고 19! 라면 long 범위도 초과해서 결국 value overflow가 발생한다.
+
+하지만 일단 해당 문제는 `N <= 10`, `K <= N`이었기에 아래 공식을 적용하여 풀 수 있었다
+
+$
+\binom{N}{K} = \frac{N!}{K!(N-K)!}
+$
+
+
+```java
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String[] NK = br.readLine().split(" ");
+		int N = Integer.parseInt(NK[0]);
+		int K = Integer.parseInt(NK[1]);
+		C(N, K);
+	}
+	
+	
+	
+	static void C(int N, int K) {
+		int denominator = 1;
+		int numerator_1 = 1;
+		int numerator_2 = 1;
+		
+		denominator = recursion(N);
+		numerator_1 = recursion(K);
+		numerator_2 = recursion(N-K);
+		
+		int res = denominator / (numerator_1 * numerator_2);
+		System.out.println(res);
+	}
+	
+	
+	
+	static int recursion(int x) {
+		if (x <= 1) {
+			return 1;
+		}
+		return x * recursion(x-1);
+	}
+	
+	
+	
+	
+}
+```
+
+
+<br><br><br><br>
+
+
+## 2번 풀이 `(무조건 이거 써라 ✅️)`
+
+DP 파스칼 방식으로 $O(N^2)$
+
+N, K가 커질수록, 그냥 묻지말고
+
+이거 닥사용이다. <br>
+왜??? -> value overflow가 잘 안나기 때문이다
+
+### 🪜구축 순서
+1. 배열 크기 선언
+- N=5일때 -> DP[5+1][5+1]
+
+2. for문으로 초기 세팅
+- i개중 1개 뽑기 -> i개
+- i개중 0개 뽑기 -> 1개
+- i개중 i개 뽑기 -> 1개
+
+3. DP 파스칼 점화식 적용
+DP[r][c] = DP[r-1][c-1] + DP[r-1][c]
+
+<br><br>
+
+2번과정까지 수행하고 출력으로 확인하면 아래와 같을 것이다
+
+|   |   |   |   |   |   |
+|---|---|---|---|---|---|
+| 1 | 0 | 0 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 2 | 1 | 0 | 0 | 0 |
+| 1 | 3 |   | 1 | 0 | 0 |
+| 1 | 4 |   |   | 1 | 0 |
+| 1 | 5 |   |   |   | 1 |
+
+그러면 이제 남은 곳을 DP 파스칼로 채워보자
+
+|   |   |   |   |   |   |
+|---|---|---|---|---|---|
+| 1 | 0 | 0 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 2 | 1 | 0 | 0 | 0 |
+| 1 | 3 | 3 | 1 | 0 | 0 |
+| 1 | 4 | 6 | 4 | 1 | 0 |
+| 1 | 5 | 10 | 10 | 5 | 1 |
+
+일단 완성이 된 것 같다
+
+이제 검증해보자
+
+$
+_{0}C_{0}
+$
+&nbsp;
+$
+_{0}C_{1}
+$
+&nbsp;
+$
+_{0}C_{2}
+$
+&nbsp;
+$
+_{0}C_{3}
+$
+&nbsp;
+$
+_{0}C_{4}
+$
+&nbsp;
+$
+_{0}C_{5}
+$
+
+<!-- 다음 줄 -->
+
+$
+_{1}C_{0}
+$
+&nbsp;
+$
+_{1}C_{1}
+$
+&nbsp;
+$
+_{1}C_{2}
+$
+&nbsp;
+$
+_{1}C_{3}
+$
+&nbsp;
+$
+_{1}C_{4}
+$
+&nbsp;
+$
+_{1}C_{5}
+$
+
+<!-- 다음 줄 -->
+
+$
+_{2}C_{0}
+$
+&nbsp;
+$
+_{2}C_{1}
+$
+&nbsp;
+$
+_{2}C_{2}
+$
+&nbsp;
+$
+_{2}C_{3}
+$
+&nbsp;
+$
+_{2}C_{4}
+$
+&nbsp;
+$
+_{2}C_{5}
+$
+
+<!-- 다음 줄 -->
+
+$
+_{3}C_{0}
+$
+&nbsp;
+$
+_{3}C_{1}
+$
+&nbsp;
+$
+_{3}C_{2}
+$
+&nbsp;
+$
+_{3}C_{3}
+$
+&nbsp;
+$
+_{3}C_{4}
+$
+&nbsp;
+$
+_{3}C_{5}
+$
+
+<!-- 다음 줄 -->
+
+$
+_{4}C_{0}
+$
+&nbsp;
+$
+_{4}C_{1}
+$
+&nbsp;
+$
+_{4}C_{2}
+$
+&nbsp;
+$
+_{4}C_{3}
+$
+&nbsp;
+$
+_{4}C_{4}
+$
+&nbsp;
+$
+_{4}C_{5}
+$
+
+<!-- 다음 줄 -->
+
+$
+_{5}C_{0}
+$
+&nbsp;
+$
+_{5}C_{1}
+$
+&nbsp;
+$
+_{5}C_{2}
+$
+&nbsp;
+$
+_{5}C_{3}
+$
+&nbsp;
+$
+_{5}C_{4}
+$
+&nbsp;
+$
+_{5}C_{5}
+$
+
+<br><br>
+
+맞네 
+
+<br>
+
+# 코드
+
+
+
+```java
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String[] NK = br.readLine().split(" ");
+		int N = Integer.parseInt(NK[0]);
+		int K = Integer.parseInt(NK[1]);
+		lets_solve_this(N, K);
+	}
+	
+	
+	
+	static void lets_solve_this(int N, int K) {
+		// 배열 크기 선언
+		int[][] DP = new int[N+1][N+1];
+		
+		// for문으로 배열 매 반복마타 입력
+		for (int i = 0; i < N+1; i++) {
+			// i개중 1개 뽑기
+			DP[i][1] = i;
+			
+			// i개중 0개 뽑기
+			DP[i][0] = 1;
+			
+			//i개중 i개 뽑기
+			DP[i][i] = 1;
+		}
+		
+		
+		// 남은 칸 채우기
+		for (int r = 3; r < N+1; r++) {
+			for (int c = 2; c < N+1; c++) {
+				DP[r][c] = DP[r-1][c-1] + DP[r-1][c];
+			}
+		}
+		
+		
+		// result
+		System.out.println(DP[N][K]);
+	}
+	
+	
+	
+	
+}
+```
