@@ -5,21 +5,9 @@ categories: [coding-test, datastructure-algorithm]
 tags: [permutation, combination]
 toc: true
 toc_sticky: true
+math: true
 date: 2025-11-22
 ---
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 
 
 ### 🙋‍♂️들어가며
@@ -207,159 +195,27 @@ DP[r][c] = DP[r-1][c-1] + DP[r-1][c]
 
 이제 검증해보자
 
-$
-_{0}C_{0}
-$
-&nbsp;
-$
-_{0}C_{1}
-$
-&nbsp;
-$
-_{0}C_{2}
-$
-&nbsp;
-$
-_{0}C_{3}
-$
-&nbsp;
-$
-_{0}C_{4}
-$
-&nbsp;
-$
-_{0}C_{5}
-$
 
-<!-- 다음 줄 -->
+$_{0}C_{0}$ &nbsp; $_{0}C_{1}$ &nbsp; $_{0}C_{2}$ &nbsp; $_{0}C_{3}$ &nbsp; $_{0}C_{4}$ &nbsp; $_{0}C_{5}$  
 
-$
-_{1}C_{0}
-$
-&nbsp;
-$
-_{1}C_{1}
-$
-&nbsp;
-$
-_{1}C_{2}
-$
-&nbsp;
-$
-_{1}C_{3}
-$
-&nbsp;
-$
-_{1}C_{4}
-$
-&nbsp;
-$
-_{1}C_{5}
-$
 
-<!-- 다음 줄 -->
+$_{1}C_{0}$ &nbsp; $_{1}C_{1}$ &nbsp; $_{1}C_{2}$ &nbsp; $_{1}C_{3}$ &nbsp; $_{1}C_{4}$ &nbsp; $_{1}C_{5}$  
 
-$
-_{2}C_{0}
-$
-&nbsp;
-$
-_{2}C_{1}
-$
-&nbsp;
-$
-_{2}C_{2}
-$
-&nbsp;
-$
-_{2}C_{3}
-$
-&nbsp;
-$
-_{2}C_{4}
-$
-&nbsp;
-$
-_{2}C_{5}
-$
 
-<!-- 다음 줄 -->
+$_{2}C_{0}$ &nbsp; $_{2}C_{1}$ &nbsp; $_{2}C_{2}$ &nbsp; $_{2}C_{3}$ &nbsp; $_{2}C_{4}$ &nbsp; $_{2}C_{5}$  
 
-$
-_{3}C_{0}
-$
-&nbsp;
-$
-_{3}C_{1}
-$
-&nbsp;
-$
-_{3}C_{2}
-$
-&nbsp;
-$
-_{3}C_{3}
-$
-&nbsp;
-$
-_{3}C_{4}
-$
-&nbsp;
-$
-_{3}C_{5}
-$
 
-<!-- 다음 줄 -->
+$_{3}C_{0}$ &nbsp; $_{3}C_{1}$ &nbsp; $_{3}C_{2}$ &nbsp; $_{3}C_{3}$ &nbsp; $_{3}C_{4}$ &nbsp; $_{3}C_{5}$  
 
-$
-_{4}C_{0}
-$
-&nbsp;
-$
-_{4}C_{1}
-$
-&nbsp;
-$
-_{4}C_{2}
-$
-&nbsp;
-$
-_{4}C_{3}
-$
-&nbsp;
-$
-_{4}C_{4}
-$
-&nbsp;
-$
-_{4}C_{5}
-$
 
-<!-- 다음 줄 -->
+$_{4}C_{0}$ &nbsp; $_{4}C_{1}$ &nbsp; $_{4}C_{2}$ &nbsp; $_{4}C_{3}$ &nbsp; $_{4}C_{4}$ &nbsp; $_{4}C_{5}$  
 
-$
-_{5}C_{0}
-$
-&nbsp;
-$
-_{5}C_{1}
-$
-&nbsp;
-$
-_{5}C_{2}
-$
-&nbsp;
-$
-_{5}C_{3}
-$
-&nbsp;
-$
-_{5}C_{4}
-$
-&nbsp;
-$
-_{5}C_{5}
-$
+
+$_{5}C_{0}$ &nbsp; $_{5}C_{1}$ &nbsp; $_{5}C_{2}$ &nbsp; $_{5}C_{3}$ &nbsp; $_{5}C_{4}$ &nbsp; $_{5}C_{5}$
+
+만약 위의 문자가 깨져보인다면 아래 사진과 같은 내용이니 아래 사진을 보자
+
+![Desktop View](/assets/img/data-alg/combination/basic-1.jpg)
 
 <br><br>
 
