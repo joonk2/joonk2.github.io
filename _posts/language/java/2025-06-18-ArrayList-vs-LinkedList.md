@@ -1,12 +1,10 @@
----
 title:  "[java] ArrayList vs LinkedList"
 layout: post
 categories: [coding-test, datastructure-algorithm]
-tags: [Java, 자료구조, ArrayList, LinkedList]
+tags: [java, 자료구조, ArrayList, LinkedList]
 toc: true
 toc_sticky: true
 date: 2025-06-18
----
 
 <!-- MathJax Script for this post only -->
 <script type="text/javascript" async
