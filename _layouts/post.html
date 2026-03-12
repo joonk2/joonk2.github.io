@@ -162,40 +162,8 @@ tail_includes:
 
 
 
-<!-- 부모 컨테이너 -->
-<div class="comment-section">
-  <!-- Utterances 댓글 기능 삽입 -->
-  <script src="https://utteranc.es/client.js"
-          repo="joonk2/joonk2.github.io"
-          issue-term="pathname"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-
-  <!-- 휴대폰에서도 자동 크기 조절-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 3D GIF 추가 -->
-  <img src="/assets/img/glitering.gif" alt="3D GIF" class="my-gif-class">
-</div>
-
-
-
-
-
-<!--------------------------------CSS---------------------------->
-<style>
-  .comment-section {
-    display: flex;
-    align-items: center; /* 세로 정렬 설정 */
-  }
-
-  .my-gif-class {
-    max-width: 40%; 
-    width: 40%; 
-    height: auto; /* 이미지 세로 크기 자동 조절 */
-    object-fit: contain; /* 비율을 유지한 채로 적절한 크기에 맞춤 */
-    margin-left: 10px; /* 댓글창과의 간격 조절 */
-  }
-</style>
+{% comment %}
+  NOTE:
+  - 커스텀으로 body 안에 viewport/meta 등을 넣던 블록은 HTML 유효성을 해쳐서 제거했습니다.
+  - 댓글은 `_config.yml`의 `comments.provider`(utterances 등)로 관리하는 게 Chirpy 권장 방식입니다.
+{% endcomment %}

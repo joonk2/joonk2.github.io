@@ -2,4 +2,12 @@
 {% if page.comments and site.comments.provider %}
   {% capture path %}comments/{{ site.comments.provider }}.html{% endcapture %}
   {% include {{ path }} %}
+
+  {%- comment -%}
+    Optional decoration next to the comment widget.
+    Keep it HTML-valid (no <meta> tags in body).
+  {%- endcomment -%}
+  <div class="comment-gif-wrap" aria-hidden="true">
+    <img src="/assets/img/glitering.gif" alt="" class="comment-gif">
+  </div>
 {% endif %}

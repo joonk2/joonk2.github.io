@@ -12,5 +12,16 @@ img {
 
 /* append your custom style below */
 
+.comment-gif-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+
+.comment-gif {
+  width: min(320px, 40%);
+  height: auto;
+  object-fit: contain;
+}
 
 
