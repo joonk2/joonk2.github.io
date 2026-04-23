@@ -12,7 +12,7 @@ published: true            #  publised   공개/비공개 설정
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: en
+lang: ko
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: Asia/Shanghai
@@ -25,7 +25,8 @@ title: 고준환  # the main title
 tagline: '어서오시게 ʕ ·ᴥ·ʔ' # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  2024-05-07 기준으로 테마를 다운받아 작성
+  코딩테스트, 자료구조/알고리즘, 수학 개념을 정리하는 개인 기술 블로그입니다.
+  문제 풀이 과정, 핵심 아이디어, 시행착오를 기록합니다.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
