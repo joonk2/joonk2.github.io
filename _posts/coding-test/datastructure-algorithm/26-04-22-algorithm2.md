@@ -142,6 +142,32 @@ $ \binom{100}{10} $
 아래는 1,5번이 범인이라고 가정했을때다
 <br>
 
+## 안되는 풀이
+세로를 더해서 K보다 적으면 범인인데 이건 반례가 있다
+
+![Desktop View](/assets/img/data-alg/back-tracking/algorithm2/2.jpg)
+
+
+예를 들어
+
+실제 범인이 1,2 다
+
+```java
+4 2
+0 1 0 1
+1 0 0 1
+0 0 0 1
+0 0 1 0
+```
+
+
+여기서 1,2번이 짜고쳐서 1번은 2번이 범인이 아니라고, 2번은 1번이 범인이 아니라고 말한다.
+
+4번은 3번에게 범인이 아니라고 했지만, 만약 범인이라고 할 경우에 3번이 0표가 되어 자동 범인 지목이 된다
+<br><br>
+
+## 가능한 풀이
+
 ![Desktop View](/assets/img/data-alg/back-tracking/algorithm2/1.jpg)
 
 <br>
