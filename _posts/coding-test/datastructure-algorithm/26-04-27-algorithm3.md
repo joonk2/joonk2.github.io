@@ -114,34 +114,37 @@ public class Main {
 			target[r] = input_target[r].charAt(0);
 		}
 		
-		// 1. target[0]의 idx를 cur[]에 저장
-		int cur[] = new int[N];
+		// 1. target[0]을 먼저 확보
+		int[] cur = new int[N];
 		int cur_size = 0;
 		for (int i = 0; i < N; i++) {
-			if (target[0] == arr[i]) {
+			if (arr[i] == target[0]) {
 				cur[cur_size] = i;
 				cur_size++;
 			}
 		}
 		
-		// 2. 2번째 target부터 탐색 시작
+		// 2. 2번째부터 탐색
 		boolean success = true;
-		
 		for (int i = 1; i < M; i++) {
-			char cur_ch = target[i];
 			int[] next = new int[N];
 			int next_size = 0;
+			char cur_ch = target[i];
 			
-			// 3. (핵심) 인덱스 중복 방지
+			// 3. 중복 인덱스 생성 방지를 위해 visited[]
 			boolean[] visited = new boolean[N];
 			
+			// 4. cur[]에서 cur_size만큼 각 원소 확인
 			for (int j = 0; j < cur_size; j++) {
 				int cur_val = cur[j];
-				for (int k = cur_val+1; k < cur_val + d + 1; k++) {
+				
+				// 5. d만큼 확인
+				for (int k = cur_val + 1; k < cur_val + d + 1; k++) {
 					
-					// 4. 가지치기 (범위초과 방지)
+					// 6. 가지치기 (범위 초과시에)
 					if (k >= N) break;
 					
+					// 7. 방문 안했고, cur_ch랑 일치하면 next[]에 추가
 					if (!visited[k] && arr[k] == cur_ch) {
 						next[next_size] = k;
 						next_size++;
@@ -150,21 +153,20 @@ public class Main {
 				}
 			}
 			
-			// 5. next_size == 0 이면 도달 못했다는 뜻
+			// 8. next_size == 0 이라면 더이상 나아가지 못한거니 break
 			if (next_size == 0) {
 				success = false;
 				break;
 			}
 			
-			// 6. 그게 아니라면
+			// 9. 그게 아니라면
 			cur = next;
 			cur_size = next_size;
 		}
 		
-		// 6. 검사
+		// 10. 출력
 		if (success) System.out.println(1);
-		else System.out.println(0);
-		
+		else System.out.println(0);	
 	}
 }
 ```
