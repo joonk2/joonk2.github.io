@@ -93,14 +93,14 @@ public class Main {
 		// 7. 탐색
 		while (!pq.isEmpty()) {
 			int[] cur = pq.poll();
-			int node = cur[0];
-			int cost = cur[1];
+			int cur_node = cur[0];
+			int cur_cost = cur[1];
 			
-			if (cost > dist[node]) continue;
+			if (cur_cost > dist[cur_node]) continue;
 			
-			for (int[] next : graph[node]) {
+			for (int[] next : graph[cur_node]) {
 				int next_node = next[0];
-				int next_cost = cost + next[1];
+				int next_cost = cur_cost + next[1];
 				
 				if (next_cost < dist[next_node]) {
 					dist[next_node] = next_cost;
