@@ -38,7 +38,6 @@ dijikstra는 최소비용을 구할 때 많이 쓰인다.
 ![Desktop View](/assets/img/data-alg/dijikstra/basic/1.jpg)
 
 위 그림을 토대로 아래에 구현해보자
-
 <br><br>
 
 ## ✅ 코드
