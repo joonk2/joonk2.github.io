@@ -57,65 +57,65 @@ import java.util.List;
 public class Main {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
 		int N = 5;
 		
-		// 1. 그래프 생성
+		// 1. graph 생성
 		List<int[]>[] graph = new ArrayList[N+1];
 		for (int i = 1; i < N+1; i++) {
 			graph[i] = new ArrayList<>();
 		}
 		
-		// 2. 간선 추가 (to, cost)
+		// 2. 값 대입
 		graph[1].add(new int[] {2, 2});
 		graph[1].add(new int[] {3, 5});
-		graph[2].add(new int[] {3, 1});
 		graph[2].add(new int[] {4, 2});
+		graph[2].add(new int[] {3, 1});
 		graph[3].add(new int[] {5, 3});
 		
-		// 3. 거리값 초기화
+		// 3. dist 배열 초기화
 		int[] dist = new int[N+1];
 		for (int i = 1; i < N+1; i++) {
 			dist[i] = Integer.MAX_VALUE;
 		}
 		
-		// 4. PQ (거리기준 정렬)
+		// 4. 시작점의 비용은 0
+		dist[1] = 0;
+		
+		// 5. pq -> 비용 asc
 		PriorityQueue<int[]> pq = new PriorityQueue<> (
-				(a,b) -> a[1] - b[1] 
+				(a,b) -> a[1] - b[1]
 		);
 		
-		// 5. 시작점은 0
-		dist[1] = 0;
-
-		// 6. 초기값 삽입 (노드, 거리)
+		// 6. 초기값 삽입
 		pq.offer(new int[] {1, 0});
 		
 		// 7. 탐색
 		while (!pq.isEmpty()) {
-			int[] cur = pq.poll();
-			int cur_node = cur[0];
-			int cur_cost = cur[1];
+			int[] cur_pos = pq.poll();
+			int cur_node =cur_pos[0];
+			int cur_cost = cur_pos[1];
 			
+			// 7-1. 현재 비용이 dist보다 크면 skip
 			if (cur_cost > dist[cur_node]) continue;
 			
+			// 7-2. 작다면
 			for (int[] next : graph[cur_node]) {
 				int next_node = next[0];
 				int next_cost = cur_cost + next[1];
 				
-				if (next_cost < dist[next_node]) {
+				if (dist[next_node] > next_cost) {
 					dist[next_node] = next_cost;
 					pq.offer(new int[] {next_node, next_cost});
 				}
-				
 			}
+
 			
 		}
 		
-		// 8. 결과 출력
+		// 8. 출력
 		for (int i = 1; i < N+1; i++) {
-			System.out.println(i + " " + dist[i]);
+			System.out.println(dist[i]);
 		}
-		
 		
 	}
 }
