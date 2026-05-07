@@ -92,52 +92,51 @@ date: 2025-09-23
 
 ```java
 import java.io.IOException;
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
-public class Main {
-	static int N;
-	
+
+public class Solution {	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String[] dials = br.readLine().split(" ");
-		String[] target = br.readLine().split(" ");
-		N = dials.length;
-		int[] d = new int[N];
-		int[] t = new int[N];
+		String[] dials_arr = br.readLine().split(" ");
+		String[] target_arr = br.readLine().split(" ");
+		
+		int N = dials_arr.length;
+		
+		int[] dials = new int[N];
+		int[] target = new int[N];
 		
 		for (int i = 0; i < N; i++) {
-			d[i] = Integer.parseInt(dials[i]);
-			t[i] = Integer.parseInt(target[i]);
+			dials[i] = Integer.parseInt(dials_arr[i]);
+			target[i] = Integer.parseInt(target_arr[i]);
 		}
 		
-		min_rotate(d, t);
-	}
-	
-	
-	
-	
-	static void min_rotate(int[] d, int[] t) {
-		int cnt = 0;
-		int c_sum = 0;
 		
+		// 식
+		int cnt = 0;
+		int cur_sum = 0;
 		for (int i = 0; i < N; i++) {
-			int down = ((((c_sum + d[i] + 10) % 10) + 10) - t[i]) % 10;
-			int up = ((t[i] + 10) - ((c_sum + d[i] + 10) % 10)) % 10;
+			int cur = (dials[i] + cur_sum) % 10;
 			
-			if (down <= up) {
-				c_sum -= down;
-				cnt += down;
-			}
-			else if (up < down) {
-				c_sum += up;
+			if (cur < 0) cur += 10;
+			
+			int up = (target[i] - cur + 10) % 10;
+			int down = (cur - target[i] + 10) % 10;
+			
+			if (up <= down) {
+				cur_sum += up;
 				cnt += up;
 			}
-		} 
+			else if (up > down) {
+				cur_sum -= down;
+				cnt += down;
+			}
+			
+		}
+		
 		System.out.println(cnt);
 		
 	}
-	
-	
 }
 ```
