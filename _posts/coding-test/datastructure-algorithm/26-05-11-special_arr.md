@@ -31,15 +31,15 @@ date: 2026-05-11
 n, jump가 주어질때 배열을 생성해보자
 
 ### n = 5, jump = 3
-![Desktop View](/assets/img/data-alg/implementation/special_arr/1.jpg)
+![Desktop View](/assets/img/data-alg/implementation/special_arr/1.png)
 <br>
 
 ### n = 4, jump = 2
-![Desktop View](/assets/img/data-alg/implementation/special_arr/2.jpg)
+![Desktop View](/assets/img/data-alg/implementation/special_arr/2.png)
 
 
 ### n = 4, jump = 3
-![Desktop View](/assets/img/data-alg/implementation/special_arr/3.jpg)
+![Desktop View](/assets/img/data-alg/implementation/special_arr/3.png)
 
 <br><br>
 
