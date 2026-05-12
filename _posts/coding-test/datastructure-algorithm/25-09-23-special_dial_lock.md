@@ -96,14 +96,12 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 
 
-public class Solution {	
+public class Solution {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String[] dials_arr = br.readLine().split(" ");
 		String[] target_arr = br.readLine().split(" ");
-		
 		int N = dials_arr.length;
-		
 		int[] dials = new int[N];
 		int[] target = new int[N];
 		
@@ -113,29 +111,30 @@ public class Solution {
 		}
 		
 		
-		// 식
 		int cnt = 0;
-		int cur_sum = 0;
+		int add = 0;
 		for (int i = 0; i < N; i++) {
-			int cur = (dials[i] + cur_sum) % 10;
+			// 음수처리
+			if (add < 0) add += 10;
+			// 현재 숫자
+			int cur = (add + dials[i]) % 10;
 			
-			if (cur < 0) cur += 10;
+			int up = (target[i] + 10 - cur) % 10;
+			int down = (cur + 10 - target[i]) % 10;
 			
-			int up = (target[i] - cur + 10) % 10;
-			int down = (cur - target[i] + 10) % 10;
-			
-			if (up <= down) {
-				cur_sum += up;
-				cnt += up;
-			}
-			else if (up > down) {
-				cur_sum -= down;
+			if (up >= down) {
 				cnt += down;
+				add -= down;
 			}
-			
+			else if (up < down) {
+				cnt += up;
+				add += up;
+			}
 		}
 		
+		// 출력
 		System.out.println(cnt);
+		
 		
 	}
 }
