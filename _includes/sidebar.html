@@ -42,38 +42,45 @@
     </ul>
   </nav>
 
-  <!-- --------------------------------------------팝업 음악 플레이어 버튼-------------------------------------------------- -->
-  <div id="music-controls" class="buttons" style="text-align: center; position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px;">
-    <!-- AI 비서 버튼 -->
-    <button id="aiChatBtn" class="speech-bubble-btn" onclick="openPopup('chat')" style="width: 85%; margin-bottom: 5px; font-size: 0.85em;">
-      나에게 도움이 필요하다면<br>클릭해주세요! 🐾
-    </button>
-    
-    <!-- 음악 고양이 (음악 재생 전용) -->
-    <div style="cursor: pointer; position: relative;" onclick="openPopup('music')">
-      <img id="musicGif" src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="Music Cat" style="width: 100px; height: 100px; margin-left: -15px;">
-      <div style="font-size: 0.7em; color: #ff6b9d; font-weight: bold; margin-top: -10px;">Click for Music! 🎵</div>
+  <!-- --------------------------------------------AI 怨좎뼇??鍮꾩꽌 & ?뚯븙 踰꾪듉-------------------------------------------------- -->
+  <div id="music-controls" class="buttons" style="text-align: center; position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 20px;">
+    <!-- 怨좎뼇???대?吏 (?대┃ ???뚯븙+梨꾪똿 ?앹뾽) -->
+    <div style="cursor: pointer; position: relative; transition: all 0.3s;" onclick="openPopup()">
+      <div class="chat-hint">?꾩????꾩슂?? ?맽</div>
+      <img id="musicGif" src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="AI Cat" style="width: 110px; height: 110px;">
     </div>
+    <div style="font-size: 0.8em; color: #ff6b9d; font-weight: bold; margin-top: -10px;">AI 怨좎뼇?댁? ??뷀븯湲??렦</div>
   </div>
 
   <style>
-    .speech-bubble-btn {
-      position: relative;
-      background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+    .chat-hint {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff6b9d;
       color: white;
-      border: 3px solid #fff;
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 6px 15px rgba(255, 107, 157, 0.3);
-      transition: all 0.3s ease;
-      font-family: 'Comic Sans MS', 'Noto Sans KR', cursive, sans-serif;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75em;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(255, 107, 157, 0.3);
+      animation: bounce 2s infinite;
     }
 
-    .speech-bubble-btn:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+    .chat-hint::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #ff6b9d;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-5px); }
     }
 
     #musicGif {
@@ -82,22 +89,23 @@
     }
     
     #musicGif:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     @keyframes gentleBounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      50% { transform: translateY(-3px); }
     }
   </style>
 
   <script>
-    function openPopup(mode) {
+    function openPopup() {
       const width = 380;
       const height = 650;
       const left = (screen.width - width) / 2;
       const top = (screen.height - height) / 2;
-      const url = '{{ "/music-player.html" | relative_url }}' + '?mode=' + mode;
+      // 湲곕낯?곸쑝濡?梨꾪똿 紐⑤뱶濡??대━???뚯븙???먮룞 ?ъ깮?섍쾶 ??
+      const url = '{{ "/music-player.html" | relative_url }}' + '?mode=chat';
       
       window.open(url, 'musicPlayer', 
         `width=${width},height=${height},left=${left},top=${top},scrollbars=no,resizable=yes,status=no,location=no,toolbar=no,menubar=no`);
