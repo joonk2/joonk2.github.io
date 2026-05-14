@@ -140,7 +140,7 @@
       const left = (screen.width - width) / 2;
       const top = (screen.height - height) / 2;
       
-      window.open('/music-player.html', 'musicPlayer', 
+      window.open('{{ "/music-player.html" | relative_url }}', 'musicPlayer', 
         `width=${width},height=${height},left=${left},top=${top},scrollbars=no,resizable=yes,status=no,location=no,toolbar=no,menubar=no`);
     }
   </script>
