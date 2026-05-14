@@ -2,10 +2,8 @@
 
 # Import the theme
 theme: jekyll-theme-chirpy
-
-# 源껎뿀釉?釉붾줈洹?湲?????щ씪?ㅻ㈃ ?닿껐梨낆? ?닿쾬!
-future: true               # 誘몃옒???ъ뒪?낆쓣 蹂댁씠寃??섎뒗 ?ㅼ젙
-published: true            # 怨듦컻/鍮꾧났媛??ㅼ젙
+future: true               
+published: true            
 
 # The language of the webpage ??http://www.lingoes.net/en/translator/langcode.htm
 lang: ko
@@ -16,13 +14,12 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings ??https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ??--------------------------
 
-title: 怨좎??? # the main title
+title: 고준환블로그
 
-tagline: '?댁꽌?ㅼ떆寃?? 쨌少Β례? # it will display as the sub-title
+tagline: 알고리즘
 
 description: >- # used by seo meta and the atom feed
-  肄붾뵫?뚯뒪?? ?먮즺援ъ“/?뚭퀬由ъ쬁, ?섑븰 媛쒕뀗???뺣━?섎뒗 媛쒖씤 湲곗닠 釉붾줈洹몄엯?덈떎.
-  臾몄젣 ???怨쇱젙, ?듭떖 ?꾩씠?붿뼱, ?쒗뻾李⑹삤瑜?湲곕줉?⑸땲??
+  고준환의 블로그입니다. 알고리즘 문제 풀이와 개발 관련 글을 공유합니다.  
 
 # Fill in the protocol & hostname for your site.
 url: "https://joonk2.github.io"

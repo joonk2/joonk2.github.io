@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?留?AI Cat & Music</title>
+    <title>?맩 AI Cat & Music</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap');
@@ -41,19 +41,39 @@
             position: relative;
         }
 
-        /* Header */
-        .header {
-            padding: 15px;
+        /* Tabs */
+        .tabs {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
+            background: #fff;
             border-bottom: 1px solid #eee;
         }
-        .header h2 { font-size: 1.1em; color: var(--primary-color); }
-        .close-btn { border: none; background: none; cursor: pointer; color: #ccc; }
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #aaa;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
 
-        /* Chat Area */
+        /* View Content */
+        .view-content {
+            flex: 1;
+            display: none;
+            flex-direction: column;
+            overflow-y: auto;
+            background: white;
+        }
+        .view-content.active { display: flex; }
+
+        /* Chat View */
         #chat-area {
             flex: 1;
             padding: 15px;
@@ -61,125 +81,172 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            background: #fff;
         }
-
-        .msg { max-width: 85%; padding: 10px 14px; border-radius: 18px; font-size: 0.9em; line-height: 1.4; position: relative; }
+        .msg { max-width: 85%; padding: 10px 14px; border-radius: 18px; font-size: 0.9em; line-height: 1.4; }
         .msg.bot { align-self: flex-start; background: #f0f0f0; color: #333; border-bottom-left-radius: 2px; }
         .msg.user { align-self: flex-end; background: var(--primary-color); color: white; border-bottom-right-radius: 2px; }
 
-        .cat-avatar { width: 40px; height: 40px; border-radius: 50%; margin-bottom: 5px; }
-
-        /* Typing Indicator */
-        .typing { font-style: italic; color: #aaa; font-size: 0.8em; display: none; }
-
-        /* Input Area */
         .input-area { padding: 10px; display: flex; gap: 8px; background: white; border-top: 1px solid #eee; }
         #user-input { flex: 1; border: 1px solid #ddd; padding: 8px 12px; border-radius: 20px; outline: none; font-size: 0.9em; }
         #send-btn { background: var(--primary-color); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; }
 
-        /* Music Player (Mini) */
-        .music-player {
+        /* Music Playlist View */
+        .playlist-header { padding: 20px; text-align: center; background: #fffafb; }
+        .playlist-header img { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px; }
+        
+        .playlist-list { padding: 10px; }
+        .playlist-item {
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background 0.2s;
+            margin-bottom: 5px;
+        }
+        .playlist-item:hover { background: #fff0f3; }
+        .playlist-item.active { background: #ffe5ea; color: var(--primary-color); font-weight: 700; }
+        .playlist-item i { font-size: 0.8em; opacity: 0.5; }
+
+        /* Mini Player (Bottom Fixed) */
+        .mini-player {
             background: #fff;
-            padding: 15px;
+            padding: 12px 15px;
             border-top: 1px solid #eee;
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            align-items: center;
+            gap: 12px;
         }
-
-        .song-info { display: flex; align-items: center; gap: 10px; }
-        .mini-album-art { width: 45px; height: 45px; border-radius: 10px; object-fit: cover; animation: rotate 10s linear infinite; animation-play-state: paused; }
+        .mini-album-art { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; animation: rotate 10s linear infinite; animation-play-state: paused; }
         .mini-album-art.playing { animation-play-state: running; }
         @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-        .song-details { flex: 1; overflow: hidden; }
-        .song-details h3 { font-size: 0.9em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .song-details p { font-size: 0.75em; color: #888; }
-
-        .player-controls { display: flex; align-items: center; justify-content: center; gap: 15px; }
-        .p-btn { background: none; border: none; cursor: pointer; color: #555; font-size: 1.1em; }
-        .play-main { font-size: 1.5em; color: var(--primary-color); }
-
-        .progress-bar-container { height: 4px; background: #eee; border-radius: 2px; width: 100%; cursor: pointer; position: relative; }
-        .progress-bar-fill { height: 100%; background: var(--primary-color); width: 0%; border-radius: 2px; }
+        
+        .mini-info { flex: 1; overflow: hidden; }
+        .mini-info h4 { font-size: 0.85em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .mini-controls { display: flex; gap: 12px; font-size: 1.1em; color: #555; }
+        .mini-controls i { cursor: pointer; }
 
         /* API Key Overlay */
         #api-key-overlay {
             position: absolute; top:0; left:0; width:100%; height:100%;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             display: none; flex-direction: column; align-items: center; justify-content: center;
-            z-index: 100; padding: 20px; text-align: center;
+            z-index: 100; padding: 30px; text-align: center;
         }
-        #api-key-input { margin-top: 10px; padding: 8px; border-radius: 5px; border: 1px solid #ddd; width: 80%; }
-        .save-key-btn { margin-top: 10px; background: var(--primary-color); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+        #api-key-input { margin: 15px 0; padding: 10px; border-radius: 10px; border: 1px solid #ddd; width: 90%; }
+        .save-key-btn { background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; }
 
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- API Key Overlay -->
     <div id="api-key-overlay">
-        <h3>?逾?Gemini API Key ?袁⑹뒄</h3>
-        <p style="font-size: 0.8em; color: #666; margin-top: 5px;">?딅돂?????酉釉??삠늺 ?닌? API ??? ?袁⑹뒄??곸뒄.<br>(?됰슢??怨?????됱읈??띿쓺 ???貫留??덈뼄)</p>
-        <input type="password" id="api-key-input" placeholder="AI Studio?癒?퐣 獄쏆룇? ????낆젾">
-        <button class="save-key-btn" onclick="saveApiKey()">???館釉????뽰삂??띾┛</button>
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.7em; margin-top: 10px; color: var(--primary-color);">????逾??獄쏆룆援??</a>
+        <h3>?뵎 Gemini API Key ?꾩슂</h3>
+        <p style="font-size: 0.85em; color: #666; margin-top: 10px;">怨좎뼇??鍮꾩꽌? ??뷀븯?ㅻ㈃ API ?ㅺ? ?꾩슂?댁슂!</p>
+        <input type="password" id="api-key-input" placeholder="?ㅻ? ?ш린??遺숈뿬?ｌ쑝?몄슂">
+        <button class="save-key-btn" onclick="saveApiKey()">?ㅼ젙 ?꾨즺</button>
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.75em; margin-top: 15px; color: var(--primary-color); display: block;">?ㅻ뒗 ?ш린??臾대즺濡?諛쏆쓣 ???덉뼱??(?대┃)</a>
     </div>
 
-    <div class="header">
-        <h2>?留?AI ?⑥쥙堉??筌욌쵐沅?/h2>
-        <button class="close-btn" onclick="window.close()"><i class="fas fa-times"></i></button>
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn" id="tab-chat" onclick="showView('chat')"><i class="fas fa-comment-dots"></i> AI 鍮꾩꽌</button>
+        <button class="tab-btn" id="tab-music" onclick="showView('music')"><i class="fas fa-music"></i> ?뚮젅?대━?ㅽ듃</button>
     </div>
 
-    <!-- Chat -->
-    <div id="chat-area">
-        <div class="msg bot">
-            獄쏆꼵????뒄! ?????꾨뗀逾ユ????툢???????롫뮉 ?⑥쥙堉??筌욌쵐沅??됱뒄. 亦낃낫???野???됱몵筌??얠눘堉김퉪?곴쉭?? ??깆깏~ ?留?
+    <!-- Chat View -->
+    <div id="view-chat" class="view-content">
+        <div id="chat-area">
+            <div class="msg bot">諛섍??뚯슂! 臾댁뾿???꾩??쒕┫源뚯슂? ?쇱샊~ ?맽</div>
+        </div>
+        <div id="typing-indicator" style="padding-left: 15px; font-size: 0.75em; color: #aaa; display: none; margin-bottom: 5px;">怨좎뼇?닿? ?앷컖 以?..</div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="硫붿떆吏瑜??낅젰?섏꽭??.." onkeypress="if(event.keyCode==13) sendMessage()">
+            <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-    <div class="typing" id="typing-indicator" style="margin-left: 15px; margin-bottom: 5px;">?⑥쥙堉??? ??룹퍟 餓?..</div>
 
-    <div class="input-area">
-        <input type="text" id="user-input" placeholder="筌롫뗄?놅쭪?????낆젾??뤾쉭??.." onkeypress="if(event.keyCode==13) sendMessage()">
-        <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    <!-- Music View -->
+    <div id="view-music" class="view-content">
+        <div class="playlist-header">
+            <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="cat">
+            <h3 style="font-size: 1em; color: var(--primary-color);">My Playlist ?렦</h3>
+        </div>
+        <div class="playlist-list" id="playlist-items">
+            <!-- Playlist items will be added here -->
+        </div>
     </div>
 
-    <!-- Music Player -->
-    <div class="music-player">
-        <div class="song-info">
-            <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" class="mini-album-art" id="album-art">
-            <div class="song-details">
-                <h3 id="m-title">餓Β??餓?..</h3>
-                <p id="m-artist">-</p>
-            </div>
+    <!-- Mini Player (Common) -->
+    <div class="mini-player">
+        <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" class="mini-album-art" id="m-art">
+        <div class="mini-info">
+            <h4 id="m-title">怨≪쓣 ?좏깮?댁＜?몄슂</h4>
         </div>
-        <div class="progress-bar-container" id="p-container">
-            <div class="progress-bar-fill" id="p-fill"></div>
-        </div>
-        <div class="player-controls">
-            <button class="p-btn" onclick="prevMusic()"><i class="fas fa-step-backward"></i></button>
-            <button class="p-btn play-main" id="m-play" onclick="togglePlay()"><i class="fas fa-play"></i></button>
-            <button class="p-btn" onclick="nextMusic()"><i class="fas fa-step-forward"></i></button>
+        <div class="mini-controls">
+            <i class="fas fa-step-backward" onclick="prevMusic()"></i>
+            <i class="fas fa-play" id="m-play-icon" onclick="togglePlay()"></i>
+            <i class="fas fa-step-forward" onclick="nextMusic()"></i>
         </div>
     </div>
 </div>
 
 <script>
-    // --- API & Chat Logic ---
-    let API_KEY = localStorage.getItem('GEMINI_API_KEY');
+    // --- Data ---
+    const musicData = [       
+        { title: "i love egg", artist: "i-love-egg", url: "https://github.com/joonk2/music/raw/music/i-love-egg.mp3" },
+        { title: "cookier-run-violin", artist: "dev sisters", url: "https://github.com/joonk2/music/raw/music/cookier-run-violin.mp3" },
+        { title: "fantasy-01", artist: "Joonhwan.K", url: "https://github.com/joonk2/music/raw/music/suno-fantasy-01.mp3" },          
+        { title: "cookie-run-frozen-tower", artist: "dev sisters", url: "https://github.com/joonk2/music/raw/music/cookie-run-frozen-tower.mp3" }
+    ];
 
-    if (!API_KEY) {
-        document.getElementById('api-key-overlay').style.display = 'flex';
+    let API_KEY = localStorage.getItem('GEMINI_API_KEY');
+    let audio = new Audio();
+    let currentIdx = 0;
+    let isPlaying = false;
+
+    // --- View Controller ---
+    function showView(view) {
+        document.querySelectorAll('.view-content').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        
+        document.getElementById('view-' + view).classList.add('active');
+        document.getElementById('tab-' + view).classList.add('active');
+
+        if (view === 'chat' && !API_KEY) {
+            document.getElementById('api-key-overlay').style.display = 'flex';
+        } else {
+            document.getElementById('api-key-overlay').style.display = 'none';
+        }
     }
 
+    // --- Init ---
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const mode = urlParams.get('mode') || 'music';
+        
+        createPlaylist();
+        loadTrack(0);
+        showView(mode);
+
+        // ?뚯븙 紐⑤뱶濡??ㅼ뼱??寃쎌슦 利됱떆 ?ъ깮 ?쒕룄
+        if (mode === 'music') {
+            setTimeout(() => {
+                playTrack(0);
+            }, 500);
+        }
+    };
+
+    // --- API Logic ---
     function saveApiKey() {
         const key = document.getElementById('api-key-input').value.trim();
         if (key) {
             localStorage.setItem('GEMINI_API_KEY', key);
             API_KEY = key;
             document.getElementById('api-key-overlay').style.display = 'none';
-            location.reload();
         }
     }
 
@@ -200,100 +267,76 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{
-                        parts: [{ text: `??덈뮉 '?⑥쥙?????疫꿸퀣???됰뗀以덃뉩紐? ?온?귐뗫릭???⑥쥙堉??筌?ロ겦??곷튊. 
-                        筌띾Ŧ嫄뱄쭕?덈뼄 '??, '??깆깏'???븐늿肉???袁⑼폒 域뮤??꾩쓺 ?????퉸餓? 
-                        筌욌뜄揆?癒? ?꾨뗀逾??援????х뵳?弛? ??묐린???????얠눘堉김퉪???燁살뮇???띿쓺 ???젻雅뚯눊?? 
-                        ?⑥쥙???롫뻷???????얠눘堉김퉪????????揶쏆뮆而?癒?뵬??燁?媛??곸㉭.
-                        ????癒?벥 筌욌뜄揆: ${text}` }]
+                        parts: [{ text: `?덈뒗 湲곗닠 釉붾줈洹?怨좎뼇??梨쀫큸?댁빞. 留먮걹留덈떎 '??, '?쇱샊'??遺숈뿬以? 
+                        ?꾩????꾩슂???ъ슜?먯뿉寃?移쒖젅?섍쾶 ??듯빐以? ?ъ슜?먯쓽 吏덈Ц: ${text}` }]
                     }]
                 })
             });
-
             const data = await response.json();
             const reply = data.candidates[0].content.parts[0].text;
             appendMessage('bot', reply);
-        } catch (error) {
-            appendMessage('bot', '沃섎챷釉??롫뼄??.. ??쎈뱜??곌쾿 ??살첒揶쎛 獄쏆뮇源??덈뼄?? API ??? ?類ㅼ뵥?????깆깏!');
+        } catch (e) {
+            appendMessage('bot', '?먮윭媛 ?щ떎??.. API ?ㅻ? ?뺤씤?대떖?쇱샊!');
         } finally {
             indicator.style.display = 'none';
         }
     }
 
     function appendMessage(sender, text) {
-        const chatArea = document.getElementById('chat-area');
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `msg ${sender}`;
-        msgDiv.innerText = text;
-        chatArea.appendChild(msgDiv);
-        chatArea.scrollTop = chatArea.scrollHeight;
+        const area = document.getElementById('chat-area');
+        const d = document.createElement('div');
+        d.className = 'msg ' + sender;
+        d.innerText = text;
+        area.appendChild(d);
+        area.scrollTop = area.scrollHeight;
     }
 
     // --- Music Logic ---
-    const musicData = [       
-        { title: "i love egg", artist: "i-love-egg", url: "https://github.com/joonk2/music/raw/music/i-love-egg.mp3" },
-        { title: "cookier-run-violin", artist: "dev sisters", url: "https://github.com/joonk2/music/raw/music/cookier-run-violin.mp3" },
-        { title: "fantasy-01", artist: "Joonhwan.K", url: "https://github.com/joonk2/music/raw/music/suno-fantasy-01.mp3" },          
-        { title: "cookie-run-frozen-tower", artist: "dev sisters", url: "https://github.com/joonk2/music/raw/music/cookie-run-frozen-tower.mp3" }
-    ];
-
-    let audio = new Audio();
-    let currentIdx = 0;
-    let isPlaying = false;
+    function createPlaylist() {
+        const list = document.getElementById('playlist-items');
+        musicData.forEach((song, i) => {
+            const item = document.createElement('div');
+            item.className = 'playlist-item';
+            item.id = 'item-' + i;
+            item.innerHTML = `<i class="fas fa-play"></i> ${song.title}`;
+            item.onclick = () => playTrack(i);
+            list.appendChild(item);
+        });
+    }
 
     function loadTrack(idx) {
         currentIdx = idx;
         audio.src = musicData[idx].url;
         document.getElementById('m-title').innerText = musicData[idx].title;
-        document.getElementById('m-artist').innerText = musicData[idx].artist;
+        
+        document.querySelectorAll('.playlist-item').forEach(el => el.classList.remove('active'));
+        document.getElementById('item-' + idx).classList.add('active');
+    }
+
+    function playTrack(idx) {
+        loadTrack(idx);
+        audio.play();
+        isPlaying = true;
+        updatePlayerUI();
     }
 
     function togglePlay() {
         if (isPlaying) { audio.pause(); } else { audio.play(); }
         isPlaying = !isPlaying;
-        updateUI();
+        updatePlayerUI();
     }
 
-    function updateUI() {
-        document.getElementById('m-play').innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
-        document.getElementById('album-art').classList.toggle('playing', isPlaying);
+    function updatePlayerUI() {
+        document.getElementById('m-play-icon').className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
+        document.getElementById('m-art').classList.toggle('playing', isPlaying);
     }
 
-    function nextMusic() { currentIdx = (currentIdx + 1) % musicData.length; playTrack(); }
-    function prevMusic() { currentIdx = (currentIdx - 1 + musicData.length) % musicData.length; playTrack(); }
-    
-    function playTrack() {
-        loadTrack(currentIdx);
-        audio.play();
-        isPlaying = true;
-        updateUI();
-    }
+    function nextMusic() { currentIdx = (currentIdx + 1) % musicData.length; playTrack(currentIdx); }
+    function prevMusic() { currentIdx = (currentIdx - 1 + musicData.length) % musicData.length; playTrack(currentIdx); }
 
-    audio.addEventListener('timeupdate', () => {
-        const pc = (audio.currentTime / audio.duration) * 100;
-        document.getElementById('p-fill').style.width = pc + '%';
-    });
-
-    audio.addEventListener('ended', nextMusic);
-
-    document.getElementById('p-container').onclick = (e) => {
-        const rect = e.target.getBoundingClientRect();
-        const pc = (e.clientX - rect.left) / rect.width;
-        audio.currentTime = pc * audio.duration;
-    };
-
-    // Start
-    loadTrack(0);
-    
-    // ?癒?짗 ??源???뺣즲 (??????????곗쨮 ??밸씜????議???嚥?揶쎛??
-    window.onload = () => {
-        setTimeout(() => {
-            audio.play().then(() => {
-                isPlaying = true;
-                updateUI();
-            }).catch(e => console.log("?癒?짗 ??源?獄쎻뫗???", e));
-        }, 500);
-    };
+    audio.onended = nextMusic;
 
 </script>
+
 </body>
 </html>
