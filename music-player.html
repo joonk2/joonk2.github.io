@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐱 AI Cat & Music</title>
+    <title>?留?AI Cat & Music</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap');
@@ -120,28 +120,28 @@
 
 <div class="container">
     <div id="api-key-overlay">
-        <h3>🔑 Gemini API Key 필요</h3>
-        <p style="font-size: 0.8em; color: #666; margin-top: 5px;">봇과 대화하려면 구글 API 키가 필요해요.<br>(브라우저에 안전하게 저장됩니다)</p>
-        <input type="password" id="api-key-input" placeholder="AI Studio에서 받은 키 입력">
-        <button class="save-key-btn" onclick="saveApiKey()">저장하고 시작하기</button>
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.7em; margin-top: 10px; color: var(--primary-color);">키 어디서 받나요?</a>
+        <h3>?逾?Gemini API Key ?袁⑹뒄</h3>
+        <p style="font-size: 0.8em; color: #666; margin-top: 5px;">?딅돂?????酉釉??삠늺 ?닌? API ??? ?袁⑹뒄??곸뒄.<br>(?됰슢??怨?????됱읈??띿쓺 ???貫留??덈뼄)</p>
+        <input type="password" id="api-key-input" placeholder="AI Studio?癒?퐣 獄쏆룇? ????낆젾">
+        <button class="save-key-btn" onclick="saveApiKey()">???館釉????뽰삂??띾┛</button>
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.7em; margin-top: 10px; color: var(--primary-color);">????逾??獄쏆룆援??</a>
     </div>
 
     <div class="header">
-        <h2>🐱 AI 고양이 집사</h2>
+        <h2>?留?AI ?⑥쥙堉??筌욌쵐沅?/h2>
         <button class="close-btn" onclick="window.close()"><i class="fas fa-times"></i></button>
     </div>
 
     <!-- Chat -->
     <div id="chat-area">
         <div class="msg bot">
-            반가워요! 저는 코딩과 음악을 사랑하는 고양이 집사예요. 궁금한 게 있으면 물어보세요! 야옹~ 🐾
+            獄쏆꼵????뒄! ?????꾨뗀逾ユ????툢???????롫뮉 ?⑥쥙堉??筌욌쵐沅??됱뒄. 亦낃낫???野???됱몵筌??얠눘堉김퉪?곴쉭?? ??깆깏~ ?留?
         </div>
     </div>
-    <div class="typing" id="typing-indicator" style="margin-left: 15px; margin-bottom: 5px;">고양이가 생각 중...</div>
+    <div class="typing" id="typing-indicator" style="margin-left: 15px; margin-bottom: 5px;">?⑥쥙堉??? ??룹퍟 餓?..</div>
 
     <div class="input-area">
-        <input type="text" id="user-input" placeholder="메시지를 입력하세요..." onkeypress="if(event.keyCode==13) sendMessage()">
+        <input type="text" id="user-input" placeholder="筌롫뗄?놅쭪?????낆젾??뤾쉭??.." onkeypress="if(event.keyCode==13) sendMessage()">
         <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
     </div>
 
@@ -150,7 +150,7 @@
         <div class="song-info">
             <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" class="mini-album-art" id="album-art">
             <div class="song-details">
-                <h3 id="m-title">준비 중...</h3>
+                <h3 id="m-title">餓Β??餓?..</h3>
                 <p id="m-artist">-</p>
             </div>
         </div>
@@ -200,11 +200,11 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{
-                        parts: [{ text: `너는 '고준환'의 기술 블로그를 관리하는 고양이 챗봇이야. 
-                        말끝마다 '냥', '야옹'을 붙여서 아주 귀엽게 대답해줘. 
-                        질문자가 코딩이나 알고리즘, 수학에 대해 물어보면 친절하게 알려주고, 
-                        고준환님에 대해 물어보면 훌륭한 개발자라고 칭찬해줘.
-                        사용자의 질문: ${text}` }]
+                        parts: [{ text: `??덈뮉 '?⑥쥙?????疫꿸퀣???됰뗀以덃뉩紐? ?온?귐뗫릭???⑥쥙堉??筌?ロ겦??곷튊. 
+                        筌띾Ŧ嫄뱄쭕?덈뼄 '??, '??깆깏'???븐늿肉???袁⑼폒 域뮤??꾩쓺 ?????퉸餓? 
+                        筌욌뜄揆?癒? ?꾨뗀逾??援????х뵳?弛? ??묐린???????얠눘堉김퉪???燁살뮇???띿쓺 ???젻雅뚯눊?? 
+                        ?⑥쥙???롫뻷???????얠눘堉김퉪????????揶쏆뮆而?癒?뵬??燁?媛??곸㉭.
+                        ????癒?벥 筌욌뜄揆: ${text}` }]
                     }]
                 })
             });
@@ -213,7 +213,7 @@
             const reply = data.candidates[0].content.parts[0].text;
             appendMessage('bot', reply);
         } catch (error) {
-            appendMessage('bot', '미안하다냥... 네트워크 오류가 발생했다냥. API 키를 확인해달라옹!');
+            appendMessage('bot', '沃섎챷釉??롫뼄??.. ??쎈뱜??곌쾿 ??살첒揶쎛 獄쏆뮇源??덈뼄?? API ??? ?類ㅼ뵥?????깆깏!');
         } finally {
             indicator.style.display = 'none';
         }
@@ -284,13 +284,13 @@
     // Start
     loadTrack(0);
     
-    // 자동 재생 시도 (사용자 클릭으로 팝업이 열렸으므로 가능)
+    // ?癒?짗 ??源???뺣즲 (??????????곗쨮 ??밸씜????議???嚥?揶쎛??
     window.onload = () => {
         setTimeout(() => {
             audio.play().then(() => {
                 isPlaying = true;
                 updateUI();
-            }).catch(e => console.log("자동 재생 방지됨:", e));
+            }).catch(e => console.log("?癒?짗 ??源?獄쎻뫗???", e));
         }, 500);
     };
 
