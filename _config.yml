@@ -15,7 +15,7 @@ published: true            #  publised   공개/비공개 설정
 lang: ko
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone: Asia/Shanghai
+timezone: Asia/Seoul
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -48,22 +48,9 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-
-
-
-
-
-google-site-verification: DUBN2uPITlhUv0RJJ1vZFzHoDrj8uiO-yDh1bYdVuxw 
-
-
-
-
-
-
-
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: DUBN2uPITlhUv0RJJ1vZFzHoDrj8uiO-yDh1bYdVuxw
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code

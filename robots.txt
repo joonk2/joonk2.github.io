@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joonk2.github.io/sitemap.xml
