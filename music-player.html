@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?맩 AI Cat Assistant</title>
+    <title>🐱 AI Cat Assistant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap');
@@ -101,25 +101,25 @@
 
 <div class="container">
     <div id="api-key-overlay">
-        <h3>?뵎 Gemini API Key ?ㅼ젙</h3>
-        <p style="font-size: 0.85em; color: #666; margin-top: 10px;">??붾? ?꾪빐 API ?ㅻ? ??踰덈쭔 ?낅젰?댁＜?몄슂!</p>
-        <input type="password" id="api-key-input" placeholder="?ш린?????낅젰">
-        <button class="save-key-btn" onclick="saveApiKey()">?ㅼ젙 ?꾨즺</button>
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.75em; margin-top: 15px; color: var(--primary-color);">臾대즺 ??諛쏄린 (?대┃)</a>
+        <h3>🔑 Gemini API Key 설정</h3>
+        <p style="font-size: 0.85em; color: #666; margin-top: 10px;">대화를 위해 API 키를 한 번만 입력해주세요!</p>
+        <input type="password" id="api-key-input" placeholder="여기에 키 입력">
+        <button class="save-key-btn" onclick="saveApiKey()">설정 완료</button>
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.75em; margin-top: 15px; color: var(--primary-color);">무료 키 받기 (클릭)</a>
     </div>
 
     <div class="tabs">
-        <button class="tab-btn" id="tab-chat" onclick="showView('chat')"><i class="fas fa-comment-dots"></i> AI 怨좎뼇??/button>
-        <button class="tab-btn" id="tab-music" onclick="showView('music')"><i class="fas fa-music"></i> ?뚮젅?대━?ㅽ듃</button>
+        <button class="tab-btn" id="tab-chat" onclick="showView('chat')"><i class="fas fa-comment-dots"></i> AI 고양이</button>
+        <button class="tab-btn" id="tab-music" onclick="showView('music')"><i class="fas fa-music"></i> 플레이리스트</button>
     </div>
 
     <div id="view-chat" class="view-content">
         <div id="chat-area">
-            <div class="msg bot">?덈뀞! ?섎뒗 ??釉붾줈洹몄쓽 AI 怨좎뼇??吏묒궗?ㅻ깷! 沅곴툑??寃??덉쑝硫?臾댁뾿?대뱺 臾쇱뼱蹂대씪?? ?맽</div>
+            <div class="msg bot">안녕! 나는 이 블로그의 AI 고양이 집사다냥! 궁금한 게 있으면 무엇이든 물어보라옹~ 🐾</div>
         </div>
-        <div id="typing-indicator" style="padding-left: 15px; font-size: 0.75em; color: #aaa; display: none; margin-bottom: 5px;">怨좎뼇?닿? ?앷컖 以?..</div>
+        <div id="typing-indicator" style="padding-left: 15px; font-size: 0.75em; color: #aaa; display: none; margin-bottom: 5px;">고양이가 생각 중...</div>
         <div class="input-area">
-            <input type="text" id="user-input" placeholder="硫붿떆吏瑜??낅젰?섏꽭??.." onkeypress="if(event.keyCode==13) sendMessage()">
+            <input type="text" id="user-input" placeholder="메시지를 입력하세요..." onkeypress="if(event.keyCode==13) sendMessage()">
             <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -127,14 +127,14 @@
     <div id="view-music" class="view-content">
         <div class="playlist-header">
             <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="cat">
-            <h3 style="font-size: 1em; color: var(--primary-color);">My Playlist ?렦</h3>
+            <h3 style="font-size: 1em; color: var(--primary-color);">My Playlist 🎵</h3>
         </div>
         <div class="playlist-list" id="playlist-items"></div>
     </div>
 
     <div class="mini-player">
         <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" class="mini-album-art" id="m-art">
-        <div class="mini-info"><h4 id="m-title">怨≪쓣 遺덈윭?ㅻ뒗 以?..</h4></div>
+        <div class="mini-info"><h4 id="m-title">곡을 불러오는 중...</h4></div>
         <div class="mini-controls">
             <i class="fas fa-step-backward" onclick="prevMusic()"></i>
             <i class="fas fa-play" id="m-play-icon" onclick="togglePlay()"></i>
@@ -144,12 +144,7 @@
 </div>
 
 <script>
-    /* =============================================================
-       蹂댁븞 寃쎄퀬: ???뚯씪??吏곸젒 API ?ㅻ? ?ｌ쑝硫?GitHub???몄텧?⑸땲??
-       蹂몄씤留??곕뒗 濡쒖뺄 ?섍꼍???꾨땲?쇰㈃, ?꾨옒 蹂??????앹뾽李쎌쓽 
-       ?ㅼ젙 ?붾㈃???듯빐 ?ㅻ? ?낅젰?섎뒗 寃껋씠 ?덉쟾?⑸땲??
-       ============================================================= */
-    const CONST_API_KEY = ""; // ?ш린???ㅻ? ?ｌ쑝硫??ㅻ쾭?덉씠 ?놁씠 諛붾줈 ?쒖옉?⑸땲??
+    const CONST_API_KEY = ""; // 보안상 비워둡니다.
 
     const musicData = [       
         { title: "i love egg", artist: "i-love-egg", url: "https://github.com/joonk2/music/raw/music/i-love-egg.mp3" },
@@ -241,8 +236,8 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{
-                        parts: [{ text: `?덈뒗 湲곗닠 釉붾줈洹?怨좎뼇??梨쀫큸?댁빞. 留먮걹留덈떎 '??, '?쇱샊'??遺숈뿬以? 
-                        肄붾뵫, ?섑븰, ?뚭퀬由ъ쬁 吏덈Ц??移쒖젅???듯빐以? 吏덈Ц: ${text}` }]
+                        parts: [{ text: `너는 기술 블로그 고양이 챗봇이야. 말끝마다 '냥', '야옹'을 붙여줘. 
+                        코딩, 수학, 알고리즘 질문에 친절히 답해줘. 질문: ${text}` }]
                     }]
                 })
             });
@@ -250,7 +245,7 @@
             const reply = data.candidates[0].content.parts[0].text;
             appendMessage('bot', reply);
         } catch (e) {
-            appendMessage('bot', '??.. API ?ㅺ? ?섎せ?섏뿀嫄곕굹 ?ㅻ쪟媛 ?щ떎?? ???ㅼ젙???ㅼ떆 ?뺤씤?대떖?쇰깷.');
+            appendMessage('bot', '냥... API 키가 잘못되었거나 오류가 났다옹! 키 설정을 다시 확인해달라냥.');
         } finally {
             document.getElementById('typing-indicator').style.display = 'none';
         }
@@ -265,7 +260,7 @@
         area.scrollTop = area.scrollHeight;
     }
 
-    // --- 利됱떆 ?ㅽ뻾遺 ---
+    // --- 즉시 실행부 ---
     (function init() {
         const urlParams = new URLSearchParams(window.location.search);
         const mode = urlParams.get('mode') || 'chat';
@@ -274,7 +269,7 @@
         loadTrack(0);
         showView(mode);
 
-        // ?앹뾽???대━硫?臾댁“嫄??뚯븙 ?ъ깮 ?쒕룄
+        // 팝업이 열리면 무조건 음악 재생 시도
         setTimeout(() => {
             playTrack(0);
         }, 300);
