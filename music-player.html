@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?맩 AI Cat & Music</title>
+    <title>🐱 AI Cat & Music</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap');
@@ -144,27 +144,27 @@
 <div class="container">
     <!-- API Key Overlay -->
     <div id="api-key-overlay">
-        <h3>?뵎 Gemini API Key ?꾩슂</h3>
-        <p style="font-size: 0.85em; color: #666; margin-top: 10px;">怨좎뼇??鍮꾩꽌? ??뷀븯?ㅻ㈃ API ?ㅺ? ?꾩슂?댁슂!</p>
-        <input type="password" id="api-key-input" placeholder="?ㅻ? ?ш린??遺숈뿬?ｌ쑝?몄슂">
-        <button class="save-key-btn" onclick="saveApiKey()">?ㅼ젙 ?꾨즺</button>
-        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.75em; margin-top: 15px; color: var(--primary-color); display: block;">?ㅻ뒗 ?ш린??臾대즺濡?諛쏆쓣 ???덉뼱??(?대┃)</a>
+        <h3>🔑 Gemini API Key 필요</h3>
+        <p style="font-size: 0.85em; color: #666; margin-top: 10px;">고양이 비서와 대화하려면 API 키가 필요해요!</p>
+        <input type="password" id="api-key-input" placeholder="키를 여기에 붙여넣으세요">
+        <button class="save-key-btn" onclick="saveApiKey()">설정 완료</button>
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size: 0.75em; margin-top: 15px; color: var(--primary-color); display: block;">키는 여기서 무료로 받을 수 있어요 (클릭)</a>
     </div>
 
     <!-- Tabs -->
     <div class="tabs">
-        <button class="tab-btn" id="tab-chat" onclick="showView('chat')"><i class="fas fa-comment-dots"></i> AI 鍮꾩꽌</button>
-        <button class="tab-btn" id="tab-music" onclick="showView('music')"><i class="fas fa-music"></i> ?뚮젅?대━?ㅽ듃</button>
+        <button class="tab-btn" id="tab-chat" onclick="showView('chat')"><i class="fas fa-comment-dots"></i> AI 비서</button>
+        <button class="tab-btn" id="tab-music" onclick="showView('music')"><i class="fas fa-music"></i> 플레이리스트</button>
     </div>
 
     <!-- Chat View -->
     <div id="view-chat" class="view-content">
         <div id="chat-area">
-            <div class="msg bot">諛섍??뚯슂! 臾댁뾿???꾩??쒕┫源뚯슂? ?쇱샊~ ?맽</div>
+            <div class="msg bot">반가워요! 무엇을 도와드릴까요? 야옹~ 🐾</div>
         </div>
-        <div id="typing-indicator" style="padding-left: 15px; font-size: 0.75em; color: #aaa; display: none; margin-bottom: 5px;">怨좎뼇?닿? ?앷컖 以?..</div>
+        <div id="typing-indicator" style="padding-left: 15px; font-size: 0.75em; color: #aaa; display: none; margin-bottom: 5px;">고양이가 생각 중...</div>
         <div class="input-area">
-            <input type="text" id="user-input" placeholder="硫붿떆吏瑜??낅젰?섏꽭??.." onkeypress="if(event.keyCode==13) sendMessage()">
+            <input type="text" id="user-input" placeholder="메시지를 입력하세요..." onkeypress="if(event.keyCode==13) sendMessage()">
             <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -173,7 +173,7 @@
     <div id="view-music" class="view-content">
         <div class="playlist-header">
             <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="cat">
-            <h3 style="font-size: 1em; color: var(--primary-color);">My Playlist ?렦</h3>
+            <h3 style="font-size: 1em; color: var(--primary-color);">My Playlist 🎵</h3>
         </div>
         <div class="playlist-list" id="playlist-items">
             <!-- Playlist items will be added here -->
@@ -184,7 +184,7 @@
     <div class="mini-player">
         <img src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" class="mini-album-art" id="m-art">
         <div class="mini-info">
-            <h4 id="m-title">怨≪쓣 ?좏깮?댁＜?몄슂</h4>
+            <h4 id="m-title">곡을 선택해주세요</h4>
         </div>
         <div class="mini-controls">
             <i class="fas fa-step-backward" onclick="prevMusic()"></i>
@@ -223,22 +223,51 @@
         }
     }
 
-    // --- Init ---
-    window.onload = () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const mode = urlParams.get('mode') || 'music';
-        
-        createPlaylist();
-        loadTrack(0);
-        showView(mode);
+    // --- Music Logic ---
+    function createPlaylist() {
+        const list = document.getElementById('playlist-items');
+        musicData.forEach((song, i) => {
+            const item = document.createElement('div');
+            item.className = 'playlist-item';
+            item.id = 'item-' + i;
+            item.innerHTML = `<i class="fas fa-play"></i> ${song.title}`;
+            item.onclick = () => playTrack(i);
+            list.appendChild(item);
+        });
+    }
 
-        // ?뚯븙 紐⑤뱶濡??ㅼ뼱??寃쎌슦 利됱떆 ?ъ깮 ?쒕룄
-        if (mode === 'music') {
-            setTimeout(() => {
-                playTrack(0);
-            }, 500);
-        }
-    };
+    function loadTrack(idx) {
+        currentIdx = idx;
+        audio.src = musicData[idx].url;
+        document.getElementById('m-title').innerText = musicData[idx].title;
+        
+        document.querySelectorAll('.playlist-item').forEach(el => el.classList.remove('active'));
+        const activeItem = document.getElementById('item-' + idx);
+        if (activeItem) activeItem.classList.add('active');
+    }
+
+    function playTrack(idx) {
+        loadTrack(idx);
+        audio.play().catch(e => console.log("Play error:", e));
+        isPlaying = true;
+        updatePlayerUI();
+    }
+
+    function togglePlay() {
+        if (isPlaying) { audio.pause(); } else { audio.play(); }
+        isPlaying = !isPlaying;
+        updatePlayerUI();
+    }
+
+    function updatePlayerUI() {
+        document.getElementById('m-play-icon').className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
+        document.getElementById('m-art').classList.toggle('playing', isPlaying);
+    }
+
+    function nextMusic() { currentIdx = (currentIdx + 1) % musicData.length; playTrack(currentIdx); }
+    function prevMusic() { currentIdx = (currentIdx - 1 + musicData.length) % musicData.length; playTrack(currentIdx); }
+
+    audio.onended = nextMusic;
 
     // --- API Logic ---
     function saveApiKey() {
@@ -267,8 +296,7 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{
-                        parts: [{ text: `?덈뒗 湲곗닠 釉붾줈洹?怨좎뼇??梨쀫큸?댁빞. 留먮걹留덈떎 '??, '?쇱샊'??遺숈뿬以? 
-                        ?꾩????꾩슂???ъ슜?먯뿉寃?移쒖젅?섍쾶 ??듯빐以? ?ъ슜?먯쓽 吏덈Ц: ${text}` }]
+                        parts: [{ text: `너는 기술 블로그 고양이 챗봇이야. 말끝마다 '냥', '야옹'을 붙여줘. 도움말 비서 역할을 해줘. 사용자의 질문: ${text}` }]
                     }]
                 })
             });
@@ -276,7 +304,7 @@
             const reply = data.candidates[0].content.parts[0].text;
             appendMessage('bot', reply);
         } catch (e) {
-            appendMessage('bot', '?먮윭媛 ?щ떎??.. API ?ㅻ? ?뺤씤?대떖?쇱샊!');
+            appendMessage('bot', '에러가 났다냥... API 키를 확인해달라옹!');
         } finally {
             indicator.style.display = 'none';
         }
@@ -291,50 +319,24 @@
         area.scrollTop = area.scrollHeight;
     }
 
-    // --- Music Logic ---
-    function createPlaylist() {
-        const list = document.getElementById('playlist-items');
-        musicData.forEach((song, i) => {
-            const item = document.createElement('div');
-            item.className = 'playlist-item';
-            item.id = 'item-' + i;
-            item.innerHTML = `<i class="fas fa-play"></i> ${song.title}`;
-            item.onclick = () => playTrack(i);
-            list.appendChild(item);
-        });
-    }
-
-    function loadTrack(idx) {
-        currentIdx = idx;
-        audio.src = musicData[idx].url;
-        document.getElementById('m-title').innerText = musicData[idx].title;
+    // --- Init ---
+    // DOM이 생성되자마자 실행하여 화면 전환 속도를 높임
+    (function init() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const mode = urlParams.get('mode') || 'music';
         
-        document.querySelectorAll('.playlist-item').forEach(el => el.classList.remove('active'));
-        document.getElementById('item-' + idx).classList.add('active');
-    }
+        // 데이터 준비
+        createPlaylist();
+        loadTrack(0);
+        
+        // 즉시 뷰 전환
+        showView(mode);
 
-    function playTrack(idx) {
-        loadTrack(idx);
-        audio.play();
-        isPlaying = true;
-        updatePlayerUI();
-    }
-
-    function togglePlay() {
-        if (isPlaying) { audio.pause(); } else { audio.play(); }
-        isPlaying = !isPlaying;
-        updatePlayerUI();
-    }
-
-    function updatePlayerUI() {
-        document.getElementById('m-play-icon').className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
-        document.getElementById('m-art').classList.toggle('playing', isPlaying);
-    }
-
-    function nextMusic() { currentIdx = (currentIdx + 1) % musicData.length; playTrack(currentIdx); }
-    function prevMusic() { currentIdx = (currentIdx - 1 + musicData.length) % musicData.length; playTrack(currentIdx); }
-
-    audio.onended = nextMusic;
+        // 음악 모드면 즉시 재생 시도
+        if (mode === 'music') {
+            setTimeout(() => { playTrack(0); }, 300);
+        }
+    })();
 
 </script>
 
