@@ -1,5 +1,4 @@
 <!-- The Side Bar -->
-
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
     <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
@@ -16,36 +15,29 @@
     </h1>
     <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
   </header>
-  <!-- .profile-wrapper -->
 
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
-      <!-- home -->
       <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
         <a href="{{ '/' | relative_url }}" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
         </a>
       </li>
-      <!-- the real tabs -->
       {% for tab in site.tabs %}
         <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
           <a href="{{ tab.url | relative_url }}" class="nav-link">
             <i class="fa-fw {{ tab.icon }}"></i>
             {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
-
             <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
           </a>
         </li>
-        <!-- .nav-item -->
       {% endfor %}
     </ul>
   </nav>
 
-  <!-- --------------------------------------------AI 고양이 비서 & 음악 버튼-------------------------------------------------- -->
-  <div id="music-controls" class="buttons" style="text-align: center; position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 20px;">
-    <!-- 고양이 이미지 (클릭 시 음악+채팅 팝업) -->
-    <div style="cursor: pointer; position: relative; transition: all 0.3s;" onclick="openPopup()">
+  <div id="music-controls" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 20px;">
+    <div style="cursor: pointer; position: relative;" onclick="window.openPopupAction()">
       <div class="chat-hint">도움이 필요냥? 🐾</div>
       <img id="musicGif" src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="AI Cat" style="width: 110px; height: 110px;">
     </div>
@@ -54,103 +46,45 @@
 
   <style>
     .chat-hint {
-      position: absolute;
-      top: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #ff6b9d;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 0.75em;
-      white-space: nowrap;
-      box-shadow: 0 4px 10px rgba(255, 107, 157, 0.3);
-      animation: bounce 2s infinite;
+      position: absolute; top: -25px; left: 50%; transform: translateX(-50%);
+      background: #ff6b9d; color: white; padding: 4px 10px; border-radius: 12px;
+      font-size: 0.75em; white-space: nowrap; box-shadow: 0 4px 10px rgba(255, 107, 157, 0.3);
+      animation: sideBounce 2s infinite; z-index: 10;
     }
-
     .chat-hint::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 5px solid transparent;
-      border-top-color: #ff6b9d;
+      content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 5px solid transparent; border-top-color: #ff6b9d;
     }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(-5px); }
-    }
-
-    #musicGif {
-      animation: gentleBounce 2s ease-in-out infinite;
-      transition: transform 0.3s ease;
-    }
-    
-    #musicGif:hover {
-      transform: scale(1.15);
-    }
-
-    @keyframes gentleBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
-    }
+    @keyframes sideBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-5px); } }
+    #musicGif { animation: catGentleBounce 2s ease-in-out infinite; transition: transform 0.3s; }
+    #musicGif:hover { transform: scale(1.1); }
+    @keyframes catGentleBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
   </style>
 
   <script>
-    function openPopup() {
-      const width = 380;
-      const height = 650;
-      const left = (screen.width - width) / 2;
-      const top = (screen.height - height) / 2;
-      // 기본적으로 채팅 모드로 열리되 음악도 자동 재생되게 함
-      const url = '{{ "/music-player.html" | relative_url }}' + '?mode=chat';
-      
-      window.open(url, 'musicPlayer', 
-        `width=${width},height=${height},left=${left},top=${top},scrollbars=no,resizable=yes,status=no,location=no,toolbar=no,menubar=no`);
-    }
+    // 전역 스코프에 확실히 등록
+    window.openPopupAction = function() {
+      const w = 380; const h = 650;
+      const l = (screen.width - w) / 2; const t = (screen.height - h) / 2;
+      const url = '{{ "/music-player.html" | relative_url }}?mode=chat';
+      window.open(url, 'musicPlayer', `width=${w},height=${h},left=${l},top=${t},scrollbars=no,resizable=yes`);
+    };
   </script>
-  <!--------------------------------------------------------------------------------------------------------- -->
 
-  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
     {% unless site.theme_mode %}
       <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
         <i class="fas fa-adjust"></i>
       </button>
-
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border"></span>
-      {% endif %}
     {% endunless %}
-
     {% for contact in site.data.contact %}
       {% capture url %}
-        {%- if contact.type == 'github' -%}
-          https://github.com/{{ contact.value }}
-        {%- elsif contact.type == 'twitter' -%}
-          https://twitter.com/{{ contact.value }}
-        {%- elsif contact.type == 'instagram' -%}
-          https://www.instagram.com/{{ contact.value }}
-        {%- elsif contact.type == 'youtube' -%}
-          https://www.youtube.com/channel/{{ contact.value }}
-        {%- elsif contact.type == 'email' -%}
-          {% assign email = site.social.email | split: '@' %}
-          javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-        {%- elsif contact.type == 'rss' -%}
-          {{ 'feed.xml' | relative_url }}
-        {%- else -%}
-          {{ contact.value }}
-        {%- endif -%}
+        {%- if contact.type == 'github' -%}https://github.com/{{ contact.value }}
+        {%- elsif contact.type == 'instagram' -%}https://www.instagram.com/{{ contact.value }}
+        {%- elsif contact.type == 'email' -%}{% assign email = site.social.email | split: '@' %}javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+        {%- else -%}{{ contact.value }}{%- endif -%}
       {% endcapture %}
-
-      {% if url %}
-        <a href="{{ url }}" aria-label="{{ contact.type }}" target="_blank" rel="noopener">
-          <i class="{{ contact.icon }}"></i>
-        </a>
-      {% endif %}
+      <a href="{{ url }}" aria-label="{{ contact.type }}" target="_blank" rel="noopener"><i class="{{ contact.icon }}"></i></a>
     {% endfor %}
   </div>
-  <!-- .sidebar-bottom -->
 </aside>
-<!-- #sidebar -->
