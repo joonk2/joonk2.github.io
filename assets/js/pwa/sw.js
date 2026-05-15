@@ -10,7 +10,12 @@ importScripts(swconfUrl);
 const purge = swconf.purge;
 
 function verifyUrl(url) {
-  const requestPath = new URL(url).pathname;
+  const urlObj = new URL(url);
+  const requestPath = urlObj.pathname;
+
+  if (urlObj.protocol !== 'http:' && urlObj.protocol !== 'https:') {
+    return false;
+  }
 
   for (const path of swconf.denyPaths) {
     if (requestPath.startsWith(path)) {
@@ -67,21 +72,25 @@ self.addEventListener('fetch', (event) => {
         return response;
       }
 
-      return fetch(event.request).then((response) => {
-        const url = event.request.url;
+      return fetch(event.request)
+        .then((response) => {
+          const url = event.request.url;
 
-        if (purge || event.request.method !== 'GET' || !verifyUrl(url)) {
+          if (purge || event.request.method !== 'GET' || !verifyUrl(url)) {
+            return response;
+          }
+
+          {% comment %}See: <https://developers.google.com/web/fundamentals/primers/service-workers#cache_and_return_requests>{% endcomment %}
+          let responseToCache = response.clone();
+
+          caches.open(swconf.cacheName).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
           return response;
-        }
-
-        {% comment %}See: <https://developers.google.com/web/fundamentals/primers/service-workers#cache_and_return_requests>{% endcomment %}
-        let responseToCache = response.clone();
-
-        caches.open(swconf.cacheName).then((cache) => {
-          cache.put(event.request, responseToCache);
+        })
+        .catch(() => {
+          return caches.match(event.request);
         });
-        return response;
-      });
     })
   );
 });
