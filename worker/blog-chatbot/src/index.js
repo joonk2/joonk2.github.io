@@ -34,6 +34,19 @@ function geminiTextResponse(text) {
   });
 }
 
+/** @param {unknown} data */
+function extractTextFromGemini(data) {
+  if (data?.error) {
+    const err = data.error;
+    throw new Error(
+      typeof err === "string" ? err : err.message || JSON.stringify(err)
+    );
+  }
+  const parts = data?.candidates?.[0]?.content?.parts;
+  if (!Array.isArray(parts)) return null;
+  return parts.map((p) => p?.text).filter(Boolean).join("\n").trim() || null;
+}
+
 /** @param {string} message @param {Array} history @param {Record<string,string>} env */
 async function callGemini(message, history, env, systemInstruction) {
   const apiKey = env.GEMINI_API_KEY;
@@ -69,7 +82,13 @@ async function callGemini(message, history, env, systemInstruction) {
     const msg = data?.error?.message || `Gemini HTTP ${res.status}`;
     throw new Error(msg);
   }
-  return data;
+  const text = extractTextFromGemini(data);
+  if (!text) {
+    const reason =
+      data?.candidates?.[0]?.finishReason || "응답 본문이 비어 있음";
+    throw new Error(reason);
+  }
+  return text;
 }
 
 export default {
@@ -111,8 +130,13 @@ export default {
       }
 
       const systemInstruction = buildSystemInstruction(problemsBlock);
-      const data = await callGemini(message, history, env, systemInstruction);
-      return jsonResponse(data);
+      const replyText = await callGemini(
+        message,
+        history,
+        env,
+        systemInstruction
+      );
+      return geminiTextResponse(replyText);
     } catch (err) {
       console.error(err);
       return jsonResponse(
