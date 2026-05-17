@@ -240,8 +240,14 @@ def build_post_url(fm: dict[str, str], fname: str) -> str:
     if not parts:
         return ""
     year, month, day = parts
+    
+    # Jekyll's :title in permalink /posts/:year/:month/:day/:title/
+    # refers to the filename without the leading date (YY-MM-DD-)
     slug = os.path.splitext(fname)[0]
-    return f"{SITE_URL}{POST_PERMALINK_PREFIX}/{year}/{month}/{day}/{slug}/"
+    title_match = re.match(r"^\d{2}-\d{2}-\d{2}-(.+)$", slug)
+    title_part = title_match.group(1) if title_match else slug
+    
+    return f"{SITE_URL}{POST_PERMALINK_PREFIX}/{year}/{month}/{day}/{title_part}/"
 
 
 def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
