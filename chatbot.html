@@ -79,16 +79,31 @@
             font-weight: 600;
         }
         .msg-row.bot .msg-bubble a {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: 4px 8px;
-            border-radius: 6px;
-            margin-top: 4px;
+            display: block;
+            background: #f8f9fa;
+            color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 8px;
             text-decoration: none;
-            border: 1px solid #ddd;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            font-size: 0.9em;
+            transition: background 0.2s;
         }
         .msg-row.bot .msg-bubble a:hover {
-            background: #e0e0e0;
+            background: #e9ecef;
+        }
+        .msg-bubble hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 12px 0;
+        }
+        .msg-bubble b, .msg-bubble strong {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 2px;
+            color: #000;
         }
         .msg-row.bot .msg-bubble {
             background: var(--kakao-bot-bubble); color: #000;

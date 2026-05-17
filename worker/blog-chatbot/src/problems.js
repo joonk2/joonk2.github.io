@@ -149,17 +149,18 @@ export function formatProblemsForPrompt(problems) {
 export function formatRecommendations(matches) {
   if (!matches.length) return null;
 
-  const lines = matches.slice(0, 8).map((p) => {
+  const lines = matches.slice(0, 5).map((p) => {
     const src =
       p.test === "programmers" ? "프로그래머스" : p.test === "swea" ? "SWEA" : "기타";
     const level = p.level_ko || p.level || "";
     const algo = p.algorithm_ko || p.algorithm || "";
-    const url = p.url ? `\n   🔗 [바로가기](${p.url})` : "";
-    return `• [${src}] ${p.title} (${level}, ${algo})${url}`;
+    
+    return `**[${src}] ${p.title}**\n${level} | ${algo}\n[🚀 풀이 보기](${p.url})`;
   });
 
   return (
-    `조건에 맞는 블로그 글이야냥! 🐾\n\n${lines.join("\n\n")}\n\n` +
+    `조건에 맞는 블로그 글이야냥! 🐾\n\n` +
+    `${lines.join("\n\n---\n\n")}\n\n` +
     `더 보고 싶으면 알고리즘이나 난이도를 바꿔서 말해줘냥!`
   );
 }
