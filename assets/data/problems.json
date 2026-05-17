@@ -494,8 +494,8 @@
     "title": "차윤이의 RC카",
     "problem_num": "22654",
     "level": "D2",
-    "algorithm": "backtracking",
-    "algorithm_ko": "백트랙킹",
+    "algorithm": "bruteforce",
+    "algorithm_ko": "완전탐색",
     "level_ko": "쉬움",
     "url": "https://joonk2.github.io/posts/2026/05/03/26-05-03-swea-22654/"
   },
@@ -534,8 +534,8 @@
     "title": "수영대회 결승전 ( 완전 탐색 + 구현 )",
     "problem_num": "4193",
     "level": "D4",
-    "algorithm": "bruteforce",
-    "algorithm_ko": "완전탐색",
+    "algorithm": "bfs, greedy",
+    "algorithm_ko": "BFS, 그리디",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/05/06/26-05-07-swea-4193/"
   },

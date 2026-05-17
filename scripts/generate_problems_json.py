@@ -278,17 +278,25 @@ def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
         entry["problem_num"] = m.group(1) if m else ""
         entry["level"] = extract_swea_level(title_raw)
         entry["title"] = extract_swea_title(title_raw)
-        entry["algorithm"] = map_tag(tags)
-        if entry["problem_num"] in ("2550", "4193"):
+        
+        # Multiple algorithms support
+        if entry["problem_num"] == "4193":
+            entry["algorithm"] = "bfs, greedy"
+        elif entry["problem_num"] == "2550":
             entry["algorithm"] = "bruteforce"
+        else:
+            entry["algorithm"] = map_tag(tags)
     else:
         entry["title"] = title_raw
         entry["algorithm"] = infer_concept_algorithm(title_raw, tags)
 
-    if entry["algorithm"] not in ALLOWED:
-        raise ValueError(f"{fname}: invalid algorithm '{entry['algorithm']}'")
-
-    entry["algorithm_ko"] = ALGORITHM_KO.get(entry["algorithm"], entry["algorithm"])
+    # Convert comma-separated algorithms to Korean names
+    algos = [a.strip() for a in entry["algorithm"].split(",") if a.strip()]
+    for a in algos:
+        if a not in ALLOWED:
+            raise ValueError(f"{fname}: invalid algorithm '{a}'")
+    
+    entry["algorithm_ko"] = ", ".join([ALGORITHM_KO.get(a, a) for a in algos])
     entry["level_ko"] = _resolve_level_ko(entry)
     entry["url"] = build_post_url(fm, fname)
 
