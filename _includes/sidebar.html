@@ -36,12 +36,12 @@
     </ul>
   </nav>
 
-  <div id="music-controls" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 20px;">
+  <div id="chatbot-controls" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 20px;">
     <div style="cursor: pointer; position: relative;" onclick="window.openPopupAction()">
       <div class="chat-hint">도움이 필요냥? 🐾</div>
-      <img id="musicGif" src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="AI Cat" style="width: 110px; height: 110px;">
+      <img id="catChatGif" src="https://github.com/joonk2/mySvg/blob/main/chill-kitty-loop-unlimited.gif?raw=true" alt="AI Chatbot" style="width: 110px; height: 110px;">
     </div>
-    <div style="font-size: 0.8em; color: #ff6b9d; font-weight: bold; margin-top: -10px;">AI 고양이와 대화하기 🎵</div>
+    <div style="font-size: 0.8em; color: #ff6b9d; font-weight: bold; margin-top: -10px;">AI 고양이와 대화하기 🐾</div>
   </div>
 
   <style>
@@ -56,8 +56,8 @@
       border: 5px solid transparent; border-top-color: #ff6b9d;
     }
     @keyframes sideBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-5px); } }
-    #musicGif { animation: catGentleBounce 2s ease-in-out infinite; transition: transform 0.3s; }
-    #musicGif:hover { transform: scale(1.1); }
+    #catChatGif { animation: catGentleBounce 2s ease-in-out infinite; transition: transform 0.3s; }
+    #catChatGif:hover { transform: scale(1.1); }
     @keyframes catGentleBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
   </style>
 
