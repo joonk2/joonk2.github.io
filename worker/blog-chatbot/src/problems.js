@@ -12,14 +12,19 @@ export async function getProblems(env) {
   const ttlMs = ttlSec * 1000;
   const now = Date.now();
 
-  if (memoryCache && now - memoryCachedAt < ttlMs) {
-    return memoryCache;
-  }
+  // For debugging/forcing update: bypass internal memory cache if needed
+  // if (memoryCache && now - memoryCachedAt < ttlMs) {
+  //   return memoryCache;
+  // }
 
   try {
-    const res = await fetch(url, {
-      headers: { Accept: "application/json" },
-      cf: { cacheTtl: ttlSec },
+    // Add timestamp to bypass Cloudflare's own Edge Cache
+    const fetchUrl = `${url}?t=${now}`;
+    const res = await fetch(fetchUrl, {
+      headers: { 
+        "Accept": "application/json",
+        "Cache-Control": "no-cache" 
+      },
     });
     if (!res.ok) throw new Error(`problems.json HTTP ${res.status}`);
     const data = await res.json();

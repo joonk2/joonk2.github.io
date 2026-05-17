@@ -242,9 +242,10 @@ def build_post_url(fm: dict[str, str], fname: str) -> str:
     year, month, day = parts
     
     # Jekyll's :title in permalink /posts/:year/:month/:day/:title/
-    # refers to the filename without the leading date (YY-MM-DD-)
+    # refers to the filename without the leading date (YYYY-MM-DD- or YY-MM-DD-)
     slug = os.path.splitext(fname)[0]
-    title_match = re.match(r"^\d{2}-\d{2}-\d{2}-(.+)$", slug)
+    # Match both 2026-02-11- and 26-02-11-
+    title_match = re.match(r"^(?:\d{4}|\d{2})-\d{2}-\d{2}-(.+)$", slug)
     title_part = title_match.group(1) if title_match else slug
     
     return f"{SITE_URL}{POST_PERMALINK_PREFIX}/{year}/{month}/{day}/{title_part}/"
