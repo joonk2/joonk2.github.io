@@ -13,9 +13,38 @@ POSTS_DIR = os.path.join(
     REPO_ROOT, "_posts", "coding-test", "datastructure-algorithm"
 )
 OUTPUT_PATHS = [
-    os.path.join(POSTS_DIR, "problems.json"),
     os.path.join(REPO_ROOT, "assets", "data", "problems.json"),
 ]
+
+# _config.yml url + defaults.posts.permalink: /posts/:year/:month/:day/:title/
+SITE_URL = "https://joonk2.github.io"
+POST_PERMALINK_PREFIX = "/posts"
+
+ALGORITHM_KO: dict[str, str] = {
+    "implementation": "구현",
+    "bfs": "BFS",
+    "dfs": "DFS",
+    "backtracking": "백트랙킹",
+    "binarysearch": "이분탐색",
+    "dp": "DP",
+    "graph": "그래프",
+    "greedy": "그리디",
+    "stack": "스택",
+    "queue": "큐",
+    "priorityqueue": "우선순위큐",
+    "bruteforce": "완전탐색",
+    "math": "수학",
+    "string": "문자열",
+    "simulation": "시뮬레이션",
+}
+
+PROGRAMMERS_LEVEL_KO = {"1": "쉬움", "2": "중간", "3": "어려움"}
+
+SWEA_LEVEL_KO = {
+    "D1": "쉬움", "D2": "쉬움",
+    "D3": "중간", "D4": "중간",
+    "D5": "어려움", "D6": "어려움",
+}
 
 ALLOWED = frozenset({
     "implementation", "bfs", "dfs", "backtracking", "binarysearch", "dp",
@@ -193,6 +222,28 @@ def infer_concept_algorithm(title: str, tags: list[str]) -> str:
     return algo
 
 
+def resolve_post_date(fm: dict[str, str], fname: str) -> tuple[str, str, str] | None:
+    date_raw = fm.get("date", "").strip()
+    if date_raw:
+        m = re.match(r"(\d{4})-(\d{2})-(\d{2})", date_raw)
+        if m:
+            return m.group(1), m.group(2), m.group(3)
+    m = re.match(r"^(\d{2})-(\d{2})-(\d{2})-", fname)
+    if m:
+        yy, mo, dd = m.groups()
+        return f"20{yy}", mo, dd
+    return None
+
+
+def build_post_url(fm: dict[str, str], fname: str) -> str:
+    parts = resolve_post_date(fm, fname)
+    if not parts:
+        return ""
+    year, month, day = parts
+    slug = os.path.splitext(fname)[0]
+    return f"{SITE_URL}{POST_PERMALINK_PREFIX}/{year}/{month}/{day}/{slug}/"
+
+
 def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
     fm = parse_frontmatter(content)
     title_raw = fm.get("title", "").strip('"').strip()
@@ -204,6 +255,9 @@ def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
         "problem_num": "",
         "level": "",
         "algorithm": "",
+        "algorithm_ko": "",
+        "level_ko": "",
+        "url": "",
     }
 
     if "programmers" in fname:
@@ -234,7 +288,19 @@ def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
     if entry["algorithm"] not in ALLOWED:
         raise ValueError(f"{fname}: invalid algorithm '{entry['algorithm']}'")
 
+    entry["algorithm_ko"] = ALGORITHM_KO.get(entry["algorithm"], entry["algorithm"])
+    entry["level_ko"] = _resolve_level_ko(entry)
+    entry["url"] = build_post_url(fm, fname)
+
     return entry
+
+
+def _resolve_level_ko(entry: dict[str, str]) -> str:
+    if entry["test"] == "programmers" and entry["level"] in PROGRAMMERS_LEVEL_KO:
+        return PROGRAMMERS_LEVEL_KO[entry["level"]]
+    if entry["test"] == "swea" and entry["level"] in SWEA_LEVEL_KO:
+        return SWEA_LEVEL_KO[entry["level"]]
+    return ""
 
 
 def collect_entries() -> list[dict[str, str]]:

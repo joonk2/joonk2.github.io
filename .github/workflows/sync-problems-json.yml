@@ -31,14 +31,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- \
-            _posts/coding-test/datastructure-algorithm/problems.json \
-            assets/data/problems.json; then
+          if git diff --quiet -- assets/data/problems.json; then
             echo "No changes to commit."
             exit 0
           fi
-          git add \
-            _posts/coding-test/datastructure-algorithm/problems.json \
-            assets/data/problems.json
+          git add assets/data/problems.json
           git commit -m "chore: sync problems.json from coding-test posts"
           git push
