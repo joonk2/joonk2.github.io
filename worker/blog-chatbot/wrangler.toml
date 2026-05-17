@@ -1,0 +1,10 @@
+name = "blog-chatbot"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+PROBLEMS_JSON_URL = "https://joonk2.github.io/assets/data/problems.json"
+PROBLEMS_CACHE_TTL_SEC = "300"
+GEMINI_MODEL = "gemini-1.5-flash"
+
+# wrangler secret put GEMINI_API_KEY
