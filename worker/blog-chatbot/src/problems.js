@@ -154,7 +154,7 @@ export function formatRecommendations(matches) {
       p.test === "programmers" ? "프로그래머스" : p.test === "swea" ? "SWEA" : "기타";
     const level = p.level_ko || p.level || "";
     const algo = p.algorithm_ko || p.algorithm || "";
-    const url = p.url ? `\n   🔗 바로가기: ${p.url}` : "";
+    const url = p.url ? `\n   🔗 [바로가기](${p.url})` : "";
     return `• [${src}] ${p.title} (${level}, ${algo})${url}`;
   });
 
