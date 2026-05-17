@@ -39,7 +39,7 @@ export async function getProblems(env) {
 const ALGORITHM_ALIASES = {
   구현: "implementation",
   백트랙킹: "backtracking",
-  "백트래킹": "backtracking",
+  백트래킹: "backtracking",
   완전탐색: "bruteforce",
   브루트포스: "bruteforce",
   이분탐색: "binarysearch",
@@ -61,8 +61,8 @@ const ALGORITHM_ALIASES = {
 
 const LEVEL_ALIASES = {
   쉬움: ["쉬움", "1", "d1", "d2"],
-  중간: ["중간", "2", "d3", "d4"],
-  어려움: ["어려움", "3", "d5", "d6"],
+  중간: ["중간", "2", "3", "d3", "d4"],
+  어려움: ["어려움", "4", "5", "d5", "d6"],
 };
 
 const ALGORITHM_KO_DISPLAY = {
@@ -108,8 +108,19 @@ export function filterProblems(problems, message) {
   if (!levelKo && !algorithm) return [];
 
   return problems.filter((p) => {
-    if (p.test !== "programmers" && p.test !== "swea") return false;
-    const levelOk = !levelKo || p.level_ko === levelKo;
+    // Determine the problem's normalized level
+    let pLevelKo = p.level_ko;
+    if (!pLevelKo) {
+      const lv = String(p.level || "").toLowerCase();
+      // 쉬움: programmers 1, SWEA D1~D2
+      if (["1", "d1", "d2"].includes(lv)) pLevelKo = "쉬움";
+      // 중간: programmers 2~3, SWEA D3~D4
+      else if (["2", "3", "d3", "d4"].includes(lv)) pLevelKo = "중간";
+      // 어려움: programmers 4, SWEA D5~D6
+      else if (["4", "5", "d5", "d6"].includes(lv)) pLevelKo = "어려움";
+    }
+
+    const levelOk = !levelKo || pLevelKo === levelKo;
     const algoOk =
       !algorithm ||
       p.algorithm === algorithm ||
@@ -139,14 +150,16 @@ export function formatRecommendations(matches) {
   if (!matches.length) return null;
 
   const lines = matches.slice(0, 8).map((p) => {
-    const src = p.test === "programmers" ? "프로그래머스" : "SWEA";
-    const level = p.level_ko || p.level;
-    const algo = p.algorithm_ko || p.algorithm;
-    return `• [${src}] ${p.title} — ${level}, ${algo}`;
+    const src =
+      p.test === "programmers" ? "프로그래머스" : p.test === "swea" ? "SWEA" : "기타";
+    const level = p.level_ko || p.level || "";
+    const algo = p.algorithm_ko || p.algorithm || "";
+    const url = p.url ? `\n   🔗 바로가기: ${p.url}` : "";
+    return `• [${src}] ${p.title} (${level}, ${algo})${url}`;
   });
 
   return (
-    `조건에 맞는 블로그 글이야냥! 🐾\n\n${lines.join("\n")}\n\n` +
+    `조건에 맞는 블로그 글이야냥! 🐾\n\n${lines.join("\n\n")}\n\n` +
     `더 보고 싶으면 알고리즘이나 난이도를 바꿔서 말해줘냥!`
   );
 }

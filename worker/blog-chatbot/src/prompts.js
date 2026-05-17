@@ -9,14 +9,20 @@ export const WELCOME_MESSAGE =
 
 export function isGreeting(message) {
   const t = message.trim().toLowerCase();
-  if (
-    /^(안녕|안녕하세요|안뇽|하이|헬로|hello|hi|ㅎㅇ|반가워|헬로우)[\s!?。\.~]*$/.test(
-      t
-    )
-  ) {
-    return true;
-  }
-  return /^(안녕|hello|hi)\b/.test(t) && t.length <= 12;
+  const keywords = [
+    "안녕",
+    "안하세요",
+    "안뇽",
+    "하이",
+    "ㅎㅇ",
+    "반가워",
+    "hello",
+    "hi",
+    "hey",
+    "인사",
+    "소개",
+  ];
+  return keywords.some((k) => t.includes(k)) && t.length <= 15;
 }
 
 /** @param {string} problemsBlock */

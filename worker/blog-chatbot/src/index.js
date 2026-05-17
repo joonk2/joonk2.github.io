@@ -55,7 +55,7 @@ async function callGemini(message, history, env, systemInstruction) {
   }
 
   const model = env.GEMINI_MODEL || "gemini-1.5-flash";
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+  const url = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${apiKey}`;
 
   const contents = [];
   for (const turn of history.slice(-8)) {
@@ -67,28 +67,33 @@ async function callGemini(message, history, env, systemInstruction) {
   }
   contents.push({ role: "user", parts: [{ text: message }] });
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      systemInstruction: { parts: [{ text: systemInstruction }] },
-      contents,
-      generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
-    }),
-  });
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: systemInstruction }] },
+        contents,
+        generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
+      }),
+    });
 
-  const data = await res.json();
-  if (!res.ok) {
-    const msg = data?.error?.message || `Gemini HTTP ${res.status}`;
-    throw new Error(msg);
+    const data = await res.json();
+    if (!res.ok) {
+      const msg = data?.error?.message || `Gemini HTTP ${res.status}`;
+      throw new Error(msg);
+    }
+    const text = extractTextFromGemini(data);
+    if (!text) {
+      const reason =
+        data?.candidates?.[0]?.finishReason || "응답 본문이 비어 있음";
+      throw new Error(reason);
+    }
+    return text;
+  } catch (err) {
+    console.error("Gemini API Error:", err);
+    throw err;
   }
-  const text = extractTextFromGemini(data);
-  if (!text) {
-    const reason =
-      data?.candidates?.[0]?.finishReason || "응답 본문이 비어 있음";
-    throw new Error(reason);
-  }
-  return text;
 }
 
 export default {
