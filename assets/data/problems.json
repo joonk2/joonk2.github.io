@@ -1,0 +1,415 @@
+[
+  {
+    "test": "",
+    "title": "DP",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "dp"
+  },
+  {
+    "test": "",
+    "title": "Greedy",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "greedy"
+  },
+  {
+    "test": "",
+    "title": "Heap",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "priorityqueue"
+  },
+  {
+    "test": "",
+    "title": "Stack-Queue",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "stack"
+  },
+  {
+    "test": "",
+    "title": "bitmasking",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "",
+    "title": "ArrayDeque",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "queue"
+  },
+  {
+    "test": "",
+    "title": "HashSet vs HashMap",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "",
+    "title": "PriorityQueue",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "priorityqueue"
+  },
+  {
+    "test": "",
+    "title": "binary search",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "binarysearch"
+  },
+  {
+    "test": "",
+    "title": "parametric search",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "binarysearch"
+  },
+  {
+    "test": "",
+    "title": "upperBound && lowerBound --> binary search",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "binarysearch"
+  },
+  {
+    "test": "",
+    "title": "time complexity",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "",
+    "title": "DFS && BFS",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "bfs"
+  },
+  {
+    "test": "",
+    "title": "Two-Pointer",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "binarysearch"
+  },
+  {
+    "test": "",
+    "title": "특별한 다이얼 자물쇠",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "greedy"
+  },
+  {
+    "test": "",
+    "title": "permutation && combination",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "programmers",
+    "title": "석유 시추",
+    "problem_num": "250136",
+    "level": "2",
+    "algorithm": "bfs"
+  },
+  {
+    "test": "programmers",
+    "title": "지게차와 크레인",
+    "problem_num": "388353",
+    "level": "2",
+    "algorithm": "bfs"
+  },
+  {
+    "test": "programmers",
+    "title": "택배 상자 꺼내기",
+    "problem_num": "389478",
+    "level": "1",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "programmers",
+    "title": "서버 증설 횟수",
+    "problem_num": "389479",
+    "level": "2",
+    "algorithm": "dp"
+  },
+  {
+    "test": "",
+    "title": "counting sort",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "programmers",
+    "title": "스티커 모으기(2)",
+    "problem_num": "12971",
+    "level": "3",
+    "algorithm": "dp"
+  },
+  {
+    "test": "programmers",
+    "title": "파괴되지 않은 건물",
+    "problem_num": "92344",
+    "level": "3",
+    "algorithm": "dp"
+  },
+  {
+    "test": "programmers",
+    "title": "[1차] 프렌즈4블록",
+    "problem_num": "17679",
+    "level": "2",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "programmers",
+    "title": "방문 길이",
+    "problem_num": "49994",
+    "level": "2",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "programmers",
+    "title": "이모티콘 할인행사",
+    "problem_num": "150368",
+    "level": "2",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "programmers",
+    "title": "행렬 테두리 회전하기",
+    "problem_num": "77485",
+    "level": "2",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "programmers",
+    "title": "두 큐 합 같게 만들기",
+    "problem_num": "118667",
+    "level": "2",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "programmers",
+    "title": "n^2 배열 자르기",
+    "problem_num": "87390",
+    "level": "2",
+    "algorithm": "binarysearch"
+  },
+  {
+    "test": "",
+    "title": "combination",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "programmers",
+    "title": "비밀 코드 해독",
+    "problem_num": "388352",
+    "level": "2",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "",
+    "title": "subset",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "programmers",
+    "title": "거리두기 확인하기",
+    "problem_num": "81302",
+    "level": "2",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "programmers",
+    "title": "단속카메라",
+    "problem_num": "42884",
+    "level": "1",
+    "algorithm": "greedy"
+  },
+  {
+    "test": "programmers",
+    "title": "등굣길",
+    "problem_num": "42898",
+    "level": "2",
+    "algorithm": "dp"
+  },
+  {
+    "test": "programmers",
+    "title": "숫자 게임",
+    "problem_num": "12987",
+    "level": "3",
+    "algorithm": "binarysearch"
+  },
+  {
+    "test": "programmers",
+    "title": "조이스틱",
+    "problem_num": "42860",
+    "level": "2",
+    "algorithm": "greedy"
+  },
+  {
+    "test": "programmers",
+    "title": "괄호 회전하기",
+    "problem_num": "76502",
+    "level": "2",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "",
+    "title": "침묵의 취조실",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "",
+    "title": "PriorityQueue",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "priorityqueue"
+  },
+  {
+    "test": "",
+    "title": "두뇌를 자극하는 문제 1",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "",
+    "title": "Dijikstra",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "graph"
+  },
+  {
+    "test": "programmers",
+    "title": "소수 만들기",
+    "problem_num": "12977",
+    "level": "1",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "programmers",
+    "title": "스킬트리",
+    "problem_num": "49993",
+    "level": "2",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "",
+    "title": "prim",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "graph"
+  },
+  {
+    "test": "programmers",
+    "title": "배달",
+    "problem_num": "12798",
+    "level": "2",
+    "algorithm": "priorityqueue"
+  },
+  {
+    "test": "programmers",
+    "title": "예상 대진표",
+    "problem_num": "12985",
+    "level": "2",
+    "algorithm": "math"
+  },
+  {
+    "test": "programmers",
+    "title": "전력망을 둘로 나누기",
+    "problem_num": "86971",
+    "level": "2",
+    "algorithm": "dfs"
+  },
+  {
+    "test": "programmers",
+    "title": "쿼드압축 후 개수 세기",
+    "problem_num": "68936",
+    "level": "2",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "swea",
+    "title": "차윤이의 RC카",
+    "problem_num": "22654",
+    "level": "D2",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "swea",
+    "title": "삼성이의 트라우마 극복",
+    "problem_num": "4223",
+    "level": "D3",
+    "algorithm": "backtracking"
+  },
+  {
+    "test": "swea",
+    "title": "당근 포장하기",
+    "problem_num": "16811",
+    "level": "D2",
+    "algorithm": "math"
+  },
+  {
+    "test": "swea",
+    "title": "징검다리도 두드려보고 건너라",
+    "problem_num": "2550",
+    "level": "D3",
+    "algorithm": "bruteforce"
+  },
+  {
+    "test": "swea",
+    "title": "수영대회 결승전 ( 완전 탐색 + 구현 )",
+    "problem_num": "4193",
+    "level": "D4",
+    "algorithm": "bruteforce"
+  },
+  {
+    "test": "",
+    "title": "특별한 배열",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "implementation"
+  },
+  {
+    "test": "swea",
+    "title": "진기의 최고급 붕어빵",
+    "problem_num": "1860",
+    "level": "D3",
+    "algorithm": "math"
+  },
+  {
+    "test": "swea",
+    "title": "[S/W 문제해결 기본] 5일차 - Magnetic",
+    "problem_num": "1220",
+    "level": "D3",
+    "algorithm": "math"
+  },
+  {
+    "test": "swea",
+    "title": "전봇대",
+    "problem_num": "10580",
+    "level": "D3",
+    "algorithm": "bruteforce"
+  },
+  {
+    "test": "swea",
+    "title": "오목 판정",
+    "problem_num": "11315",
+    "level": "D3",
+    "algorithm": "bruteforce"
+  }
+]
