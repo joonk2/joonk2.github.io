@@ -73,6 +73,23 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
             position: relative;
         }
+        .msg-bubble a {
+            color: #004e7c;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .msg-row.bot .msg-bubble a {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin-top: 4px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+        }
+        .msg-row.bot .msg-bubble a:hover {
+            background: #e0e0e0;
+        }
         .msg-row.bot .msg-bubble {
             background: var(--kakao-bot-bubble); color: #000;
             border-top-left-radius: 2px;
@@ -240,12 +257,29 @@
         const avatarHtml = sender === 'bot'
             ? '<img class="msg-avatar" src="' + CAT_AVATAR + '" alt="\ube44\uc0ac">'
             : '<div class="msg-avatar user-avatar">\ub098</div>';
+        
+        // Link and URL conversion logic
+        let formattedText = text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+
+        // 1. Markdown style links [Title](URL) -> <a href="URL" target="_blank">Title</a>
+        formattedText = formattedText.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+        
+        // 2. Raw URLs (not already part of a link) -> <a href="URL" target="_blank">URL</a>
+        // This regex avoids double-wrapping links that were already handled by the markdown regex.
+        formattedText = formattedText.replace(/(?<!href=")(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank">$1</a>');
+
         row.innerHTML = avatarHtml +
             '<div class="msg-body">' +
             (sender === 'bot' ? '<span class="msg-sender">\ube44\uc0ac</span>' : '') +
             '<div class="msg-bubble"></div>' +
             '<span class="msg-time">' + formatTime(now) + '</span></div>';
-        row.querySelector('.msg-bubble').textContent = text;
+        
+        row.querySelector('.msg-bubble').innerHTML = formattedText;
         area.appendChild(row);
         scrollChatToBottom();
         if (sender === 'user' || sender === 'bot') {
