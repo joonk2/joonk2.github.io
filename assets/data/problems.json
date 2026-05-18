@@ -598,5 +598,15 @@
     "algorithm_ko": "BFS",
     "level_ko": "쉬움",
     "url": "https://joonk2.github.io/posts/2026/05/18/swea-14195/"
+  },
+  {
+    "test": "swea",
+    "title": "등산로",
+    "problem_num": "25052",
+    "level": "D2",
+    "algorithm": "bruteforce",
+    "algorithm_ko": "완전탐색",
+    "level_ko": "쉬움",
+    "url": "https://joonk2.github.io/posts/2026/05/18/swea-25052/"
   }
 ]
