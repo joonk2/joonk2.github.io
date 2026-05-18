@@ -681,6 +681,12 @@ npx wrangler deploy
 #### 📌 맞춤형 학습
 ![Desktop View](/assets/img/blog/chatbot/2026-05-18/chatbot-link.jpg)
 
+<br><br>
+
+#### 📌 봇이 새로 올라온 알고리즘 글을 자동 감지
+![Desktop View](/assets/img/blog/chatbot/2026-05-18/auto-detection.jpg)
+
+
 <br><br><br><br><br><br>
 
 ## 5. 최종 개선 결과
