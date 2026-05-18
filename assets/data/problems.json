@@ -588,5 +588,15 @@
     "algorithm_ko": "완전탐색",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/05/16/swea-11315/"
+  },
+  {
+    "test": "swea",
+    "title": "미생물 관찰",
+    "problem_num": "14195",
+    "level": "D2",
+    "algorithm": "bfs",
+    "algorithm_ko": "BFS",
+    "level_ko": "쉬움",
+    "url": "https://joonk2.github.io/posts/2026/05/18/swea-14195/"
   }
 ]
