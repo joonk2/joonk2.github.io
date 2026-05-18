@@ -335,59 +335,169 @@ JSON만 바뀐 커밋은 workflow를 다시 트리거하지 않아 무한 루프
 
 ## 4. 트러블슈팅 모음
 
-만들면서 만난 대표적인 문제들이다.
+제작하면서 만난 대표적인 문제들이다.
 
+<br>
+
+---
 ### ❌ 문제 1: Gemini API 지역 제한
-
 Cloudflare Worker는 전 세계 노드에서 실행되는데, 특정 노드(유럽 등)에서 API를 호출하면 `"User location is not supported"` 에러가 발생했다.
 
-**해결:** `v1beta` 대신 안정적인 `v1` 엔드포인트로 전환하고, "안녕", "ㅎㅇ" 같은 단순 인사말은 API를 거치지 않고 Worker 내부에서 즉시 응답하도록 `isGreeting` 로직을 추가해 API 호출 빈도를 줄였다.
+#### 해결
 
+- `v1beta` 대신 안정적인 `v1` 엔드포인트로 전환
+- `"안녕"`, `"ㅎㅇ"` 같은 단순 인사말은 API를 거치지 않고 Worker 내부에서 즉시 응답하도록 처리
+- `isGreeting()` 로직을 추가해 불필요한 Gemini 호출 감소
+
+```javascript
+if (isGreeting(message)) {
+  return geminiTextResponse(WELCOME_MESSAGE);
+}
+```
+
+<br><br><br>
+
+---
 ### ❌ 문제 2: 블로그 링크 404
 
-챗봇이 추천한 링크를 클릭하면 404가 떴다. 원인은 URL 슬러그 불일치였다. `generate_problems_json.py`가 파일명 전체(`26-02-11-title.md`)를 슬러그로 썼는데, Jekyll은 앞의 날짜 부분을 뺀 제목만 슬러그로 쓰고 있었다.
+챗봇이 추천한 링크를 클릭하면 404가 발생했다.
 
-**해결:** `build_post_url` 함수에 정규표현식으로 날짜 패턴을 제거하는 로직을 추가했다.
+원인은 URL 슬러그 불일치였다.
 
+`generate_problems_json.py`가 파일명 전체:
+
+```txt
+2026-02-11-title.md
+```
+
+를 그대로 슬러그로 사용했지만,
+Jekyll은 앞 날짜를 제거한 제목 부분만 URL에 사용하고 있었다.
+
+#### 해결
+
+`build_post_url()` 함수에서 정규표현식으로 날짜 패턴을 제거하도록 수정했다.
+
+```python
+slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", filename)
+```
+
+<br><br><br>
+
+---
 ### ❌ 문제 3: 멀티 알고리즘 태그 미지원
 
-BFS + 그리디처럼 여러 알고리즘이 섞인 문제는 검색 결과에 한쪽만 나왔다. 데이터 구조가 알고리즘 태그를 하나만 허용했기 때문이다.
+BFS + 그리디처럼 여러 알고리즘이 섞인 문제는 검색 결과에 한쪽만 노출됐다.
 
-**해결:** 콤마(`,`)로 구분된 복수 태그를 처리하도록 스크립트와 챗봇 검색 엔진을 수정했다. 예시: `"algorithm": "bfs, greedy"`.
+원인은 데이터 구조가 알고리즘 태그를 하나만 저장하도록 설계되어 있었기 때문이다.
+
+예시:
+
+```json
+"algorithm": "bfs"
+```
+
+#### 해결
+
+콤마(`,`) 기반 복수 태그를 허용하도록 수정했다.
+
+```json
+"algorithm": "bfs, greedy"
+```
+
+Python 수집 스크립트와 챗봇 검색 로직 모두 멀티 태그를 처리하도록 변경했다.
+
+---
+
+<br><br><br>
 
 ### ❌ 문제 4: 단순 텍스트 URL 불편
 
-추천 결과가 텍스트 URL이라 복사해서 주소창에 붙여넣어야 했다.
+추천 결과가 일반 텍스트 URL이라 사용자가 직접 복사해서 주소창에 붙여넣어야 했다.
 
-**해결:** 봇 응답에서 마크다운 링크와 URL을 감지해 클릭 가능한 `🚀 풀이 보기` 버튼으로 자동 변환하는 함수를 `chatbot.html` 프론트엔드에 추가했다.
+#### 해결
 
-### ❌ 문제 5: 멀티 알고리즘 태그 검색 누락
+프론트엔드(`chatbot.html`)에서 마크다운 링크와 URL을 감지해
+자동으로 클릭 가능한 버튼 형태로 변환하는 함수를 추가했다.
 
-"쉬움 bfs 문제 찾아줘"처럼 검색해도 해당 문제가 나오지 않았다. 원인은 `filterProblems`의 알고리즘 매칭이 완전 일치(`===`) 방식이었기 때문이다. `"bfs, greedy"`처럼 콤마로 구분된 멀티 태그가 들어오면 `"bfs"` 단독과 일치하지 않아 전부 누락됐다.
+```html
+<a href="${url}" target="_blank" class="chat-link-btn">
+  🚀 풀이 보기
+</a>
+```
 
-**해결:** `p.algorithm` 필드를 콤마로 split한 뒤 배열로 변환해 `includes()`로 매칭하도록 `algoOk` 로직을 수정했다.
+<br><br><br>
+
+---
+
+### ❌ 문제 5: 멀티 알고리즘 검색 및 `problems.json` 동기화 오류
+
+"쉬움 bfs 문제 찾아줘"처럼 검색해도 일부 문제가 결과에 나오지 않았다.
+
+처음에는 검색 로직 문제라고 생각했다.
+
+원인은 `filterProblems()`의 알고리즘 비교가 완전 일치(`===`) 방식이었기 때문이다.
+
+예를 들어:
+
+```json
+"algorithm": "bfs, greedy"
+```
+
+처럼 복수 태그가 들어오면 `"bfs"` 단독 검색과 일치하지 않아 결과에서 누락됐다.
+
+기존 코드:
 
 ```javascript
-// 수정 전
-const algoOk = !algorithm || p.algorithm === algorithm || ...;
+const algoOk =
+  !algorithm ||
+  p.algorithm === algorithm ||
+  p.algorithm_ko === ALGORITHM_KO_DISPLAY[algorithm];
+```
 
-// 수정 후
+---
+
+### 해결 1: 멀티 태그 검색 지원
+
+`algorithm` 문자열을 콤마 기준으로 split한 뒤 배열로 변환해 `includes()` 방식으로 검색하도록 수정했다.
+
+```javascript
 const algoOk = !algorithm || (() => {
   const algos = String(p.algorithm || "")
     .split(",")
     .map(a => a.trim().toLowerCase());
+
   const algosKo = String(p.algorithm_ko || "")
     .split(",")
     .map(a => a.trim());
-  return algos.includes(algorithm) ||
-         algosKo.includes(ALGORITHM_KO_DISPLAY[algorithm] || "");
+
+  return (
+    algos.includes(algorithm) ||
+    algosKo.includes(ALGORITHM_KO_DISPLAY[algorithm] || "")
+  );
 })();
 ```
 
-### ❌ 문제 6: GitHub Actions가 `problems.json` 변경을 감지하지 못함
+하지만 수정 후에도 일부 신규 문제는 검색되지 않았다.
 
-새로운 알고리즘 글을 push 했는데도 원격 저장소의 `problems.json`이 갱신되지 않았다.
-결과적으로 챗봇 검색에서도 새 문제를 찾지 못했다.
+브라우저에서 직접 확인해보니:
+
+```javascript
+fetch("https://joonk2.github.io/assets/data/problems.json?t=" + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    const item = data.find(p => p.problem_num === "14195");
+    console.log(item);
+  });
+```
+
+결과가 `null`이거나 최신 데이터가 반영되지 않고 있었다.
+
+즉 검색 엔진 문제가 아니라
+`problems.json` 자체가 최신 상태로 갱신되지 않는 상황이었다.
+
+---
+
+### 해결 2: GitHub Actions 동기화 수정
 
 처음에는 Python 수집 스크립트의 필터를 의심했다.
 
@@ -396,7 +506,7 @@ if "boj" in fname.lower():
     continue
 ```
 
-하지만 파일명이:
+하지만 실제 파일명은:
 
 ```txt
 2026-05-18-swea-14195.md
@@ -418,11 +528,11 @@ git add assets/data/problems.json
 ```
 
 `git diff --quiet`는 스테이징 이전 상태를 검사한다.
-즉 파일은 수정되었지만 아직 `git add`가 되지 않아 변경사항이 없다고 판단했고, commit/push가 스킵되고 있었다.
 
-## 해결 방법
+즉 파일은 수정되었지만 아직 `git add`가 되지 않아 변경사항이 없다고 판단했고,
+결과적으로 commit/push가 스킵되면서 `problems.json`이 갱신되지 않고 있었다.
 
-`git add`를 먼저 수행한 뒤, `git diff --cached --quiet`로 스테이징된 변경사항을 검사하도록 수정했다.
+수정 후:
 
 ```yaml
 - name: Commit and push if changed
@@ -441,12 +551,119 @@ git add assets/data/problems.json
     git push
 ```
 
-## 핵심 포인트
+<br><br><br>
 
-* `git add`를 먼저 수행
-* `git diff --quiet` → `git diff --cached --quiet` 변경
+### ❌ 문제 6: `wrangler deploy` 명령어 인식 실패
 
-이후부터는 새 글이 올라오면 `problems.json`이 정상적으로 자동 갱신되고 챗봇 검색에도 즉시 반영되었다.
+Cloudflare Worker를 수동 배포하려고 아래 명령어를 실행했다.
+
+```powershell
+wrangler deploy
+```
+
+하지만 PowerShell에서 다음 에러가 발생했다.
+
+```powershell
+wrangler : 'wrangler' 용어가 cmdlet, 함수, 스크립트 파일 또는 실행할 수 있는 프로그램 이름으로 인식되지 않습니다.
+```
+
+처음에는 `node_modules`가 없거나 설치가 잘못된 줄 알았지만,
+실제로는 프로젝트 내부에 이미 다음 파일들이 존재하고 있었다.
+
+```txt
+worker/blog-chatbot
+ ├─ wrangler.toml
+ ├─ package.json
+ └─ node_modules
+```
+
+즉 패키지는 정상 설치되어 있었지만,
+`wrangler`가 글로벌(global) 명령어로 등록되어 있지 않아
+PowerShell이 실행 파일을 찾지 못한 것이 원인이었다.
+
+---
+
+### 해결
+
+전역 설치 대신 프로젝트 로컬 패키리를 실행하는 `npx`를 사용했다.
+
+```powershell
+npx wrangler deploy
+```
+
+`npx`는 현재 프로젝트의:
+
+```txt
+node_modules/.bin/wrangler
+```
+
+를 자동으로 찾아 실행해준다.
+
+따라서 별도의 PATH 설정이나 글로벌 설치 없이도 바로 배포할 수 있었다.
+
+추가로 반드시 `wrangler.toml`이 존재하는 Worker 루트 디렉토리에서 실행해야 한다.
+
+```powershell
+cd worker/blog-chatbot
+npx wrangler deploy
+```
+
+이후 Cloudflare Worker가 정상적으로 배포되었다.
+
+<br><br><br>
+
+---
+## ✅ 핵심 수정 정리
+
+최종적으로 다음 수정들이 적용되면서 챗봇 검색 시스템이 안정적으로 동작하게 되었다.
+
+### 검색 엔진 개선
+
+- 멀티 알고리즘 태그 지원
+- `includes()` 기반 알고리즘 매칭 적용
+- 한글/영문 알고리즘 동시 검색 지원
+
+```javascript
+"algorithm": "bfs, greedy"
+```
+
+---
+
+### 데이터 동기화 안정화
+
+GitHub Actions에서:
+
+```yaml
+git diff --cached --quiet
+```
+
+방식으로 변경하여  
+새로운 문제 글이 추가되면 `problems.json`이 정상적으로 갱신되도록 수정했다.
+
+---
+
+### Worker 배포 안정화
+
+PowerShell 환경에서 `wrangler` 명령어 인식 문제를 해결하기 위해:
+
+```powershell
+npx wrangler deploy
+```
+
+방식으로 배포하도록 변경했다.
+
+---
+
+### 최종 결과
+
+이후:
+
+- 신규 문제 업로드
+- `problems.json` 자동 갱신
+- 챗봇 검색 반영
+- Cloudflare Worker 배포
+
+까지 전체 파이프라인이 정상적으로 동작하게 되었다.
 
 
 
@@ -470,12 +687,16 @@ git add assets/data/problems.json
 
 | 항목 | 이전 | 이후 |
 |------|------|------|
-| API 키 관리 | 클라이언트 코드에 노출 | Cloudflare 환경 변수로 격리 |
-| 포스트 인식 | 수동 JSON 관리 | md push → Actions → 자동 커밋 |
-| 챗봇 링크 | 404 발생 | 실제 블로그 URL과 100% 일치 |
-| 알고리즘 검색 | 단일 태그만 지원 | 복합 태그 지원 |
-| UI | 좁은 모바일 프레임 (380px) | 카카오톡 스타일 (최대 600px) |
-| 링크 형태 | 텍스트 URL | 클릭 가능한 버튼 |
+| API 키 관리 | 클라이언트 코드에 노출 | Cloudflare Worker 환경 변수로 격리 |
+| 포스트 인식 | 수동 JSON 관리 | md push → GitHub Actions → 자동 동기화 |
+| problems.json 갱신 | 변경 감지 실패로 누락 가능 | `git diff --cached --quiet` 적용으로 안정화 |
+| 챗봇 링크 | 404 발생 | 실제 Jekyll URL과 100% 일치 |
+| 알고리즘 검색 | 단일 태그만 지원 | `bfs, greedy` 같은 복합 태그 지원 |
+| 알고리즘 매칭 | 완전 일치(`===`) 방식 | `includes()` 기반 멀티 태그 검색 |
+| 신규 문제 반영 | 일부 문제 검색 누락 | push 후 자동 검색 반영 |
+| Worker 배포 | `wrangler` 명령어 인식 실패 | `npx wrangler deploy`로 안정화 |
+| UI | 좁은 모바일 프레임 (380px) | 카카오톡 스타일 UI (최대 600px) |
+| 링크 형태 | 텍스트 URL | 클릭 가능한 `🚀 풀이 보기` 버튼 |
 
 ---
 
@@ -485,7 +706,10 @@ git add assets/data/problems.json
 
 | 파일 | 역할 |
 |------|------|
-| `scripts/generate_problems_json.py` | 포스트 스캔 → JSON 생성 |
-| `assets/data/problems.json` | 챗봇 Worker용 공개 엔드포인트 |
-| `.github/workflows/sync-problems-json.yml` | md push 시 JSON 자동 커밋 |
-| `chatbot.html` | 카카오톡 스타일 프론트엔드 |
+| `scripts/generate_problems_json.py` | 마크다운 포스트 스캔 후 `problems.json` 생성 |
+| `assets/data/problems.json` | 챗봇 검색용 공개 데이터 엔드포인트 |
+| `.github/workflows/sync-problems-json.yml` | md push 시 JSON 자동 생성 및 커밋 |
+| `worker/blog-chatbot/src/index.js` | Cloudflare Worker 메인 API 서버 |
+| `worker/blog-chatbot/wrangler.toml` | Worker 배포 설정 |
+| `chatbot.html` | 카카오톡 스타일 챗봇 프론트엔드 |
+| `assets/js/home.min.js` | 챗봇 UI 및 프론트엔드 동작 제어 |
