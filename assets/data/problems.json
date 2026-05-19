@@ -608,5 +608,15 @@
     "algorithm_ko": "완전탐색",
     "level_ko": "쉬움",
     "url": "https://joonk2.github.io/posts/2026/05/18/swea-25052/"
+  },
+  {
+    "test": "swea",
+    "title": "[모의 SW 역량테스트] 등산로 조성",
+    "problem_num": "1949",
+    "level": "D4",
+    "algorithm": "dfs",
+    "algorithm_ko": "DFS",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/05/19/swea-1949/"
   }
 ]
