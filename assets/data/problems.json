@@ -618,5 +618,25 @@
     "algorithm_ko": "DFS",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/05/19/swea-1949/"
+  },
+  {
+    "test": "swea",
+    "title": "0/1 Knapsack",
+    "problem_num": "3282",
+    "level": "D3",
+    "algorithm": "dp",
+    "algorithm_ko": "DP",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/05/22/swea-3282/"
+  },
+  {
+    "test": "swea",
+    "title": "가능한 시험 점수",
+    "problem_num": "3752",
+    "level": "D4",
+    "algorithm": "dp",
+    "algorithm_ko": "DP",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/05/22/swea-3752/"
   }
 ]
