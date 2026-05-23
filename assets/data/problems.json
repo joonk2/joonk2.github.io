@@ -621,7 +621,7 @@
   },
   {
     "test": "swea",
-    "title": "0/1 Knapsack",
+    "title": "Knapsack",
     "problem_num": "3282",
     "level": "D3",
     "algorithm": "dp",
