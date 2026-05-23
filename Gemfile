@@ -2,7 +2,9 @@
 
 source "https://rubygems.org"
 
-ruby ">= 3.2"
+ruby ">= 3.3"
+
+gem "json", ">= 2.10"
 
 gemspec
 
