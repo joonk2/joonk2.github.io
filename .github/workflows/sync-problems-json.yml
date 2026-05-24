@@ -38,3 +38,9 @@ jobs:
           fi
           git commit -m "chore: sync problems.json from coding-test posts"
           git push
+
+      - name: Deploy Chatbot to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: 'worker/blog-chatbot'
