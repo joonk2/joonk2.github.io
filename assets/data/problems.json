@@ -638,5 +638,15 @@
     "algorithm_ko": "DP",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/05/22/swea-3752/"
+  },
+  {
+    "test": "programmers",
+    "title": "완전범죄",
+    "problem_num": "389480",
+    "level": "",
+    "algorithm": "dp",
+    "algorithm_ko": "DP",
+    "level_ko": "",
+    "url": "https://joonk2.github.io/posts/2026/05/24/programmers-389480/"
   }
 ]
