@@ -251,6 +251,20 @@ def build_post_url(fm: dict[str, str], fname: str) -> str:
     return f"{SITE_URL}{POST_PERMALINK_PREFIX}/{year}/{month}/{day}/{title_part}/"
 
 
+def extract_prog_level(fm: dict[str, str]) -> str:
+    # Try from description first
+    desc = fm.get("description", "").lower()
+    # Support: lv2, lv 2, level2, level 2, lv.2
+    m = re.search(r"(?:lv|level)\.?\s*(\d+)", desc)
+    if m:
+        return m.group(1)
+    
+    # Try from title
+    title = fm.get("title", "").lower()
+    m = re.search(r"(?:lv|level)\.?\s*(\d+)", title)
+    return m.group(1) if m else ""
+
+
 def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
     fm = parse_frontmatter(content)
     title_raw = fm.get("title", "").strip('"').strip()
@@ -279,6 +293,10 @@ def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
         else:
             entry["title"] = extract_prog_title(title_raw)
             entry["algorithm"] = map_tag(tags)
+        
+        # Override or fill level from frontmatter if missing/empty
+        if not entry["level"]:
+            entry["level"] = extract_prog_level(fm)
     elif "swea" in fname:
         entry["test"] = "swea"
         m = re.search(r"swea-(\d+)", fname)
