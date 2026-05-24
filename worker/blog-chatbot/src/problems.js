@@ -94,6 +94,15 @@ const ALGORITHM_KO_DISPLAY = {
  */
 export function filterProblems(problems, message) {
   const text = message.toLowerCase();
+  
+  // 1. Try direct title search first (highest priority)
+  const titleMatches = problems.filter(p => 
+    p.title.toLowerCase().includes(text) || 
+    (p.problem_num && text.includes(p.problem_num))
+  );
+  if (titleMatches.length > 0) return titleMatches;
+
+  // 2. Extract level and algorithm keywords
   let levelKo = "";
   for (const [ko, keys] of Object.entries(LEVEL_ALIASES)) {
     if (keys.some((k) => text.includes(k))) {
@@ -117,20 +126,22 @@ export function filterProblems(problems, message) {
     let pLevelKo = p.level_ko;
     if (!pLevelKo) {
       const lv = String(p.level || "").toLowerCase();
-      // 쉬움: programmers 1, SWEA D1~D2
       if (["1", "d1", "d2"].includes(lv)) pLevelKo = "쉬움";
-      // 중간: programmers 2~3, SWEA D3~D4
       else if (["2", "3", "d3", "d4"].includes(lv)) pLevelKo = "중간";
-      // 어려움: programmers 4, SWEA D5~D6
       else if (["4", "5", "d5", "d6"].includes(lv)) pLevelKo = "어려움";
     }
 
     const levelOk = !levelKo || pLevelKo === levelKo;
     const algoOk =
       !algorithm ||
-      p.algorithm === algorithm ||
-      p.algorithm_ko === ALGORITHM_KO_DISPLAY[algorithm];
-    return levelOk && algoOk;
+      (p.algorithm && p.algorithm.includes(algorithm)) ||
+      (p.algorithm_ko && ALGORITHM_KO_DISPLAY[algorithm] && p.algorithm_ko.includes(ALGORITHM_KO_DISPLAY[algorithm]));
+    
+    // For "programmers 레벨2", ensure it matches the test type if mentioned
+    const testOk = !text.includes("programmers") || p.test === "programmers";
+    const testOk2 = !text.includes("swea") || p.test === "swea";
+
+    return levelOk && algoOk && testOk && testOk2;
   });
 }
 
