@@ -6,7 +6,7 @@ description: "블로그 특화 AI 챗봇 '비사'를 Cloudflare Worker + Gemini 
 tags: [blog, cloudflare, gemini, github-actions, jekyll]
 toc: true
 toc_sticky: true
-date: 2026-05-18
+date: 2026-05-25
 ---
 
 # AI챗봇 도우미, 봇이 자동으로 글 감지
@@ -701,8 +701,47 @@ npx wrangler deploy
 | 알고리즘 매칭 | 완전 일치(`===`) 방식 | `includes()` 기반 멀티 태그 검색 |
 | 신규 문제 반영 | 일부 문제 검색 누락 | push 후 자동 검색 반영 |
 | Worker 배포 | `wrangler` 명령어 인식 실패 | `npx wrangler deploy`로 안정화 |
+| CI/CD | 수동 배포 필요 | GitHub Actions를 통한 완전 자동 배포 |
 | UI | 좁은 모바일 프레임 (380px) | 카카오톡 스타일 UI (최대 600px) |
 | 링크 형태 | 텍스트 URL | 클릭 가능한 `🚀 풀이 보기` 버튼 |
+
+---
+
+<br><br><br><br><br><br>
+
+## 6. 추가 업데이트: 완전 자동화 (V3)
+
+### 6-1. 완전 자동 배포 파이프라인 구축
+
+기존에는 `problems.json`은 자동으로 갱신되었지만, 챗봇 로직을 변경하거나 데이터 동기화를 즉시 강제하고 싶을 때는 수동으로 `npx wrangler deploy`를 입력해야 했다. 이를 해결하기 위해 GitHub Actions에 **Cloudflare 배포 단계**를 통합했다.
+
+이제 사용자가 포스트를 푸시하면:
+1. `problems.json` 갱신 및 자동 커밋
+2. **곧바로 Cloudflare Worker 자동 배포**
+
+가 한 번에 이루어진다. 진정한 의미의 **"글만 쓰면 끝나는"** 시스템이 완성된 것이다.
+
+### 6-2. 난이도 자동 추출 로직 개선
+
+기존에는 `scripts/generate_problems_json.py`에서 난이도를 수동으로 매칭해주어야 했으나, 이제 마크다운의 `description`이나 `title`에서 `lv2`, `level 2`와 같은 키워드를 정규표현식으로 자동 감지하여 추출하도록 로직을 강화했다.
+
+```python
+# 자동으로 lv2, level 2 등의 패턴을 찾아 level 필드를 채운다
+re.search(r"(?:lv|level)\.?\s*(\d+)", text)
+```
+
+---
+
+<br><br>
+
+## ⚠️ 유지보수 참고사항 (보안 및 인증)
+
+### Cloudflare API 토큰 관리
+GitHub Actions가 대신 배포를 수행하기 위해 사용된 `CLOUDFLARE_API_TOKEN`은 보안상 1년의 유효기간을 갖도록 설정했다.
+
+- **발급 일자**: 2026-05-24
+- **만료 예정**: 2027-05-24
+- **조치 사항**: 만료 전 새로운 토큰을 발급받아 GitHub Secrets를 갱신해야 자동 배포가 끊기지 않는다.
 
 ---
 
