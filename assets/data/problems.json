@@ -190,16 +190,6 @@
     "url": "https://joonk2.github.io/posts/2026/02/11/programmers-389478/"
   },
   {
-    "test": "programmers",
-    "title": "서버 증설 횟수",
-    "problem_num": "389479",
-    "level": "2",
-    "algorithm": "dp",
-    "algorithm_ko": "DP",
-    "level_ko": "중간",
-    "url": "https://joonk2.github.io/posts/2026/02/13/programmers-389479/"
-  },
-  {
     "test": "",
     "title": "counting sort",
     "problem_num": "",
@@ -648,5 +638,15 @@
     "algorithm_ko": "DP",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/05/24/programmers-389480/"
+  },
+  {
+    "test": "programmers",
+    "title": "서버 증설 횟수",
+    "problem_num": "389479",
+    "level": "2",
+    "algorithm": "dp",
+    "algorithm_ko": "DP",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/06/05/programmers-389479/"
   }
 ]
