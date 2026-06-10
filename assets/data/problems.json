@@ -658,5 +658,15 @@
     "algorithm_ko": "스택",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/06/10/programmers-42586/"
+  },
+  {
+    "test": "programmers",
+    "title": "다리를 지나는 트럭",
+    "problem_num": "42583",
+    "level": "2",
+    "algorithm": "stack",
+    "algorithm_ko": "스택",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/06/11/programmers-42583/"
   }
 ]
