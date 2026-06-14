@@ -668,5 +668,15 @@
     "algorithm_ko": "스택",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/06/11/programmers-42583/"
+  },
+  {
+    "test": "",
+    "title": "[간단한 수학] 토너먼트",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "",
+    "url": "https://joonk2.github.io/posts/2026/06/14/tournament/"
   }
 ]
