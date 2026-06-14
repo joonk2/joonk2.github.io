@@ -63,13 +63,13 @@ date: 2026-06-14
 ![Desktop View](/assets/img/data-alg/math/tournament/7people.jpg)
 
 이때 총 6경기
-<br>
+<br><br><br>
 
 ### 10명
 ![Desktop View](/assets/img/data-alg/math/tournament/10people.jpg)
 
 이때 총 9경기
-<br>
+<br><br><br>
 
 ### 12명
 ![Desktop View](/assets/img/data-alg/math/tournament/12people.jpg)
