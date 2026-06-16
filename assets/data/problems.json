@@ -451,16 +451,6 @@
   },
   {
     "test": "programmers",
-    "title": "예상 대진표",
-    "problem_num": "12985",
-    "level": "2",
-    "algorithm": "math",
-    "algorithm_ko": "수학",
-    "level_ko": "중간",
-    "url": "https://joonk2.github.io/posts/2026/06/17/programmers-12985/"
-  },
-  {
-    "test": "programmers",
     "title": "전력망을 둘로 나누기",
     "problem_num": "86971",
     "level": "2",
@@ -631,7 +621,7 @@
   },
   {
     "test": "programmers",
-    "title": "LV2 완전범죄 풀이 - 완전 탐색 알고리즘",
+    "title": "완전범죄 - 완전탐색, DP(Java)",
     "problem_num": "389480",
     "level": "2",
     "algorithm": "dp",
@@ -651,7 +641,7 @@
   },
   {
     "test": "programmers",
-    "title": "LV2 기능개발 풀이 - 스택 알고리즘",
+    "title": "기능개발 - 스택, 배열(Java)",
     "problem_num": "42586",
     "level": "2",
     "algorithm": "stack",
@@ -661,7 +651,7 @@
   },
   {
     "test": "programmers",
-    "title": "LV2 다리를 지나는 트럭 풀이 - 큐 알고리즘",
+    "title": "다리를 지나는 트럭 - 큐(Java)",
     "problem_num": "42583",
     "level": "2",
     "algorithm": "stack",
@@ -678,5 +668,15 @@
     "algorithm_ko": "수학",
     "level_ko": "",
     "url": "https://joonk2.github.io/posts/2026/06/14/tournament/"
+  },
+  {
+    "test": "programmers",
+    "title": "예상 대진표",
+    "problem_num": "12985",
+    "level": "2",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/06/17/programmers-12985/"
   }
 ]
