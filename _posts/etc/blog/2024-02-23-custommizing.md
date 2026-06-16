@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 블로그 커스터마이징"
+title:  "[깃허브 블로그] Chirpy 테마 커스터마이징 가이드"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -21,7 +21,7 @@ written: 2024-02-23 fri 18:20
 
 ### 1. 우선 왼쪽 사이드바 항목 수정 및 보완이다.
 
-![Desktop View](/assets/img/blog/categorizing/1.png)
+![블로그 커스터마이징 설정 화면](/assets/img/blog/categorizing/1.png)
 
 
 <br>
@@ -59,7 +59,7 @@ bundle exec jekyll serve
 ```
 입력하니 아래와 같은 결과가 나왔습니다
 
-![Desktop View](/assets/img/blog/categorizing/2.png)
+![블로그 커스터마이징 설정 화면](/assets/img/blog/categorizing/2.png)
 
 
 <br>
@@ -130,7 +130,7 @@ date: 2024-02-23
 
 # 짜잔✅
 
-![Desktop View](/assets/img/blog/categorizing/3.png)
+![블로그 커스터마이징 설정 화면](/assets/img/blog/categorizing/3.png)
 
 메인 홈페이지로 카테고리화된 페이지가 나오게 변경해줬습니다 <br>
 이제 HOME이나 STUDY DIARY 아무거나 클릭해도 메인홈페이지로 이동 잘 됩니다! <br>
@@ -141,3 +141,12 @@ date: 2024-02-23
 
 ## 글을 마치며
 _tabs/ 에 home.md가 없는데 왼쪽 사이드바에 home이 생성되네요. 아직 방법을 찾지 못해 그대로 있는데 나중에 이것도 없앨 수 있도록 날잡고 한번 봐야겠습니다
+
+---
+
+## 📚 관련 글
+
+- [👈 블로그 카테고리 나누기](https://joonk2.github.io/posts/2022/08/16/categories-dividing/)
+- [👉 댓글창 꾸미기](https://joonk2.github.io/posts/2024/03/13/gif-right-next-to-comments/)
+- [👉 블로그 배경음악 추가하기](https://joonk2.github.io/posts/2024/03/05/custum-music/)
+

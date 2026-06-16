@@ -1,5 +1,6 @@
 ---
 title:  "ArrayDeque"
+description: "ArrayDeque 자료구조의 특징과 활용 방법을 설명합니다. 양방향 큐로서의 장점을 이해하고, Java에서의 구현 방법과 실전 활용 사례를 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, ArrayDeque]
@@ -58,6 +59,10 @@ date: 2025-06-25
 ### 💡 예제 코드
 
 #### 양쪽 삽입/삭제 예제
+
+
+아래 Java 코드는 datastructure 관점에서 접근한 핵심 풀이입니다. 입력 조건과 시간·공간 복잡도를 함께 고려하여 불필요한 연산을 줄이는 방향으로 설계했습니다.
+
 ```java
 Deque<Integer> dq = new ArrayDeque<>();
 
@@ -72,3 +77,5 @@ dq.removeFirst(); // 앞에서 삭제
 
 System.out.println(dq); // [10]
 ```
+
+위 구현은 ArrayDeque의 제약 조건을 만족하도록 자료구조 선택과 반복 범위를 최적화한 결과입니다.

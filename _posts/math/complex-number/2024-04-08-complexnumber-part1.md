@@ -1,5 +1,5 @@
 ---
-title: "미분방정식을 이용한 오일러 공식 유도"
+title:  "미분방정식을 이용한 오일러 공식 유도"
 layout: post
 categories: [math, complex-number]
 tags: [수학, math, 복소수, ComplexNumber, 회전변환, 회전행렬, 삼각함수, 오일러공식, 미분, 적분]
@@ -9,19 +9,6 @@ date: 2024-04-08 mon 00:17
 updated: 
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 ```md
@@ -37,14 +24,14 @@ updated:
 사전에 알면 좋은 것은 극좌표계(**Polar Coordinates**), 직교좌표계(**Cartesian Coordinates**)의 개념입니다.
 
 ### <span style="color:red">알면 좋은 것</span> ʕ  ·ᴥ·ʔ
-![Desktop View](/assets/img/math/ComplexNumber/Euler_Formula_1/1.png)
+![선형대수·수학 개념 설명: <span style="color:red">알면 좋은 것</span> ʕ  ·ᴥ·ʔ](/assets/img/math/ComplexNumber/Euler_Formula_1/1.png)
 # 2. Euler's formula by differential equation
 임의의 복소수 
 $$x+iy$$가 있을 때, $$x$$와 $$y$$를 실수라고 하자. <br>
 이 값은 극좌표계를 이용해 표현하면 다음과 같이 표현할 수 있다. <br>
 원점에서 $$x$$, $$y$$까지의 거리가 $$r$$이고 $$x$$축과 이루는 각도가$$\theta$$라고 했을 때, <br>
 $$x+iy = rcos\theta+irsin\theta$$이다 <br>
-![Desktop View](/assets/img/math/ComplexNumber/Euler_Formula_1/2.png)
+![선형대수·수학 개념 설명: 2. Euler's formula by differential equation](/assets/img/math/ComplexNumber/Euler_Formula_1/2.png)
 <br>
 
 여기서 $$x$$와 $$y$$가 만나는 점을 $$x+iy$$로 나타내고 이를 직교좌표계에서 극좌표계로 변환해보면 아래와 같다.<br>
@@ -54,7 +41,7 @@ $$x+iy$$를 나타내면 이는 $$r cos \theta + ir sin \theta$$가 된다 <br>
 ### <span style="color:blue">**🧩증명**</span>
 r=1 일때, &nbsp; 임의의 복소수 $z$가 있다고 하자 <br>
 $$z = cos\theta + isin\theta$$ <br>
-![Desktop View](/assets/img/math/ComplexNumber/Euler_Formula_1/3.png)
+![선형대수·수학 개념 설명: <span style="color:blue">**🧩증명**</span>](/assets/img/math/ComplexNumber/Euler_Formula_1/3.png)
 양변을 $$\theta$$에 대해 미분하자 <br>
 $$\frac{dz}{d\theta} = -sin\theta + icos\theta$$
 <br> 

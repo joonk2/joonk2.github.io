@@ -1,5 +1,6 @@
 ---
 title:  "binary search"
+description: "이진 탐색(Binary Search) 알고리즘의 개념과 구현 방법을 설명합니다. 정렬된 배열에서의 효율적인 탐색 방법을 이해하고, Java에서의 구현 방법과 시간 복잡도를 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, binarySearch]

@@ -16,7 +16,7 @@ date: 2024-03-07
 bundle exec jekyll build
 ```
 
-![Desktop View](/assets/img/error/ruby/1.png)
+![🚨문제 발생 관련 설명 이미지](/assets/img/error/ruby/1.png)
 
 <br><br>
 
@@ -32,5 +32,5 @@ bundle update jekyll
 bundle exec jekyll serve --port 4000
 ```
 
-![Desktop View](/assets/img/error/ruby/2.png)
-![Desktop View](/assets/img/error/ruby/3.png)
+![build error 관련 참고 이미지](/assets/img/error/ruby/2.png)
+![build error 관련 참고 이미지](/assets/img/error/ruby/3.png)

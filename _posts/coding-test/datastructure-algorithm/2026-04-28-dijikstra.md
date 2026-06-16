@@ -10,22 +10,6 @@ date: 2026-04-28
 ---
 
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-
-
 ## 🙋‍♂️ 들어가며
 이번 시간에는 dijikstra를 배워보자
 
@@ -35,7 +19,7 @@ date: 2026-04-28
 
 dijikstra는 최소비용을 구할 때 많이 쓰인다.
 
-![Desktop View](/assets/img/data-alg/dijikstra/basic/1.jpg)
+![알고리즘 문제 풀이 참고 다이어그램](/assets/img/data-alg/dijikstra/basic/1.jpg)
 
 위 그림을 토대로 아래에 구현해보자
 <br><br>

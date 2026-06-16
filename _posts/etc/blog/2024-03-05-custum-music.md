@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 블로그 음악 추가 updated(Mar 13, 2024)"
+title:  "[깃허브 블로그] 배경음악 플레이어 추가하기"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -35,7 +35,7 @@ updated: 2024-03-13 wed 12:41
 우리가 필요한 건 음악의 raw 주소입니다 <br>
 github나 gitlab에 올린 음악파일.wav 혹은 mp3는 용량이 커서 view raw를 누르면 다운로드 되는데 당황하지말고 일단 제 글을 천천히 잘 읽어봅시다 <br>
 
-음악의 raw주소는 아래 코드에 어떻게 구하는지 제 코드를 보고 참고합시다. <br>
+음악의 raw주소는 아래 코드에 어떻게 구하는지 제 코드를 보고 참고하시기 바랍니다. <br>
 이제 다음으로 넘어갑니다 <br><br><br><br><br>
 
 # 2. 음악 자동재생 기준으로 play, pause, next 버튼을 추가
@@ -131,7 +131,7 @@ gif를 얻기 위해 [https://new.express.adobe.com/tools/convert-to-gif](https:
 # 실행하면 이렇게 됩니다ㅎ
 bundle exec jekyll build
 ```
-![Desktop View](/assets/img/blog/music/0.png)
+![Jekyll 블로그 배경음악 플레이어 설정 화면](/assets/img/blog/music/0.png)
 #### 영상으로 확인하고 싶으면 링크 클릭
 ## [ㄱㄱ](https://github.com/joonk2/music/assets/153247950/492279e7-a319-4bd8-b049-1c3b4f75dae5)
 
@@ -147,7 +147,7 @@ bundle exec jekyll build
 
 `bundle exec jekyll build` 을 통해 들어간 로컬 주소 [http://127.0.0.1:4000/](http://127.0.0.1:4000/) 여기서는 자동 실행이 잘만되는데 어째서 깃허브 블로그에 업로드하고 각 play, pause, next 버튼을 클릭하니 음악 실행은 되지않고 F12 누르니 아래와 같은 오류가 뜨네요
 
-![Desktop View](/assets/img/blog/music/1.png)
+![Jekyll 블로그 배경음악 플레이어 설정 화면](/assets/img/blog/music/1.png)
 <br>
 일단 무슨 말이냐면 노래 저장한 경로를 못 찾고, 버튼도 못 찾겠다는겁니다. <br>
 그리고 jekyll 페이지가 정적이라 처음 홈페이지 들어올 때 자동 재생을 못하는 대신 메인 홈페이지 들어오자마자 play를 누르거나 내부 페이지를 눌렀을 때 음악 자동재생이 시작된다하네요 <br>
@@ -275,7 +275,7 @@ n-1번째 시도 --> <script src="../../javascript/commons/music-controls.js"></
 
 <br><br><br><br>
 # 4. github page에 업로드하고 확인
-![Desktop View](/assets/img/blog/music/2.png)
+![Jekyll 블로그 배경음악 플레이어 설정 화면](/assets/img/blog/music/2.png)
 
 #### 영상으로 확인하고 싶으면 링크 클릭
 ## [ㄱㄱ](https://github.com/joonk2/music/assets/153247950/12c0ae39-a3c7-4d03-b3aa-71600e473137)
@@ -290,7 +290,7 @@ n-1번째 시도 --> <script src="../../javascript/commons/music-controls.js"></
 
 # 5. (updated) 버튼 색깔 바꾸기
 ### 버튼이 너무 밋밋하여 색깔을 넣어봅시다<br>
-`/includes/sidebar.html` 이곳에서 아래코드로 변경합시다
+`/includes/sidebar.html` 이곳에서 아래코드로 변경하시기 바랍니다
 ```html
 <!-- 음악 제어 버튼 추가 -->
 <div id="music-controls" style="text-align: center;">
@@ -391,10 +391,10 @@ _sass/addon/common.scss 이 경로에서 아래 코드들을 아무대나 추가
 이제 로컬환경에 한번 들어가보고 업데이트 후 블로그에도 들어가봅시다!
 <br><br>
 
-![Desktop View](/assets/img/blog/music/3.png)
+![Jekyll 블로그 배경음악 플레이어 설정 화면](/assets/img/blog/music/3.png)
 <br><br>
 
-![Desktop View](/assets/img/blog/music/4.png)
+![Jekyll 블로그 배경음악 플레이어 설정 화면](/assets/img/blog/music/4.png)
 <br><br>
 
 이것으로 음악추가는 여기서 마치겠습니다. 긴글 읽어주셔서 감사합니다!

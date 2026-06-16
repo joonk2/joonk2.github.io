@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 댓글창 꾸미기"
+title:  "[깃허브 블로그] Utterances 댓글창 GIF 꾸미기"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -13,7 +13,7 @@ written: 2024-03-10 sun 12:11
 블로그 댓글창이 너무 생동감이 없는 것 같아 댓글창 옆에 gif사진을 추가해보기로 했습니다!
 <br><br>
 
-![Desktop View](/assets/img/blog/gifcomments/0.png)
+![블로그 커스터마이징 설정 화면](/assets/img/blog/gifcomments/0.png)
 
 우선 전 utterance 댓글창을 _layout/post.html 이곳에서 맨 아래에 작성해 놓은게 있었습니다 <br>
 
@@ -86,10 +86,10 @@ bundle exec jekyll serve --port 4000
 ```
 <br>
 
-![Desktop View](/assets/img/blog/gifcomments/1.png)
+![블로그 커스터마이징 설정 화면](/assets/img/blog/gifcomments/1.png)
 ---
 
-![Desktop View](/assets/img/blog/gifcomments/2.jpg)
+![블로그 커스터마이징 설정 화면](/assets/img/blog/gifcomments/2.jpg)
 ---
 <br><br>
 

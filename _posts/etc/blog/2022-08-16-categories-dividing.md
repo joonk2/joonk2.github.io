@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 블로그 카테고리 나누는 법"
+title:  "[깃허브 블로그] Jekyll 카테고리 및 태그 분류 설정"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -18,13 +18,13 @@ date: 2022-08-16
 <br>
 <br>
 
-![Desktop View](/assets/img/categories-dividing/1.PNG)
+![🤔카테고리를 어떻게 하면 나눌 수 있을까? 관련 설명 이미지](/assets/img/categories-dividing/1.PNG)
 
 <br>
 <br>
 <br>
 
-![Desktop View](/assets/img/categories-dividing/2.PNG)
+![Jekyll 카테고리 및 태그 분류 설정 관련 참고 이미지](/assets/img/categories-dividing/2.PNG)
 
 <br>
 <br>
@@ -55,7 +55,7 @@ date: 2022-08-16
 <br>
 <br>
 
-![Desktop View](/assets/img/categories-dividing/4.PNG)
+![Jekyll 카테고리 및 태그 분류 설정 관련 참고 이미지](/assets/img/categories-dividing/4.PNG)
 
 ```markdown
 categories: [상위폴더명, 하위폴더명] 
@@ -79,7 +79,7 @@ git push 후 결과를 확인해보면?
 
 # 짜잔✅
 
-![Desktop View](/assets/img/categories-dividing/5.PNG)
+![짜잔✅ 관련 설명 이미지](/assets/img/categories-dividing/5.PNG)
 
 ***
 <br>
@@ -100,4 +100,10 @@ git push 후 결과를 확인해보면?
 
 [![어서오셔 ㅎ](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk-zPB4TCuWRNJVIF0aWgniDPNJgUTdXmILg&usqp=CAU)](https://discord.gg/zkzk5xtm)
 
+---
+
+## 📚 관련 글
+
+- [👈 깃허브 블로그 시리즈: 1편 기초 세팅](https://joonk2.github.io/posts/2022/08/12/creating-githubblog/)
+- [👉 블로그 커스터마이징 가이드](https://joonk2.github.io/posts/2024/02/23/custommizing/)
 

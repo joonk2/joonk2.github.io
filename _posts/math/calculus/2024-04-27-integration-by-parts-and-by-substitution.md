@@ -1,5 +1,5 @@
 ---
-title: "(problem solving) integration by parts and by substitution"
+title:  "(problem solving) integration by parts and by substitution"
 layout: post
 categories: [math, calculus]
 tags: [math, calculus, 미적분, 큐스터디, 부분적분, 치환적분, integration by parts, integration by substitution]
@@ -9,19 +9,6 @@ date: 2024-04-27 sat 07:49am
 updated: 
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 ```markdown

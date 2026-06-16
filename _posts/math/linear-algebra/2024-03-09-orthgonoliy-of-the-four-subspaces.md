@@ -1,5 +1,5 @@
 ---
-title: "Orthogonality of The Four Subspaces"
+title:  "Orthogonality of The Four Subspaces"
 layout: post
 categories: [math, linear-algebra]
 tags: [math, LinearAlgebra, Orthogonality of The Four Subspaces, 부분공간, 선형변환, 행공간, 영공간, subspace, linear_transformation]
@@ -8,19 +8,6 @@ toc_sticky: true
 date: 2024-03-09 sat 10:40
 updated: 
 ---
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 ```md
@@ -49,8 +36,8 @@ updated:
 나아가 이는 어떻게 사진(무시쿵야)에 형성되어있는지 알 수 있게될 것입니다.
 ```
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/1.png)
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/coongya.jpeg)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/four-subspace/1.png)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/four-subspace/coongya.jpeg)
 <br><br><br>
 
 # 2. 복습
@@ -63,7 +50,7 @@ updated:
 선형대수에서 정의역, 공역, 치역? <br>
 —> 그럼 선형변환에서 말하는 정의역, 공역, 치역은 어떤 것일까?
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/2.png)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/four-subspace/2.png)
 <br><br>
 
 ## 2-2 선형변환
@@ -78,7 +65,7 @@ updated:
 1. 부분 집합의 개념을 벡터 공간에 접목한 것 <br>
 2. 벡터 공간의 기본 구조를 그대로 유지하는 작은 벡터공간
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/3.png) <br>
+![선형대수·수학 개념 설명: 2-3 부분공간](/assets/img/math/LinearAlgebra/four-subspace/3.png) <br>
 $$\vec{0}$$은 항상 벡터공간에 들어있어야 하기에 <br>
 원점을 지나는 직선이 $$R^2$$(2차원) 벡터공간 상에서 부분 공간이 될 수 있다! 
 <br><br><br><br>
@@ -90,7 +77,7 @@ $$\vec{0}$$은 항상 벡터공간에 들어있어야 하기에 <br>
 $$A=\begin{bmatrix} 2 & 1 \\ 4 & 2\end{bmatrix}$$
 그러면, 행공간은 행벡터[2 1]와 [4 2]의 선형결합으로 이뤄진 선상에 있는 모든 벡터들의 집합이다
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/4.png)
+![선형대수·수학 개념 설명: 3. 행공간과 열공간](/assets/img/math/LinearAlgebra/four-subspace/4.png)
 <br><br><br><br>
 
 열공간은 열벡터 
@@ -101,7 +88,7 @@ $$[1 \quad 2]^T$$
 여기서는 열벡터 2개로 선형결합 시켜서 얻을 수 있는 벡터공간을 열공간이라 한다
 <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/5.png)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/four-subspace/5.png)
 <br><br><br>
 
 이렇게 보니 행공간과 열공간은 다르게 생긴 것을 확인할 수 있었다. <br>
@@ -122,8 +109,8 @@ $$1\begin{bmatrix} 1 \\ 2 \end{bmatrix}$$
 빨간색 선이 <span style="color:red">**열벡터**</span> 
 $$2\begin{bmatrix} 1 \\ 2 \end{bmatrix}$$
 
-![Desktop View](https://github.com/joonk2/math/raw/main/linear-algebra/linear-transformation2.gif)
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/transformation2.png)
+![수학 개념 설명 다이어그램](https://github.com/joonk2/math/raw/main/linear-algebra/linear-transformation2.gif)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/four-subspace/transformation2.png)
 <br><br><br><br><br><br>
 
 # 4. 영공간
@@ -140,7 +127,7 @@ $$\vec{x}$$들이라는 것
 [잠깐!]
 `선형변환 = 모든 입력 벡터들이 열공간으로 매핑된다`
 
-![Desktop View](https://github.com/joonk2/math/raw/main/linear-algebra/linear-combination-between-MatrixA-nullspace.gif)
+![수학 개념 설명 다이어그램](https://github.com/joonk2/math/raw/main/linear-algebra/linear-combination-between-MatrixA-nullspace.gif)
 
 ```md
 영공간이 물어보는 것:
@@ -151,13 +138,13 @@ A라는 선형변환 후에 결과가 0이 되어버리는 \vec{x}의 집합은 
 ### 위의 사진을 보고 알 수 있는 것:
 행공간과 영공간은 서로 직교한다 <br>
 즉 행벡터들과 직교하는 모든 공간을 잇는게 영공간이다
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/6.png)
+![선형대수·수학 개념 설명: 위의 사진을 보고 알 수 있는 것:](/assets/img/math/LinearAlgebra/four-subspace/6.png)
 <br><br><br>
 
 # 5. 좌영공간
 <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/7.png)
+![선형대수·수학 개념 설명: 5. 좌영공간](/assets/img/math/LinearAlgebra/four-subspace/7.png)
 <br>
 
 이 그림의 우측에 보면 열공간과 좌영공간인 A행렬을 전치시킨 영공간이 서로 직교(직각표시) <br>
@@ -171,7 +158,7 @@ A라는 선형변환 후에 결과가 0이 되어버리는 \vec{x}의 집합은 
  For 
 $$A \in R^{m*n}, \quad\quad f: R^n \rightarrow R^m$$
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/7.png)
+![선형대수·수학 개념 설명: 6. 과제](/assets/img/math/LinearAlgebra/four-subspace/7.png)
 
 ## <span style="color:red">**풀이:**</span>
 m*n 행렬에서 전체 입력인 n차원은 row space, null space로 구성 <br>
@@ -193,7 +180,7 @@ row space + null space = $$R^n$$
 - 선형변환의 정의역은 row space + null space의 합집합
 - n차원 실수 공간상 어떤 벡터라도 row space와 null space 상의 벡터들의 선형조합으로 표현 가능
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/8.png)
+![선형대수·수학 개념 설명: <span style="color:red">**입력(정의역)**</span>](/assets/img/math/LinearAlgebra/four-subspace/8.png)
 <br>
 
 이 그림은 <span style="color:red">**행공간**</span>인 빨간색 선과 <span style="color:pink">**영공간**</span>인 빨간 점선이 만나 <br>
@@ -211,7 +198,7 @@ $$2\begin{bmatrix} 1 \\ 2 \end{bmatrix}$$도 표현할 수 있습니다.
 - left nullspace는 선형 변환 과정에서 시각화 할 수는 없지만 열공간과 서로 직교하므로 다음과 같이 표현할 수 있다
 <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/four-subspace/9.png)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/four-subspace/9.png)
 <br>
 
 아까 `정의역` 에서 행공간과 영공간에서 선형변환을 통해 생성된 초록색 선이 여기서는 <br>

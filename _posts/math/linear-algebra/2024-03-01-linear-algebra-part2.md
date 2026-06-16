@@ -40,22 +40,6 @@ date: 2024-03-01
 6. 참고
 ```
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-
-
 <!------------------------------------------------------------------------------------->
 # 0. 핵심 요약 (3개)
 ### <span style="color:red">norm(정규화) 쓰는 이유</span>
@@ -84,7 +68,7 @@ $$\Rightarrow$$ 암 물론 $$f(a, b) = f(b, a)$$가 만족하면 된다
 <br>
 
 ### <span style="color:red">정사영</span>
-![Desktop View](/assets/img/math/LinearAlgebra/part2/projection2.png)
+![선형대수·수학 개념 설명: <span style="color:red">정사영</span>](/assets/img/math/LinearAlgebra/part2/projection2.png)
 $$\vec{a} \cdot \vec{b} = ||a|| \cdot ||b|| cos \theta $$ <br>
 ($$\theta$$구하고 수선의 발을 내려 $$\perp$$표시하고 다시 확인해보면 자연스럽게 내적 이해가 될 것이다) <br>
 
@@ -101,7 +85,7 @@ $$\Rightarrow$$
 a <span style="color:pink">=</span> v에 평행한 a벡터 aka 부분벡터공간 v에 속한 벡터<br>
 b <span style="color:pink">=</span> w라는 v에 직교하는 여공간 속에 포함되는 b벡터 <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part2/projection.png)
+![선형대수·수학 개념 설명: <span style="color:red">ex)</span>](/assets/img/math/LinearAlgebra/part2/projection.png)
 <br><br><br><br><br>
 
 # 1. 행렬
@@ -112,8 +96,8 @@ ex) 속도 = 벡터 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 속력 = 스칼라
 <br><br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part2/1.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/2.png)
+![선형대수·수학 개념 설명: 1-1. 평면백터](/assets/img/math/LinearAlgebra/part2/1.png)
+![선형대수·수학 개념 설명: 1-1. 평면백터](/assets/img/math/LinearAlgebra/part2/2.png)
 
 벡터 v와 방향이 같은 벡터: a, d <br>
 벡터 v와 크기가 같은 벡터: c, d <br>
@@ -123,29 +107,29 @@ ex) v 벡터를 보자 <br>
 <br><br>
 
 ## 1-2. 공간벡터
-![Desktop View](/assets/img/math/LinearAlgebra/part2/3.png)
+![선형대수·수학 개념 설명: 1-2. 공간벡터](/assets/img/math/LinearAlgebra/part2/3.png)
 <br><br>
 
 ## 1-3. n차원 벡터
-![Desktop View](/assets/img/math/LinearAlgebra/part2/4.png)
+![선형대수·수학 개념 설명: 1-3. n차원 벡터](/assets/img/math/LinearAlgebra/part2/4.png)
 <br><br><br>
 
 # 2. 벡터의 연산
 ## 2-1. Norm
-![Desktop View](/assets/img/math/LinearAlgebra/part2/5.png)
+![선형대수·수학 개념 설명: 2-1. Norm](/assets/img/math/LinearAlgebra/part2/5.png)
 <br><br><br>
 
 ## 2-2. 선형결합
-![Desktop View](/assets/img/math/LinearAlgebra/part2/6.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/7.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/8.png)
+![선형대수·수학 개념 설명: 2-2. 선형결합](/assets/img/math/LinearAlgebra/part2/6.png)
+![선형대수·수학 개념 설명: 2-2. 선형결합](/assets/img/math/LinearAlgebra/part2/7.png)
+![선형대수·수학 개념 설명: 2-2. 선형결합](/assets/img/math/LinearAlgebra/part2/8.png)
 <br><br>
 
 ## 2-3. 스칼라 곱 + cosine simmilarity
 - ### 스칼라곱 시작하기 전에 잠깐 삼각함수 표 확인합시다
-![Desktop View](/assets/img/math/LinearAlgebra/part2/9.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/10.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/11.png)
+![선형대수·수학 개념 설명: 2-3. 스칼라 곱 + cosine simmilarity](/assets/img/math/LinearAlgebra/part2/9.png)
+![선형대수·수학 개념 설명: 2-3. 스칼라 곱 + cosine simmilarity](/assets/img/math/LinearAlgebra/part2/10.png)
+![선형대수·수학 개념 설명: 2-3. 스칼라 곱 + cosine simmilarity](/assets/img/math/LinearAlgebra/part2/11.png)
 <br><br>
 
 #### cosine simmilarity
@@ -153,27 +137,27 @@ $$cos\theta=\frac{a \cdot b}{\vert a \vert \cdot \vert b \vert} = \frac{\sum\lim
 <br><br>
 
 ## 2-4. 벡터곱
-![Desktop View](/assets/img/math/LinearAlgebra/part2/12.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/13.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/14.png)
+![선형대수·수학 개념 설명: 2-4. 벡터곱](/assets/img/math/LinearAlgebra/part2/12.png)
+![선형대수·수학 개념 설명: 2-4. 벡터곱](/assets/img/math/LinearAlgebra/part2/13.png)
+![선형대수·수학 개념 설명: 2-4. 벡터곱](/assets/img/math/LinearAlgebra/part2/14.png)
 <br><br><br>
 
 # 3. 벡터의 응용
 ## 3-1. 직선의 표
-![Desktop View](/assets/img/math/LinearAlgebra/part2/15.png)
+![선형대수·수학 개념 설명: 3-1. 직선의 표](/assets/img/math/LinearAlgebra/part2/15.png)
 <br><br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part2/16.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/17.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/18.png)
+![선형대수·수학 개념 설명: 3-1. 직선의 표](/assets/img/math/LinearAlgebra/part2/16.png)
+![선형대수·수학 개념 설명: 3-1. 직선의 표](/assets/img/math/LinearAlgebra/part2/17.png)
+![선형대수·수학 개념 설명: 3-1. 직선의 표](/assets/img/math/LinearAlgebra/part2/18.png)
 
 ## 3-2. 평면의 표현
-![Desktop View](/assets/img/math/LinearAlgebra/part2/19.png)
+![선형대수·수학 개념 설명: 3-2. 평면의 표현](/assets/img/math/LinearAlgebra/part2/19.png)
 <br><br><br><br><br>
 
 # 4. 행벡터와 벡터내적간의 연관성
 `질문`: 벡터의 내적이 기하학적으로 한 벡터에서 다른 벡터로의 정사영과 관련이 있을까? <br>
-![Desktop View](/assets/img/math/LinearAlgebra/part2/basic1.png)
+![선형대수·수학 개념 설명: 4. 행벡터와 벡터내적간의 연관성](/assets/img/math/LinearAlgebra/part2/basic1.png)
 관례적으로 변화가 되는 대상인 열벡터를 우리가 “흔히 말하는” 벡터라고 본다. <br>
 행벡터는 열벡터에 대한 함수로, 열벡터는 ‘변화의 대상’이 되는 것에 반해 행벡터는 변화를 시키는 행위자인 것이다. <br>
 가령 [2, 1]이라는 행벡터와 $$[3, -4]^T$$라는 열 벡터에 대해 다음과 같은 곱셈을 생각해보자 <br>
@@ -191,12 +175,12 @@ $$f: V \Rightarrow R$$
 
 우선 `ax+by+c = 0` 인 식을 통해, 출력 스칼라 값4가 어떤 의미일지 확인하자 <br>
 우리는 행벡터에 해당하는 [2, 1] 을 그리고 2x+y=4 라는 점까지의 거리를 생각하자
-![Desktop View](/assets/img/math/LinearAlgebra/part2/rowVEC-innerProduct.png)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/part2/rowVEC-innerProduct.png)
 생각해보면  `2x+y=c`에 해당하는 점선은 모두 행벡터 [2, 1]에 수직이다 <br>
 <span style="color:red">**why?**</span> --> 행벡터가 점선으로 표현한 함수들에 대해 법선 벡터역할을 하기 때문 <br>
 따라서 위의 그림에서 빨간색으로 표현한 길이는 다음과 같이 직각 삼각형의 높이를 계산함으로써 얻을 수 있다.
 
-![Desktop View](/assets/img/math/LinearAlgebra/part2/inner-product2.png)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/part2/inner-product2.png)
 <br>
 
 직각 삼각형의 넓이를 구하는 방법을 이용해 d의 길이를 계산할 수 있다. <br>
@@ -215,17 +199,17 @@ $$ ||v|| * ||w|| * cos60 $$
 
 # 5. 예제
 ## 5-1. cos theta
-![Desktop View](/assets/img/math/LinearAlgebra/part2/20.png)
+![선형대수·수학 개념 설명: 5-1. cos theta](/assets/img/math/LinearAlgebra/part2/20.png)
 <br><br>
 
 ## 5-2. 두 벡터를 활용한 평행사변형 넓이
-![Desktop View](/assets/img/math/LinearAlgebra/part2/21.png)
+![선형대수·수학 개념 설명: 5-2. 두 벡터를 활용한 평행사변형 넓이](/assets/img/math/LinearAlgebra/part2/21.png)
 <br><br>
 
 ## 5-3. 직선과 평면이 동시에 만나는 좌표
-![Desktop View](/assets/img/math/LinearAlgebra/part2/22.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/23.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part2/24.png)
+![선형대수·수학 개념 설명: 5-3. 직선과 평면이 동시에 만나는 좌표](/assets/img/math/LinearAlgebra/part2/22.png)
+![선형대수·수학 개념 설명: 5-3. 직선과 평면이 동시에 만나는 좌표](/assets/img/math/LinearAlgebra/part2/23.png)
+![선형대수·수학 개념 설명: 5-3. 직선과 평면이 동시에 만나는 좌표](/assets/img/math/LinearAlgebra/part2/24.png)
 <br><br>
 
 # 6. 참고

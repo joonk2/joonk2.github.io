@@ -1,5 +1,5 @@
 ---
-title: "오일러공식을 이해하기 위한 쉬운 설명(회전변환)"
+title:  "오일러공식을 이해하기 위한 쉬운 설명(회전변환)"
 layout: post
 categories: [math, trigonometric-functions]
 tags: [수학, math, 복소수, ComplexNumber, 회전변환, 회전행렬, 삼각함수, 오일러공식, 미분, 적분]
@@ -8,19 +8,6 @@ toc_sticky: true
 date: 2024-04-09 tue 19:17
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 
@@ -33,15 +20,15 @@ date: 2024-04-09 tue 19:17
 
 # 1. 들어가며
 ### 질문: 평면 위의 점 (x, y)를 $$\theta$$만큼 회전시키면 좌표가 어떻게 변할까?
-![Desktop View](/assets/img/math/Trigonometric_Functions/euler's_formula_1/1.png)
+![선형대수·수학 개념 설명: 질문: 평면 위의 점 (x, y)를 $$\theta$$만큼 회전시키면 좌표가 어떻게 변할까?](/assets/img/math/Trigonometric_Functions/euler's_formula_1/1.png)
 
 # 2. 회전변환 증명
 우선 (x’, y’)를 구하기 위해 아래의 직사각형을 생각해보자
 그럼 그 직사각형 역시 $$\theta$$만큼 회전하여 놓이게 될 것이다.<br>
 아래는 <span style="color:red">**결과 사진**</span>과 <span style="color:blue">**시뮬레이션.gif**</span>다. <br>
-![Desktop View](/assets/img/math/Trigonometric_Functions/euler's_formula_1/2.png)
+![선형대수·수학 개념 설명: 2. 회전변환 증명](/assets/img/math/Trigonometric_Functions/euler's_formula_1/2.png)
 
-![Desktop View](https://github.com/joonk2/math/raw/main/complex-number/euler-formula/part1/rotation1.gif)
+![선형대수·수학 개념 설명: 2. 회전변환 증명](https://github.com/joonk2/math/raw/main/complex-number/euler-formula/part1/rotation1.gif)
 <br><br><br><br>
 
 이제 이 회전하여 놓인사각형의 초록색 꼭짓점을 보면, <br>
@@ -51,8 +38,8 @@ date: 2024-04-09 tue 19:17
 $$x sin \theta$$가 되며 그 점의 좌표는 ($$x cos \theta$$, $$x sin \theta$$)가 된다.
 아래는 <span style="color:red">**결과 사진**</span>과 <span style="color:blue">**시뮬레이션.gif**</span>다. <br>
 
-![Desktop View](/assets/img/math/Trigonometric_Functions/euler's_formula_1/3.png)
-![Desktop View](https://github.com/joonk2/math/raw/main/complex-number/euler-formula/part2/part2.gif)
+![수학 개념 설명 다이어그램](/assets/img/math/Trigonometric_Functions/euler's_formula_1/3.png)
+![수학 개념 설명 다이어그램](https://github.com/joonk2/math/raw/main/complex-number/euler-formula/part2/part2.gif)
 <br><br><br><br>
 
 마지막으로 ($$x’, y’$$)의 좌표를 찾기위해 아래의 빨간색 직각삼각형을 생각해보자 <br>
@@ -65,8 +52,8 @@ $$x sin \theta$$가 되며 그 점의 좌표는 ($$x cos \theta$$, $$x sin \thet
 여기서 sin cos 계산하면 $x’$, $y’$의 위치 좌표 값을 계산할 수 있다 <br>
 아래는 <span style="color:red">**결과 사진**</span>과 <span style="color:blue">**시뮬레이션.gif**</span>다. <br>
 
-![Desktop View](/assets/img/math/Trigonometric_Functions/euler's_formula_1/4.png)
-![Desktop View](https://github.com/joonk2/math/raw/main/complex-number/euler-formula/part3/part3.gif)
+![수학 개념 설명 다이어그램](/assets/img/math/Trigonometric_Functions/euler's_formula_1/4.png)
+![수학 개념 설명 다이어그램](https://github.com/joonk2/math/raw/main/complex-number/euler-formula/part3/part3.gif)
 <br><br><br>
 
 $x’$, $y’$를 계산해보면 아래와 같이 나온다 <br>

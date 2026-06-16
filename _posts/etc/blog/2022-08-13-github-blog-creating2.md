@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 깃허브 블로그 만드는 법 2"
+title:  "[깃허브 블로그] Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -24,13 +24,13 @@ date: 2022-08-13
 
 <br>
 
-![Desktop View](/assets/img/2022-08-13/0.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/0.PNG)
 
 <br>
 빨간색을 클릭하면
 <br>
 
-![Desktop View](/assets/img/2022-08-13/01.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/01.PNG)
 <br>
 
 code를 눌러 downloadzip을 통해 일단 찾기 쉽게 저장해두는 것을 권장합니다. 저는 바탕화면에 저장 후 진행하였습니다.
@@ -46,7 +46,7 @@ code를 눌러 downloadzip을 통해 일단 찾기 쉽게 저장해두는 것을
 <br>
 
 
-![Desktop View](/assets/img/2022-08-13/1.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/1.PNG)
 
 <br>
 <br>
@@ -60,19 +60,19 @@ code를 눌러 downloadzip을 통해 일단 찾기 쉽게 저장해두는 것을
 <br>
 
 
-![Desktop View](/assets/img/2022-08-13/2.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/2.PNG)
 
 <br>
 <br>
 <br>
 
-<u>저거 체크 안하면 조금 피곤해집니다, 꼭 체크합시다ㅎ<u/>
+<u>저거 체크 안하면 조금 피곤해집니다, 꼭 체크하시기 바랍니다ㅎ<u/>
 
 <br>
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-13/3.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/3.PNG)
 
 <br>
 <br>
@@ -83,7 +83,7 @@ code를 눌러 downloadzip을 통해 일단 찾기 쉽게 저장해두는 것을
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-13/4.PNG)\
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/4.PNG)\
 그 후 엔터를 누르면 자동으로 꺼집니다.
 
 <br>
@@ -93,7 +93,7 @@ code를 눌러 downloadzip을 통해 일단 찾기 쉽게 저장해두는 것을
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-13/5.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/5.PNG)
 
 <br>
 루비가 잘 설치되었나 확인하기위해
@@ -105,7 +105,7 @@ $ruby -v
   
 <br>
 
-![Desktop View](/assets/img/2022-08-13/6.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/6.PNG)
   
 <br>
 이렇게 뜨면 설치가 잘 되었다는 뜻입니다.
@@ -129,7 +129,7 @@ jekyll new 폴더명 아무거나
 <br>
 <br>
   
-![Desktop View](/assets/img/2022-08-13/7.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/7.PNG)
 
 <br>
 <br>
@@ -177,7 +177,7 @@ $jekyll build --verbose
 <br>
 <br>
   
-![Desktop View](/assets/img/2022-08-13/8.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/8.PNG)
 
 <br>
 serer address 부분에 저거를 복사하여 주소창에 입력해보면
@@ -185,7 +185,7 @@ serer address 부분에 저거를 복사하여 주소창에 입력해보면
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-13/9.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/9.PNG)
   
 <br>
 <br>
@@ -210,7 +210,7 @@ serer address 부분에 저거를 복사하여 주소창에 입력해보면
 
 
 <br>
- 그리고 본인의 컴퓨터가 리눅스가 아니라면 입력합시다
+ 그리고 본인의 컴퓨터가 리눅스가 아니라면 입력하시기 바랍니다
  
  ```
  $bundle lock --add-platform x86_64-linux
@@ -223,10 +223,10 @@ serer address 부분에 저거를 복사하여 주소창에 입력해보면
 `.github>workflows>pages-deploy.yml.hook` 여기서 `.hook`을 지우고\
 파일명을 `.github>workflows>pages-deploy.yml`으로 바꿔줍시다\
 <br>
-(옵션)그리고 깔지 않고싶은 것이 있다면 gitignore 파일을 열어 적고 수정합시다  
+(옵션)그리고 깔지 않고싶은 것이 있다면 gitignore 파일을 열어 적고 수정하시기 바랍니다  
 <br>
 
-그 후 해당 파일을 열어 branch 부분을 수정합시다.
+그 후 해당 파일을 열어 branch 부분을 수정하시기 바랍니다.
 <br>
 
 ```yml
@@ -250,7 +250,7 @@ $bundle exec jekyll serve
 <br>
 <br>
   
-![Desktop View](/assets/img/2022-08-13/10.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/10.PNG)
 
 <br>
 이 사단이 납니다.
@@ -265,7 +265,7 @@ $bundle exec jekyll serve
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-13/11.PNG)
+![2-3 🧐자 어떻게 해결하느냐? 관련 설명 이미지](/assets/img/2022-08-13/11.PNG)
 
 <br>
 <br>
@@ -291,7 +291,7 @@ gem "webrick", "~> 1.7"
 ```
 
 <br>
-이제 이 문장 밑에 이 문구를 복붙합시다, 그리고 저장
+이제 이 문장 밑에 이 문구를 복사하여 붙여넣으시기 바랍니다, 그리고 저장
 <br>
 <br>
   
@@ -321,7 +321,7 @@ $bundle exec jekyll serve
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-13/12.PNG)
+![Jekyll 테마로 블로그 만드는 법 - 2편 로컬 실행 관련 참고 이미지](/assets/img/2022-08-13/12.PNG)
   
 <br>
 <br>
@@ -356,3 +356,11 @@ $bundle exec jekyll serve
 <br>
 
 <https://chirpy.cotes.page/posts/getting-started>
+
+---
+
+## 📚 관련 글
+
+- [👈 이전: 깃허브 블로그 기초 세팅 (1편)](https://joonk2.github.io/posts/2022/08/12/creating-githubblog/)
+- [👉 다음 단계: 블로그 최종 수정 및 배포 (3편)](https://joonk2.github.io/posts/2022/08/14/last/)
+

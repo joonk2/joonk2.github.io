@@ -1,5 +1,6 @@
 ---
 title:  "PriorityQueue"
+description: "우선순위 큐(PriorityQueue)의 개념과 동작 원리를 설명합니다. 힙(Heap) 기반의 구조를 이해하고, Java에서의 구현 방법과 실전 활용 사례를 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, PriorityQueue]

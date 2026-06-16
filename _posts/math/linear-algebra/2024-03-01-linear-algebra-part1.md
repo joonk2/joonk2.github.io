@@ -5,21 +5,10 @@ categories: [math, linear-algebra]
 tags: [math, LinearAlgebra]
 toc: true
 toc_sticky: true
+math: true
 date: 2024-03-01
 ---
 
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 # 목차
@@ -147,26 +136,26 @@ $$
 행렬곱에서 $$A_{3*1} B_{1*3}$$이 있다하자 <br>
 여기서 mxn은 `행x열`이니 위는 matrix $$AB_{3*3}$$ 가 된다 <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/0.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/1.png)
+![선형대수·수학 개념 설명: 1-1. 용어정리](/assets/img/math/LinearAlgebra/part1/0.png)
+![선형대수·수학 개념 설명: 1-1. 용어정리](/assets/img/math/LinearAlgebra/part1/1.png)
 
 ## 1-2. 행렬의 연산
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/2.png)
+![선형대수·수학 개념 설명: 1-2. 행렬의 연산](/assets/img/math/LinearAlgebra/part1/2.png)
 
 <br><br><br>
 
 # 2. 연립일차방정식
 ## 2-1. 행렬의 표현
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/3.png)
+![선형대수·수학 개념 설명: 2-1. 행렬의 표현](/assets/img/math/LinearAlgebra/part1/3.png)
 
 ## 2-2 가우스 조던 소거법 & 예제
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/4.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/5.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/6.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/7.png)
+![선형대수·수학 개념 설명: 2-2 가우스 조던 소거법 & 예제](/assets/img/math/LinearAlgebra/part1/4.png)
+![선형대수·수학 개념 설명: 2-2 가우스 조던 소거법 & 예제](/assets/img/math/LinearAlgebra/part1/5.png)
+![선형대수·수학 개념 설명: 2-2 가우스 조던 소거법 & 예제](/assets/img/math/LinearAlgebra/part1/6.png)
+![선형대수·수학 개념 설명: 2-2 가우스 조던 소거법 & 예제](/assets/img/math/LinearAlgebra/part1/7.png)
 
 <br><br><br>
 
@@ -175,25 +164,25 @@ $$
 
 - >행렬식은 아래처럼 식을 계산하는 것을 의미합니다.
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/8.png)
+![선형대수·수학 개념 설명: 3-1. 행렬식이란? & Sarrus 전개](/assets/img/math/LinearAlgebra/part1/8.png)
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/9.png)
+![선형대수·수학 개념 설명: 3-1. 행렬식이란? & Sarrus 전개](/assets/img/math/LinearAlgebra/part1/9.png)
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/10.png)
+![선형대수·수학 개념 설명: 3-1. 행렬식이란? & Sarrus 전개](/assets/img/math/LinearAlgebra/part1/10.png)
 
 ## 3-2. 역행렬
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/11.png)
+![선형대수·수학 개념 설명: 3-2. 역행렬](/assets/img/math/LinearAlgebra/part1/11.png)
 
 ## 3-3. Crammer`s Rule
 
 - 연립일차방정식 AX = B 에서 A가 행렬식 0이 아닌 정사각행렬일 때
 
-![Desktop View](/assets/img/math/LinearAlgebra/part1/12.png)
+![선형대수·수학 개념 설명: 3-3. Crammer`s Rule](/assets/img/math/LinearAlgebra/part1/12.png)
 
 ## 3-4. Crammer`s Rule 예제 1개
-![Desktop View](/assets/img/math/LinearAlgebra/part1/13.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/14.png)
+![선형대수·수학 개념 설명: 3-4. Crammer`s Rule 예제 1개](/assets/img/math/LinearAlgebra/part1/13.png)
+![선형대수·수학 개념 설명: 3-4. Crammer`s Rule 예제 1개](/assets/img/math/LinearAlgebra/part1/14.png)
 <br><br>
 
 # 4. 이벤트문제 + 연습문제
@@ -223,19 +212,19 @@ A: &nbsp; 3x3, B: &nbsp; 3x3이니까 <br>
 <br><br><br>
 
 ## 4-1. 가우스 조던 소거법
-![Desktop View](/assets/img/math/LinearAlgebra/part1/15.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/16.png)
+![선형대수·수학 개념 설명: 4-1. 가우스 조던 소거법](/assets/img/math/LinearAlgebra/part1/15.png)
+![선형대수·수학 개념 설명: 4-1. 가우스 조던 소거법](/assets/img/math/LinearAlgebra/part1/16.png)
 <br><br>
 
 ## 4-2. 역행렬
-![Desktop View](/assets/img/math/LinearAlgebra/part1/17.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/18.png)
+![선형대수·수학 개념 설명: 4-2. 역행렬](/assets/img/math/LinearAlgebra/part1/17.png)
+![선형대수·수학 개념 설명: 4-2. 역행렬](/assets/img/math/LinearAlgebra/part1/18.png)
 <br><br>
 
 ## 4-3. 크래머공식으로 연립일차방정식 해 구하기(2개)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/19.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/20.png)
-![Desktop View](/assets/img/math/LinearAlgebra/part1/21.png)
+![선형대수·수학 개념 설명: 4-3. 크래머공식으로 연립일차방정식 해 구하기(2개)](/assets/img/math/LinearAlgebra/part1/19.png)
+![선형대수·수학 개념 설명: 4-3. 크래머공식으로 연립일차방정식 해 구하기(2개)](/assets/img/math/LinearAlgebra/part1/20.png)
+![선형대수·수학 개념 설명: 4-3. 크래머공식으로 연립일차방정식 해 구하기(2개)](/assets/img/math/LinearAlgebra/part1/21.png)
 
 # 참고
 [장황수학 &nbsp;&nbsp;&nbsp; 행렬식 1](https://www.youtube.com/watch?v=6DujGOVy2zo&list=PLxMkK1K0XECOj2sZG-gCk-CjvZhJ_75I4&index=13)

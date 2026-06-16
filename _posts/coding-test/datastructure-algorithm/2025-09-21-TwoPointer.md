@@ -1,5 +1,6 @@
 ---
 title:  "Two-Pointer"
+description: "투 포인터(Two Pointer) 알고리즘의 개념과 활용 방법을 설명합니다. 연속 구간과 불연속 구간 문제에서의 투 포인터 활용 방법을 이해하고, 프로그래머스 구명보트 문제 해결 방법을 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, TwoPointer]

@@ -1,5 +1,6 @@
 ---
 title:  "Stack-Queue"
+description: "스택(Stack)과 큐(Queue) 자료구조의 차이점과 특징을 설명합니다. LIFO와 FIFO 구조를 이해하고, Python을 활용한 구현 방법과 실제 활용 사례를 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, stack, Queue]
@@ -10,7 +11,7 @@ date: 2024-01-23
 
 스택과 큐는 차이가 존재하는데, 그 2개를 각자 비교해봅시다!
 
-![Desktop View](/assets/img/data-alg/stack-queue/0.png)
+![알고리즘 문제 풀이 참고 다이어그램](/assets/img/data-alg/stack-queue/0.png)
 
 ```python
 <스택이 제공하는 method>
@@ -57,7 +58,7 @@ print(result)
 # 결과     --->     ['mushroom_coongya']
 ```
 
-![Desktop View](/assets/img/data-alg/stack-queue/1.png)
+![결과     --->     ['mushroom_coongya'] 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/stack-queue/1.png)
 
 ## ※스택 활용 방안
 
@@ -65,7 +66,7 @@ print(result)
 - 후위 계산법
 - 개발 중 오류 해결을 위해, 일을 가장 최근에 한 것부터 싹 되돌아보기
 
-![Desktop View](/assets/img/data-alg/stack-queue/2.png)
+![※스택 활용 방안 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/stack-queue/2.png)
 
 ```python
 <queue가 제공하는 method>
@@ -118,7 +119,7 @@ doll_picking(order) # 함수 적용
 print(how_dolls_come_out_in_sequence)
 ```
 
-![Desktop View](/assets/img/data-alg/stack-queue/3.png)
+![알고리즘 문제 풀이 참고 다이어그램](/assets/img/data-alg/stack-queue/3.png)
 
 # ※큐 활용방안
 

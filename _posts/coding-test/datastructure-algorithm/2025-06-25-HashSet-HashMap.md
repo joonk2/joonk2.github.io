@@ -1,5 +1,6 @@
 ---
 title:  "HashSet vs HashMap"
+description: "HashSet과 HashMap의 차이점과 각각의 특징을 설명합니다. Set과 Map 자료구조의 활용 시점을 이해하고, Java에서의 구현 방법과 시간 복잡도를 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, HashSet, HashMap]

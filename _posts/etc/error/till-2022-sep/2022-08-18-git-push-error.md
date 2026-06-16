@@ -24,7 +24,7 @@ git push -u origin main
 ```
 입력했더니
 
-![Desktop View](/assets/img/git-error/git-push/1.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/git-push/1.PNG)
 
 <br>
 <br>
@@ -50,7 +50,7 @@ git pull origin main
 
 
 
-![Desktop View](/assets/img/git-error/git-push/4.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/git-push/4.PNG)
 
 <br>
 <br>
@@ -63,7 +63,7 @@ $git fetch origin
 
 <br>
 
-![Desktop View](/assets/img/git-error/git-push/5.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/git-push/5.PNG)
 
 <br>
 <br>
@@ -73,7 +73,7 @@ $git fetch origin
 git pull origin --allow-unrelated--histories
 ```
 
-![Desktop View](/assets/img/git-error/git-push/6.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/git-push/6.PNG)
 
 <br>
 그 후 git push로 해결 완료!

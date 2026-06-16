@@ -1,5 +1,6 @@
 ---
 title:  "bitmasking"
+description: "비트마스킹(Bitmasking) 기법을 활용한 부분집합 생성 방법을 설명합니다. 이진수 연산을 통해 효율적으로 부분집합을 탐색하고, 합이 특정 값인 부분집합의 개수를 구하는 방법을 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, bitmasking]

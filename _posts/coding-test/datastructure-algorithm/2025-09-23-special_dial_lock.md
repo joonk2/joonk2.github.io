@@ -1,5 +1,6 @@
 ---
 title:  "특별한 다이얼 자물쇠"
+description: "특별한 다이얼 자물쇠 문제를 Java로 해결한 풀이입니다. 그리디 알고리즘을 활용하여 앞에서부터 차례로 다이얼을 맞추며 최소 회전 횟수를 구하는 방법을 설명합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [implementation, greedy]
@@ -12,7 +13,7 @@ date: 2025-09-23
 
 # 특별한 다이얼 자물쇠
 
-![Desktop View](/assets/img/data-alg/greedy/dials_lock.jpg)
+![특별한 다이얼 자물쇠 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/greedy/dials_lock.jpg)
 
 일반적인 다이얼 자물쇠는 **위로 돌리면 숫자가 증가**, **아래로 돌리면
 숫자가 감소**합니다.\
@@ -86,7 +87,7 @@ date: 2025-09-23
 
 <br><br><br>
 
-![Desktop View](/assets/img/data-alg/greedy/dials_lock_1.jpg)
+![알고리즘 문제 풀이 참고 다이어그램](/assets/img/data-alg/greedy/dials_lock_1.jpg)
 
 <br>
 

@@ -1,5 +1,5 @@
 ---
-title: "[선형대수학] 6강. 복소벡터공간"
+title:  "[선형대수학] 6강. 복소벡터공간"
 layout: post
 categories: [math, linear-algebra]
 tags: [math, LinearAlgebra, EigenValue, kaley-hammilton, diagonalization of a matrix, 유니터리행렬, 복소벡터공간, 켤레전치, 선형대수학]
@@ -9,19 +9,6 @@ date: 2024-04-06 sat 17:07
 updated: 
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 ```md
@@ -214,7 +201,7 @@ $$v = (1, i)\\ ||v|| = \sqrt{v \cdot \bar v} = \sqrt{(1,i) \cdot (1,-i)} = \sqrt
 <br>
 
 ### 복소평면으로 복소벡터$$\begin{bmatrix}1 \\ -i\end{bmatrix} $$를 표현하면
-![Desktop View](/assets/img/math/LinearAlgebra/part6/1.png)
+![선형대수·수학 개념 설명: 복소평면으로 복소벡터$$\begin{bmatrix}1 \\ -i\end{bmatrix} $$를 표현하면](/assets/img/math/LinearAlgebra/part6/1.png)
 <br>
 위의 2차원 복소평면좌표 그래프를 봤을 때 Norm을 기하적으로 해석하면 <br>
 분홍색 벡터(분홍색 화살표)의 길이, 정확하게 $$\sqrt 2$$가 나와서 <br>

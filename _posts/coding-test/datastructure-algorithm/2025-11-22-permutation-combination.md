@@ -1,5 +1,6 @@
 ---
 title:  "permutation && combination"
+description: "순열(Permutation)과 조합(Combination)의 개념과 구현 방법을 설명합니다. 백준 11050번 이항계수1 문제를 통해 DP 파스칼 방식을 활용한 효율적인 계산 방법을 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [permutation, combination]
@@ -221,7 +222,7 @@ $_{5}C_{0}$ &nbsp; $_{5}C_{1}$ &nbsp; $_{5}C_{2}$ &nbsp; $_{5}C_{3}$ &nbsp; $_{5
 
 만약 위의 문자가 깨져보인다면 아래 사진과 같은 내용이니 아래 사진을 보자
 
-![Desktop View](/assets/img/data-alg/combination/basic-1.jpg)
+![알고리즘 문제 풀이 참고 다이어그램](/assets/img/data-alg/combination/basic-1.jpg)
 
 <br><br>
 

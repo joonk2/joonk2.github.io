@@ -19,7 +19,7 @@ date: 2022-08-17
 <br>
 <br>
 
-![Desktop View](/assets/img/git-error/deleted/1.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/deleted/1.PNG)
 
 <br>
 <br>

@@ -1,5 +1,6 @@
 ---
 title:  "gradient 작동 원리 [수기 작성]"
+description: "경사 하강법(Gradient Descent)의 작동 원리를 설명합니다. 수기 작성을 통해 기울기가 0인 지점을 찾는 과정을 이해하고, 머신러닝에서의 최적화 알고리즘 개념을 학습합니다."
 layout: post
 categories: [DataScience, ML] 
 tags: [gradient, ML, DataScience]
@@ -13,7 +14,7 @@ date: 2024-02-28
 
 ex) 짙은 안개산에서 앞은 안보이고 발 끝으로 산의 기울기만 느낄 수 있을 때, 탈출하기 위해 가장 기울기가 급한 길을 따라 내려가는 것
 
-![Desktop View](/assets/img/DataScience/ML/0.png)
+![GD(경사하강법) 관련 설명 이미지](/assets/img/DataScience/ML/0.png)
 
 <br><br><br>
 
@@ -23,10 +24,10 @@ ex) 짙은 안개산에서 앞은 안보이고 발 끝으로 산의 기울기만
 >아래 종이에 적힌 것을 보면 경사하강법의 증명을 알 수 있습니다.
 
 
-![Desktop View](/assets/img/DataScience/ML/1.png)
-![Desktop View](/assets/img/DataScience/ML/2.png)
-![Desktop View](/assets/img/DataScience/ML/3.png)
-![Desktop View](/assets/img/DataScience/ML/4.png)
+![GD를 수기 작성으로 이해해보자 관련 설명 이미지](/assets/img/DataScience/ML/1.png)
+![GD를 수기 작성으로 이해해보자 관련 설명 이미지](/assets/img/DataScience/ML/2.png)
+![GD를 수기 작성으로 이해해보자 관련 설명 이미지](/assets/img/DataScience/ML/3.png)
+![gradient 작동 원리 관련 참고 이미지](/assets/img/DataScience/ML/4.png)
 
 
 

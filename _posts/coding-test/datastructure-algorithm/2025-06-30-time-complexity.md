@@ -1,5 +1,6 @@
 ---
 title:  "time complexity"
+description: "시간 복잡도(Time Complexity)의 개념과 각종 알고리즘의 시간 복잡도를 설명합니다. O(1)부터 O(N!)까지의 복잡도를 이해하고, 각 복잡도별 가능한 입력 크기를 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, timeComplexity]
@@ -8,25 +9,15 @@ toc_sticky: true
 date: 2025-06-30
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
-
 # 📊 time Complexity
 
 ---
 
 ## 1️⃣ 완전 이중 반복문 (Full Nested Loop)
+
+
+
+아래 Java 코드는 datastructure 관점에서 접근한 핵심 풀이입니다. 입력 조건과 시간·공간 복잡도를 함께 고려하여 불필요한 연산을 줄이는 방향으로 설계했습니다.
 
 ```java
 for (int i = 0; i < N; i++) {
@@ -35,6 +26,9 @@ for (int i = 0; i < N; i++) {
     }
 }
 ```
+
+위 구현은 time complexity의 제약 조건을 만족하도록 자료구조 선택과 반복 범위를 최적화한 결과입니다.
+
 
 ## 📌 완전 이중 반복문의 시간 복잡도
 

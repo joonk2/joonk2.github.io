@@ -1,5 +1,6 @@
 ---
 title:  "parametric search"
+description: "파라메트릭 서치(Parametric Search) 알고리즘의 개념과 활용 방법을 설명합니다. 이진 탐색을 활용하여 최적의 조건을 만족하는 값을 찾는 방법을 이해하고, 실전 문제 적용 사례를 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, parametricSearch]

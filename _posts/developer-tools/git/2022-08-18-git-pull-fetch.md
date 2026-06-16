@@ -41,7 +41,7 @@ echo "hiya it's me Joonhwan!" > yes.txt
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/1.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/1.PNG)
 
 <br>
 <br>
@@ -53,7 +53,7 @@ echo "hiya it's me Joonhwan!" > yes.txt
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/2.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/2.PNG)
 
 <br>
 <br>
@@ -73,7 +73,7 @@ echo "hiya it's me Joonhwan!" > yes.txt
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/3.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/3.PNG)
 
 <br>
 <br>
@@ -99,7 +99,7 @@ git checkout origin/main
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/4.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/4.PNG)
 
 <br>
 <br>
@@ -112,7 +112,7 @@ git checkout origin/main
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/5.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/5.PNG)
 
 <br>
 <br>
@@ -122,7 +122,7 @@ action을 눌러 저는 해당되는 숫자를 찾아 클릭해보니
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/6.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/6.PNG)
 
 
 <br>
@@ -134,7 +134,7 @@ action을 눌러 저는 해당되는 숫자를 찾아 클릭해보니
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/7.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/7.PNG)
 
 <br>
 
@@ -149,7 +149,7 @@ action을 눌러 저는 해당되는 숫자를 찾아 클릭해보니
 ---
 > ####  ❗ 잠깐 혹시 `git push` 하다가 오류나서 `git status` 쳤는데 이런 오류가 떳다면 여기를 참고해주세요 ㅎ
 ---
-![Desktop View](/assets/img/git-error/head-detached-at/1.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/head-detached-at/1.PNG)
 
 ### [HEAD detached at 오류 해결하러가기!](https://joonhwan2.github.io/posts/git-fetch-head-detached/)
 
@@ -167,7 +167,7 @@ action을 눌러 저는 해당되는 숫자를 찾아 클릭해보니
 > * # git pull
 ---
 
-![Desktop View](/assets/img/git/fetch-pull/8.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/8.PNG)
 
 <br>
 <br>
@@ -181,7 +181,7 @@ git pull origin main
 git push 여기까지  
 ```
 
-![Desktop View](/assets/img/git/fetch-pull/9.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/9.PNG)
 
 <br>
 <br>
@@ -194,7 +194,7 @@ git push 여기까지
 <br>
 <br>
 
-![Desktop View](/assets/img/git/fetch-pull/10.PNG)
+![git pull fetch 정리 관련 참고 이미지](/assets/img/git/fetch-pull/10.PNG)
 
 <br>
 <br>

@@ -1,5 +1,6 @@
 ---
 title:  "upperBound && lowerBound --> binary search"
+description: "이진 탐색에서의 lowerBound와 upperBound 개념을 설명합니다. 정렬된 배열에서 특정 값의 개수를 효율적으로 구하는 방법과 백준 10816번 문제 해결 방법을 학습합니다."
 layout: post
 categories: [coding-test, datastructure-algorithm] 
 tags: [datastructure, algorithm, binarySearch, upperBound, lowerBound]
@@ -27,7 +28,7 @@ date: 2025-06-26
 다음 사진은 ```int[] my_cards``` 이다
 <br><br>
 
-![Desktop View](/assets/img/data-alg/upperBound-lowerBound/upperBound-lowerBound.png)
+![알고리즘 문제 풀이 참고 다이어그램](/assets/img/data-alg/upperBound-lowerBound/upperBound-lowerBound.png)
 <br>
 
 내가 갖고 있는 given_numbers를 아래와 같다고 가정하자
@@ -66,7 +67,7 @@ upperBound - lowerBound = 7 - 7 = 0
 실전 연습으로 백준 문제를 풀어봅시다
 https://www.acmicpc.net/problem/10816
 
-![Desktop View](/assets/img/data-alg/upperBound-lowerBound/boj-10816-upperbound-lowerbound.jpg)
+![백준 10816 숫자카드2 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/upperBound-lowerBound/boj-10816-upperbound-lowerbound.jpg)
 
 <br><br>
 

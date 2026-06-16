@@ -1,5 +1,5 @@
 ---
-title: "covariance matrix"
+title:  "covariance matrix"
 layout: post
 categories: [math, statistics]
 tags: [math, statistics, 공분산 행렬, covariance matrix, 수학, 통계]
@@ -9,19 +9,6 @@ date: 2024-05-02 thur
 updated: 
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 <u>3명의 피실험자가 있다고 가정하자</u> <br>
@@ -38,13 +25,13 @@ updated:
 
 아래는 $$R^2$$ 좌표에서 피실험자 3명을 각 벡터로 나타낸 것이다 <br>
 
-![Desktop View](/assets/img/math/statistics/CovarianceMaxtrix/1.png) <br>
+![수학 개념 설명 다이어그램](/assets/img/math/statistics/CovarianceMaxtrix/1.png) <br>
 
 변수는 x,y가 각각 사과, 바나나로 2개다 <br>
 그래서 2x2 행렬이 되겠다 <br>
 $$\begin{bmatrix} cov(x,x) & cos(x,y) \\cov(y,x) & cos(y,y) \end{bmatrix}$$ <br>
 
-![Desktop View](/assets/img/math/statistics/CovarianceMaxtrix/2.png) <br>
+![수학 개념 설명 다이어그램](/assets/img/math/statistics/CovarianceMaxtrix/2.png) <br>
 
 여기서 cov(사, 사)는 사과와 사과끼리의 공분산을 나타낸 것인데 이는 var(사)로 바꿀 수도 있다<br>
 마찬가지로 cov(바, 바) $\Rightarrow$ var(바) <br>

@@ -1,5 +1,5 @@
 ---
-title: "Eigen Decomposition"
+title:  "Eigen Decomposition"
 layout: post
 categories: [math, linear-algebra]
 tags: [math, LinearAlgebra, EigenValue, kaley-hammilton, diagonalization of a matrix]
@@ -9,19 +9,6 @@ date: 2024-03-26 tue 10:40
 updated: 2024-05-04 sat
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 ```md
@@ -155,8 +142,8 @@ $$\left(Qv\right)^{T}Qv= V^TQ^TQV=V^TV= \parallel V \parallel_2^2$$   <br>
 $$z^TAz \ge 0$$ 이고 이것은 z를 선형변환한 것인데 z와 내적했을 때 양수가 된다는 것은 <br>
 선형변환을 거쳐도 직교하는 평면 뒤쪽으로 안튀어나간다는 말이다 <br>
 (즉 어떤 벡터를 통과시키더라도 아래 그림처럼만 바뀐다) <br>
-![Desktop View](/assets/img/math/LinearAlgebra/part5/1.png) <br>
-![Desktop View](https://github.com/joonk2/math/raw/main/linear-algebra/eigen-decomposition/psd/psd.gif)
+![선형대수·수학 개념 설명: (3) A가 positive semi-difinite(P.S.D)면 $$\color{red}{\Leftrightarrow} \quad \gamma_i \ge 0$$](/assets/img/math/LinearAlgebra/part5/1.png) <br>
+![수학 개념 설명 다이어그램](https://github.com/joonk2/math/raw/main/linear-algebra/eigen-decomposition/psd/psd.gif)
 <br>
 
 내적했을 때 음수가 되는 $$90^{\circ}$$ 방향을 넘어가지 않는다 <br>
@@ -204,11 +191,11 @@ $$A=\begin{bmatrix} q_1 & q_2 & q_3 \end{bmatrix} \begin{bmatrix} \gamma_1 & & \
 
 $$=\begin{bmatrix} \gamma_1q_1 & \gamma_1q_2 & \gamma_1q_3 \end{bmatrix} \begin{bmatrix} q_1^T \\ q_2^T \\ q_3^T \end{bmatrix} \\ \Rightarrow \gamma_1q_1q_1^T+\gamma_2q_2q_2^T+\gamma_3q_3q_3^T$$ <br>
 오! 이거 $$q_1q_1^T$$ 는 자연스럽게 Rank1 Matrix니까 행렬은 slice로 쪼갠거네 <br>
-![Desktop View](/assets/img/math/LinearAlgebra/part5/2.png) <br>
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/part5/2.png) <br>
 
 아 이거 100퍼 데이터 압축에 응용가능하다 <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part5/3.png) <br>
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/part5/3.png) <br>
 
 #### ex) 사진 W가 100x100 이라 하면 10000개의 숫자가 필요하다. <br>
 이걸 쪼개서 5개만 쓰자 $$\gamma_1q_1q_1^T+\gamma_2q_2q_2^T+ \cdots \gamma_{10000}q_{10000}q_{10000}^T$$ <br>
@@ -225,7 +212,7 @@ $$A=A^T$$면 $$A=\gamma_1q_1q_1^T+\gamma_2q_2q_2^T+\gamma_3q_3q_3^T$$ <br>
 
 여기서 x라는 Eigen vector가 아닌 임의의 벡터를 행렬A에 통과시켜 decompose한 상태로 들여보자 <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part5/4.png) <br>
+![선형대수·수학 개념 설명: 2-3. 새로운 해석](/assets/img/math/LinearAlgebra/part5/4.png) <br>
 
 어? $$q_1^Tx \quad\quad q_2^Tx \quad\quad q_3^Tx$$ 는 각각 x랑 내적한거네?? <br>
 그러면 $$q_1 \quad\quad q_2 \quad\quad q_3$$ 는 각각 방향벡터다 <br>
@@ -234,9 +221,9 @@ $$A=A^T$$면 $$A=\gamma_1q_1q_1^T+\gamma_2q_2q_2^T+\gamma_3q_3q_3^T$$ <br>
 ## 🏜️그림 예시
 x라는 벡터가 있을 때 직교하는 $$q_1 \quad\quad q_2 \quad\quad q_3$$가 있다 하자 <br>
 $$\color{lightgreen}{/}$$선들을 아래로 내리면 $\color{purple}{\nearrow}벡터$들이 대응될 것이다 <br>
-![Desktop View](/assets/img/math/LinearAlgebra/part5/5.png) <br>
+![선형대수·수학 개념 설명: 🏜️그림 예시](/assets/img/math/LinearAlgebra/part5/5.png) <br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part5/6.png) <br><br><br><br>
+![선형대수·수학 개념 설명: 🏜️그림 예시](/assets/img/math/LinearAlgebra/part5/6.png) <br><br><br><br>
 
 # 3. 대각화 판별법
 판별법을 보기전 우선 대각화 불가능사례와 가능한 사례를 먼저 보고자 한다 <br>
@@ -321,7 +308,7 @@ $$P_2 P_1$$
 고유 다항식에서 $$\gamma-\gamma_0$$ 가 인수로 나타나는 횟수 <br>
 (대수적으로 고유값이 총 몇 거듭제곱인지?) <br><br>
 
-![Desktop View](/assets/img/math/LinearAlgebra/part5/7.png)
+![수학 개념 설명 다이어그램](/assets/img/math/LinearAlgebra/part5/7.png)
 ### [👉고유벡터, 고유기저를 잘 모르겠다면 이것 클릭](https://joonk2.github.io/posts/LinearAlgebra-part5/#:~:text=1%20or%202-,step%202%EA%B3%A0%EC%9C%A0%EB%B2%A1%ED%84%B0%20%EA%B5%AC%ED%95%98%EA%B8%B0,-case%201)
 <br><br><br><br>
 

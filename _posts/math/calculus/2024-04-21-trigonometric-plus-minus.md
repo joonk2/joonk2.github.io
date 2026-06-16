@@ -1,5 +1,5 @@
 ---
-title: "삼각함수의 덧셈정리"
+title:  "삼각함수의 덧셈정리"
 layout: post
 categories: [math, calculus]
 tags: [math, calculus, limit, 극한, 미적분, 큐스터디, 3d1brown]
@@ -9,19 +9,6 @@ date: 2024-04-21 sun
 updated: 
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 ```markdown
@@ -39,7 +26,7 @@ updated:
 2. 짤막한 팁 $\Rightarrow$ $tan \theta = \frac{sin \theta}{cos \theta}$ <br> 
 3. 삼각함수의 역수⬇️ <br>
 $$\begin{cases} csc \theta = \frac{1}{sin \theta} \\ sec\theta = \frac{1}{cos\theta} \\ cot\theta = \frac{1}{tan\theta} \end{cases}$$ <br><br>
-![Desktop View](/assets/img/math/calculus/trigonometric-plus-minus/1.png)
+![선형대수·수학 개념 설명: preRequisites](/assets/img/math/calculus/trigonometric-plus-minus/1.png)
 <br><br>
 
 # 1. 삼각함수의 덧셈정리 공식
@@ -49,7 +36,7 @@ $$\quad sin(\alpha - \beta) = sin \alpha \cdot cos \beta - cos \alpha \cdot sin 
 $$\quad cos(\alpha - \beta) = cos \alpha cos \beta + sin \alpha sin\beta$$ <br>
 (3) $$tan(\alpha + \beta) = \frac{tan \alpha + tan \beta}{1-tan \alpha \cdot tan \beta}$$ <br>
 (4) $$tan(\alpha - \beta) = \frac{tan \alpha - tan \beta}{1+tan \alpha \cdot tan \beta}$$ <br>
-![Desktop View](/assets/img/math/calculus/trigonometric-plus-minus/2.png)<br>
+![선형대수·수학 개념 설명: 1. 삼각함수의 덧셈정리 공식](/assets/img/math/calculus/trigonometric-plus-minus/2.png)<br>
 $$\Delta$$ ABC 넓이 <span style="color:red">**=**</span> $$\Delta$$ ABH 넓이 + $$\Delta$$ ACH 넓이 <br>
 $$\Rightarrow$$ $$\frac{1}{2}ab sin (\alpha + \beta) = \frac{1}{2}ah sin \alpha +  \frac{1}{2}bh sin \beta$$ <br>
 $$\Rightarrow$$ $$sin (\alpha + \beta) = \frac{h}{b}sin \alpha + \frac{h}{a} sin \beta$$ <br>
@@ -67,10 +54,10 @@ $$tan(-\theta) = -tan \theta$$ <br>
 $$\quad sin(\alpha - \beta) = sin \alpha \cdot cos \beta - cos \alpha \cdot sin \beta$$ 이 식도 자연스럽게 유도되지 않는가?
 <br><br>
 
-![Desktop View](/assets/img/math/calculus/trigonometric-plus-minus/3.png)<br>
+![수학 개념 설명 다이어그램](/assets/img/math/calculus/trigonometric-plus-minus/3.png)<br>
 이것을 보니 `제 2코사인 정리`를 이용하면 되겠네  아래 삼각형을 참고하자 <br>
 
-![Desktop View](/assets/img/math/calculus/trigonometric-plus-minus/4.png)
+![수학 개념 설명 다이어그램](/assets/img/math/calculus/trigonometric-plus-minus/4.png)
 <br>
 제 2코사인 정리: &nbsp;&nbsp;  $x^2 = b^2 + c^2 -2bc \cdot cos\theta$ <br>
 
@@ -111,7 +98,7 @@ $$tan (\alpha + \beta+ \gamma) \Rightarrow tan (\theta+ \gamma)$$ <br>
 # 2. 예제 2개
 ## 2-1 예제1
 좌표평면에서 $\alpha + \beta = \gamma$ 일 때, 점 $P$의 $y$좌표는? <br>
-![Desktop View](/assets/img/math/calculus/trigonometric-plus-minus/5.png)
+![선형대수·수학 개념 설명: 2-1 예제1](/assets/img/math/calculus/trigonometric-plus-minus/5.png)
 <br>
 
 <span style="color:red">**sol:**</span> <br>

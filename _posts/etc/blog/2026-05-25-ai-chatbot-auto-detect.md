@@ -325,7 +325,7 @@ JSON만 바뀐 커밋은 workflow를 다시 트리거하지 않아 무한 루프
 
 위의 과정을 거치고 직접 테스트를 해보았는데, 어라? 응답이 이상하다
 
-![Desktop View](/assets/img/blog/chatbot/2026-05-18/problem_cognition.jpg)
+![AI 챗봇 자동 감지 기능 동작 화면](/assets/img/blog/chatbot/2026-05-18/problem_cognition.jpg)
 
 <br>
 
@@ -674,17 +674,17 @@ npx wrangler deploy
 트러블 슈팅 이후 결과는 다음과 같게 , `풀이보기` 클릭시 링크 이동이 된다.
 
 #### 📌 소개
-![Desktop View](/assets/img/blog/chatbot/2026-05-18/chatbot-hi.jpg)
+![AI 챗봇 자동 감지 기능 동작 화면](/assets/img/blog/chatbot/2026-05-18/chatbot-hi.jpg)
 
 <br><br>
 
 #### 📌 맞춤형 학습
-![Desktop View](/assets/img/blog/chatbot/2026-05-18/chatbot-link.jpg)
+![AI 챗봇 자동 감지 기능 동작 화면](/assets/img/blog/chatbot/2026-05-18/chatbot-link.jpg)
 
 <br><br>
 
 #### 📌 봇이 새로 올라온 알고리즘 글을 자동 감지
-![Desktop View](/assets/img/blog/chatbot/2026-05-18/auto-detection.jpg)
+![AI 챗봇 자동 감지 기능 동작 화면](/assets/img/blog/chatbot/2026-05-18/auto-detection.jpg)
 
 
 <br><br><br><br><br><br>

@@ -1,25 +1,10 @@
-title:  "[java] ArrayList vs LinkedList"
+------title:  "[java] ArrayList vs LinkedList"
 layout: post
 categories: [coding-test, datastructure-algorithm]
 tags: [java, 자료구조, ArrayList, LinkedList]
 toc: true
 toc_sticky: true
 date: 2025-06-18
-
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
-
 
 <br><br>
 

@@ -24,7 +24,7 @@ npm init
 ```
 입력했더니
 
-![Desktop View](/assets/img/error/npm/1.PNG)
+![본문 설명 참고 이미지](/assets/img/error/npm/1.PNG)
 
 <br>
 <br>
@@ -79,7 +79,7 @@ npm init
 
 <br>
 
-![Desktop View](/assets/img/error/npm/4.PNG)
+![3  &nbsp; 권한변경 및 변경이 잘 되었는지 확인 관련 설명 이미지](/assets/img/error/npm/4.PNG)
 
 <br>
 <br>

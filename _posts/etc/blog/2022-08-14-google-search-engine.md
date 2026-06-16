@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 깃허브 블로그 구글검색 노출시키기"
+title:  "[깃허브 블로그] 구글 서치 콘솔 검색 노출 설정 - sitemap·robots.txt"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -7,6 +7,10 @@ toc: true
 toc_sticky: true
 date: 2022-08-14
 ---
+
+> ⚠️ 본 가이드는 2026년 현재 구글 서치 콘솔 인터페이스 기준으로 최적화 및 동작이 검증된 최신 글입니다.
+
+
 
 <br>
 
@@ -21,7 +25,7 @@ google search console 들어가기
 
 <br>
 
-이 곳을 들어간 후 <u>시작<u/>을 누릅시다.
+이 곳을 들어간 후 <u>시작<u/>을 누르시기 바랍니다.
 
 <br>
 그러면 이 화면으로 바뀝니다.
@@ -29,7 +33,7 @@ google search console 들어가기
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-14k/1.PNG)  
+![구글 서치 콘솔 URL 등록 및 도메인 소유권 확인 화면](/assets/img/2022-08-14k/1.PNG)  
 <br>
   
 이제 여기 주소를 입력해주시면 됩니다. 저의 경우는 
@@ -39,15 +43,15 @@ google search console 들어가기
 <br>
 <br>
   
-![Desktop View](/assets/img/2022-08-14k/2.PNG)
+![구글 서치 콘솔 HTML 소유권 확인 파일 다운로드](/assets/img/2022-08-14k/2.PNG)
 <br>
   
-저거 클릭해서 깃허브 블로그 폴더와 같은 경로에 저장합시다
+저거 클릭해서 깃허브 블로그 폴더와 같은 경로에 저장하시기 바랍니다
   
 <br>
 <br>
   
-![Desktop View](/assets/img/2022-08-14k/3.PNG)
+![블로그 루트에 소유권 확인 파일 업로드 위치](/assets/img/2022-08-14k/3.PNG)
   
 <br>
 <br>
@@ -88,15 +92,15 @@ google search console 들어가기
 <br>
 <br>
 
-이제 `robot.txt`를 열읍시다.\
-(robot.txt 역할은 사이트 페이지를 검색 결과에 포함시킬지 여부를 검색 엔진에 알립니다.)  
+이제 `robots.txt` 파일을 열어봅시다.\
+(robots.txt 역할은 사이트 페이지를 검색 결과에 포함시킬지 여부를 검색 엔진에 알립니다.)  
 ```
 User-agent: *
 Allow: /
 
 Sitemap: https://joonhwan2.github.io/sitemap.xml
 ```
-내용이 disallow 라고 되있는 분들도 계실텐데 저처럼 바꿔주시면 됩니다.
+내용이 Disallow라고 되어 있는 분들도 계실텐데 저처럼 바꿔주시면 됩니다.
 밑에 주소적고 꼭 `/sitemap.xml`도 붙여야합니다 ㅎ
 
 <br>
@@ -109,18 +113,18 @@ Sitemap: https://joonhwan2.github.io/sitemap.xml
 <br>
 <br>  
   
-![Desktop View](/assets/img/2022-08-14k/4.PNG)
+![구글 서치 콘솔 사이트맵 제출 메뉴](/assets/img/2022-08-14k/4.PNG)
   
 <br>
 <br>
 <br>
   
-이 곳에서 `sitemap.xml` 을 입력합니다. 그리고 제출을 합시다
+이 곳에서 `sitemap.xml` 을 입력합니다. 그리고 제출하시기 바랍니다
 
 <br>  
 <br>
 
-![Desktop View](/assets/img/2022-08-14k/5.PNG)
+![사이트맵 제출 완료 및 색인 요청 성공 화면](/assets/img/2022-08-14k/5.PNG)
   
 <br>
   
@@ -146,3 +150,12 @@ Sitemap: https://joonhwan2.github.io/sitemap.xml
 # 참고
 ---
  'eona1301' &nbsp;&nbsp;&nbsp;&nbsp;   [[Github Blog] 검색창 노출시키기](https://velog.io/@eona1301/Github-Blog-%EA%B2%80%EC%83%89%EC%B0%BD-%EB%85%B8%EC%B6%9C%EC%8B%9C%ED%82%A4%EA%B8%B0)
+
+---
+
+## 📚 관련 글
+
+- [👈 1편: 깃허브 블로그 기초 세팅](https://joonk2.github.io/posts/2022/08/12/creating-githubblog/)
+- [👈 2편: Jekyll 테마 설치](https://joonk2.github.io/posts/2022/08/13/github-blog-creating2/)
+- [👈 3편: 블로그 최종 설정](https://joonk2.github.io/posts/2022/08/14/last/)
+

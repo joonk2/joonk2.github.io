@@ -36,7 +36,7 @@ date: 2022-08-18
 <br>
 
 
-![Desktop View](/assets/img/git-error/head-detached-at/1.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/head-detached-at/1.PNG)
 
 <br>
 <br>
@@ -61,7 +61,7 @@ git branch
 ```
 깃 브랜치 보유상태 확인 명령어
 
-![Desktop View](/assets/img/git-error/head-detached-at/3.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/head-detached-at/3.PNG)
 
 <br>
 <br>
@@ -79,7 +79,7 @@ git checkout joonhwan            (`준환`을 주요 브랜치로 쓰겠다)
 > 준환을 주요 브랜치로 만들어 쓰겠다\
 > (준환 브랜치를 만들지 않은경우 가능)
 
-![Desktop View](/assets/img/git-error/head-detached-at/4.PNG)
+![Git 오류 해결 과정 캡처](/assets/img/git-error/head-detached-at/4.PNG)
 
 
 

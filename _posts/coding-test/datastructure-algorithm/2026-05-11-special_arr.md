@@ -9,37 +9,19 @@ math: true
 date: 2026-05-11
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-
-
-
-
 ## 문제
 n, jump가 주어질때 배열을 생성해보자
 
 ### n = 5, jump = 3
-![Desktop View](/assets/img/data-alg/implementation/special_arr/1.png)
+![n = 5, jump = 3 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/implementation/special_arr/1.png)
 <br>
 
 ### n = 4, jump = 2
-![Desktop View](/assets/img/data-alg/implementation/special_arr/2.png)
+![n = 4, jump = 2 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/implementation/special_arr/2.png)
 
 
 ### n = 4, jump = 3
-![Desktop View](/assets/img/data-alg/implementation/special_arr/3.png)
+![n = 4, jump = 3 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/implementation/special_arr/3.png)
 
 <br><br>
 
@@ -57,10 +39,10 @@ n, jump가 주어질때 배열을 생성해보자
 
 그리고 테두리의 크기는 특정한 규칙을 통해 갱신되는 것을 알 수 있었다
 
-![Desktop View](/assets/img/data-alg/implementation/special_arr/explain_1.jpg)
+![🙋‍♂️ 들어가며 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/implementation/special_arr/explain_1.jpg)
 <br><br>
 
-![Desktop View](/assets/img/data-alg/implementation/special_arr/explain_2.jpg)
+![🙋‍♂️ 들어가며 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/implementation/special_arr/explain_2.jpg)
 <br><br>
 
 ### input-1

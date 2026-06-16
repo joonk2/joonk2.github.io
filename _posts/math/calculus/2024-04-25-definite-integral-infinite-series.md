@@ -1,5 +1,5 @@
 ---
-title: "Infinite Series & Definite Integral"
+title:  "Infinite Series & Definite Integral"
 layout: post
 categories: [math, calculus]
 tags: [math, calculus, limit, 극한, 미적분, 큐스터디, 3d1brown, 정적분, 무한급수, infinite series, definite integral]
@@ -9,19 +9,6 @@ date: 2024-04-25 thur 23:14pm
 updated: 
 ---
 
-<!-- MathJax Script for this post only -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-      processEscapes: true
-    }
-  });
-</script>
 #### 🙅‍♂️휴대폰으로 볼 때 혹시 글자나 숫자가 화면에 다 안나오면<span style="color:red">**,**</span> 휴대폰 가로로 돌리시면 됩니다
 
 ```markdown
@@ -52,7 +39,7 @@ $\int x= x^2+C$ <br><br><br><br><br>
 개념을 정의하기 전에 정적분은 쉽게 말해 수열의 합의 극한 값으로 <br>
 `n개의 직사각형들의 각 넓이의 합의 극한값`이라고 보면 된다 <br>
 잠깐 아래 그림을 보자 <br><br><br>
-![Desktop View](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/1.png) <br>
+![선형대수·수학 개념 설명: 2. 정적분](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/1.png) <br>
 
 이 그림을 대충 한번 한번 훑어 보니 2개의 차이는 극한값 유무다 <br>
 그냥 “이런게 있구나”정도로 생각하고 넘어가면 될 것 같다. <br>
@@ -68,7 +55,7 @@ $$\color{red}{\therefore}$$ &nbsp; 즉 $$\lim_{n \to \infty} \sum\limits_{k=1}^N
 쉬운 이해를 위해 아래 그림을 보자 <br>
 (아래 그림은 $$\lim_{n \to \infty}$$를 뺀 n개의 모든 <font color='purple'>보라 직사각형의 넓이</font>를 $$\sum\limits$$ 한 값이다) <br><br>
 
-![Desktop View](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/2.png) <br><br>
+![수학 개념 설명 다이어그램](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/2.png) <br><br>
 
 여기서 보라색 벽돌 1개 칸의 길이는 $$\frac{b-a}{n}$$이다 <br>
 왜냐하면 전체 길이는 b-a고 n등분 했으니까 <br>
@@ -87,7 +74,7 @@ $$\sum\limits_{k=1}^n \frac{b-a}{n} f \left(a+ \frac{b-a}{n}k \right)$$ <br><br>
 $$\lim_{n \to \infty} \sum\limits_{k=1}^n \frac{b-a}{n} f \left(a+ \frac{b-a}{n}k \right)$$ <br>
 앞서 얘기했듯이 적분은 `n개의 직사각형들의 각 넓이의 합의 극한값`이니 $\lim_{n\to \infty}$ 표시를 하자 <br> 하게 되면 아래 그림의 과정을 거친다 <br>
 
-![Desktop View](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/3.png) <br>
+![선형대수·수학 개념 설명: **<font color='skyblue'>직사각형 넓이합을 적분으로 변환</font>**](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/3.png) <br>
 
 우리가 그림을 보고 알 수 있는 것은 n이 무한으로 가까워 갈 수록<br>
 y=f(x)위의 삐져나온 면적들이 줄어들면서 결국 없어지는 것이다 <br>
@@ -107,7 +94,7 @@ $$\therefore \int^b_a f(x)dx$$으로 부호가 있는 직사각형 넓이 합의
 참 위의 그림에서는 면적이 양(+)의 부호인 넓이의 합의 극한값인데 <br>
 사실 양(+) 음(-) 둘다 상관없다 &nbsp;&nbsp; 아래 그림을 확인하자<br>
 
-![Desktop View](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/4.png)
+![수학 개념 설명 다이어그램](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/4.png)
 <br><br><br>
 
 # 3. 무한급수와 정적분의 관계
@@ -137,7 +124,7 @@ $$\left( \frac{p}{n}k \color{red}{=} x \right)$$ &nbsp;&nbsp;&nbsp; $$\frac{p}{n
 $$\color{red}{준식}$$ = $$\int^{p}_0 f(a+x)dx$$ <br><br>
 
 ### 🖐️case1과 case2 비교
-![Desktop View](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/5.png) <br>
+![선형대수·수학 개념 설명: 🖐️case1과 case2 비교](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/5.png) <br>
 
 평행 이동한 차이가 잘 보이네ㅎ 그래서 면적은 둘다 같다 <br>
 
@@ -165,14 +152,14 @@ $$\lim_{n \to \infty}\sum\limits_{k=1}^n f \left( a+ 2p\frac{k}{2n} \right) \fra
 $$\color{red}{준식}$$ = $$2p\int^{\frac{1}{2}}_{0} f(a+2px)dx$$ <br><br><br>
 
 ### 🖐️case3과 case4 비교
-![Desktop View](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/6.png) <br><br>
+![선형대수·수학 개념 설명: 🖐️case3과 case4 비교](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/6.png) <br><br>
 
 위 2개는 역시 같은 결과 값을 도출하는데 차이점이 있다면, &nbsp; p와 2p 차이인데 축소 개념으로 보면 되겠다 <br>
 즉 case4)의 함수가 case 3)의 함수에서 $$\frac{1}{2}$$ 축소해서 구간도 $$\int^{\frac{1}{2}}_{0}$$ 이렇게 절반으로 감소한 것이다 <br>
 그래서 case4)의 함수에서 p에 2배를 해준 것이다 <br>
 `축소`를 잘 모르겠으면 쉽게 이해하기 위해 아래 sinx와 sin2x 그래프를 보면 되겠다<br>
 
-![Desktop View](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/7.png) <br><br><br>
+![선형대수·수학 개념 설명: 🖐️case3과 case4 비교](/assets/img/math/calculus/InfiniteSeries-DefiniteIntegral/7.png) <br><br><br>
 
 
 

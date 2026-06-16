@@ -1,5 +1,5 @@
 ---
-title:  "[blog] 깃허브 블로그 만드는 법 1"
+title:  "[깃허브 블로그] Jekyll 테마로 블로그 만드는 법 - 1편 기초 세팅"
 layout: post
 categories: [etc, blog] 
 tags: [blog, jekyll, github, git]
@@ -10,12 +10,12 @@ date: 2022-08-12
 
 > 이번에 깃허브 블로그를 만들었던 방법을 공유하려고 합니다!.\
 > 전 꽤 힘들게하고 오래 걸렸지만 이 글을 읽는 분들은 전와 같은 전철을 밟지않고 쉽고
-> 빠르게 완성하셨으면 좋겠어요ㅎ.\
+> 빠르게 완성하셨으면 좋겠습니다.\
 > 이글은 windows환경 기준으로 작성합니다.
 <br>
 
 # 시작하기 앞서 필요한 것
-시작하기 앞서 vscode, git,  github desktop 이 3개중 하나라도 없으시다면 설치를 하는걸 권장함.
+시작하기 앞서 vscode, git,  github desktop 이 3개중 하나라도 없으시다면 설치를 하는걸 권장합니다.
 글을 클릭하면 링크로 이동, 알맞은 비트에 맞게 다운받으면 됨, 필자는 64비트라 그걸 다운받음.
 
 [1. VScode 다운로드](https://code.visualstudio.com/download)
@@ -28,7 +28,7 @@ date: 2022-08-12
 
 <br>
 <br>
-여기까지 완료했다면 15%는 따라온 겁니다, 아주 잘하고 계신겁니다!!. 이제부터 본론으로 들어갑니다.
+여기까지 완료했다면 15%는 완료하신 것입니다, 순조롭게 진행하고 계십니다.. 이제부터 본론으로 들어갑니다.
 
 <br>
 
@@ -36,7 +36,7 @@ date: 2022-08-12
 ---
 # 1-1 깃허브로 들어가기
 ---
-![Desktop View](/assets/img/2022-08-12/1.PNG)
+![GitHub 저장소 New Repository 생성 화면](/assets/img/2022-08-12/1.PNG)
 
   **reposistory**를 눌러 **new**를 누른 후 이 화면이 뜰텐데
 
@@ -45,13 +45,13 @@ date: 2022-08-12
 
 
 
-![Desktop View](/assets/img/2022-08-12/2.PNG)
+![GitHub Pages 블로그 저장소 이름 설정 화면](/assets/img/2022-08-12/2.PNG)
 
 <br>
 
 여기서 반드시 왼쪽의 'owner 명'과 동일하게 작성할 것, 그렇지 않은 경우엔 오류가 날 겁니다!.\
-틀은  **{owner *}.github.io** 가 됩니다. 그리고 create repository를 누르면 생성이 됨\
-그게 자신의 깃허브 주소가 될 거에요.  제 경우에는 joonhwan2.github.io  
+틀은  **{owner *}.github.io** 가 됩니다. 그리고 create repository를 누르면 생성됩니다\
+그게 자신의 깃허브 주소가 될 것입니다.  제 경우에는 joonhwan2.github.io  
 
 <br>
 <br>
@@ -60,7 +60,7 @@ date: 2022-08-12
 ---
 ## 1-2 github desktop으로 갑시다
 ---
-![Desktop View](/assets/img/2022-08-12/3.PNG)
+![GitHub Desktop으로 저장소 Clone 화면](/assets/img/2022-08-12/3.PNG)
 
 <br>
 
@@ -68,14 +68,14 @@ date: 2022-08-12
 
 <br>
 
-![Desktop View](/assets/img/2022-08-12/4.PNG)
+![로컬 폴더에 Clone된 블로그 저장소](/assets/img/2022-08-12/4.PNG)
 <br>
 
 자, 여기서 이제 깃허브 홈페이지로 돌아갑시다
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-12/5.PNG)
+![VS Code에서 블로그 프로젝트 열기](/assets/img/2022-08-12/5.PNG)
 
 <br>
 <br>
@@ -96,7 +96,7 @@ date: 2022-08-12
 <br>
 <br>
 
-![Desktop View](/assets/img/2022-08-12/6.PNG)
+![GitHub Pages 블로그 첫 배포 확인 화면](/assets/img/2022-08-12/6.PNG)
 
 <br>
 
@@ -118,4 +118,13 @@ date: 2022-08-12
 # 참고
 ---
  'dodev'\
- [초보자를 위한 GitHub Blog 만들기 - 1](https://wlqmffl0102.github.io/posts/Making-Git-blogs-for-beginners-1/) 
+ [초보자를 위한 GitHub Blog 만들기 - 1](https://wlqmffl0102.github.io/posts/Making-Git-blogs-for-beginners-1/)
+
+---
+
+## 📚 관련 글
+
+- [👉 다음 단계: Jekyll 테마 설치 및 로컬 실행하기](https://joonk2.github.io/posts/2022/08/13/github-blog-creating2/)
+- [👉 3편: 블로그 최종 설정 및 배포](https://joonk2.github.io/posts/2022/08/14/last/)
+- [👉 구글 검색 노출 설정하기](https://joonk2.github.io/posts/2022/08/14/google-search-engine/)
+
