@@ -718,5 +718,15 @@
     "algorithm_ko": "구현",
     "level_ko": "쉬움",
     "url": "https://joonk2.github.io/posts/2026/06/19/programmers-121683/"
+  },
+  {
+    "test": "programmers",
+    "title": "[PCCP 모의고사 1] 2번 - 순열 (Java)",
+    "problem_num": "121684",
+    "level": "2",
+    "algorithm": "backtracking",
+    "algorithm_ko": "백트랙킹",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/06/19/programmers-121684/"
   }
 ]
