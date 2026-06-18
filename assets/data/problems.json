@@ -708,5 +708,15 @@
     "algorithm_ko": "수학",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/06/18/programmers-77885/"
+  },
+  {
+    "test": "programmers",
+    "title": "[PCCP 모의고사 1] 1번 - 문자열, 구현 (Java)",
+    "problem_num": "121683",
+    "level": "1",
+    "algorithm": "implementation",
+    "algorithm_ko": "구현",
+    "level_ko": "쉬움",
+    "url": "https://joonk2.github.io/posts/2026/06/19/programmers-121683/"
   }
 ]
