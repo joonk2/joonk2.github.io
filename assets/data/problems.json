@@ -681,6 +681,16 @@
   },
   {
     "test": "programmers",
+    "title": "경주로 건설 - 다익스트라 (Java)",
+    "problem_num": "67259",
+    "level": "3",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "어려움",
+    "url": "https://joonk2.github.io/posts/2026/06/18/programmers-67259/"
+  },
+  {
+    "test": "programmers",
     "title": "이진 변환 반복하기 - 비트 구현 (Java)",
     "problem_num": "70129",
     "level": "2",
