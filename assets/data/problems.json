@@ -678,5 +678,15 @@
     "algorithm_ko": "수학",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/06/17/programmers-12985/"
+  },
+  {
+    "test": "programmers",
+    "title": "이진 변환 반복하기 - 비트 구현 (Java)",
+    "problem_num": "70129",
+    "level": "2",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/06/17/programmers-70129/"
   }
 ]
