@@ -698,5 +698,15 @@
     "algorithm_ko": "수학",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/06/18/programmers-70129/"
+  },
+  {
+    "test": "programmers",
+    "title": "2개 이하로 다른 비트 - 수학,구현 (Java)",
+    "problem_num": "77885",
+    "level": "2",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/06/18/programmers-77885/"
   }
 ]
