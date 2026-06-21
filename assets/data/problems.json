@@ -738,5 +738,15 @@
     "algorithm_ko": "백트랙킹",
     "level_ko": "어려움",
     "url": "https://joonk2.github.io/posts/2026/06/20/programmers-121685/"
+  },
+  {
+    "test": "programmers",
+    "title": "[PCCP 모의고사 1] 4번 - 우선순위큐 (Java)",
+    "problem_num": "121686",
+    "level": "3",
+    "algorithm": "priorityqueue",
+    "algorithm_ko": "우선순위큐",
+    "level_ko": "어려움",
+    "url": "https://joonk2.github.io/posts/2026/06/21/programmers-121686/"
   }
 ]
