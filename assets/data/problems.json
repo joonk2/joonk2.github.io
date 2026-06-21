@@ -731,7 +731,7 @@
   },
   {
     "test": "programmers",
-    "title": "[PCCP 모의고사 3] 3번 - 재귀 (Java)",
+    "title": "[PCCP 모의고사 #1] 3번 - 재귀 (Java)",
     "problem_num": "121685",
     "level": "3",
     "algorithm": "backtracking",
@@ -741,7 +741,7 @@
   },
   {
     "test": "programmers",
-    "title": "[PCCP 모의고사 1] 4번 - 우선순위큐 (Java)",
+    "title": "[PCCP 모의고사 #1] 4번 - 우선순위큐 (Java)",
     "problem_num": "121686",
     "level": "3",
     "algorithm": "priorityqueue",
