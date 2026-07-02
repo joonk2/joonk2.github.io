@@ -758,5 +758,15 @@
     "algorithm_ko": "구현",
     "level_ko": "쉬움",
     "url": "https://joonk2.github.io/posts/2026/07/02/leetcode-2144/"
+  },
+  {
+    "test": "",
+    "title": "[필독!!] -> DFS, 백트랙킹, 조합, 순열",
+    "problem_num": "",
+    "level": "",
+    "algorithm": "backtracking",
+    "algorithm_ko": "백트랙킹",
+    "level_ko": "",
+    "url": "https://joonk2.github.io/posts/2026/07/02/tips1/"
   }
 ]
