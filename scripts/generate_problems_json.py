@@ -46,6 +46,8 @@ SWEA_LEVEL_KO = {
     "D5": "어려움", "D6": "어려움",
 }
 
+LEETCODE_LEVEL_KO = {"easy": "쉬움", "medium": "중간", "hard": "어려움"}
+
 ALLOWED = frozenset({
     "implementation", "bfs", "dfs", "backtracking", "binarysearch", "dp",
     "graph", "greedy", "stack", "queue", "priorityqueue", "bruteforce",
@@ -128,6 +130,9 @@ PROG_REF: dict[str, tuple[str, str, str]] = {
     "42860": ("2", "greedy", "조이스틱"),
 }
 
+# leetcode: problem_num -> (level, algorithm, title)
+LEETCODE_REF: dict[str, tuple[str, str, str]] = {}
+
 
 def parse_frontmatter(content: str) -> dict[str, str]:
     m = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
@@ -179,6 +184,23 @@ def extract_swea_title(title: str) -> str:
 
 def extract_prog_title(title: str) -> str:
     return re.sub(r"^\[.*?\]\s*", "", title.strip('"')).strip()
+
+
+def extract_leetcode_title(title: str) -> str:
+    title = re.sub(r"^\[.*?\]\s*", "", title.strip('"')).strip()
+    m = re.search(r"\d+\.\s*(.+?)(?:\s*-|$)", title)
+    if m:
+        return m.group(1).strip()
+    return title
+
+
+def extract_leetcode_level(fm: dict[str, str]) -> str:
+    for field in ("title", "description"):
+        text = fm.get(field, "").lower()
+        m = re.search(r"leetcode[/\-\s]*(easy|medium|hard)", text, re.I)
+        if m:
+            return m.group(1).lower()
+    return ""
 
 
 def extract_swea_level(title: str) -> str:
@@ -297,6 +319,20 @@ def parse_markdown_file(fname: str, content: str) -> dict[str, str]:
         # Override or fill level from frontmatter if missing/empty
         if not entry["level"]:
             entry["level"] = extract_prog_level(fm)
+    elif "leetcode" in fname:
+        entry["test"] = "leetcode"
+        m = re.search(r"leetcode-(\d+)", fname)
+        entry["problem_num"] = m.group(1) if m else ""
+        if entry["problem_num"] in LEETCODE_REF:
+            level, algo, ref_title = LEETCODE_REF[entry["problem_num"]]
+            entry["level"] = level
+            entry["algorithm"] = algo
+            entry["title"] = ref_title
+        else:
+            entry["title"] = extract_leetcode_title(title_raw)
+            entry["algorithm"] = map_tag(tags)
+        if not entry["level"]:
+            entry["level"] = extract_leetcode_level(fm)
     elif "swea" in fname:
         entry["test"] = "swea"
         m = re.search(r"swea-(\d+)", fname)
@@ -333,6 +369,8 @@ def _resolve_level_ko(entry: dict[str, str]) -> str:
         return PROGRAMMERS_LEVEL_KO[entry["level"]]
     if entry["test"] == "swea" and entry["level"] in SWEA_LEVEL_KO:
         return SWEA_LEVEL_KO[entry["level"]]
+    if entry["test"] == "leetcode" and entry["level"] in LEETCODE_LEVEL_KO:
+        return LEETCODE_LEVEL_KO[entry["level"]]
     return ""
 
 

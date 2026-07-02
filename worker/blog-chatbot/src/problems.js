@@ -65,9 +65,9 @@ const ALGORITHM_ALIASES = {
 };
 
 const LEVEL_ALIASES = {
-  쉬움: ["쉬움", "1", "d1", "d2"],
-  중간: ["중간", "2", "3", "d3", "d4"],
-  어려움: ["어려움", "4", "5", "d5", "d6"],
+  쉬움: ["쉬움", "1", "d1", "d2", "easy"],
+  중간: ["중간", "2", "3", "d3", "d4", "medium"],
+  어려움: ["어려움", "4", "5", "d5", "d6", "hard"],
 };
 
 const ALGORITHM_KO_DISPLAY = {
@@ -126,9 +126,9 @@ export function filterProblems(problems, message) {
     let pLevelKo = p.level_ko;
     if (!pLevelKo) {
       const lv = String(p.level || "").toLowerCase();
-      if (["1", "d1", "d2"].includes(lv)) pLevelKo = "쉬움";
-      else if (["2", "3", "d3", "d4"].includes(lv)) pLevelKo = "중간";
-      else if (["4", "5", "d5", "d6"].includes(lv)) pLevelKo = "어려움";
+      if (["1", "d1", "d2", "easy"].includes(lv)) pLevelKo = "쉬움";
+      else if (["2", "3", "d3", "d4", "medium"].includes(lv)) pLevelKo = "중간";
+      else if (["4", "5", "d5", "d6", "hard"].includes(lv)) pLevelKo = "어려움";
     }
 
     const levelOk = !levelKo || pLevelKo === levelKo;
@@ -140,8 +140,11 @@ export function filterProblems(problems, message) {
     // For "programmers 레벨2", ensure it matches the test type if mentioned
     const testOk = !text.includes("programmers") || p.test === "programmers";
     const testOk2 = !text.includes("swea") || p.test === "swea";
+    const testOk3 =
+      (!text.includes("leetcode") && !text.includes("리트코드")) ||
+      p.test === "leetcode";
 
-    return levelOk && algoOk && testOk && testOk2;
+    return levelOk && algoOk && testOk && testOk2 && testOk3;
   });
 }
 
@@ -167,7 +170,13 @@ export function formatRecommendations(matches) {
 
   const lines = matches.slice(0, 5).map((p) => {
     const src =
-      p.test === "programmers" ? "프로그래머스" : p.test === "swea" ? "SWEA" : "기타";
+      p.test === "programmers"
+        ? "프로그래머스"
+        : p.test === "swea"
+          ? "SWEA"
+          : p.test === "leetcode"
+            ? "LeetCode"
+            : "기타";
     const level = p.level_ko || p.level || "";
     const algo = p.algorithm_ko || p.algorithm || "";
     
