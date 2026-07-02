@@ -760,6 +760,16 @@
     "url": "https://joonk2.github.io/posts/2026/07/02/leetcode-2144/"
   },
   {
+    "test": "leetcode",
+    "title": "Find a Safe Walk Through a Grid",
+    "problem_num": "3286",
+    "level": "medium",
+    "algorithm": "dp",
+    "algorithm_ko": "DP",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/07/02/leetcode-3286/"
+  },
+  {
     "test": "",
     "title": "[필독!!] -> DFS, 백트랙킹, 조합, 순열",
     "problem_num": "",
