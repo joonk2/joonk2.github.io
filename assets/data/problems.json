@@ -748,5 +748,15 @@
     "algorithm_ko": "우선순위큐",
     "level_ko": "어려움",
     "url": "https://joonk2.github.io/posts/2026/06/21/programmers-121686/"
+  },
+  {
+    "test": "leetcode",
+    "title": "Minimum Cost of Buying Candies With Discount",
+    "problem_num": "2144",
+    "level": "",
+    "algorithm": "implementation",
+    "algorithm_ko": "구현",
+    "level_ko": "",
+    "url": "https://joonk2.github.io/posts/2026/07/02/leetcode-2144/"
   }
 ]
