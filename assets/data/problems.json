@@ -788,5 +788,15 @@
     "algorithm_ko": "수학",
     "level_ko": "쉬움",
     "url": "https://joonk2.github.io/posts/2026/07/20/leetcode-1260/"
+  },
+  {
+    "test": "programmers",
+    "title": "[PCCP 모의고사 #2] 3번 - 카페 확장 (Java)",
+    "problem_num": "121689",
+    "level": "2",
+    "algorithm": "implementation",
+    "algorithm_ko": "구현",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/07/22/programmers-121689/"
   }
 ]
