@@ -778,5 +778,15 @@
     "algorithm_ko": "백트랙킹",
     "level_ko": "",
     "url": "https://joonk2.github.io/posts/2026/07/02/tips1/"
+  },
+  {
+    "test": "leetcode",
+    "title": "Shift 2D Grid",
+    "problem_num": "1260",
+    "level": "easy",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "쉬움",
+    "url": "https://joonk2.github.io/posts/2026/07/20/leetcode-1260/"
   }
 ]
