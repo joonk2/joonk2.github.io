@@ -818,5 +818,15 @@
     "algorithm_ko": "구현",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/07/23/programmers-42747/"
+  },
+  {
+    "test": "programmers",
+    "title": "도둑질 - DP (Java)",
+    "problem_num": "42897",
+    "level": "4",
+    "algorithm": "dp",
+    "algorithm_ko": "DP",
+    "level_ko": "",
+    "url": "https://joonk2.github.io/posts/2026/07/23/programmers-42897/"
   }
 ]
