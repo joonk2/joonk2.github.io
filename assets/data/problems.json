@@ -808,5 +808,15 @@
     "algorithm_ko": "구현",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/07/23/programmers-42746/"
+  },
+  {
+    "test": "programmers",
+    "title": "H-Index - 정렬 (Java)",
+    "problem_num": "42747",
+    "level": "2",
+    "algorithm": "implementation",
+    "algorithm_ko": "구현",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/07/23/programmers-42747/"
   }
 ]
