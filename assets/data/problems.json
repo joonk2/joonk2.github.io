@@ -798,5 +798,15 @@
     "algorithm_ko": "구현",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/07/22/programmers-121689/"
+  },
+  {
+    "test": "programmers",
+    "title": "가장 큰 수 - 문자열 람다 정렬 (Java)",
+    "problem_num": "42746",
+    "level": "2",
+    "algorithm": "implementation",
+    "algorithm_ko": "구현",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/07/23/programmers-42746/"
   }
 ]
