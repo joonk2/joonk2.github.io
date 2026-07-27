@@ -828,5 +828,15 @@
     "algorithm_ko": "DP",
     "level_ko": "",
     "url": "https://joonk2.github.io/posts/2026/07/23/programmers-42897/"
+  },
+  {
+    "test": "programmers",
+    "title": "아이템 줍기 - bfs (Java)",
+    "problem_num": "87694",
+    "level": "3",
+    "algorithm": "bfs",
+    "algorithm_ko": "BFS",
+    "level_ko": "어려움",
+    "url": "https://joonk2.github.io/posts/2026/07/27/programmers-87694/"
   }
 ]
