@@ -841,12 +841,22 @@
   },
   {
     "test": "programmers",
-    "title": "[3차] n진수 게임 - 비트 && 진법 (Java)",
+    "title": "2018 KAKAO BLIND RECRUITMENT [3차] n진수 게임 - 비트 && 진법 (Java)",
     "problem_num": "17687",
     "level": "2",
     "algorithm": "math",
     "algorithm_ko": "수학",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/07/30/programmers-17687/"
+  },
+  {
+    "test": "programmers",
+    "title": "2022 KAKAO BLIND RECRUITMENT k진수에서 소수 개수 구하기 - 비트 && 진법 (Java)",
+    "problem_num": "92335",
+    "level": "2",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/07/30/programmers-92335/"
   }
 ]
