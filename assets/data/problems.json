@@ -838,5 +838,15 @@
     "algorithm_ko": "BFS",
     "level_ko": "어려움",
     "url": "https://joonk2.github.io/posts/2026/07/27/programmers-87694/"
+  },
+  {
+    "test": "programmers",
+    "title": "[3차] n진수 게임 - 비트 && 진법 (Java)",
+    "problem_num": "17687",
+    "level": "2",
+    "algorithm": "math",
+    "algorithm_ko": "수학",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/07/30/programmers-17687/"
   }
 ]
