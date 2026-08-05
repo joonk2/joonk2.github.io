@@ -858,5 +858,15 @@
     "algorithm_ko": "수학",
     "level_ko": "중간",
     "url": "https://joonk2.github.io/posts/2026/07/30/programmers-92335/"
+  },
+  {
+    "test": "leetcode",
+    "title": "Predict the Winner",
+    "problem_num": "486",
+    "level": "medium",
+    "algorithm": "dp",
+    "algorithm_ko": "DP",
+    "level_ko": "중간",
+    "url": "https://joonk2.github.io/posts/2026/08/06/leetcode-486/"
   }
 ]
