@@ -2,6 +2,10 @@ name = "blog-chatbot"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
 
+# Gemini API는 Worker egress 지역(HKG 등)에 따라 차단될 수 있음 → US 리전 고정
+[placement]
+region = "gcp:us-central1"
+
 [vars]
 QA_DATASET_URL = "https://joonk2.github.io/assets/data/qa-dataset.json"
 QA_DATASET_CACHE_TTL_SEC = "300"

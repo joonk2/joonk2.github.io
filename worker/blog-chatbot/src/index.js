@@ -95,7 +95,11 @@ async function callGemini(message, history, env, systemInstruction) {
 }
 
 function errorResponse(err, status = 200) {
-  const message = err?.message || String(err) || "Internal error";
+  let message = err?.message || String(err) || "Internal error";
+  if (/location is not supported/i.test(message)) {
+    message +=
+      " (Cloudflare Worker가 Gemini 미지원 지역에서 API를 호출한 경우입니다. wrangler.toml [placement] region 설정 후 재배포하세요.)";
+  }
   console.error(err);
   return jsonResponse(
     {
@@ -152,6 +156,7 @@ export default {
           ok: true,
           hasApiKey: Boolean(env.GEMINI_API_KEY),
           model: env.GEMINI_MODEL || "gemini-2.5-flash",
+          colo: request.cf?.colo || null,
         });
       }
 
