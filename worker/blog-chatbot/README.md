@@ -29,7 +29,27 @@ py -3 scripts/manage_qa_dataset.py add -q "질문" -a "답변"
 | GET | `/config` | 봇 이름·환영 메시지 |
 | POST | `/` | `{ message, history[], userPersona? }` |
 
-## 배포
+## 자동 배포 (GitHub Actions)
+
+`main` 브랜치에 아래 파일이 push되면 Worker가 **자동 배포**됩니다.
+
+- `worker/blog-chatbot/**`
+- `assets/data/qa-dataset.json`
+- `scripts/manage_qa_dataset.py`
+
+워크플로: `.github/workflows/deploy-blog-chatbot.yml`
+
+### GitHub Secrets (Repository → Settings → Secrets)
+
+| Secret | 필수 | 설명 |
+|--------|------|------|
+| `CLOUDFLARE_API_TOKEN` | ✅ | Cloudflare API 토큰 (Workers Edit 권한) |
+| `CLOUDFLARE_ACCOUNT_ID` | ✅ | Cloudflare Account ID |
+| `GEMINI_API_KEY` | ✅ | Google AI Studio API 키 |
+
+수동으로 한 번만 설정하면 이후 push마다 `GEMINI_API_KEY`도 함께 Worker secret으로 동기화됩니다.
+
+수동 배포가 필요할 때:
 
 ```bash
 cd worker/blog-chatbot

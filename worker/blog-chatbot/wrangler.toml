@@ -5,7 +5,7 @@ compatibility_date = "2024-01-01"
 [vars]
 QA_DATASET_URL = "https://joonk2.github.io/assets/data/qa-dataset.json"
 QA_DATASET_CACHE_TTL_SEC = "300"
-GEMINI_MODEL = "gemini-2.0-flash"
+GEMINI_MODEL = "gemini-2.5-flash"
 GEMINI_API_VERSION = "v1beta"
 GEMINI_TEMPERATURE = "0.75"
 GEMINI_MAX_OUTPUT_TOKENS = "2048"

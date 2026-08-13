@@ -1,17 +1,21 @@
-name: Validate QA dataset & deploy chatbot
+name: Deploy blog-chatbot Worker
 
 on:
   push:
     branches:
       - main
     paths:
+      - "worker/blog-chatbot/**"
       - "assets/data/qa-dataset.json"
       - "scripts/manage_qa_dataset.py"
-      - "worker/blog-chatbot/**"
   workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: deploy-blog-chatbot
+  cancel-in-progress: true
 
 jobs:
   validate:
@@ -40,8 +44,22 @@ jobs:
         working-directory: worker/blog-chatbot
         run: npm install
 
-      - name: Deploy Chatbot to Cloudflare
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: worker/blog-chatbot
+          secrets: |
+            GEMINI_API_KEY
+
+      - name: Verify deployment (/health)
+        run: |
+          for i in 1 2 3 4 5; do
+            body=$(curl -fsS "https://blog-chatbot.with-joonk.workers.dev/health") && break
+            echo "retry $i..."
+            sleep 3
+          done
+          echo "$body"
+          echo "$body" | grep -q '"ok":true'
+          echo "$body" | grep -q '"hasApiKey":true'
