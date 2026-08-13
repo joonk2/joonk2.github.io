@@ -44,12 +44,28 @@ jobs:
         working-directory: worker/blog-chatbot
         run: npm install
 
+      - name: Check GitHub Secrets
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          GEMINI_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          missing=0
+          if [ -z "$CF_TOKEN" ]; then echo "::error::CLOUDFLARE_API_TOKEN secret이 비어 있습니다."; missing=1; fi
+          if [ -z "$CF_ACCOUNT" ]; then echo "::error::CLOUDFLARE_ACCOUNT_ID secret이 비어 있습니다."; missing=1; fi
+          if [ -z "$GEMINI_KEY" ]; then echo "::error::GEMINI_API_KEY secret이 비어 있습니다."; missing=1; fi
+          if [ "$missing" -eq 1 ]; then
+            echo "Repository → Settings → Secrets and variables → Actions 에서 3개 secret을 등록한 뒤 Re-run 하세요."
+            exit 1
+          fi
+
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: worker/blog-chatbot
+          wranglerVersion: "3.99.0"
           secrets: |
             GEMINI_API_KEY
 
@@ -63,3 +79,4 @@ jobs:
           echo "$body"
           echo "$body" | grep -q '"ok":true'
           echo "$body" | grep -q '"hasApiKey":true'
+          echo "$body" | grep -q '"model":"gemini-2.5-flash"'

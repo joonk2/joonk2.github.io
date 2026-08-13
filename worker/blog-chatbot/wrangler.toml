@@ -8,19 +8,10 @@ region = "gcp:us-central1"
 
 
 
-# --------------- cloudflareworker 로그 추가 ----------------------------
+# Workers Logs (Cloudflare 대시보드 Observability). 공식 최소 설정만 사용.
 [observability]
 enabled = true
 head_sampling_rate = 1
-
-[observability.logs]
-enabled = true
-invocation_logs = true
-persist = true
-head_sampling_rate = 1
-
-
-
 
 [vars]
 QA_DATASET_URL = "https://joonk2.github.io/assets/data/qa-dataset.json"
