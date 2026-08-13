@@ -1,50 +1,37 @@
-export const WELCOME_MESSAGE =
-  "블로그에 와서 환영한다냥! 🐾\n\n" +
-  "이 블로그는 **알고리즘 학습 특화 블로그**로, 여기 정리된 SWEA·programmers·LeetCode 풀이와 개념 글을 보며 공부하는 데 도움을 주고자 한다냥.\n\n" +
-  "• 출처: SWEA, programmers, LeetCode (백준 BOJ 글은 목록에 없음)\n" +
-  "• 난이도: **쉬움 · 중간 · 어려움** (programmers 1~3레벨, SWEA D1~D6, LeetCode Easy/Medium/Hard)\n" +
-  "• 알고리즘: 구현, 백트랙킹, 완전탐색, BFS, DP, 그래프(다익스트라 등) 등\n\n" +
-  "원하는 **난이도**나 **알고리즘 유형**을 말해주면, 블로그에 있는 글을 골라 줄게냥!\n\n" +
-  '예) "레벨은 쉬움, 구현으로 할게"';
+/** @param {object} persona @param {string} qaBlock @param {string} [relevantBlock] */
+export function buildSystemInstruction(persona, qaBlock, relevantBlock = "") {
+  const siteLine = persona.siteTitle
+    ? `- 사이트: ${persona.siteTitle}${persona.siteUrl ? ` (${persona.siteUrl})` : ""}`
+    : "";
 
-export function isGreeting(message) {
-  const t = message.trim().toLowerCase();
-  const keywords = [
-    "안녕",
-    "안하세요",
-    "안뇽",
-    "하이",
-    "ㅎㅇ",
-    "반가워",
-    "hello",
-    "hi",
-    "hey",
-    "인사",
-    "소개",
-  ];
-  return keywords.some((k) => t.includes(k)) && t.length <= 15;
+  return [
+    "# 역할",
+    `너는 ${persona.name}이라는 이름의 **범용 생성형 AI 어시스턴트**다.`,
+    `- 성격: ${persona.personality}`,
+    `- 말투: ${persona.tone}`,
+    `- 다룰 수 있는 주제: ${persona.expertise}`,
+    siteLine,
+    "",
+    "# 답변 규칙",
+    "- ChatGPT처럼 자연스럽고 유용하게 답한다. 주제에 가짜 제한을 두지 않는다.",
+    "- 일상 대화, 정보 질문, 학습·업무·창작·코딩 등 어떤 질문이든 성실히 돕는다.",
+    "- 모르는 것은 모른다고 말하고, 추측과 사실을 구분한다.",
+    "- 사용자의 개인 설정(호칭·배경·선호)이 주어지면 그에 맞춰 톤과 설명 깊이를 조절한다.",
+    "- 아래 [선택 Q&A]가 있으면 참고하되, 없거나 부족해도 일반 지식으로 자유롭게 답한다.",
+    relevantBlock,
+    "",
+    "[선택 Q&A — 사이트 운영자가 등록한 참고 자료]",
+    qaBlock,
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
-/** @param {string} problemsBlock */
-export function buildSystemInstruction(problemsBlock) {
-  return [
-    "너는 고준환 블로그의 AI 고양이 어시스턴트다. 말끝에 '냥'을 자연스럽게 붙인다.",
-    "",
-    "## 역할",
-    "- 블로그 방문자에게 SWEA·programmers·LeetCode·알고리즘 개념 글을 안내한다.",
-    "- 아래 [블로그 풀이 목록]만 근거로 추천한다. 목록에 없는 문제는 '블로그에 아직 글이 없다냥'이라고 한다.",
-    "- algorithm 필드는 영문 코드, algorithm_ko·level_ko는 한글 표기다. 답변할 때는 **한글(algorithm_ko, level_ko)을 우선** 사용한다.",
-    "",
-    "## 알고리즘 한글 표기",
-    "implementation→구현, backtracking→백트랙킹, bruteforce→완전탐색, binarysearch→이분탐색,",
-    "graph→그래프(다익스트라·최단경로 포함), greedy→그리디, priorityqueue→우선순위큐",
-    "",
-    "## 난이도",
-    "programmers: 1=쉬움, 2=중간, 3=어려움",
-    "SWEA: D1~D2=쉬움, D3~D4=중간, D5~D6=어려움",
-    "LeetCode: Easy=쉬움, Medium=중간, Hard=어려움",
-    "",
-    "[블로그 풀이 목록]",
-    problemsBlock,
-  ].join("\n");
+/** @param {object[]} items */
+export function formatRelevantQA(items) {
+  if (!items?.length) return "";
+  const body = items
+    .map((item) => `Q: ${item.question}\nA: ${item.answer}`)
+    .join("\n\n");
+  return ["", "# 이번 질문과 유사한 참고 Q&A", body].join("\n");
 }

@@ -1,0 +1,47 @@
+name: Validate QA dataset & deploy chatbot
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "assets/data/qa-dataset.json"
+      - "scripts/manage_qa_dataset.py"
+      - "worker/blog-chatbot/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate qa-dataset.json
+        run: python scripts/manage_qa_dataset.py validate
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Worker dependencies
+        working-directory: worker/blog-chatbot
+        run: npm install
+
+      - name: Deploy Chatbot to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: worker/blog-chatbot

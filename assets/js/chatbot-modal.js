@@ -6,6 +6,7 @@
     history: 'bisa-chat-history',
     open: 'bisa-chat-open',
     view: 'bisa-chat-view',
+    userPersona: 'bisa-user-persona',
   };
 
   const MUSIC_DATA = [
@@ -15,7 +16,7 @@
     { title: 'cookie-run-frozen-tower', url: 'https://github.com/joonk2/music/raw/music/cookie-run-frozen-tower.mp3' },
   ];
 
-  const WELCOME = '안녕하세요! 블로그 AI 채팅봇입니다.\n궁금한 점이 있으면 편하게 물어보세요!';
+  const WELCOME = '안녕하세요! AI 채팅봇입니다.\n무엇이든 편하게 물어보세요.';
   const CHATBOT_API = 'https://blog-chatbot.with-joonk.workers.dev';
 
   let botAvatar = '/assets/img/chatbot-robot.png';
@@ -28,6 +29,12 @@
   let audio;
   let currentIdx = 0;
   let isPlaying = false;
+  let userPersona = {
+    nickname: '',
+    occupation: '',
+    extra: '',
+    useMemory: true,
+  };
 
   function $(id) {
     return document.getElementById(id);
@@ -44,6 +51,77 @@
 
   function writeJSON(key, value) {
     sessionStorage.setItem(key, JSON.stringify(value));
+  }
+
+  function readLocalJSON(key, fallback) {
+    try {
+      var raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch {
+      return fallback;
+    }
+  }
+
+  function writeLocalJSON(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  function loadUserPersona() {
+    var saved = readLocalJSON(STORAGE.userPersona, null);
+    if (saved && typeof saved === 'object') {
+      userPersona = {
+        nickname: saved.nickname || '',
+        occupation: saved.occupation || '',
+        extra: saved.extra || '',
+        useMemory: saved.useMemory !== false,
+      };
+    }
+    return userPersona;
+  }
+
+  function saveUserPersona() {
+    writeLocalJSON(STORAGE.userPersona, userPersona);
+  }
+
+  function getUserPersonaPayload() {
+    if (!userPersona.useMemory) return { enabled: false };
+    var nickname = (userPersona.nickname || '').trim();
+    var occupation = (userPersona.occupation || '').trim();
+    var extra = (userPersona.extra || '').trim();
+    if (!nickname && !occupation && !extra) return { enabled: false };
+    return {
+      enabled: true,
+      nickname: nickname,
+      occupation: occupation,
+      extra: extra,
+    };
+  }
+
+  function fillPersonaForm() {
+    var nick = $('cb-persona-nickname');
+    var job = $('cb-persona-occupation');
+    var extra = $('cb-persona-extra');
+    var memory = $('cb-persona-memory');
+    if (nick) nick.value = userPersona.nickname || '';
+    if (job) job.value = userPersona.occupation || '';
+    if (extra) extra.value = userPersona.extra || '';
+    if (memory) memory.checked = userPersona.useMemory !== false;
+  }
+
+  function readPersonaForm() {
+    userPersona = {
+      nickname: ($('cb-persona-nickname') && $('cb-persona-nickname').value.trim()) || '',
+      occupation: ($('cb-persona-occupation') && $('cb-persona-occupation').value.trim()) || '',
+      extra: ($('cb-persona-extra') && $('cb-persona-extra').value.trim()) || '',
+      useMemory: !($('cb-persona-memory') && !$('cb-persona-memory').checked),
+    };
+  }
+
+  function setPersonaStatus(text, ok) {
+    var el = $('cb-persona-status');
+    if (!el) return;
+    el.textContent = text || '';
+    el.classList.toggle('is-success', Boolean(ok));
   }
 
   function persistState() {
@@ -163,14 +241,36 @@
     if (!skipPersist) persistState();
   }
 
-  function restoreMessages() {
+  function applyBotConfig(cfg) {
+    if (!cfg) return;
+    if (cfg.name) {
+      var title = $('cb-chat-title');
+      if (title) title.textContent = cfg.name;
+    }
+  }
+
+  async function fetchBotConfig() {
+    try {
+      var res = await fetch(CHATBOT_API + '/config');
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      console.warn('[chatbot] config fetch failed:', e);
+      return null;
+    }
+  }
+
+  async function restoreMessages() {
     chatHistory = readJSON(STORAGE.history, []);
     const saved = readJSON(STORAGE.messages, []);
     $('cb-chat-area').innerHTML = '';
 
     if (!saved.length) {
-      appendMessage('bot', WELCOME, { skipPersist: true, skipHistory: true });
-      chatHistory = [{ role: 'assistant', content: WELCOME }];
+      var cfg = await fetchBotConfig();
+      applyBotConfig(cfg);
+      var welcome = (cfg && cfg.welcome) || WELCOME;
+      appendMessage('bot', welcome, { skipPersist: true, skipHistory: true });
+      chatHistory = [{ role: 'assistant', content: welcome }];
       persistState();
       return;
     }
@@ -240,7 +340,11 @@
       const response = await fetch(CHATBOT_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, history: chatHistory.slice(0, -1) }),
+        body: JSON.stringify({
+          message: text,
+          history: chatHistory.slice(0, -1),
+          userPersona: getUserPersonaPayload(),
+        }),
       });
       let data;
       try {
@@ -249,10 +353,10 @@
         throw new Error('서버 응답을 읽을 수 없어요 (HTTP ' + response.status + ')');
       }
       const reply = extractBotText(data);
-      appendMessage('bot', reply || ('냥... ' + extractErrorMessage(data, response)));
+      appendMessage('bot', reply || extractErrorMessage(data, response));
     } catch (e) {
       console.error('Chat Error:', e);
-      appendMessage('bot', '연결 실패했다옹! (' + chatFetchErrorMessage(e) + ')');
+      appendMessage('bot', '연결에 실패했습니다. (' + chatFetchErrorMessage(e) + ')');
     } finally {
       setChatLoading(false);
     }
@@ -414,6 +518,35 @@
     }
   });
 
+  function bindPersonaEvents() {
+    var openBtn = $('cb-open-persona');
+    var backBtn = $('cb-persona-back');
+    var saveBtn = $('cb-persona-save');
+
+    if (openBtn) {
+      openBtn.addEventListener('click', function () {
+        fillPersonaForm();
+        setPersonaStatus('');
+        showView('persona');
+      });
+    }
+
+    if (backBtn) {
+      backBtn.addEventListener('click', function () {
+        showView('chat');
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', function () {
+        readPersonaForm();
+        saveUserPersona();
+        setPersonaStatus('저장되었습니다. 이제 맞춤형 답변을 받을 수 있어요.', true);
+        setTimeout(function () { showView('chat'); }, 700);
+      });
+    }
+  }
+
   function bindEvents() {
     root.querySelectorAll('[data-chatbot-close]').forEach(function (el) {
       el.addEventListener('click', function () { setOpen(false); });
@@ -451,7 +584,7 @@
     });
   }
 
-  function initChatbot() {
+  async function initChatbot() {
     try {
       root = $('bisa-chatbot-root');
       if (!root) {
@@ -461,13 +594,17 @@
 
       if (root.dataset.botAvatar) botAvatar = root.dataset.botAvatar;
 
+      loadUserPersona();
+      fillPersonaForm();
+
       audio = new Audio();
       audio.onended = nextMusic;
 
-      restoreMessages();
+      await restoreMessages();
       createPlaylist();
       loadTrack(0);
       bindEvents();
+      bindPersonaEvents();
       bindLauncherWake();
       updateComposerActions();
 

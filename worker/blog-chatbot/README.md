@@ -1,6 +1,33 @@
 # blog-chatbot Worker
 
-블로그 AI 고양이 챗봇 API (`blog-chatbot.with-joonk.workers.dev`)
+Gemini API 기반 **범용 생성형 AI** 챗봇 (`blog-chatbot.with-joonk.workers.dev`)
+
+## 아키텍처
+
+| 구분 | 설명 |
+|------|------|
+| 프론트 | `assets/js/chatbot-modal.js` — 대화 UI, 개인 페르소나 설정 |
+| Worker | Cloudflare Worker — Gemini 호출 |
+| 데이터 | `assets/data/qa-dataset.json` — (선택) 운영자 참고 Q&A |
+
+알고리즘·블로그 특화 제한 없이 **일반 생성형 AI**처럼 동작합니다.  
+Q&A JSON은 있으면 참고하고, 없어도 Gemini가 자유롭게 답합니다.
+
+## Q&A 데이터 (선택)
+
+`scripts/manage_qa_dataset.py`로 사이트 맞춤 Q&A를 추가할 수 있습니다.
+
+```bash
+py -3 scripts/manage_qa_dataset.py add -q "질문" -a "답변"
+```
+
+## API
+
+| Method | Path | 설명 |
+|--------|------|------|
+| GET | `/health` | Worker 상태 |
+| GET | `/config` | 봇 이름·환영 메시지 |
+| POST | `/` | `{ message, history[], userPersona? }` |
 
 ## 배포
 
@@ -11,18 +38,11 @@ npx wrangler secret put GEMINI_API_KEY
 npm run deploy
 ```
 
-## 동작
+## 페르소나 (`wrangler.toml`)
 
-| 사용자 입력 | 응답 |
-|-------------|------|
-| `안녕` 등 인사 | 환영 메시지 + 난이도/알고리즘 안내 |
-| `레벨은 쉬움, 구현으로 할게` | `problems.json` 필터 → 추천 목록 |
-| 그 외 | Gemini + 블로그 풀이 목록 컨텍스트 |
-
-`problems.json`의 `algorithm_ko`, `level_ko` 필드로 한글 매칭.
-
-## 환경 변수
-
-- `GEMINI_API_KEY` (secret)
-- `PROBLEMS_JSON_URL` (wrangler.toml)
-- `PROBLEMS_CACHE_TTL_SEC` (기본 300)
+```toml
+BOT_NAME = "채팅봇"
+BOT_TONE = "친근하고 자연스러운 존댓말..."
+BOT_PERSONALITY = "범용 AI 어시스턴트"
+BOT_EXPERTISE = "일상, 학습, 업무, 창작, 코딩 등"
+```

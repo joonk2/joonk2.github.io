@@ -1,18 +1,16 @@
 import {
-  filterProblems,
-  formatProblemsForPrompt,
-  formatRecommendations,
-  getProblems,
-} from "./problems.js";
-import {
-  WELCOME_MESSAGE,
-  buildSystemInstruction,
-  isGreeting,
-} from "./prompts.js";
+  findRelevantQA,
+  formatQAForPrompt,
+  getQADataset,
+  getQAItems,
+} from "./qaDataset.js";
+import { buildWelcomeMessage, getPersona } from "./persona.js";
+import { buildSystemInstruction, formatRelevantQA } from "./prompts.js";
+import { buildUserPersonaBlock } from "./userPersona.js";
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
@@ -47,18 +45,19 @@ function extractTextFromGemini(data) {
   return parts.map((p) => p?.text).filter(Boolean).join("\n").trim() || null;
 }
 
-/** @param {string} message @param {Array} history @param {Record<string,string>} env */
+/** @param {string} message @param {Array} history @param {Record<string,string>} env @param {string} systemInstruction */
 async function callGemini(message, history, env, systemInstruction) {
   const apiKey = env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("GEMINI_API_KEY is not configured");
   }
 
-  const model = env.GEMINI_MODEL || "gemini-1.5-flash";
-  const url = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${apiKey}`;
+  const model = env.GEMINI_MODEL || "gemini-2.0-flash";
+  const apiVersion = env.GEMINI_API_VERSION || "v1beta";
+  const url = `https://generativelanguage.googleapis.com/${apiVersion}/models/${model}:generateContent?key=${apiKey}`;
 
   const contents = [];
-  for (const turn of history.slice(-8)) {
+  for (const turn of history.slice(-12)) {
     if (!turn?.content) continue;
     contents.push({
       role: turn.role === "assistant" ? "model" : "user",
@@ -67,33 +66,32 @@ async function callGemini(message, history, env, systemInstruction) {
   }
   contents.push({ role: "user", parts: [{ text: message }] });
 
-  try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: systemInstruction }] },
-        contents,
-        generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
-      }),
-    });
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: systemInstruction }] },
+      contents,
+      generationConfig: {
+        temperature: Number(env.GEMINI_TEMPERATURE || 0.75),
+        maxOutputTokens: Number(env.GEMINI_MAX_OUTPUT_TOKENS || 2048),
+      },
+    }),
+  });
 
-    const data = await res.json();
-    if (!res.ok) {
-      const msg = data?.error?.message || `Gemini HTTP ${res.status}`;
-      throw new Error(msg);
-    }
-    const text = extractTextFromGemini(data);
-    if (!text) {
-      const reason =
-        data?.candidates?.[0]?.finishReason || "응답 본문이 비어 있음";
-      throw new Error(reason);
-    }
-    return text;
-  } catch (err) {
-    console.error("Gemini API Error:", err);
-    throw err;
+  const data = await res.json();
+  if (!res.ok) {
+    const msg = data?.error?.message || `Gemini HTTP ${res.status}`;
+    throw new Error(msg);
   }
+
+  const text = extractTextFromGemini(data);
+  if (!text) {
+    const reason =
+      data?.candidates?.[0]?.finishReason || "응답 본문이 비어 있음";
+    throw new Error(reason);
+  }
+  return text;
 }
 
 function errorResponse(err, status = 500) {
@@ -105,13 +103,39 @@ function errorResponse(err, status = 500) {
       candidates: [
         {
           content: {
-            parts: [{ text: `냥... 잠시 문제가 생겼다옹. (${message})` }],
+            parts: [
+              {
+                text: `죄송합니다. 잠시 문제가 발생했습니다.\n(${message})\n잠시 후 다시 시도해 주세요.`,
+              },
+            ],
           },
         },
       ],
     },
     status
   );
+}
+
+/** @param {Record<string,string>} env @param {object} [userPersona] @param {string} [message] */
+async function buildChatContext(env, userPersona, message = "") {
+  const persona = getPersona(env);
+  let qaBlock = "(등록된 참고 Q&A 없음 — 일반 지식으로 자유롭게 답변)";
+  let relevantBlock = "";
+  try {
+    const dataset = await getQADataset(env);
+    const items = getQAItems(dataset);
+    qaBlock = formatQAForPrompt(items);
+    if (message) {
+      const relevant = findRelevantQA(items, message);
+      relevantBlock = formatRelevantQA(relevant);
+    }
+  } catch (err) {
+    console.warn("qa-dataset.json unavailable:", err);
+  }
+  const userPersonaBlock = buildUserPersonaBlock(userPersona);
+  const systemInstruction =
+    buildSystemInstruction(persona, qaBlock, relevantBlock) + userPersonaBlock;
+  return { persona, systemInstruction };
 }
 
 export default {
@@ -121,8 +145,29 @@ export default {
         return new Response(null, { headers: CORS_HEADERS });
       }
 
+      const url = new URL(request.url);
+
+      if (request.method === "GET" && url.pathname === "/health") {
+        return jsonResponse({
+          ok: true,
+          hasApiKey: Boolean(env.GEMINI_API_KEY),
+          model: env.GEMINI_MODEL || "gemini-2.0-flash",
+        });
+      }
+
+      if (request.method === "GET" && url.pathname === "/config") {
+        const { persona } = await buildChatContext(env);
+        return jsonResponse({
+          name: persona.name,
+          owner: persona.owner,
+          siteTitle: persona.siteTitle,
+          welcome: buildWelcomeMessage(persona),
+          model: env.GEMINI_MODEL || "gemini-2.0-flash",
+        });
+      }
+
       if (request.method !== "POST") {
-        return jsonResponse({ error: "POST only" }, 405);
+        return jsonResponse({ error: "GET /health, GET /config, POST /chat" }, 405);
       }
 
       let body;
@@ -134,25 +179,20 @@ export default {
 
       const message = (body.message || "").trim();
       const history = Array.isArray(body.history) ? body.history : [];
+      const userPersona =
+        body.userPersona && typeof body.userPersona === "object"
+          ? body.userPersona
+          : null;
 
       if (!message) {
         return jsonResponse({ error: "message required" }, 400);
       }
 
-      if (isGreeting(message)) {
-        return geminiTextResponse(WELCOME_MESSAGE);
-      }
-
-      const problems = await getProblems(env);
-      const problemsBlock = formatProblemsForPrompt(problems);
-
-      const matches = filterProblems(problems, message);
-      const recommendation = formatRecommendations(matches);
-      if (recommendation) {
-        return geminiTextResponse(recommendation);
-      }
-
-      const systemInstruction = buildSystemInstruction(problemsBlock);
+      const { systemInstruction } = await buildChatContext(
+        env,
+        userPersona,
+        message
+      );
       const replyText = await callGemini(
         message,
         history,
