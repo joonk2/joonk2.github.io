@@ -104,12 +104,5 @@
 
   {% include metadata-hook.html %}
 
-  <script>
-    /* Global function to open the chatbot popup */
-    window.openPopupAction = function() {
-      const w = 620; const h = 750;
-      const l = (screen.width - w) / 2; const t = (screen.height - h) / 2;
-      const url = '{{ "/chatbot.html" | relative_url }}?mode=chat';
-      window.open(url, 'chatbotPopup', `width=${w},height=${h},left=${l},top=${t},scrollbars=no,resizable=yes`);
-    };  </script>
+  <link rel="stylesheet" href="{{ '/assets/css/chatbot-modal.css' | relative_url }}">
 </head>

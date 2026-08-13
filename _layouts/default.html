@@ -70,6 +70,8 @@ layout: compress
 
     <div id="mask"></div>
 
+    {% include chatbot-modal.html %}
+
     {% if site.pwa.enabled %}
       {% include_cached notification.html lang=lang %}
     {% endif %}
@@ -78,5 +80,7 @@ layout: compress
     {% include js-selector.html lang=lang %}
 
     {% include_cached search-loader.html lang=lang %}
+
+    <script src="{{ '/assets/js/chatbot-modal.js' | relative_url }}"></script>
   </body>
 </html>

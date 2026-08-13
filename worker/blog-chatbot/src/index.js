@@ -96,35 +96,53 @@ async function callGemini(message, history, env, systemInstruction) {
   }
 }
 
+function errorResponse(err, status = 500) {
+  const message = err?.message || String(err) || "Internal error";
+  console.error(err);
+  return jsonResponse(
+    {
+      error: { message },
+      candidates: [
+        {
+          content: {
+            parts: [{ text: `냥... 잠시 문제가 생겼다옹. (${message})` }],
+          },
+        },
+      ],
+    },
+    status
+  );
+}
+
 export default {
   async fetch(request, env) {
-    if (request.method === "OPTIONS") {
-      return new Response(null, { headers: CORS_HEADERS });
-    }
-
-    if (request.method !== "POST") {
-      return jsonResponse({ error: "POST only" }, 405);
-    }
-
-    let body;
     try {
-      body = await request.json();
-    } catch {
-      return jsonResponse({ error: "Invalid JSON" }, 400);
-    }
+      if (request.method === "OPTIONS") {
+        return new Response(null, { headers: CORS_HEADERS });
+      }
 
-    const message = (body.message || "").trim();
-    const history = Array.isArray(body.history) ? body.history : [];
+      if (request.method !== "POST") {
+        return jsonResponse({ error: "POST only" }, 405);
+      }
 
-    if (!message) {
-      return jsonResponse({ error: "message required" }, 400);
-    }
+      let body;
+      try {
+        body = await request.json();
+      } catch {
+        return jsonResponse({ error: "Invalid JSON" }, 400);
+      }
 
-    if (isGreeting(message)) {
-      return geminiTextResponse(WELCOME_MESSAGE);
-    }
+      const message = (body.message || "").trim();
+      const history = Array.isArray(body.history) ? body.history : [];
 
-    try {
+      if (!message) {
+        return jsonResponse({ error: "message required" }, 400);
+      }
+
+      if (isGreeting(message)) {
+        return geminiTextResponse(WELCOME_MESSAGE);
+      }
+
       const problems = await getProblems(env);
       const problemsBlock = formatProblemsForPrompt(problems);
 
@@ -143,24 +161,7 @@ export default {
       );
       return geminiTextResponse(replyText);
     } catch (err) {
-      console.error(err);
-      return jsonResponse(
-        {
-          error: { message: err.message || "Internal error" },
-          candidates: [
-            {
-              content: {
-                parts: [
-                  {
-                    text: `냥... 잠시 문제가 생겼다옹. (${err.message})`,
-                  },
-                ],
-              },
-            },
-          ],
-        },
-        500
-      );
+      return errorResponse(err);
     }
   },
 };
