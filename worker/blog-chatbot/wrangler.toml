@@ -6,6 +6,22 @@ compatibility_date = "2024-01-01"
 [placement]
 region = "gcp:us-central1"
 
+
+
+# --------------- cloudflareworker 로그 추가 ----------------------------
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+persist = true
+head_sampling_rate = 1
+
+
+
+
 [vars]
 QA_DATASET_URL = "https://joonk2.github.io/assets/data/qa-dataset.json"
 QA_DATASET_CACHE_TTL_SEC = "300"
