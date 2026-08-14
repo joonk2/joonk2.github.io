@@ -52,8 +52,16 @@ async function callGemini(message, history, env, systemInstruction) {
     throw new Error("GEMINI_API_KEY is not configured");
   }
 
-  const model = env.GEMINI_MODEL || "gemini-2.5-flash";
+  const model = env.GEMINI_MODEL || null;
   const apiVersion = env.GEMINI_API_VERSION || "v1beta";
+
+  if (!model) {
+    throw new error("GEMINI_MODEL is not configured");
+  }
+  if (!apiVersion) {
+    throw new error("apiVersion is not configured");
+  }
+
   const url = `https://generativelanguage.googleapis.com/${apiVersion}/models/${model}:generateContent?key=${apiKey}`;
 
   const contents = [];
@@ -155,7 +163,7 @@ export default {
         return jsonResponse({
           ok: true,
           hasApiKey: Boolean(env.GEMINI_API_KEY),
-          model: env.GEMINI_MODEL || "gemini-2.5-flash",
+          model: env.GEMINI_MODEL || null,
           colo: request.cf?.colo || null,
         });
       }
@@ -167,7 +175,7 @@ export default {
           owner: persona.owner,
           siteTitle: persona.siteTitle,
           welcome: buildWelcomeMessage(persona),
-          model: env.GEMINI_MODEL || "gemini-2.5-flash",
+          model: env.GEMINI_MODEL || null,
         });
       }
 

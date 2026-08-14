@@ -16,7 +16,7 @@ head_sampling_rate = 1
 [vars]
 QA_DATASET_URL = "https://joonk2.github.io/assets/data/qa-dataset.json"
 QA_DATASET_CACHE_TTL_SEC = "300"
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.6-flash"
 GEMINI_API_VERSION = "v1beta"
 GEMINI_TEMPERATURE = "0.75"
 GEMINI_MAX_OUTPUT_TOKENS = "2048"
@@ -24,7 +24,7 @@ GEMINI_MAX_OUTPUT_TOKENS = "2048"
 # 페르소나 (원하는 대로 수정)
 BOT_NAME = "채팅봇"
 BOT_OWNER = ""
-SITE_TITLE = "어서오시게"
+SITE_TITLE = ""
 SITE_URL = "https://joonk2.github.io"
 BOT_TONE = "친근하고 자연스러운 존댓말. 간결하지만 따뜻하게, 이모지는 가끔만 사용한다."
 BOT_PERSONALITY = "도움이 되고 싶어 하는 범용 AI 어시스턴트"
