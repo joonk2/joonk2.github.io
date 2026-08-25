@@ -129,7 +129,7 @@ gif를 얻기 위해 [https://new.express.adobe.com/tools/convert-to-gif](https:
 
 ```bash
 # 실행하면 이렇게 됩니다ㅎ
-bundle exec jekyll build
+bundle exec jekyll serve --livereload
 ```
 ![Jekyll 블로그 배경음악 플레이어 설정 화면](/assets/img/blog/music/0.png)
 #### 영상으로 확인하고 싶으면 링크 클릭
