@@ -1,5 +1,5 @@
 ---
-title:  "stack을 class로 구현"
+title:  "stack_v1을 class로 구현"
 description: "말 그대로 stack을 class로 구현하였다"
 layout: post
 categories: [coding-test, datastructure-algorithm, stack, implementation] 
@@ -12,7 +12,7 @@ date: 2026-08-26
 
 
 ## 🙋‍♂️ 들어가며
-stack을 만들기 위해 class에 작성할 것들을 정리해보자
+stack_v1을 만들기 위해 class에 작성할 것들을 정리해보자
 - 1. 데이터 상태 정의
 - 2. 생성자
 - 3. push
@@ -42,18 +42,18 @@ public class Solution {
 		int N = price.length;
 		
 		// 1. stack 생성
-		my_stack stack = new my_stack(N);
-		System.out.println(stack.top);
-		stack.push(123);
-		System.out.println(stack.top);
-		System.out.println(stack.peek());
-		stack.push(145);
-		System.out.println(stack.top);
-		System.out.println(stack.pop());
-		System.out.println(stack.top);
-		stack.push(999);
-		System.out.println(stack.size());
-		System.out.println(stack.isEmpty());
+		my_stack stack_v1 = new my_stack(N);
+		System.out.println(stack_v1.top);
+		stack_v1_v1.push(123);
+		System.out.println(stack_v1.top);
+		System.out.println(stack_v1.peek());
+		stack_v1.push(145);
+		System.out.println(stack_v1.top);
+		System.out.println(stack_v1.pop());
+		System.out.println(stack_v1.top);
+		stack_v1.push(999);
+		System.out.println(stack_v1.size());
+		System.out.println(stack_v1.isEmpty());
 	}
 	
 	
@@ -63,30 +63,30 @@ public class Solution {
 		
 		// 3-1. 데이터 상태 정의
 		private int top;
-		private int[] stack;
+		private int[] stack_v1;
 		
 		// 3-2. 생성자
 		my_stack(int size) {
 			top = -1;
-			stack = new int[size];
+			stack_v1 = new int[size];
 		}
 		
 		// 3-3. push
 		void push(int value) {
 			top++;
-			stack[top] = value;
+			stack_v1[top] = value;
 		}
 		
 		// 3-4. pop
 		int pop() {
-			int value = stack[top];
+			int value = stack_v1[top];
 			top--;
 			return value;
 		}
 		
 		// 3-5. peek
 		int peek() {
-			int value = stack[top];
+			int value = stack_v1[top];
 			return value;
 		}
 		
@@ -149,26 +149,26 @@ public class Solution {
 		int N = price.length;
 		
 		// 1. stack 생성
-		my_stack stack = new my_stack(N);
+		my_stack stack_v1 = new my_stack(N);
 		
 		// 2. 단조스택 검사 (점차 증가?)
 		for (int i = 0; i < N; i++) {
 			
 			// 2-1. 스택이 비지 않았고 && 스택의 마지막값 > 현재값이면
-			while (!stack.isEmpty() && stack.peek() > price[i]) {
-				System.out.println(stack.peek());
-				stack.pop();
+			while (!stack_v1.isEmpty() && stack_v1.peek() > price[i]) {
+				System.out.println(stack_v1.peek());
+				stack_v1.pop();
 			}
 			
-			// 2-2. stack에 push
-			stack.push(price[i]);
+			// 2-2. stack_v1에 push
+			stack_v1.push(price[i]);
 		}
 		
 		
 		// 3. 스택(오름차순) 출력
-		int[] res = new int[stack.size()];
+		int[] res = new int[stack_v1.size()];
 		for (int i = res.length-1 ; i >= 0; i--) {
-			res[i] = stack.pop();
+			res[i] = stack_v1.pop();
 		}
 		System.out.println(Arrays.toString(res));
 		
@@ -182,30 +182,30 @@ public class Solution {
 		
 		// 3-1. 데이터 상태 정의
 		private int top;
-		private int[] stack;
+		private int[] stack_v1;
 		
 		// 3-2. 생성자
 		my_stack(int size) {
 			top = -1;
-			stack = new int[size];
+			stack_v1 = new int[size];
 		}
 		
 		// 3-3. push
 		void push(int value) {
 			top++;
-			stack[top] = value;
+			stack_v1[top] = value;
 		}
 		
 		// 3-4. pop
 		int pop() {
-			int value = stack[top];
+			int value = stack_v1[top];
 			top--;
 			return value;
 		}
 		
 		// 3-5. peek
 		int peek() {
-			int value = stack[top];
+			int value = stack_v1[top];
 			return value;
 		}
 		
