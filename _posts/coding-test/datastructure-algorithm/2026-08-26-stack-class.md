@@ -119,3 +119,117 @@ public class Solution {
 2
 false
 ```
+
+
+<br><br><br>
+
+
+이제부터 단조스택에 대해 보자
+
+단조스택은 스택에 오름차순으로 남아있거나, 내림차순으로 정렬되어있는 것을 의미한다.
+
+아래는 단조스택의 오름차순 코드다
+
+## ✅ 정답 코드 (monotonic_stack - asc)
+```java
+package joonhwan_k;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+
+// test
+import java.util.Arrays;
+
+
+public class Solution {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int[] price = new int[] {5, 3, 7, 2, 6};
+		int N = price.length;
+		
+		// 1. stack 생성
+		my_stack stack = new my_stack(N);
+		
+		// 2. 단조스택 검사 (점차 증가?)
+		for (int i = 0; i < N; i++) {
+			
+			// 2-1. 스택이 비지 않았고 && 스택의 마지막값 > 현재값이면
+			while (!stack.isEmpty() && stack.peek() > price[i]) {
+				System.out.println(stack.peek());
+				stack.pop();
+			}
+			
+			// 2-2. stack에 push
+			stack.push(price[i]);
+		}
+		
+		
+		// 3. 스택(오름차순) 출력
+		int[] res = new int[stack.size()];
+		for (int i = res.length-1 ; i >= 0; i--) {
+			res[i] = stack.pop();
+		}
+		System.out.println(Arrays.toString(res));
+		
+		
+	}
+	
+	
+	
+	// 3. stack 클래스
+	static class my_stack {
+		
+		// 3-1. 데이터 상태 정의
+		private int top;
+		private int[] stack;
+		
+		// 3-2. 생성자
+		my_stack(int size) {
+			top = -1;
+			stack = new int[size];
+		}
+		
+		// 3-3. push
+		void push(int value) {
+			top++;
+			stack[top] = value;
+		}
+		
+		// 3-4. pop
+		int pop() {
+			int value = stack[top];
+			top--;
+			return value;
+		}
+		
+		// 3-5. peek
+		int peek() {
+			int value = stack[top];
+			return value;
+		}
+		
+		// 3-6. isEmpty
+		boolean isEmpty() {
+			if (top != -1) return false;
+			return true;
+		}
+		
+		// 3-7. size
+		int size() {
+			return top + 1;
+		}
+				
+		
+	}
+}
+```
+<br><br><br>
+
+## 출력 값
+```java
+5
+7
+3
+[2, 6]
+```
