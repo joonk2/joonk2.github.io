@@ -1,5 +1,5 @@
 ---
-title:  "stack_v1을 class로 구현"
+title:  "stack을 class로 구현"
 description: "말 그대로 stack을 class로 구현하였다"
 layout: post
 categories: [coding-test, datastructure-algorithm, stack, implementation] 
@@ -12,7 +12,7 @@ date: 2026-08-26
 
 
 ## 🙋‍♂️ 들어가며
-stack_v1을 만들기 위해 class에 작성할 것들을 정리해보자
+stack을 만들기 위해 class에 작성할 것들을 정리해보자
 - 1. 데이터 상태 정의
 - 2. 생성자
 - 3. push
