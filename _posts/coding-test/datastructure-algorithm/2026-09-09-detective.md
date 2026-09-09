@@ -1,12 +1,12 @@
 ---
-title:  "침묵의 취조실"
+title:  "명탐정과 침묵의 취조실"
 layout: post
-categories: [coding-test, datastructure-algorithm, back-tracking] 
-tags: [back-tracking]
+categories: [coding-test, datastructure-algorithm, backtracking] 
+tags: [backtracking]
 toc: true
 toc_sticky: true
 math: true
-date: 2026-04-22
+date: 2026-09-09
 ---
 
 
@@ -122,43 +122,17 @@ $ \binom{100}{10} $
 
 전부 다 일치하면 내 추리가 맞아서 범인 색출을 할 수 있지 않을까?
 
-테스트케이스를 활용하면 아래처럼 나타낼 수 있겠다
-
-아래는 1,5번이 범인이라고 가정했을때다
-<br>
-
-## 안되는 풀이
-세로를 더해서 K보다 적으면 범인인데 이건 반례가 있다
-
-![안되는 풀이 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/back-tracking/algorithm2/2.jpg)
-
-
-예를 들어
-
-실제 범인이 1,2 다
-
-```java
-4 2
-0 1 0 1
-1 0 0 1
-0 0 0 1
-0 0 1 0
-```
-
-
-여기서 1,2번이 짜고쳐서 1번은 2번이 범인이 아니라고, 2번은 1번이 범인이 아니라고 말한다.
-
-4번은 3번에게 범인이 아니라고 했지만, 만약 범인이라고 할 경우에 3번이 0표가 되어 자동 범인 지목이 된다
 <br><br>
 
-## 가능한 풀이
+testcase 2번 기준으로
 
-![가능한 풀이 알고리즘 문제 풀이 참고 이미지](/assets/img/data-alg/back-tracking/algorithm2/1.jpg)
+만약 현재 내 추리가 `my_reasoning = {0, 1, 1, 0, 0, 1, 1}` 일때
 
-<br>
-삽화를 보았을 때,
+`2, 3, 6, 7`이 무고하기에 2,3,6,7 의 알리바이를 듣고 모두 일치하면
 
-알리바이가 각각 있는 2,3,4번 사람의 증언을 보면 전부 내가 제시한 추리와 일치한다.
+범인은 1,4,5로 간주된다
+
+
 
 
 그러면 사고의 흐름을 작성해보자
